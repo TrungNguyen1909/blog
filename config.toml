@@ -5,6 +5,7 @@ title = "Nguyen Hoang Trung"
 #disqusShortname = "username" # delete this to disable disqus comments
 googleAnalytics = "UA-138000293-1"
 DefaultContentLanguage = "en"
+disablePathToLower = true
 [languages]
 [languages.en]
 [languages.vi]
