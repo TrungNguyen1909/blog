@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>stack-buffer-overflow on Nguyen Hoang Trung</title>
+    <link>https://trungnguyen1909.github.io/blog/tags/stack-buffer-overflow/</link>
+    <description>Recent content in stack-buffer-overflow on Nguyen Hoang Trung</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 10 Oct 2018 11:35:23 +0700</lastBuildDate>
+    
+	<atom:link href="https://trungnguyen1909.github.io/blog/tags/stack-buffer-overflow/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>matesCTF babyOVERFLOW</title>
+      <link>https://trungnguyen1909.github.io/blog/post/matesctf/babyOVERFLOW/</link>
+      <pubDate>Wed, 10 Oct 2018 11:35:23 +0700</pubDate>
+      
+      <guid>https://trungnguyen1909.github.io/blog/post/matesctf/babyOVERFLOW/</guid>
+      <description>babyOVERFLOW Tên file bài này gợi ý rất nhiều.
+&amp;ldquo;baby&amp;rdquo; thường được dùng trong CTF chỉ những bài đơn giản dành cho người mới
+&amp;ldquo;OVERFLOW&amp;rdquo; ở đây thì chỉ đến stack buffer overflow.
+Chạy nó, nhập vào thì nó in ra lại đúng như thế.
+Ta có thể thử nhập vào &amp;ldquo;%x&amp;rdquo; để xem có format string không thì kết quả là chương trình chạy bình thường
+Thử với 1 input thật dài thì thấy không có lỗi gì xảy ra.</description>
+    </item>
+    
+  </channel>
+</rss>

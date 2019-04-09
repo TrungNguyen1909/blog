@@ -1,0 +1,543 @@
+<!DOCTYPE html>
+<html lang="en-us">
+    <head>
+         
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>AceBear Security Contest House-of-loop</title>
+        
+        <style>
+
+    html body {
+        font-family: 'Noto Sans', sans-serif;
+        background-color: white;
+    }
+
+    :root {
+        --accent: purple;
+        --border-width:  5px ;
+    }
+
+</style>
+
+
+<link rel="stylesheet" href="https://trungnguyen1909.github.io/blog/css/main.css">
+
+
+
+
+
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Noto%20Sans">
+
+
+ <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/solarized-dark.min.css"> 
+
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+ 
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/go.min.js"></script>  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/haskell.min.js"></script>  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/kotlin.min.js"></script>  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/scala.min.js"></script>  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/swift.min.js"></script>  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/common.min.js"></script>  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/assembler.min.js"></script> 
+
+    <script>hljs.initHighlightingOnLoad();</script>
+
+
+
+
+
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+
+<script>$(document).on('click', function() { $('.collapse').collapse('hide'); })</script>
+ <meta name="generator" content="Hugo 0.55.0" />
+        
+
+        
+        
+        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-138000293-1"></script>
+        <script>
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments)};
+          gtag('js', new Date());
+
+          gtag('config', 'UA-138000293-1');
+        </script>
+        
+    </head>
+
+    
+    
+    <script type="text/javascript" async
+      src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+    </script>
+    
+
+    <body>
+         
+        <nav class="navbar navbar-default navbar-fixed-top">
+
+            <div class="container">
+
+                <div class="navbar-header">
+
+                    <a class="navbar-brand visible-xs" href="#">AceBear Security Contest House-of-loop</a>
+
+                    <button class="navbar-toggle" data-target=".navbar-collapse" data-toggle="collapse">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+
+                </div>
+
+                <div class="collapse navbar-collapse">
+
+                    
+                        <ul class="nav navbar-nav">
+                            
+                                <li><a href="/blog/">Home</a></li>
+                            
+                                <li><a href="/blog/post/">Posts</a></li>
+                            
+                                <li><a href="/blog/tags/">Tags</a></li>
+                            
+                        </ul>
+                    
+
+                    
+                        <ul class="nav navbar-nav navbar-right">
+                            
+                                <li class="navbar-icon"><a href="mailto:someone@example.com"><i class="fa fa-envelope-o"></i></a></li>
+                            
+                                <li class="navbar-icon"><a href="https://github.com/TrungNguyen1909/"><i class="fa fa-github"></i></a></li>
+                            
+                        </ul>
+                    
+
+                </div>
+
+            </div>
+
+        </nav>
+
+
+<main>
+
+    <div class="item">
+
+    
+    
+    
+
+    
+    
+
+    <h4><a href="/blog/post/AceBear2019/house_of_loop/">AceBear Security Contest House-of-loop</a></h4>
+    <h5>April 8, 2019</h5>
+    
+    <a href="https://trungnguyen1909.github.io/blogtags/AceBear"><kbd class="item-tag">AceBear</kbd></a>
+    
+    <a href="https://trungnguyen1909.github.io/blogtags/CTF"><kbd class="item-tag">CTF</kbd></a>
+    
+    <a href="https://trungnguyen1909.github.io/blogtags/pwn"><kbd class="item-tag">pwn</kbd></a>
+    
+    <a href="https://trungnguyen1909.github.io/blogtags/heap"><kbd class="item-tag">heap</kbd></a>
+    
+
+</div>
+
+    
+    <br> <div class="text-justify">
+
+<h1 id="house-of-loop">House of loop</h1>
+
+<p>Hi everyone, this is the writeup for the challenge <em>House of loop</em> in the <em>AceBear Security Contest 2019</em></p>
+
+<h2 id="description">Description</h2>
+
+<p>We are given a stripped ELF x64 binary which can be interacted with, our task is to get remote code execution(RCE)</p>
+
+<p>The binary presents us 3 options: Create, View and Delete note.</p>
+
+<p>When create a note, we have 3 field: Title, Private, and Description.</p>
+
+<p>We have the limits on Title, Private field length but with Description, we can use as much as we specified.</p>
+
+<p>When viewing a note, we can view the <code>Title</code> and <code>Description</code> fields but not <code>Private</code>.</p>
+
+<p>When delete a note, we specify the <code>Title</code> of the note which we want to delete and then it will be removed from view.</p>
+
+<p>I spent 1h30 to reverse and understand the binary and decompile the binary</p>
+
+<p>The fully decompiled program is at <a href="./house_of_loop.c">here</a></p>
+
+<p>EDIT: Almost forgot, I used <code>syms2elf</code> plugin to get the function symbols into the executable (a.k.a de-strip) :)</p>
+
+<h2 id="technical-details">Technical Details</h2>
+
+<p>When creating a note, it <code>malloc(144)</code> for the note, note&rsquo;s title is at offset 96 of the struct,</p>
+
+<p>The title is null-terminated at offset 25 although we can write 32bytes.</p>
+
+<p>Private data is written to the beginning(offset 0).</p>
+
+<p>Lastly, It asks us for the description size, malloc enough data, zero it out, finally read in exactly number of bytes.</p>
+
+<p>The address of the description is then saved in its field.</p>
+
+<p>Then the program goes on check if it was the first note created or loop through the singly-linked list
+until the next_note field is null, it puts the address of the newly-created note there.</p>
+
+<p>When deleting a note, it&rsquo;s loop through the linked-list to find the note with matched title,
+<em>unlink</em> it from the singly-linked-list then free its data and itself</p>
+
+<h2 id="bugs">Bugs</h2>
+
+<p>While reversing the binary, I found out that the next_note field is not initialized at the time of creating and clear it at the time of deletion.</p>
+
+<p>So it left a dangling pointer there and also picked up the dangling pointer which is left there earlier.</p>
+
+<p>So that opens us a use-after-free vulnerbility.</p>
+
+<p>Meanwhile, it creates a problem that if we are careless,
+we can put the program in an endless loop by having the next_note field points (directly/indrectly) to itself.</p>
+
+<p>After hours of trying the program, I also found a critical logic bug.</p>
+
+<p>The chunk that is malloc-ed to store the Description is memset by the size we entered but not the <em>actual</em> chunk size.</p>
+
+<p>Which means, if we create a 0-sized description,
+it will then <code>malloc(0)</code>, which gives 16 bytes, then <code>memset(chunk,0,0)</code> (which is non-sense).</p>
+
+<p>So, we got an information disclosure of anything that was there before :)</p>
+
+<h2 id="exploit">Exploit</h2>
+
+<h3 id="checksec">Checksec</h3>
+
+<pre><code>[+] checksec for '/root/house_of_loop/house_of_loop'
+Canary                        : Yes
+NX                            : Yes
+PIE                           : Yes
+Fortify                       : No
+RelRO                         : Full
+</code></pre>
+
+<h3 id="information-disclosure">Information Disclosure</h3>
+
+<p>To leak a pointer, we can use the  <em>0-sized</em> description to leak the FD, BK of that chunk.</p>
+
+<p>FYI, FD, BK pointers are used when a chunk is freed to points to the next free one.</p>
+
+<p>That&rsquo;s cool, we can easily leak the heap address.</p>
+
+<p>But what about libc? Where can I find it?</p>
+
+<p>Since glibc 2.26 with the introduction of <code>tcache</code>, we have an libc info-leak</p>
+
+<p>A chunk inside the unsorted bin
+will have a pointer to a libc address in the <code>fd</code> if that is the last chunk and in <code>bk</code> if it was the first one.</p>
+
+<p><a href="http://eternal.red/2018/children_tcache-writeup-and-tcache-overview/">Reference</a></p>
+
+<p>In my exploit, at line 67, I alloc a description that is big enough to goes to the unsorted-bin,
+then I freed it, try to re-alloc that chunk with a <em>0-sized</em> description. Because it was the last chunk, there will be a pointer :)</p>
+
+<p>There was a reason why I also free the last chunk allocated.
+If we don&rsquo;t do so, the last chunk we allocated will points to that chunk, but the dangling pointer there will throw us a ∞ loop</p>
+
+<p>In the other hand, let consider the heap currently be allocated like this</p>
+
+<pre><code>|    A     |   B       |      C     |      D    |
+    v          ^   v          ^   v      ^
+    └──────────┘   └──────────┘   └──────┘
+</code></pre>
+
+<p>A is that big chunk, D is the last one we allocated.</p>
+
+<p>The line represent the linked-list pointer to the next note.
+They <strong>don&rsquo;t</strong> go away upon deleting.</p>
+
+<p>When you free A, then reallocate it, it will stay at the same position but with the pointer.</p>
+
+<p>D will the points to A(the next one allocated) then A-&gt;B-&gt;C-&gt;D =&gt; ∞ loop</p>
+
+<p>By also free D after A, these things happen:</p>
+
+<ul>
+<li><p>D next_note(0 because it is the last one) will be saved to C, which mark C as the last note.</p></li>
+
+<li><p>Because of malloc&rsquo;s natural of a first-fit algorithm
+the reallocated one will have the struct lied on D&rsquo;s location and the description at A&rsquo;s description.</p></li>
+
+<li><p>Because D have next_note is 0, so it will be the last note(the previous one is C)</p></li>
+
+<li><p>The address will be at the description of the last allocated note.</p></li>
+</ul>
+
+<p>And that&rsquo;s how you leak the libc address.</p>
+
+<p>You can see the exection trace at <a href="./libc_leak_trace.txt">here</a></p>
+
+<h3 id="from-uaf-to-ace">From UAF to ACE</h3>
+
+<p>So the only field that was not initialized was <code>next_note</code>, so how can we control it?</p>
+
+<p>To leave there an arbitrary pointer,
+we need to create another note that have the description size is <strong>the same size</strong> with the note structure.</p>
+
+<p>Then we can attempt to re-allocate the description(which we have full control) as the note structure.</p>
+
+<p>To re-allocate it, firstly, we will need to allocate a note that have the description&rsquo;s size strictly greater than the note structure.</p>
+
+<p>By doing that, we can make sure that our crafted struct is not being used as the description of the other note.</p>
+
+<p>Then, the next note we allocate will lied on our crafted struct</p>
+
+<p>Illustration</p>
+
+<p>Before:</p>
+
+<pre><code>|    A    | data of A(144)|     B     | data of B(144)|
+          |    crafted    |
+</code></pre>
+
+<p>After:</p>
+
+<pre><code>|    C    |      D        |     B     | data of B(144)| Data of C(144+)   | 
+</code></pre>
+
+<p>But&hellip;, what will we put there&hellip;???</p>
+
+<p>Okay, we will setup an arbitrary-write primitive.</p>
+
+<p>The GOT is Fully Protected, which mean it is read-only</p>
+
+<p>Now, we are introducing to you the <strong>MALLOC HOOK</strong></p>
+
+<p>The malloc hooks is available for debugging heap purpose, and it&rsquo;s executed before any <em>malloc</em> operations</p>
+
+<p>If the data at variable <code>__free_hook</code> or __malloc_hook` is not NULL, it will be executed.</p>
+
+<p>So, we write the address we want there, and we will have ACE (Arbitrary Code Execution)</p>
+
+<p>Ideally, you may want to write an address of a <code>one_gadget</code> there for the sake of simplicity.</p>
+
+<p>But how?</p>
+
+<p>Let&rsquo;s checkout this piece of code:</p>
+
+<pre><code class="language-c">int del_note(){
+  //tbf_note: to be freed note
+  //prev_note: the previous note of the one we want to free
+  //s1: the title of the note we want to free
+  ...
+  for ( tbf_note = first_note; tbf_note &amp;&amp; strncmp(&amp;s1, tbf_note-&gt;title, 0x20uLL); tbf_note = tbf_note-&gt;next_note )
+    prev_note = tbf_note;
+  if ( tbf_note )
+  {
+    if ( prev_note )
+      prev_note-&gt;next_note = tbf_note-&gt;next_note;
+    else
+      first_note = tbf_note-&gt;next_note;
+    free(tbf_note-&gt;data);
+    free(tbf_note);
+   ...
+}
+</code></pre>
+
+<p>As you can see, the program finds the note that we want to delete then does this piece of code:</p>
+
+<p><code>prev_note-&gt;next_note = tbf_note-&gt;next_note;</code></p>
+
+<p>It takes the address of the note that goes after the note will want to free,
+nd then make it to be the <code>next_note</code> of the note that comes before the one we want to free.</p>
+
+<p>Illustration!!!</p>
+
+<p>Before:</p>
+
+<pre><code>|    A     |   B       |      C     |
+     v          ^   v          ^
+     └──────────┘   └──────────┘
+</code></pre>
+
+<p>After:</p>
+
+<pre><code>|    A     |  freed   |      C     |
+    v                        ^
+    └────────────────────────┘
+</code></pre>
+
+<p>Basically, what it does it <em>unlink</em> that note from the linked-list</p>
+
+<blockquote>
+<p>Hey, have you learn the oldschool dlmalloc unlink exploit yet?</p>
+</blockquote>
+
+<p>The idea is simple,
+ -  Let&rsquo;s make the A note to lied on somewhere near <code>__free_hook</code></p>
+
+<pre><code>  - Use the _use-after-free` vuln to make `__free_hook` address as the `next_note`
+</code></pre>
+
+<ul>
+<li><p>Create a new note from A(Let&rsquo;s called it B)</p></li>
+
+<li><p>Then we <em>unlink</em> B off the linked_list</p></li>
+
+<li><p>Anything at B-&gt;next_note will be put in A-&gt;next_note !!!! (Isn&rsquo;t that Arbitrary Write?)</p></li>
+</ul>
+
+<p>=&gt; Let&rsquo;s make <code>__free_hook</code> is also the <code>next_note</code> field of A :)</p>
+
+<blockquote>
+<p>Isn&rsquo;t that the famous dlmalloc unlink exploit? ;)</p>
+</blockquote>
+
+<p>Friendly Reminder: Don&rsquo;t forget to filling up the heap holes you created by any stage of this exploit :)</p>
+
+<p><a href="./UAF-AW-ACE-trace.txt">UAF-&gt;AW-&gt;ACE trace</a></p>
+
+<h2 id="a-huge-handclap-to">A huge handclap to</h2>
+
+<ul>
+<li><p>chung96vn for creating this challenge(or the opportunity for me to learn heap exploit :))</p></li>
+
+<li><p><a href="http://eternal.red/2018/children_tcache-writeup-and-tcache-overview/">This writeup</a></p></li>
+
+<li><p><a href="https://protegototalum.faith/post/csaw-ctf-17-qual/">@ducphanduyagentP for letting me know about syms2elf</a></p></li>
+
+<li><p>You, Yes. You, for staying till this end of this writeup :)</p></li>
+</ul>
+</div>
+    
+    <h4 class="page-header">File Resources</h4>
+    <ul>
+    
+    <li><a href="https://trungnguyen1909.github.io/blog/post/AceBear2019/house_of_loop/UAF-AW-ACE-trace.txt"> UAF-AW-ACE-trace.txt </a> </li>
+    
+    <li><a href="https://trungnguyen1909.github.io/blog/post/AceBear2019/house_of_loop/exploit.py"> exploit.py </a> </li>
+    
+    <li><a href="https://trungnguyen1909.github.io/blog/post/AceBear2019/house_of_loop/house_of_loop"> house_of_loop </a> </li>
+    
+    <li><a href="https://trungnguyen1909.github.io/blog/post/AceBear2019/house_of_loop/house_of_loop.c"> house_of_loop.c </a> </li>
+    
+    <li><a href="https://trungnguyen1909.github.io/blog/post/AceBear2019/house_of_loop/house_of_loop.i64"> house_of_loop.i64 </a> </li>
+    
+    <li><a href="https://trungnguyen1909.github.io/blog/post/AceBear2019/house_of_loop/house_of_loop_unstripped"> house_of_loop_unstripped </a> </li>
+    
+    <li><a href="https://trungnguyen1909.github.io/blog/post/AceBear2019/house_of_loop/libc-2.27.so"> libc-2.27.so </a> </li>
+    
+    <li><a href="https://trungnguyen1909.github.io/blog/post/AceBear2019/house_of_loop/libc_leak_trace.txt"> libc_leak_trace.txt </a> </li>
+    
+    <li><a href="https://trungnguyen1909.github.io/blog/post/AceBear2019/house_of_loop/meplayingaroundwiththebinary.txt"> meplayingaroundwiththebinary.txt </a> </li>
+    
+    <ul>
+    
+    
+
+    
+
+        <h4 class="page-header">Related</h4>
+
+         <div class="item">
+
+    
+    
+    
+
+    
+    
+
+    <h4><a href="/blog/post/tetctf/babysandbox/">TetCTF babySandbox</a></h4>
+    <h5>February 22, 2019</h5>
+    
+    <a href="https://trungnguyen1909.github.io/blogtags/TetCTF"><kbd class="item-tag">TetCTF</kbd></a>
+    
+    <a href="https://trungnguyen1909.github.io/blogtags/CTF"><kbd class="item-tag">CTF</kbd></a>
+    
+    <a href="https://trungnguyen1909.github.io/blogtags/pwn"><kbd class="item-tag">pwn</kbd></a>
+    
+    <a href="https://trungnguyen1909.github.io/blogtags/sandbox"><kbd class="item-tag">sandbox</kbd></a>
+    
+    <a href="https://trungnguyen1909.github.io/blogtags/ROP"><kbd class="item-tag">ROP</kbd></a>
+    
+    <a href="https://trungnguyen1909.github.io/blogtags/NX"><kbd class="item-tag">NX</kbd></a>
+    
+
+</div>
+  <div class="item">
+
+    
+    
+    
+
+    
+    
+
+    <h4><a href="/blog/post/matesctf/KSMASH/">matesCTF KSMASH</a></h4>
+    <h5>February 18, 2019</h5>
+    
+    <a href="https://trungnguyen1909.github.io/blogtags/matesCTF"><kbd class="item-tag">matesCTF</kbd></a>
+    
+    <a href="https://trungnguyen1909.github.io/blogtags/CTF"><kbd class="item-tag">CTF</kbd></a>
+    
+    <a href="https://trungnguyen1909.github.io/blogtags/pwn"><kbd class="item-tag">pwn</kbd></a>
+    
+    <a href="https://trungnguyen1909.github.io/blogtags/kernel"><kbd class="item-tag">kernel</kbd></a>
+    
+    <a href="https://trungnguyen1909.github.io/blogtags/linux"><kbd class="item-tag">linux</kbd></a>
+    
+
+</div>
+  <div class="item">
+
+    
+    
+    
+
+    
+    
+
+    <h4><a href="/blog/post/35c3/pillow/">35C3 CTF Pillow</a></h4>
+    <h5>February 15, 2019</h5>
+    
+    <a href="https://trungnguyen1909.github.io/blogtags/35C3-CTF"><kbd class="item-tag">35C3-CTF</kbd></a>
+    
+    <a href="https://trungnguyen1909.github.io/blogtags/CTF"><kbd class="item-tag">CTF</kbd></a>
+    
+    <a href="https://trungnguyen1909.github.io/blogtags/pwn"><kbd class="item-tag">pwn</kbd></a>
+    
+    <a href="https://trungnguyen1909.github.io/blogtags/xnu"><kbd class="item-tag">xnu</kbd></a>
+    
+
+</div>
+ 
+
+    
+
+    
+
+</main>
+
+        <footer>
+
+            <p class="copyright text-muted">&copy; All rights reserved. Powered by <a href="https://gohugo.io">Hugo</a> and <a href="https://github.com/calintat/minimal">Minimal</a></p>
+
+        </footer>
+       
+    </body>
+
+</html>
+

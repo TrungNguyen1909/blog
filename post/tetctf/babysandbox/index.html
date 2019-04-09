@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="en-us">
+    <head>
+         
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>TetCTF babySandbox</title>
+        
+        <style>
+
+    html body {
+        font-family: 'Noto Sans', sans-serif;
+        background-color: white;
+    }
+
+    :root {
+        --accent: purple;
+        --border-width:  5px ;
+    }
+
+</style>
+
+
+<link rel="stylesheet" href="https://trungnguyen1909.github.io/blog/css/main.css">
+
+
+
+
+
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Noto%20Sans">
+
+
+ <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/solarized-dark.min.css"> 
+
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+ 
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/go.min.js"></script>  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/haskell.min.js"></script>  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/kotlin.min.js"></script>  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/scala.min.js"></script>  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/swift.min.js"></script>  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/common.min.js"></script>  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/assembler.min.js"></script> 
+
+    <script>hljs.initHighlightingOnLoad();</script>
+
+
+
+
+
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+
+<script>$(document).on('click', function() { $('.collapse').collapse('hide'); })</script>
+ <meta name="generator" content="Hugo 0.55.0" />
+        
+
+        
+        
+        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-138000293-1"></script>
+        <script>
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments)};
+          gtag('js', new Date());
+
+          gtag('config', 'UA-138000293-1');
+        </script>
+        
+    </head>
+
+    
+    
+    <script type="text/javascript" async
+      src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+    </script>
+    
+
+    <body>
+         
+        <nav class="navbar navbar-default navbar-fixed-top">
+
+            <div class="container">
+
+                <div class="navbar-header">
+
+                    <a class="navbar-brand visible-xs" href="#">TetCTF babySandbox</a>
+
+                    <button class="navbar-toggle" data-target=".navbar-collapse" data-toggle="collapse">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+
+                </div>
+
+                <div class="collapse navbar-collapse">
+
+                    
+                        <ul class="nav navbar-nav">
+                            
+                                <li><a href="/blog/">Home</a></li>
+                            
+                                <li><a href="/blog/post/">Posts</a></li>
+                            
+                                <li><a href="/blog/tags/">Tags</a></li>
+                            
+                        </ul>
+                    
+
+                    
+                        <ul class="nav navbar-nav navbar-right">
+                            
+                                <li class="navbar-icon"><a href="mailto:someone@example.com"><i class="fa fa-envelope-o"></i></a></li>
+                            
+                                <li class="navbar-icon"><a href="https://github.com/TrungNguyen1909/"><i class="fa fa-github"></i></a></li>
+                            
+                        </ul>
+                    
+
+                </div>
+
+            </div>
+
+        </nav>
+
+
+<main>
+
+    <div class="item">
+
+    
+    
+    
+
+    
+    
+
+    <h4><a href="/blog/post/tetctf/babysandbox/">TetCTF babySandbox</a></h4>
+    <h5>February 22, 2019</h5>
+    
+    <a href="https://trungnguyen1909.github.io/blogtags/TetCTF"><kbd class="item-tag">TetCTF</kbd></a>
+    
+    <a href="https://trungnguyen1909.github.io/blogtags/CTF"><kbd class="item-tag">CTF</kbd></a>
+    
+    <a href="https://trungnguyen1909.github.io/blogtags/pwn"><kbd class="item-tag">pwn</kbd></a>
+    
+    <a href="https://trungnguyen1909.github.io/blogtags/sandbox"><kbd class="item-tag">sandbox</kbd></a>
+    
+    <a href="https://trungnguyen1909.github.io/blogtags/ROP"><kbd class="item-tag">ROP</kbd></a>
+    
+    <a href="https://trungnguyen1909.github.io/blogtags/NX"><kbd class="item-tag">NX</kbd></a>
+    
+
+</div>
+
+    
+    <br> <div class="text-justify">
+
+<h1 id="baby-sandbox">Baby Sandbox</h1>
+
+<p>This is a challenge of TetCTF, which is hosted from Jan 1st to Jan 7th by MeePwn Team of Vietnam</p>
+
+<h2 id="challenge-description">Challenge description</h2>
+
+<p>We are given 2 binary, one is <code>sandbox</code> and the other one is <code>program</code>.</p>
+
+<p><code>sandbox</code>, judging by its name, is a implementation of sandbox, executing the program passed in argv[1] in an sandbox environment.</p>
+
+<p><code>program</code> is executed by <code>sandbox</code>, which is a simple static stripped executable which simply reads your input and then output it.</p>
+
+<h2 id="reversing">Reversing</h2>
+
+<p><code>sandbox</code> forks and execve a child process that passed in argv[1], then use ptrace to monitor it</p>
+
+<p>At every syscall, it checks if the syscall is not blacklist and not violates custom rules and then choosing whether to stop it or continue.</p>
+
+<p>Some syscalls are blocked are fork, execve, open (filename containing flag), &hellip;</p>
+
+<p><code>program</code> is a statically-linked stripped binary, reads input, writes it out, do a mystery function 3 times then exits.</p>
+
+<h2 id="bugs">Bugs</h2>
+
+<p><code>sandbox</code> blacklists syscall, but it only blacklists x86_64 system call numbers.
+The difference between x86 and x86_64 syscall table allows us to using forbidden syscalls</p>
+
+<p><code>program</code> has a buffer-overflow, which allowing arbitrary code execution</p>
+
+<h2 id="exploit">Exploit</h2>
+
+<p>To escape the sandbox, we can fork it using 32bit syscall number. The newly spawned process will be off-the-radar.</p>
+
+<p>The file <code>poc.s</code> is a sandbox-escape proof-of-concept, which will escape itself and spawn a shell</p>
+
+<p><code>program</code> is a statically-linked, which allows us to have a good surface for ROPing</p>
+
+<p>I decided to make the stack executable to allow us to injecting the shellcode.</p>
+
+<p>While searching for solutions such as mmap or mprotect, I suddenly remember to <code>_dl_make_stack_executable</code>,
+which always available in statically-linked binary.</p>
+
+<p>The way I found it was while searching for <code>mov eax, 9;syscall</code> for <code>mprotect</code> syscall,
+I suddenly realised that the function that it was found in, is definitely the libc wrapper for <code>mprotect</code></p>
+
+<p>Searching reference to this function, I found 3 ones that has reference to <code>mprotect</code>.</p>
+
+<p>By comparing those function reference offset to <code>mprotect</code> to the one in the others libc,
+We can find the <code>_dl_make_stack_executable</code> function. Its reference to <code>mprotect</code> is about 0x26 to 0x27 bytes from the function beginning.</p>
+
+<p>With some reversing in that function, we can use it to make the stack executable again.
+This technique first appeared in the CTF was in the BKPCTF Simple Calc Challenge.</p>
+
+<p>After that, we can <code>push rsp;ret</code> to jump to our following shellcode.</p>
+
+<p>While doing this, you will realise that the function that is called last in main was <code>close(fd)</code>.
+It was used to close all pipe before leaving.</p>
+
+<p>Also, please bear in mind that <code>program</code> will only read 256(0x100) bytes so make sure everything fits in.
+My exploit use <sup>255</sup>&frasl;<sub>256</sub> bytes, which is nice(although it is a bit infuriating by leaving one-byte unused)</p>
+
+<p>The first shellcode is responsible for opening a reverse shell, reading the next shellcode to a fixed executable mmap then returning to this.</p>
+
+<p>The second shellcode is responsible for escaping sandbox and then gives us a shell.</p>
+</div>
+    
+    <h4 class="page-header">File Resources</h4>
+    <ul>
+    
+    <li><a href="https://trungnguyen1909.github.io/blog/post/tetctf/babysandbox/exploit.py"> exploit.py </a> </li>
+    
+    <li><a href="https://trungnguyen1909.github.io/blog/post/tetctf/babysandbox/poc.s"> poc.s </a> </li>
+    
+    <li><a href="https://trungnguyen1909.github.io/blog/post/tetctf/babysandbox/program"> program </a> </li>
+    
+    <li><a href="https://trungnguyen1909.github.io/blog/post/tetctf/babysandbox/sandbox"> sandbox </a> </li>
+    
+    <li><a href="https://trungnguyen1909.github.io/blog/post/tetctf/babysandbox/shellcode.py"> shellcode.py </a> </li>
+    
+    <li><a href="https://trungnguyen1909.github.io/blog/post/tetctf/babysandbox/shellcode.pyc"> shellcode.pyc </a> </li>
+    
+    <li><a href="https://trungnguyen1909.github.io/blog/post/tetctf/babysandbox/run.sh"> run.sh </a> </li>
+    
+    <ul>
+    
+    
+
+    
+
+        <h4 class="page-header">Related</h4>
+
+         <div class="item">
+
+    
+    
+    
+
+    
+    
+
+    <h4><a href="/blog/post/AceBear2019/house_of_loop/">AceBear Security Contest House-of-loop</a></h4>
+    <h5>April 8, 2019</h5>
+    
+    <a href="https://trungnguyen1909.github.io/blogtags/AceBear"><kbd class="item-tag">AceBear</kbd></a>
+    
+    <a href="https://trungnguyen1909.github.io/blogtags/CTF"><kbd class="item-tag">CTF</kbd></a>
+    
+    <a href="https://trungnguyen1909.github.io/blogtags/pwn"><kbd class="item-tag">pwn</kbd></a>
+    
+    <a href="https://trungnguyen1909.github.io/blogtags/heap"><kbd class="item-tag">heap</kbd></a>
+    
+
+</div>
+  <div class="item">
+
+    
+    
+    
+
+    
+    
+
+    <h4><a href="/blog/post/matesctf/KSMASH/">matesCTF KSMASH</a></h4>
+    <h5>February 18, 2019</h5>
+    
+    <a href="https://trungnguyen1909.github.io/blogtags/matesCTF"><kbd class="item-tag">matesCTF</kbd></a>
+    
+    <a href="https://trungnguyen1909.github.io/blogtags/CTF"><kbd class="item-tag">CTF</kbd></a>
+    
+    <a href="https://trungnguyen1909.github.io/blogtags/pwn"><kbd class="item-tag">pwn</kbd></a>
+    
+    <a href="https://trungnguyen1909.github.io/blogtags/kernel"><kbd class="item-tag">kernel</kbd></a>
+    
+    <a href="https://trungnguyen1909.github.io/blogtags/linux"><kbd class="item-tag">linux</kbd></a>
+    
+
+</div>
+  <div class="item">
+
+    
+    
+    
+
+    
+    
+
+    <h4><a href="/blog/post/35c3/pillow/">35C3 CTF Pillow</a></h4>
+    <h5>February 15, 2019</h5>
+    
+    <a href="https://trungnguyen1909.github.io/blogtags/35C3-CTF"><kbd class="item-tag">35C3-CTF</kbd></a>
+    
+    <a href="https://trungnguyen1909.github.io/blogtags/CTF"><kbd class="item-tag">CTF</kbd></a>
+    
+    <a href="https://trungnguyen1909.github.io/blogtags/pwn"><kbd class="item-tag">pwn</kbd></a>
+    
+    <a href="https://trungnguyen1909.github.io/blogtags/xnu"><kbd class="item-tag">xnu</kbd></a>
+    
+
+</div>
+ 
+
+    
+
+    
+
+</main>
+
+        <footer>
+
+            <p class="copyright text-muted">&copy; All rights reserved. Powered by <a href="https://gohugo.io">Hugo</a> and <a href="https://github.com/calintat/minimal">Minimal</a></p>
+
+        </footer>
+       
+    </body>
+
+</html>
+

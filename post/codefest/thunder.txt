@@ -1,0 +1,3 @@
+tcpflow -r thunder.pcap
+binwalk --dd='.*' 172.017.0*
+//checkout the output directory and u will get what u need...

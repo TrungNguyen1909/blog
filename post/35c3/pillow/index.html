@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="en-us">
+    <head>
+         
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>35C3 CTF Pillow</title>
+        
+        <style>
+
+    html body {
+        font-family: 'Noto Sans', sans-serif;
+        background-color: white;
+    }
+
+    :root {
+        --accent: purple;
+        --border-width:  5px ;
+    }
+
+</style>
+
+
+<link rel="stylesheet" href="https://trungnguyen1909.github.io/blog/css/main.css">
+
+
+
+
+
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Noto%20Sans">
+
+
+ <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/solarized-dark.min.css"> 
+
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+ 
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/go.min.js"></script>  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/haskell.min.js"></script>  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/kotlin.min.js"></script>  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/scala.min.js"></script>  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/swift.min.js"></script>  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/common.min.js"></script>  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/assembler.min.js"></script> 
+
+    <script>hljs.initHighlightingOnLoad();</script>
+
+
+
+
+
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+
+<script>$(document).on('click', function() { $('.collapse').collapse('hide'); })</script>
+ <meta name="generator" content="Hugo 0.55.0" />
+        
+
+        
+        
+        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-138000293-1"></script>
+        <script>
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments)};
+          gtag('js', new Date());
+
+          gtag('config', 'UA-138000293-1');
+        </script>
+        
+    </head>
+
+    
+    
+    <script type="text/javascript" async
+      src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+    </script>
+    
+
+    <body>
+         
+        <nav class="navbar navbar-default navbar-fixed-top">
+
+            <div class="container">
+
+                <div class="navbar-header">
+
+                    <a class="navbar-brand visible-xs" href="#">35C3 CTF Pillow</a>
+
+                    <button class="navbar-toggle" data-target=".navbar-collapse" data-toggle="collapse">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+
+                </div>
+
+                <div class="collapse navbar-collapse">
+
+                    
+                        <ul class="nav navbar-nav">
+                            
+                                <li><a href="/blog/">Home</a></li>
+                            
+                                <li><a href="/blog/post/">Posts</a></li>
+                            
+                                <li><a href="/blog/tags/">Tags</a></li>
+                            
+                        </ul>
+                    
+
+                    
+                        <ul class="nav navbar-nav navbar-right">
+                            
+                                <li class="navbar-icon"><a href="mailto:someone@example.com"><i class="fa fa-envelope-o"></i></a></li>
+                            
+                                <li class="navbar-icon"><a href="https://github.com/TrungNguyen1909/"><i class="fa fa-github"></i></a></li>
+                            
+                        </ul>
+                    
+
+                </div>
+
+            </div>
+
+        </nav>
+
+
+<main>
+
+    <div class="item">
+
+    
+    
+    
+
+    
+    
+
+    <h4><a href="/blog/post/35c3/pillow/">35C3 CTF Pillow</a></h4>
+    <h5>February 15, 2019</h5>
+    
+    <a href="https://trungnguyen1909.github.io/blogtags/35C3-CTF"><kbd class="item-tag">35C3-CTF</kbd></a>
+    
+    <a href="https://trungnguyen1909.github.io/blogtags/CTF"><kbd class="item-tag">CTF</kbd></a>
+    
+    <a href="https://trungnguyen1909.github.io/blogtags/pwn"><kbd class="item-tag">pwn</kbd></a>
+    
+    <a href="https://trungnguyen1909.github.io/blogtags/xnu"><kbd class="item-tag">xnu</kbd></a>
+    
+
+</div>
+
+    
+    <br> <div class="text-justify">
+
+<h1 id="pillow">Pillow</h1>
+
+<h2 id="background">Background</h2>
+
+<p>This is the writeup for the challenge Pillow, created by Samuel Groß(@saelo) of Project Zero, of 35C3 CTF annually organized by @EatSleepPwnRpt happening at the end of year 2018.</p>
+
+<p>I didn&rsquo;t solve this challenge during the CTF, when revisiting this challenge after checkout @LinusHenze repo, I have a big learning oppuntunity to checkout XNU exploitation, which was completely new to me.</p>
+
+<h2 id="basic-stuff">Basic stuff</h2>
+
+<p>Feel free to skip this part if you have already had a basic knowledge in Mach.</p>
+
+<h3 id="mach">Mach</h3>
+
+<p>Mach 3.0 was originally conceived as a simple, extensible, communications microkernel. It is capable of running as a stand-alone kernel, with other traditional operating-system services such as I/O, file systems, and networking stacks running as user-mode servers.</p>
+
+<p>Mach is used to <em>send messages</em> or do <em>remote procedure</em> calls (RPC) between separate tasks. This modular structure results in a more robust and extensible system than a monolithic kernel would allow, without the performance penalty of a pure microkernel.</p>
+
+<p><a href="https://developer.apple.com/library/archive/documentation/Darwin/Conceptual/KernelProgramming/Mach/Mach.html">More information</a></p>
+
+<h3 id="mach-port">Mach Port</h3>
+
+<p>In Mach kernel, port is a very important concept, especially at its reference counting.</p>
+
+<p>Port is a <strong>one-way</strong> transmission channel. The corresponding object in kernel is the <code>ipc_port</code>.</p>
+
+<p>There can only be one receiver but there can be multiple senders.</p>
+
+<p>To be able to send a message through a port, you must have a send right to it.</p>
+
+<p>When sending and receiving mach messages from userspace there are two important kernel objects, which are the foundation of Mach Port: ipc_entry and
+ipc_object.</p>
+
+<blockquote>
+<p><code>ipc_entry</code> are the per-process handles or names which a process uses to refer to a particular ipc_object.</p>
+
+<p><code>ipc_object</code> is the actual message queue (or kernel object) which the port refers to.</p>
+
+<p><code>ipc_entry</code> have a pointer to the <code>ipc_object</code> they are a handle for along with the ie_bits field which contains
+the urefs and capacility bits for this name/handle (whether this is a send right, receive right etc.)</p>
+
+<p>Each time a new right(send or receive) is received by a process, if it already had a name for that right the kernel will
+increment the urefs count. Userspace can also arbitrarily control this reference count via <code>mach_port_mod_refs</code>
+and <code>mach_port_deallocate</code>. When the reference count hits 0 the entry is free&rsquo;d and the name can be <strong>re-used</strong> to
+name another right.</p>
+
+<p>-Ian Beer(@i41nbeer) of Google Project Zero-</p>
+
+<p><a href="https://bugs.chromium.org/p/project-zero/issues/detail?id=959">Source</a></p>
+</blockquote>
+
+<p>Port has two different usage. The first is for inter-process-communication (IPC); the second is for representing a kernel object.</p>
+
+<p>For this writeup, we will only focus on IPC usage.</p>
+
+<h3 id="mig">MIG</h3>
+
+<blockquote>
+<p>In Apple&rsquo;s code, there is one called MIG, which is automatically generated according to the defs file. It usually does some inter-core object conversion (such as from port to kernel object) and object reference count management, and then call the real kernel functions. If the kernel developer is not familiar with the meaning of defs or MIG&rsquo;s management of object reference counts, there is high possibility to manage the reference counts of the kernel objects improperly in the real kernel API of this MIG package, thus causing leaks of the reference counts or double free.</p>
+
+<p>-Qixun Zhao(@S0rryMybad) of Qihoo 360 Vulcan Team-</p>
+</blockquote>
+
+<h2 id="challenge">Challenge</h2>
+
+<p>The distribution gives you 4 files, 2 Launch Daemons config and 2 executable act at daemon.</p>
+
+<p>shelld looks promising, there is a function shell_exec with call an arbitrary command after do some verification with capsd</p>
+
+<h2 id="bug">Bug</h2>
+
+<p>shelld</p>
+
+<pre><code class="language-c">kern_return_t register_completion_listener(mach_port_t server, const char* session_name, mach_port_t listener, audit_token_t client) {
+	CFMutableDictionaryRef session = lookup_session(session_name, client);
+	if (!session) {
+		mach_port_deallocate(mach_task_self(), listener);
+		return KERN_FAILURE;
+	}
+
+	CFNumberRef value = CFNumberCreate(kCFAllocatorDefault, kCFNumberSInt32Type, &amp;listener);
+	CFDictionaryAddValue(session, CFSTR(&quot;listener&quot;), value);
+	CFRelease(value);
+
+	return KERN_SUCCESS;
+}
+</code></pre>
+
+<p>This function is called by the MIG server.</p>
+
+<p>The problem is that it does not respect the MIG schematics</p>
+
+<blockquote>
+<p>If a MIG method returns KERN_SUCCESS it means that the method took ownership of <em>all</em> the arguments passed to it.
+If a MIG method returns an error code, then it took ownership of <em>none</em> of the arguments passed to it.
+<a href="https://bugs.chromium.org/p/project-zero/issues/detail?id=1417">Source</a></p>
+</blockquote>
+
+<p>What does it mean that if the function return <code>KERN_SUCCESS</code>, it is responsible to manage all the resources passed in.</p>
+
+<p>Otherwise, MIG will responsible for freeing all of it.</p>
+
+<p>By <code>mach_port_deallocate</code>, the listener port will be double-freed (by the function and MIG) and the uref(userspace-reference count) will be decreased.</p>
+
+<p>When the uref reaches zero, it means that all connection to that port is deallocated, the port will be freed and be reused later</p>
+
+<blockquote>
+<p>When the receive right/port have already have a reference(name) in the task, the uref will be increased by one
+and decreased by one when it is deallocated</p>
+</blockquote>
+
+<h3 id="exploitation">Exploitation</h3>
+
+<p>If we pass in the capsd port to the listener and an invalid session, the port that shelld communicates with capsd will be freed and we can attach our port to it by using <code>register_completion_handler</code>.</p>
+
+<p>=&gt; IPC Man-in-the-middle</p>
+
+<p>One more thing, even if we have passed capsd check, we still have the macOS Sandbox enforced to a session-name
+To bypass this, we create a session with a super long name, then the sandbox will refused to enforce due to long path.</p>
+
+<p>=&gt; Arbitrary Code Execution outside the sandbox.</p>
+
+<p>Other technical/implementation is noted in the exploit.c, please check it out.</p>
+
+<h2 id="reference">Reference</h2>
+
+<p><a href="https://github.com/saelo/35c3ctf/tree/master/pillow">Official Source Code</a></p>
+
+<p><a href="https://github.com/LinusHenze/35C3_Writeups/tree/master/pillow">Reference</a></p>
+</div>
+    
+    <h4 class="page-header">File Resources</h4>
+    <ul>
+    
+    <li><a href="https://trungnguyen1909.github.io/blog/post/35c3/pillow/Makefile"> Makefile </a> </li>
+    
+    <li><a href="https://trungnguyen1909.github.io/blog/post/35c3/pillow/common.h"> common.h </a> </li>
+    
+    <li><a href="https://trungnguyen1909.github.io/blog/post/35c3/pillow/exploit.c"> exploit.c </a> </li>
+    
+    <li><a href="https://trungnguyen1909.github.io/blog/post/35c3/pillow/reloadservice.sh"> reloadservice.sh </a> </li>
+    
+    <li><a href="https://trungnguyen1909.github.io/blog/post/35c3/pillow/sandbox.sb"> sandbox.sb </a> </li>
+    
+    <li><a href="https://trungnguyen1909.github.io/blog/post/35c3/pillow/shelld.defs"> shelld.defs </a> </li>
+    
+    <li><a href="https://trungnguyen1909.github.io/blog/post/35c3/pillow/shelld_client.defs"> shelld_client.defs </a> </li>
+    
+    <ul>
+    
+    
+
+    
+
+        <h4 class="page-header">Related</h4>
+
+         <div class="item">
+
+    
+    
+    
+
+    
+    
+
+    <h4><a href="/blog/post/AceBear2019/house_of_loop/">AceBear Security Contest House-of-loop</a></h4>
+    <h5>April 8, 2019</h5>
+    
+    <a href="https://trungnguyen1909.github.io/blogtags/AceBear"><kbd class="item-tag">AceBear</kbd></a>
+    
+    <a href="https://trungnguyen1909.github.io/blogtags/CTF"><kbd class="item-tag">CTF</kbd></a>
+    
+    <a href="https://trungnguyen1909.github.io/blogtags/pwn"><kbd class="item-tag">pwn</kbd></a>
+    
+    <a href="https://trungnguyen1909.github.io/blogtags/heap"><kbd class="item-tag">heap</kbd></a>
+    
+
+</div>
+  <div class="item">
+
+    
+    
+    
+
+    
+    
+
+    <h4><a href="/blog/post/tetctf/babysandbox/">TetCTF babySandbox</a></h4>
+    <h5>February 22, 2019</h5>
+    
+    <a href="https://trungnguyen1909.github.io/blogtags/TetCTF"><kbd class="item-tag">TetCTF</kbd></a>
+    
+    <a href="https://trungnguyen1909.github.io/blogtags/CTF"><kbd class="item-tag">CTF</kbd></a>
+    
+    <a href="https://trungnguyen1909.github.io/blogtags/pwn"><kbd class="item-tag">pwn</kbd></a>
+    
+    <a href="https://trungnguyen1909.github.io/blogtags/sandbox"><kbd class="item-tag">sandbox</kbd></a>
+    
+    <a href="https://trungnguyen1909.github.io/blogtags/ROP"><kbd class="item-tag">ROP</kbd></a>
+    
+    <a href="https://trungnguyen1909.github.io/blogtags/NX"><kbd class="item-tag">NX</kbd></a>
+    
+
+</div>
+  <div class="item">
+
+    
+    
+    
+
+    
+    
+
+    <h4><a href="/blog/post/matesctf/KSMASH/">matesCTF KSMASH</a></h4>
+    <h5>February 18, 2019</h5>
+    
+    <a href="https://trungnguyen1909.github.io/blogtags/matesCTF"><kbd class="item-tag">matesCTF</kbd></a>
+    
+    <a href="https://trungnguyen1909.github.io/blogtags/CTF"><kbd class="item-tag">CTF</kbd></a>
+    
+    <a href="https://trungnguyen1909.github.io/blogtags/pwn"><kbd class="item-tag">pwn</kbd></a>
+    
+    <a href="https://trungnguyen1909.github.io/blogtags/kernel"><kbd class="item-tag">kernel</kbd></a>
+    
+    <a href="https://trungnguyen1909.github.io/blogtags/linux"><kbd class="item-tag">linux</kbd></a>
+    
+
+</div>
+ 
+
+    
+
+    
+
+</main>
+
+        <footer>
+
+            <p class="copyright text-muted">&copy; All rights reserved. Powered by <a href="https://gohugo.io">Hugo</a> and <a href="https://github.com/calintat/minimal">Minimal</a></p>
+
+        </footer>
+       
+    </body>
+
+</html>
+

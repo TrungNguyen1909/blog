@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>reversing on Nguyen Hoang Trung</title>
+    <link>https://trungnguyen1909.github.io/blog/tags/reversing/</link>
+    <description>Recent content in reversing on Nguyen Hoang Trung</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Thu, 22 Nov 2018 21:30:28 +0700</lastBuildDate>
+    
+	<atom:link href="https://trungnguyen1909.github.io/blog/tags/reversing/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>RITSEC18 Freeze</title>
+      <link>https://trungnguyen1909.github.io/blog/post/RITSEC-2018/Freeze/</link>
+      <pubDate>Thu, 22 Nov 2018 21:30:28 +0700</pubDate>
+      
+      <guid>https://trungnguyen1909.github.io/blog/post/RITSEC-2018/Freeze/</guid>
+      <description>It&amp;rsquo;s clearly a python compiled program since there is a libpython and also, when using decompiler, there was a function name PyDontWriteByteCode
+using &amp;lsquo;pyi-archive-viewer&amp;rsquo; we can extract the main function.
+Append headers to the file
+ &amp;quot;\x03\xf3\x0d\x0a\xf1\x32\x75\x5a&amp;quot;  using uncompyle, we can get the main function.
+Change the key a little bit ±k*360 and we will get the flag.</description>
+    </item>
+    
+  </channel>
+</rss>

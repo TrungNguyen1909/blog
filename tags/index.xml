@@ -1,0 +1,204 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Tags on Nguyen Hoang Trung</title>
+    <link>https://trungnguyen1909.github.io/blog/tags/</link>
+    <description>Recent content in Tags on Nguyen Hoang Trung</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 08 Apr 2019 14:35:17 +0700</lastBuildDate>
+    
+	<atom:link href="https://trungnguyen1909.github.io/blog/tags/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>AceBear</title>
+      <link>https://trungnguyen1909.github.io/blog/tags/AceBear/</link>
+      <pubDate>Mon, 08 Apr 2019 14:35:17 +0700</pubDate>
+      
+      <guid>https://trungnguyen1909.github.io/blog/tags/AceBear/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>CTF</title>
+      <link>https://trungnguyen1909.github.io/blog/tags/CTF/</link>
+      <pubDate>Mon, 08 Apr 2019 14:35:17 +0700</pubDate>
+      
+      <guid>https://trungnguyen1909.github.io/blog/tags/CTF/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>heap</title>
+      <link>https://trungnguyen1909.github.io/blog/tags/heap/</link>
+      <pubDate>Mon, 08 Apr 2019 14:35:17 +0700</pubDate>
+      
+      <guid>https://trungnguyen1909.github.io/blog/tags/heap/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>pwn</title>
+      <link>https://trungnguyen1909.github.io/blog/tags/pwn/</link>
+      <pubDate>Mon, 08 Apr 2019 14:35:17 +0700</pubDate>
+      
+      <guid>https://trungnguyen1909.github.io/blog/tags/pwn/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>NX</title>
+      <link>https://trungnguyen1909.github.io/blog/tags/NX/</link>
+      <pubDate>Fri, 22 Feb 2019 23:17:46 +0700</pubDate>
+      
+      <guid>https://trungnguyen1909.github.io/blog/tags/NX/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>ROP</title>
+      <link>https://trungnguyen1909.github.io/blog/tags/ROP/</link>
+      <pubDate>Fri, 22 Feb 2019 23:17:46 +0700</pubDate>
+      
+      <guid>https://trungnguyen1909.github.io/blog/tags/ROP/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>TetCTF</title>
+      <link>https://trungnguyen1909.github.io/blog/tags/TetCTF/</link>
+      <pubDate>Fri, 22 Feb 2019 23:17:46 +0700</pubDate>
+      
+      <guid>https://trungnguyen1909.github.io/blog/tags/TetCTF/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>sandbox</title>
+      <link>https://trungnguyen1909.github.io/blog/tags/sandbox/</link>
+      <pubDate>Fri, 22 Feb 2019 23:17:46 +0700</pubDate>
+      
+      <guid>https://trungnguyen1909.github.io/blog/tags/sandbox/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>debug</title>
+      <link>https://trungnguyen1909.github.io/blog/tags/debug/</link>
+      <pubDate>Mon, 18 Feb 2019 16:48:13 +0700</pubDate>
+      
+      <guid>https://trungnguyen1909.github.io/blog/tags/debug/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>kernel</title>
+      <link>https://trungnguyen1909.github.io/blog/tags/kernel/</link>
+      <pubDate>Mon, 18 Feb 2019 16:48:13 +0700</pubDate>
+      
+      <guid>https://trungnguyen1909.github.io/blog/tags/kernel/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>linux</title>
+      <link>https://trungnguyen1909.github.io/blog/tags/linux/</link>
+      <pubDate>Mon, 18 Feb 2019 16:48:13 +0700</pubDate>
+      
+      <guid>https://trungnguyen1909.github.io/blog/tags/linux/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>matesCTF</title>
+      <link>https://trungnguyen1909.github.io/blog/tags/matesCTF/</link>
+      <pubDate>Mon, 18 Feb 2019 16:48:13 +0700</pubDate>
+      
+      <guid>https://trungnguyen1909.github.io/blog/tags/matesCTF/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>35C3-CTF</title>
+      <link>https://trungnguyen1909.github.io/blog/tags/35C3-CTF/</link>
+      <pubDate>Fri, 15 Feb 2019 00:47:48 +0700</pubDate>
+      
+      <guid>https://trungnguyen1909.github.io/blog/tags/35C3-CTF/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>xnu</title>
+      <link>https://trungnguyen1909.github.io/blog/tags/xnu/</link>
+      <pubDate>Fri, 15 Feb 2019 00:47:48 +0700</pubDate>
+      
+      <guid>https://trungnguyen1909.github.io/blog/tags/xnu/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Python</title>
+      <link>https://trungnguyen1909.github.io/blog/tags/Python/</link>
+      <pubDate>Thu, 22 Nov 2018 21:30:28 +0700</pubDate>
+      
+      <guid>https://trungnguyen1909.github.io/blog/tags/Python/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>RITSEC</title>
+      <link>https://trungnguyen1909.github.io/blog/tags/RITSEC/</link>
+      <pubDate>Thu, 22 Nov 2018 21:30:28 +0700</pubDate>
+      
+      <guid>https://trungnguyen1909.github.io/blog/tags/RITSEC/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>forensics</title>
+      <link>https://trungnguyen1909.github.io/blog/tags/forensics/</link>
+      <pubDate>Thu, 22 Nov 2018 21:30:28 +0700</pubDate>
+      
+      <guid>https://trungnguyen1909.github.io/blog/tags/forensics/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>golang</title>
+      <link>https://trungnguyen1909.github.io/blog/tags/golang/</link>
+      <pubDate>Thu, 22 Nov 2018 21:30:28 +0700</pubDate>
+      
+      <guid>https://trungnguyen1909.github.io/blog/tags/golang/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>reversing</title>
+      <link>https://trungnguyen1909.github.io/blog/tags/reversing/</link>
+      <pubDate>Thu, 22 Nov 2018 21:30:28 +0700</pubDate>
+      
+      <guid>https://trungnguyen1909.github.io/blog/tags/reversing/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>web</title>
+      <link>https://trungnguyen1909.github.io/blog/tags/web/</link>
+      <pubDate>Thu, 22 Nov 2018 21:30:28 +0700</pubDate>
+      
+      <guid>https://trungnguyen1909.github.io/blog/tags/web/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>stack-buffer-overflow</title>
+      <link>https://trungnguyen1909.github.io/blog/tags/stack-buffer-overflow/</link>
+      <pubDate>Wed, 10 Oct 2018 11:35:23 +0700</pubDate>
+      
+      <guid>https://trungnguyen1909.github.io/blog/tags/stack-buffer-overflow/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

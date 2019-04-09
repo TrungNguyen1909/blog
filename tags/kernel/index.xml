@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>kernel on Nguyen Hoang Trung</title>
+    <link>https://trungnguyen1909.github.io/blog/tags/kernel/</link>
+    <description>Recent content in kernel on Nguyen Hoang Trung</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 18 Feb 2019 16:48:13 +0700</lastBuildDate>
+    
+	<atom:link href="https://trungnguyen1909.github.io/blog/tags/kernel/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Linux Kernel Debugging in VM</title>
+      <link>https://trungnguyen1909.github.io/blog/post/misc/KDB/KDB/</link>
+      <pubDate>Mon, 18 Feb 2019 16:48:13 +0700</pubDate>
+      
+      <guid>https://trungnguyen1909.github.io/blog/post/misc/KDB/KDB/</guid>
+      <description>Kernel Debugging Instruction Setup I used VirtualBox for Kernel Debugging, VMWare shoud be able to do the same thing.
+Enter Machine Settings -&amp;gt; Ports -&amp;gt; Serial -&amp;gt; Enable Serial Port
+Port Number: Any :)))
+Port mode: Host Pipe
+Connect to existing : unchecked
+Path/Address: /tmp/vbox (placeholder purpose :))
+Boot Linux normally, run as root
+$ echo ttyS0,9600 &amp;gt; /sys/module/kgdboc/parameters/kgdboc
+if Port Number is COM1, use ttyS0; if it is COM2, use ttyS1&amp;hellip; etc</description>
+    </item>
+    
+    <item>
+      <title>matesCTF KSMASH</title>
+      <link>https://trungnguyen1909.github.io/blog/post/matesctf/KSMASH/</link>
+      <pubDate>Mon, 18 Feb 2019 16:48:13 +0700</pubDate>
+      
+      <guid>https://trungnguyen1909.github.io/blog/post/matesctf/KSMASH/</guid>
+      <description>KSMASH - Kernel Stack Smashing Background This is a Linux Kernel Module(LKM) exploitation challenge by nyaacate@gmail.com host in Round 3 MatesCTF 2018-2019
+I solved this challenge overtime :&amp;lt; But It seems that no team solved this so I still sent the exploit to the challenge author for testing and also wrote this writeup.
+Challenge Description A kernel module is running, escape from non-root user to r00t to read /root/flag</description>
+    </item>
+    
+  </channel>
+</rss>

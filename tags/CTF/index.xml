@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>CTF on Nguyen Hoang Trung</title>
+    <link>https://trungnguyen1909.github.io/blog/tags/CTF/</link>
+    <description>Recent content in CTF on Nguyen Hoang Trung</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 08 Apr 2019 14:35:17 +0700</lastBuildDate>
+    
+	<atom:link href="https://trungnguyen1909.github.io/blog/tags/CTF/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>AceBear Security Contest House-of-loop</title>
+      <link>https://trungnguyen1909.github.io/blog/post/AceBear2019/house_of_loop/</link>
+      <pubDate>Mon, 08 Apr 2019 14:35:17 +0700</pubDate>
+      
+      <guid>https://trungnguyen1909.github.io/blog/post/AceBear2019/house_of_loop/</guid>
+      <description>House of loop Hi everyone, this is the writeup for the challenge House of loop in the AceBear Security Contest 2019
+Description We are given a stripped ELF x64 binary which can be interacted with, our task is to get remote code execution(RCE)
+The binary presents us 3 options: Create, View and Delete note.
+When create a note, we have 3 field: Title, Private, and Description.
+We have the limits on Title, Private field length but with Description, we can use as much as we specified.</description>
+    </item>
+    
+    <item>
+      <title>TetCTF babySandbox</title>
+      <link>https://trungnguyen1909.github.io/blog/post/tetctf/babysandbox/</link>
+      <pubDate>Fri, 22 Feb 2019 23:17:46 +0700</pubDate>
+      
+      <guid>https://trungnguyen1909.github.io/blog/post/tetctf/babysandbox/</guid>
+      <description>Baby Sandbox This is a challenge of TetCTF, which is hosted from Jan 1st to Jan 7th by MeePwn Team of Vietnam
+Challenge description We are given 2 binary, one is sandbox and the other one is program.
+sandbox, judging by its name, is a implementation of sandbox, executing the program passed in argv[1] in an sandbox environment.
+program is executed by sandbox, which is a simple static stripped executable which simply reads your input and then output it.</description>
+    </item>
+    
+    <item>
+      <title>matesCTF KSMASH</title>
+      <link>https://trungnguyen1909.github.io/blog/post/matesctf/KSMASH/</link>
+      <pubDate>Mon, 18 Feb 2019 16:48:13 +0700</pubDate>
+      
+      <guid>https://trungnguyen1909.github.io/blog/post/matesctf/KSMASH/</guid>
+      <description>KSMASH - Kernel Stack Smashing Background This is a Linux Kernel Module(LKM) exploitation challenge by nyaacate@gmail.com host in Round 3 MatesCTF 2018-2019
+I solved this challenge overtime :&amp;lt; But It seems that no team solved this so I still sent the exploit to the challenge author for testing and also wrote this writeup.
+Challenge Description A kernel module is running, escape from non-root user to r00t to read /root/flag</description>
+    </item>
+    
+    <item>
+      <title>35C3 CTF Pillow</title>
+      <link>https://trungnguyen1909.github.io/blog/post/35c3/pillow/</link>
+      <pubDate>Fri, 15 Feb 2019 00:47:48 +0700</pubDate>
+      
+      <guid>https://trungnguyen1909.github.io/blog/post/35c3/pillow/</guid>
+      <description>Pillow Background This is the writeup for the challenge Pillow, created by Samuel Groß(@saelo) of Project Zero, of 35C3 CTF annually organized by @EatSleepPwnRpt happening at the end of year 2018.
+I didn&amp;rsquo;t solve this challenge during the CTF, when revisiting this challenge after checkout @LinusHenze repo, I have a big learning oppuntunity to checkout XNU exploitation, which was completely new to me.
+Basic stuff Feel free to skip this part if you have already had a basic knowledge in Mach.</description>
+    </item>
+    
+    <item>
+      <title>RITSEC18 Bucket-o-cash</title>
+      <link>https://trungnguyen1909.github.io/blog/post/RITSEC-2018/Bucket-o-cash/</link>
+      <pubDate>Thu, 22 Nov 2018 21:30:28 +0700</pubDate>
+      
+      <guid>https://trungnguyen1909.github.io/blog/post/RITSEC-2018/Bucket-o-cash/</guid>
+      <description>By cating and grepping the file, we know that there was a file named /home/memes/flag.c
+It&amp;rsquo;s probably a program, so I searched for ./flag Just printing the line doesn&amp;rsquo;t seem to work so I tried
+ cat memorydump | grep -A 10 -B 10 ./flag  I found an interesting base64-encoded string that is repeated multiple times.
+Decode it, the flag is yours.
+Also, later I realised that a great pattern to grep for challs like this are the base64-encoded of the beginning part of the flag format, which is constant.</description>
+    </item>
+    
+    <item>
+      <title>RITSEC18 Freeze</title>
+      <link>https://trungnguyen1909.github.io/blog/post/RITSEC-2018/Freeze/</link>
+      <pubDate>Thu, 22 Nov 2018 21:30:28 +0700</pubDate>
+      
+      <guid>https://trungnguyen1909.github.io/blog/post/RITSEC-2018/Freeze/</guid>
+      <description>It&amp;rsquo;s clearly a python compiled program since there is a libpython and also, when using decompiler, there was a function name PyDontWriteByteCode
+using &amp;lsquo;pyi-archive-viewer&amp;rsquo; we can extract the main function.
+Append headers to the file
+ &amp;quot;\x03\xf3\x0d\x0a\xf1\x32\x75\x5a&amp;quot;  using uncompyle, we can get the main function.
+Change the key a little bit ±k*360 and we will get the flag.</description>
+    </item>
+    
+    <item>
+      <title>RITSEC18 Gimme sum fud</title>
+      <link>https://trungnguyen1909.github.io/blog/post/RITSEC-2018/Gimme-sum-fud/</link>
+      <pubDate>Thu, 22 Nov 2018 21:30:28 +0700</pubDate>
+      
+      <guid>https://trungnguyen1909.github.io/blog/post/RITSEC-2018/Gimme-sum-fud/</guid>
+      <description>The binary loads the flag.txt to the memory and asks us to provide input.
+Interesting things is that it loads to the same memory segment with the input.
+Debugging locally, I found it at the offset 752 from the first input bytes.
+Running it multiple times on the server and at sometimes, the null bytes will be all-cleared and puts will print it all.</description>
+    </item>
+    
+    <item>
+      <title>RITSEC18 The tangled web</title>
+      <link>https://trungnguyen1909.github.io/blog/post/RITSEC-2018/The-tangled-web/</link>
+      <pubDate>Thu, 22 Nov 2018 21:30:28 +0700</pubDate>
+      
+      <guid>https://trungnguyen1909.github.io/blog/post/RITSEC-2018/The-tangled-web/</guid>
+      <description>wget -r fun.ritsec.club:8007
+You may find the file Fl4gggg1337.html is referenced or has already been download. The flag wasn&amp;rsquo;t there, but it has link to Stars.html.
+Fetch that file, the base64 encoded string is the flag for this challenge.</description>
+    </item>
+    
+    <item>
+      <title>RITSEC18 Yet another HR Management Framework</title>
+      <link>https://trungnguyen1909.github.io/blog/post/RITSEC-2018/Yet-another-HR-Management-Framework/</link>
+      <pubDate>Thu, 22 Nov 2018 21:30:28 +0700</pubDate>
+      
+      <guid>https://trungnguyen1909.github.io/blog/post/RITSEC-2018/Yet-another-HR-Management-Framework/</guid>
+      <description>By judging the program&amp;rsquo;s interface, we know that it was a heap challenge.
+Spent quite a lot of time reversing it, I figured it out that it malloc a few bytes for the person struct on the heap, then the name will be malloc with the size entered and that address will be put in the person struct.
+The person struct also has a function pointer which is set to the printPerson function.</description>
+    </item>
+    
+    <item>
+      <title>matesCTF notebook</title>
+      <link>https://trungnguyen1909.github.io/blog/post/matesctf/notebook/</link>
+      <pubDate>Wed, 10 Oct 2018 11:56:50 +0700</pubDate>
+      
+      <guid>https://trungnguyen1909.github.io/blog/post/matesctf/notebook/</guid>
+      <description>Notebook Bài này mình pwn được sau khi được tiền bối Đào Xuân Nghĩa thông não sau giờ.
+Đây là 1 bài Heap overflow.
+checksec:
+[*] &#39;/root/matesctf/notebook&#39; Arch: amd64-64-little RELRO: Partial RELRO Stack: No canary found NX: NX enabled PIE: No PIE (0x400000)  Có 2 loại note (bình thường: 1000bytes. Lớn: 2000bytes)
+Các notes được lưu ở dạng double linked-list. 16 bytes đầu của mỗi note sẽ lưu note tiếp theo(FD) và note trước (BK)</description>
+    </item>
+    
+    <item>
+      <title>matesCTF babyOVERFLOW</title>
+      <link>https://trungnguyen1909.github.io/blog/post/matesctf/babyOVERFLOW/</link>
+      <pubDate>Wed, 10 Oct 2018 11:35:23 +0700</pubDate>
+      
+      <guid>https://trungnguyen1909.github.io/blog/post/matesctf/babyOVERFLOW/</guid>
+      <description>babyOVERFLOW Tên file bài này gợi ý rất nhiều.
+&amp;ldquo;baby&amp;rdquo; thường được dùng trong CTF chỉ những bài đơn giản dành cho người mới
+&amp;ldquo;OVERFLOW&amp;rdquo; ở đây thì chỉ đến stack buffer overflow.
+Chạy nó, nhập vào thì nó in ra lại đúng như thế.
+Ta có thể thử nhập vào &amp;ldquo;%x&amp;rdquo; để xem có format string không thì kết quả là chương trình chạy bình thường
+Thử với 1 input thật dài thì thấy không có lỗi gì xảy ra.</description>
+    </item>
+    
+  </channel>
+</rss>
