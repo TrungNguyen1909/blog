@@ -6,10 +6,25 @@
     <description>Recent content on Nguyen Hoang Trung</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 08 Apr 2019 14:35:17 +0700</lastBuildDate>
+    <lastBuildDate>Sun, 21 Apr 2019 00:46:45 +0700</lastBuildDate>
     
 	<atom:link href="https://trungnguyen1909.github.io/blog/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>IPwnKit DEFCON CTF 26 Qualification Round</title>
+      <link>https://trungnguyen1909.github.io/blog/post/DEFCON26-Qual/iPwnKit/</link>
+      <pubDate>Sun, 21 Apr 2019 00:46:45 +0700</pubDate>
+      
+      <guid>https://trungnguyen1909.github.io/blog/post/DEFCON26-Qual/iPwnKit/</guid>
+      <description>IPwnKit  Come and take a bite of the Apple!
+We have reserved you a very special place at the WWPC (World Wide Pwning Conference).
+Email ipwnkit@gmail.com to RSVP and we will reply with your invite.
+Come, test your skills, and win pwn2ooown!!!
+Fine print: sw_vers 17E202.
+The VM will be reset between exploit attempts.
+If you panic the kernel and don&amp;rsquo;t walk away with the flag, you are BANNED FROM THIS CHALLENGE, so make it count!</description>
+    </item>
     
     <item>
       <title>AceBear Security Contest House-of-loop</title>

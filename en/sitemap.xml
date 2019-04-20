@@ -3,19 +3,8 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>https://trungnguyen1909.github.io/blog/tags/AceBear/</loc>
-    <lastmod>2019-04-08T14:35:17+07:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://trungnguyen1909.github.io/blog/post/AceBear2019/house_of_loop/</loc>
-    <lastmod>2019-04-08T14:35:17+07:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://trungnguyen1909.github.io/blog/tags/CTF/</loc>
-    <lastmod>2019-04-08T14:35:17+07:00</lastmod>
+    <lastmod>2019-04-21T00:46:45+07:00</lastmod>
     <priority>0</priority>
     <xhtml:link
                 rel="alternate"
@@ -30,8 +19,25 @@
   </url>
   
   <url>
+    <loc>https://trungnguyen1909.github.io/blog/tags/DEFCON-CTF/</loc>
+    <lastmod>2019-04-21T00:46:45+07:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://trungnguyen1909.github.io/blog/tags/IOKit/</loc>
+    <lastmod>2019-04-21T00:46:45+07:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://trungnguyen1909.github.io/blog/post/DEFCON26-Qual/iPwnKit/</loc>
+    <lastmod>2019-04-21T00:46:45+07:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://trungnguyen1909.github.io/blog/</loc>
-    <lastmod>2019-04-08T14:35:17+07:00</lastmod>
+    <lastmod>2019-04-21T00:46:45+07:00</lastmod>
     <priority>0</priority>
     <xhtml:link
                 rel="alternate"
@@ -47,7 +53,7 @@
   
   <url>
     <loc>https://trungnguyen1909.github.io/blog/post/</loc>
-    <lastmod>2019-04-08T14:35:17+07:00</lastmod>
+    <lastmod>2019-04-21T00:46:45+07:00</lastmod>
     <priority>0</priority>
     <xhtml:link
                 rel="alternate"
@@ -63,7 +69,7 @@
   
   <url>
     <loc>https://trungnguyen1909.github.io/blog/tags/</loc>
-    <lastmod>2019-04-08T14:35:17+07:00</lastmod>
+    <lastmod>2019-04-21T00:46:45+07:00</lastmod>
     <priority>0</priority>
     <xhtml:link
                 rel="alternate"
@@ -78,14 +84,14 @@
   </url>
   
   <url>
-    <loc>https://trungnguyen1909.github.io/blog/tags/heap/</loc>
-    <lastmod>2019-04-08T14:35:17+07:00</lastmod>
+    <loc>https://trungnguyen1909.github.io/blog/tags/double-fetch/</loc>
+    <lastmod>2019-04-21T00:46:45+07:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://trungnguyen1909.github.io/blog/tags/pwn/</loc>
-    <lastmod>2019-04-08T14:35:17+07:00</lastmod>
+    <lastmod>2019-04-21T00:46:45+07:00</lastmod>
     <priority>0</priority>
     <xhtml:link
                 rel="alternate"
@@ -97,6 +103,35 @@
                 hreflang="en"
                 href="https://trungnguyen1909.github.io/blog/tags/pwn/"
                 />
+  </url>
+  
+  <url>
+    <loc>https://trungnguyen1909.github.io/blog/tags/race-condition/</loc>
+    <lastmod>2019-04-21T00:46:45+07:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://trungnguyen1909.github.io/blog/tags/xnu/</loc>
+    <lastmod>2019-04-21T00:46:45+07:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://trungnguyen1909.github.io/blog/tags/AceBear/</loc>
+    <lastmod>2019-04-08T14:35:17+07:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://trungnguyen1909.github.io/blog/post/AceBear2019/house_of_loop/</loc>
+    <lastmod>2019-04-08T14:35:17+07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://trungnguyen1909.github.io/blog/tags/heap/</loc>
+    <lastmod>2019-04-08T14:35:17+07:00</lastmod>
+    <priority>0</priority>
   </url>
   
   <url>
@@ -229,12 +264,6 @@
   
   <url>
     <loc>https://trungnguyen1909.github.io/blog/tags/35C3-CTF/</loc>
-    <lastmod>2019-02-15T00:47:48+07:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://trungnguyen1909.github.io/blog/tags/xnu/</loc>
     <lastmod>2019-02-15T00:47:48+07:00</lastmod>
     <priority>0</priority>
   </url>

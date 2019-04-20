@@ -6,10 +6,73 @@
     <description>Recent content in Tags on Nguyen Hoang Trung</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 08 Apr 2019 14:35:17 +0700</lastBuildDate>
+    <lastBuildDate>Sun, 21 Apr 2019 00:46:45 +0700</lastBuildDate>
     
 	<atom:link href="https://trungnguyen1909.github.io/blog/tags/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>CTF</title>
+      <link>https://trungnguyen1909.github.io/blog/tags/CTF/</link>
+      <pubDate>Sun, 21 Apr 2019 00:46:45 +0700</pubDate>
+      
+      <guid>https://trungnguyen1909.github.io/blog/tags/CTF/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>DEFCON-CTF</title>
+      <link>https://trungnguyen1909.github.io/blog/tags/DEFCON-CTF/</link>
+      <pubDate>Sun, 21 Apr 2019 00:46:45 +0700</pubDate>
+      
+      <guid>https://trungnguyen1909.github.io/blog/tags/DEFCON-CTF/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>IOKit</title>
+      <link>https://trungnguyen1909.github.io/blog/tags/IOKit/</link>
+      <pubDate>Sun, 21 Apr 2019 00:46:45 +0700</pubDate>
+      
+      <guid>https://trungnguyen1909.github.io/blog/tags/IOKit/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>double-fetch</title>
+      <link>https://trungnguyen1909.github.io/blog/tags/double-fetch/</link>
+      <pubDate>Sun, 21 Apr 2019 00:46:45 +0700</pubDate>
+      
+      <guid>https://trungnguyen1909.github.io/blog/tags/double-fetch/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>pwn</title>
+      <link>https://trungnguyen1909.github.io/blog/tags/pwn/</link>
+      <pubDate>Sun, 21 Apr 2019 00:46:45 +0700</pubDate>
+      
+      <guid>https://trungnguyen1909.github.io/blog/tags/pwn/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>race-condition</title>
+      <link>https://trungnguyen1909.github.io/blog/tags/race-condition/</link>
+      <pubDate>Sun, 21 Apr 2019 00:46:45 +0700</pubDate>
+      
+      <guid>https://trungnguyen1909.github.io/blog/tags/race-condition/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>xnu</title>
+      <link>https://trungnguyen1909.github.io/blog/tags/xnu/</link>
+      <pubDate>Sun, 21 Apr 2019 00:46:45 +0700</pubDate>
+      
+      <guid>https://trungnguyen1909.github.io/blog/tags/xnu/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>AceBear</title>
@@ -21,29 +84,11 @@
     </item>
     
     <item>
-      <title>CTF</title>
-      <link>https://trungnguyen1909.github.io/blog/tags/CTF/</link>
-      <pubDate>Mon, 08 Apr 2019 14:35:17 +0700</pubDate>
-      
-      <guid>https://trungnguyen1909.github.io/blog/tags/CTF/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>heap</title>
       <link>https://trungnguyen1909.github.io/blog/tags/heap/</link>
       <pubDate>Mon, 08 Apr 2019 14:35:17 +0700</pubDate>
       
       <guid>https://trungnguyen1909.github.io/blog/tags/heap/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>pwn</title>
-      <link>https://trungnguyen1909.github.io/blog/tags/pwn/</link>
-      <pubDate>Mon, 08 Apr 2019 14:35:17 +0700</pubDate>
-      
-      <guid>https://trungnguyen1909.github.io/blog/tags/pwn/</guid>
       <description></description>
     </item>
     
@@ -125,15 +170,6 @@
       <pubDate>Fri, 15 Feb 2019 00:47:48 +0700</pubDate>
       
       <guid>https://trungnguyen1909.github.io/blog/tags/35C3-CTF/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>xnu</title>
-      <link>https://trungnguyen1909.github.io/blog/tags/xnu/</link>
-      <pubDate>Fri, 15 Feb 2019 00:47:48 +0700</pubDate>
-      
-      <guid>https://trungnguyen1909.github.io/blog/tags/xnu/</guid>
       <description></description>
     </item>
     

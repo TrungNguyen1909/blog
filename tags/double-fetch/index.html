@@ -4,7 +4,7 @@
          
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>matesCTF notebook</title>
+        <title>double-fetch</title>
         
         <style>
 
@@ -90,7 +90,7 @@ if (!doNotTrack) {
 
                 <div class="navbar-header">
 
-                    <a class="navbar-brand visible-xs" href="#">matesCTF notebook</a>
+                    <a class="navbar-brand visible-xs" href="#">double-fetch</a>
 
                     <button class="navbar-toggle" data-target=".navbar-collapse" data-toggle="collapse">
                         <span class="icon-bar"></span>
@@ -133,106 +133,8 @@ if (!doNotTrack) {
 
 <main>
 
-    <div class="item">
-
-    
-    
-    
-
-    
-    
-
-    <h4><a href="/blog/post/matesctf/notebook/">matesCTF notebook</a></h4>
-    <h5>October 10, 2018</h5>
-    
-    <a href="https://trungnguyen1909.github.io/blog/tags/matesCTF"><kbd class="item-tag">matesCTF</kbd></a>
-    
-    <a href="https://trungnguyen1909.github.io/blog/tags/CTF"><kbd class="item-tag">CTF</kbd></a>
-    
-    <a href="https://trungnguyen1909.github.io/blog/tags/pwn"><kbd class="item-tag">pwn</kbd></a>
-    
-    <a href="https://trungnguyen1909.github.io/blog/tags/heap"><kbd class="item-tag">heap</kbd></a>
-    
-
-</div>
-
-    
-    <br> <div class="text-justify">
-
-<h1 id="notebook">Notebook</h1>
-
-<p>Bài này mình pwn được sau khi được tiền bối <em>Đào Xuân Nghĩa</em> thông não sau giờ.</p>
-
-<p>Đây là 1 bài <em>Heap overflow</em>.</p>
-
-<p>checksec:</p>
-
-<pre><code>[*] '/root/matesctf/notebook'
-    Arch:     amd64-64-little
-    RELRO:    Partial RELRO
-    Stack:    No canary found
-    NX:       NX enabled
-    PIE:      No PIE (0x400000)
-</code></pre>
-
-<p>Có 2 loại note (bình thường: 1000bytes. Lớn: 2000bytes)</p>
-
-<p>Các notes được lưu ở dạng double linked-list. 16 bytes đầu của mỗi note sẽ lưu note tiếp theo(FD) và note trước (BK)</p>
-
-<h2 id="goal">Goal</h2>
-
-<p>Overwrite FD và BK để nó trỏ về GOT của <code>_IO_getc</code>. Sau đó dùng chức năng Edit để ghi vị trí của <code>canyourunme</code> vào</p>
-
-<h2 id="bug">Bug</h2>
-
-<p>Lỗi logic nghiêm trong ở phần Edit.</p>
-
-<p>Đối với note bé, ta sẽ có (1000-16)=984 bytes cho dữ liệu, tuy nhiên, ta lại được EDIT những 992 bytes.</p>
-
-<p>=&gt; Tức là đã tràn 8 bytes để có thể edit cái size của note tiếp theo</p>
-
-<h2 id="exploit">Exploit</h2>
-
-<p>Như vậy là ta có thể áp dụng kĩ thuật <a href="https://github.com/shellphish/how2heap/blob/master/glibc_2.25/overlapping_chunks_2.c">overlapping chunks</a></p>
-
-<p>Mình sẽ edit size của 1 note thành tổng của nó và cái tiếp theo rồi free.
-Như vậy, ptmalloc2 sẽ bị lừa rằng là nó sẽ có 1 khoảng trống gấp đôi ở đó và sẽ allocate Big note vào đó.</p>
-
-<p>Trên thực tế, cái note sau vẫn được chương trình coi như bình thường</p>
-
-<p>=&gt; Ta sẽ tạo 1 cái Big note ở đó rồi đè lên FD và BK bằng <code>vị trí của GOT _IO_getc - 16</code></p>
-
-<p>Khi đi qua cái note đó, thì dù Back hay Next đều khiến cho chương trình coi GOT là 1 cái note và tức là ta có thể edit tuỳ ý.</p>
-
-<p>Edit nó bằng vị trí của <code>canyourunme</code> là ta có shell.</p>
-
-<p>Như thường lệ, <code>cat flag</code> sẽ cho chúng ta flag.</p>
-
-<p>Tham khảo:</p>
-
-<p>Đào Trọng Nghĩa</p>
-
-<p><a href="https://github.com/shellphish/how2heap/blob/master/glibc_2.25/overlapping_chunks_2.c">how2heap</a></p>
-</div>
-    
-    <h4 class="page-header">File Resources</h4>
-    <ul>
-    
-    <li><a href="https://trungnguyen1909.github.io/blog/post/matesctf/notebook/nbe.py"> nbe.py </a> </li>
-    
-    <li><a href="https://trungnguyen1909.github.io/blog/post/matesctf/notebook/notebook"> notebook </a> </li>
-    
-    <li><a href="https://trungnguyen1909.github.io/blog/post/matesctf/notebook/libc-2.27.so"> libc-2.27.so </a> </li>
-    
-    <ul>
-    
-    
-
-    
-
-        <h4 class="page-header">Related</h4>
-
-         <div class="item">
+    <h2>double-fetch</h2>
+     <div class="item">
 
     
     
@@ -260,61 +162,11 @@ Như vậy, ptmalloc2 sẽ bị lừa rằng là nó sẽ có 1 khoảng trống
     
 
 </div>
-  <div class="item">
-
-    
-    
-    
-
-    
-    
-
-    <h4><a href="/blog/post/AceBear2019/house_of_loop/">AceBear Security Contest House-of-loop</a></h4>
-    <h5>April 8, 2019</h5>
-    
-    <a href="https://trungnguyen1909.github.io/blog/tags/AceBear"><kbd class="item-tag">AceBear</kbd></a>
-    
-    <a href="https://trungnguyen1909.github.io/blog/tags/CTF"><kbd class="item-tag">CTF</kbd></a>
-    
-    <a href="https://trungnguyen1909.github.io/blog/tags/pwn"><kbd class="item-tag">pwn</kbd></a>
-    
-    <a href="https://trungnguyen1909.github.io/blog/tags/heap"><kbd class="item-tag">heap</kbd></a>
-    
-
-</div>
-  <div class="item">
-
-    
-    
-    
-
-    
-    
-
-    <h4><a href="/blog/post/tetctf/babysandbox/">TetCTF babySandbox</a></h4>
-    <h5>February 22, 2019</h5>
-    
-    <a href="https://trungnguyen1909.github.io/blog/tags/TetCTF"><kbd class="item-tag">TetCTF</kbd></a>
-    
-    <a href="https://trungnguyen1909.github.io/blog/tags/CTF"><kbd class="item-tag">CTF</kbd></a>
-    
-    <a href="https://trungnguyen1909.github.io/blog/tags/pwn"><kbd class="item-tag">pwn</kbd></a>
-    
-    <a href="https://trungnguyen1909.github.io/blog/tags/sandbox"><kbd class="item-tag">sandbox</kbd></a>
-    
-    <a href="https://trungnguyen1909.github.io/blog/tags/ROP"><kbd class="item-tag">ROP</kbd></a>
-    
-    <a href="https://trungnguyen1909.github.io/blog/tags/NX"><kbd class="item-tag">NX</kbd></a>
-    
-
-</div>
  
 
-    
-
-    
-
 </main>
+
+
 
         <footer>
 
