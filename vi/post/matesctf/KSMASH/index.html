@@ -59,7 +59,7 @@
 
 
 <script>$(document).on('click', function() { $('.collapse').collapse('hide'); })</script>
- <meta name="generator" content="Hugo 0.55.0" />
+ <meta name="generator" content="Hugo 0.55.5" />
 
         
 <script type="application/javascript">
@@ -227,8 +227,7 @@ vermagic:       4.18.0-15-generic SMP mod_unload
 <ul>
 <li><p>Đầu tiên, chúng ta đọc kernel memory từ <code>/proc/havoc</code> để lấy thông tin</p></li>
 
-<li><p>Thông tin quan trọng sẽ nằm ở offset 1</p></li>
-</ul>
+<li><p>Thông tin quan trọng sẽ nằm ở offset 1</p>
 
 <pre><code>	---------------------------
 	|       Stack Canary       |
@@ -239,9 +238,8 @@ vermagic:       4.18.0-15-generic SMP mod_unload
 	---------------------------
 	|       Saved RIP          |
 	---------------------------
-</code></pre>
+</code></pre></li>
 
-<ul>
 <li><p>Như vậy, chúng ta có thể Leak và Defeat Stack Canary</p></li>
 
 <li><p>Kernel ASLR defeated bằng cách tính offset từ RIP</p></li>
@@ -314,9 +312,9 @@ tuy nhiên, vì 1 lý do nào đó, RAX lúc đó lại sẵn = RDI nên chúng 
     
     <li><a href="https://trungnguyen1909.github.io/blog/vi/post/matesctf/KSMASH/Source/Module.symvers"> Source/Module.symvers </a> </li>
     
-    <li><a href="https://trungnguyen1909.github.io/blog/vi/post/matesctf/KSMASH/Source/kmod.c"> Source/kmod.c </a> </li>
-    
     <li><a href="https://trungnguyen1909.github.io/blog/vi/post/matesctf/KSMASH/Source/modules.order"> Source/modules.order </a> </li>
+    
+    <li><a href="https://trungnguyen1909.github.io/blog/vi/post/matesctf/KSMASH/Source/kmod.c"> Source/kmod.c </a> </li>
     
     <li><a href="https://trungnguyen1909.github.io/blog/vi/post/matesctf/KSMASH/exploit.c"> exploit.c </a> </li>
     
@@ -351,6 +349,31 @@ tuy nhiên, vì 1 lý do nào đó, RAX lúc đó lại sẵn = RDI nên chúng 
  
 
     
+
+    
+
+        <h4 class="page-header">Comments</h4>
+
+        <div id="disqus_thread"></div>
+<script type="application/javascript">
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "ntrung03" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
 
     
 
