@@ -9,8 +9,11 @@
         <link rel="icon" href="{{ .Site.Params.favicon | absURL }}">
         {{ end }}
         {{ partial "css" . }} {{ partial "js" . }} {{ hugo.Generator }}
-
-        {{ template "_internal/google_analytics_async.html" . }}
+        {{- if or (in (string .Site.BaseURL) "localhost") (in (string .Site.BaseURL) "127.0.0.1") -}}
+            
+        {{- else -}}
+            {{ template "_internal/google_analytics_async.html" . }}
+        {{- end -}}
     </head>
 
     {{ if .Site.Params.MathJax | default true }}
