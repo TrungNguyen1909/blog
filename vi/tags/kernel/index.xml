@@ -21,12 +21,12 @@
 Vào Machine Settings -&amp;gt; Ports -&amp;gt; Serial -&amp;gt; Enable Serial Port
 Port Number: Tuỳ :)))
 Port mode: Host Pipe
-Connect to existing : unchecked
-Path/Address: /tmp/vbox (placeholder purpose :))
+Connect to existing : Bỏ tick
+Path/Address: /tmp/vbox
 Boot Linux lên bình thường, Lấy root dùng
 echo ttyS0,9600 &amp;gt; /sys/module/kgdboc/parameters/kgdboc
 nếu Port Number là COM1 -&amp;gt; ttyS0, COM2 -&amp;gt; ttyS1, vv
-Sang máy khác, chạy</description>
+Sang máy host, chạy</description>
     </item>
     
     <item>
