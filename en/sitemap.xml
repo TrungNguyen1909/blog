@@ -4,7 +4,7 @@
   
   <url>
     <loc>https://trungnguyen1909.github.io/blog/tags/CTF/</loc>
-    <lastmod>2019-04-21T00:46:45+07:00</lastmod>
+    <lastmod>2019-06-12T23:15:34+07:00</lastmod>
     <priority>0</priority>
     <xhtml:link
                 rel="alternate"
@@ -16,6 +16,109 @@
                 hreflang="en"
                 href="https://trungnguyen1909.github.io/blog/tags/CTF/"
                 />
+  </url>
+  
+  <url>
+    <loc>https://trungnguyen1909.github.io/blog/tags/FBCTF/</loc>
+    <lastmod>2019-06-12T23:15:34+07:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://trungnguyen1909.github.io/blog/</loc>
+    <lastmod>2019-06-12T23:15:34+07:00</lastmod>
+    <priority>0</priority>
+    <xhtml:link
+                rel="alternate"
+                hreflang="vi"
+                href="https://trungnguyen1909.github.io/blog/vi/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://trungnguyen1909.github.io/blog/"
+                />
+  </url>
+  
+  <url>
+    <loc>https://trungnguyen1909.github.io/blog/post/</loc>
+    <lastmod>2019-06-12T23:15:34+07:00</lastmod>
+    <priority>0</priority>
+    <xhtml:link
+                rel="alternate"
+                hreflang="vi"
+                href="https://trungnguyen1909.github.io/blog/vi/post/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://trungnguyen1909.github.io/blog/post/"
+                />
+  </url>
+  
+  <url>
+    <loc>https://trungnguyen1909.github.io/blog/tags/</loc>
+    <lastmod>2019-06-12T23:15:34+07:00</lastmod>
+    <priority>0</priority>
+    <xhtml:link
+                rel="alternate"
+                hreflang="vi"
+                href="https://trungnguyen1909.github.io/blog/vi/tags/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://trungnguyen1909.github.io/blog/tags/"
+                />
+  </url>
+  
+  <url>
+    <loc>https://trungnguyen1909.github.io/blog/tags/double-fetch/</loc>
+    <lastmod>2019-06-12T23:15:34+07:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://trungnguyen1909.github.io/blog/post/FBCTF19-Qual/kpets/</loc>
+    <lastmod>2019-06-12T23:15:34+07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://trungnguyen1909.github.io/blog/tags/linux/</loc>
+    <lastmod>2019-06-12T23:15:34+07:00</lastmod>
+    <priority>0</priority>
+    <xhtml:link
+                rel="alternate"
+                hreflang="vi"
+                href="https://trungnguyen1909.github.io/blog/vi/tags/linux/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://trungnguyen1909.github.io/blog/tags/linux/"
+                />
+  </url>
+  
+  <url>
+    <loc>https://trungnguyen1909.github.io/blog/tags/pwn/</loc>
+    <lastmod>2019-06-12T23:15:34+07:00</lastmod>
+    <priority>0</priority>
+    <xhtml:link
+                rel="alternate"
+                hreflang="vi"
+                href="https://trungnguyen1909.github.io/blog/vi/tags/pwn/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://trungnguyen1909.github.io/blog/tags/pwn/"
+                />
+  </url>
+  
+  <url>
+    <loc>https://trungnguyen1909.github.io/blog/tags/race-condition/</loc>
+    <lastmod>2019-06-12T23:15:34+07:00</lastmod>
+    <priority>0</priority>
   </url>
   
   <url>
@@ -33,82 +136,6 @@
   <url>
     <loc>https://trungnguyen1909.github.io/blog/post/DEFCON26-Qual/iPwnKit/</loc>
     <lastmod>2019-04-21T00:46:45+07:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://trungnguyen1909.github.io/blog/</loc>
-    <lastmod>2019-04-21T00:46:45+07:00</lastmod>
-    <priority>0</priority>
-    <xhtml:link
-                rel="alternate"
-                hreflang="vi"
-                href="https://trungnguyen1909.github.io/blog/vi/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://trungnguyen1909.github.io/blog/"
-                />
-  </url>
-  
-  <url>
-    <loc>https://trungnguyen1909.github.io/blog/post/</loc>
-    <lastmod>2019-04-21T00:46:45+07:00</lastmod>
-    <priority>0</priority>
-    <xhtml:link
-                rel="alternate"
-                hreflang="vi"
-                href="https://trungnguyen1909.github.io/blog/vi/post/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://trungnguyen1909.github.io/blog/post/"
-                />
-  </url>
-  
-  <url>
-    <loc>https://trungnguyen1909.github.io/blog/tags/</loc>
-    <lastmod>2019-04-21T00:46:45+07:00</lastmod>
-    <priority>0</priority>
-    <xhtml:link
-                rel="alternate"
-                hreflang="vi"
-                href="https://trungnguyen1909.github.io/blog/vi/tags/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://trungnguyen1909.github.io/blog/tags/"
-                />
-  </url>
-  
-  <url>
-    <loc>https://trungnguyen1909.github.io/blog/tags/double-fetch/</loc>
-    <lastmod>2019-04-21T00:46:45+07:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://trungnguyen1909.github.io/blog/tags/pwn/</loc>
-    <lastmod>2019-04-21T00:46:45+07:00</lastmod>
-    <priority>0</priority>
-    <xhtml:link
-                rel="alternate"
-                hreflang="vi"
-                href="https://trungnguyen1909.github.io/blog/vi/tags/pwn/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://trungnguyen1909.github.io/blog/tags/pwn/"
-                />
-  </url>
-  
-  <url>
-    <loc>https://trungnguyen1909.github.io/blog/tags/race-condition/</loc>
-    <lastmod>2019-04-21T00:46:45+07:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>
@@ -207,22 +234,6 @@
                 rel="alternate"
                 hreflang="en"
                 href="https://trungnguyen1909.github.io/blog/tags/kernel/"
-                />
-  </url>
-  
-  <url>
-    <loc>https://trungnguyen1909.github.io/blog/tags/linux/</loc>
-    <lastmod>2019-02-18T16:48:13+07:00</lastmod>
-    <priority>0</priority>
-    <xhtml:link
-                rel="alternate"
-                hreflang="vi"
-                href="https://trungnguyen1909.github.io/blog/vi/tags/linux/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://trungnguyen1909.github.io/blog/tags/linux/"
                 />
   </url>
   

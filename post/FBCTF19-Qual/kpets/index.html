@@ -4,7 +4,7 @@
          
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>pwn</title>
+        <title>kpets FacebookCTF 2019 Qualification Round</title>
         
         <style>
 
@@ -87,7 +87,7 @@ if (!doNotTrack) {
 
                 <div class="navbar-header">
 
-                    <a class="navbar-brand visible-xs" href="#">pwn</a>
+                    <a class="navbar-brand visible-xs" href="#">kpets FacebookCTF 2019 Qualification Round</a>
 
                     <button class="navbar-toggle" data-target=".navbar-collapse" data-toggle="collapse">
                         <span class="icon-bar"></span>
@@ -128,8 +128,7 @@ if (!doNotTrack) {
 
 <main>
 
-    <h2>pwn</h2>
-     <div class="item">
+    <div class="item">
 
     
     
@@ -155,7 +154,174 @@ if (!doNotTrack) {
     
 
 </div>
-  <div class="item">
+
+    
+    <br> <div class="text-justify">
+
+<pre><code> __  __     ______   ______     ______   ______    
+/\ \/ /    /\  == \ /\  ___\   /\__  _\ /\  ___\   
+\ \  _&quot;-.  \ \  _-/ \ \  __\   \/_/\ \/ \ \___  \  
+ \ \_\ \_\  \ \_\    \ \_____\    \ \_\  \/\_____\ 
+  \/_/\/_/   \/_/     \/_____/     \/_/   \/_____/ 
+
+																									 
+welcome to Kernel Pets Simulator!
+</code></pre>
+
+<blockquote>
+<p>We wrote a pet store application that was too slow, so we made a kernel module for it instead.</p>
+
+<p>Author: pippinthedog</p>
+</blockquote>
+
+<p>Hi everyone, this is the writeup for the Facebook CTF 2019 Qualification Round kpets challenge</p>
+
+<h1 id="description">Description</h1>
+
+<p>We are given a linux kernel module, packed with a qemu VM that runs Linux 5.1.5.</p>
+
+<p>The module, like it&rsquo;s self-introduction, is a application that can create and view pets.</p>
+
+<p>We&rsquo;ll communicate with the module by reading and writing over the pseudo-file-descriptor <code>/dev/kpets</code></p>
+
+<p><code>dev_read</code> is the read handler, while <code>dev_write</code> is the write handler.</p>
+
+<p>The only path that leads us to the flag is in the <code>dev_read</code> method, when the value 0xAA is in the first byte of a pet.</p>
+
+<p>The other path will print the pets and then return;</p>
+
+<p>We should try to make a pet that have a 0xAA in the first byte.</p>
+
+<p><code>dev_write</code> will create a new pet from the struct that we written in.</p>
+
+<p>It&rsquo;s perform some sanity checks to prevent buffer-overflow.</p>
+
+<p>Most importantly, it checks that the first byte shouldn&rsquo;t be 0xAA</p>
+
+<p>One more thing, by reversing (which I haven&rsquo;t found during the CTF 😭), we can see that it saves the pets backward.</p>
+
+<h1 id="bug">Bug</h1>
+
+<pre><code class="language-c">int dev_write(__int64 a1, char *buf, __int64 sz)
+{
+
+	v17 = sz;
+	copy_from_user(&amp;v19, buf + 4, 4LL);
+	if ( v19 &gt; 0x20 )
+	{
+		printk(&quot;kpets: invalid pet name len: 0x%02x\n&quot;, v19, v3, v4, v5);
+		return v17;
+	}
+	copy_from_user(&amp;v20, buf + 40, 4LL);
+	if ( v20 &gt; 0x40 )
+	{
+		printk(&quot;kpets: invalid pet description len: 0x%02x\n&quot;, v20, v6, v7, v8);
+		return v17;
+	}
+	//Cut off
+	printk(&quot;kpets: your new pet owner is %s!&quot;, names[v21 % 6], v21 / 6, v21 % 6, v13);
+	copy_from_user(&amp;v18, buf, 1LL);
+	if ( (unsigned __int8)(v18 + 64) &gt; 1u &amp;&amp; v18 != 0xC2u )
+	{
+		printk(&quot;kpets: invalid pet type: 0x%02hhx\n&quot;, (unsigned int)(char)v18, (unsigned int)v18 + 64, v14, v15);
+	}
+	else
+	{
+		copy_from_user(&amp;v21, buf + 4, 4LL);
+		*v10 = v18;
+		copy_from_user(v10 + 8, buf + 8, (unsigned int)v21);
+		copy_from_user(v10 + 44, buf + 44, v20);
+	}
+	return v17;
+}
+</code></pre>
+
+<p>We can see that it checks the supplied length of the pet&rsquo;s name and the supplied length of the pet&rsquo;s description
+and then copy that amount of data to kernel memory.</p>
+
+<p>The problem is in this piece of code:</p>
+
+<pre><code class="language-c">copy_from_user(&amp;v19, buf + 4, 4LL);
+if ( v19 &gt; 0x20 )
+	{
+		printk(&quot;kpets: invalid pet name len: 0x%02x\n&quot;, v19, v3, v4, v5);
+		return v17;
+	}
+...
+copy_from_user(&amp;v21, buf + 4, 4LL);
+*v10 = v18;
+copy_from_user(v10 + 8, buf + 8, (unsigned int)v21);
+</code></pre>
+
+<p>The module copies the length from the userspace, perform checks on it, and copies it <strong>AGAIN</strong> from the userspace, unchecked, to use it as the copy length.</p>
+
+<p>By doing this, it introduces a race condition.</p>
+
+<p>That value may have been changed in the user&rsquo;s memory between two copies, which invalidates the sanity checks.</p>
+
+<p>From here, we have a buffer-overflow with arbitrary data&rsquo;s length on the name field of the kernel memory.</p>
+
+<p>To exploit this, we can create a new thread that repeatedly changes the length value in the userspace.</p>
+
+<h1 id="the-remaining-road-to-the-flag">The remaining road to the flag&hellip;.</h1>
+
+<p>Well, I did stop here 8 hours before the CTF ends&hellip;.</p>
+
+<p>It was a late Sunday night&hellip;</p>
+
+<p>My teammates are resting for the next Monday&hellip;</p>
+
+<p>I was stuck.</p>
+
+<p>Well, after 2 weeks, I&rsquo;m here.</p>
+
+<p>To finish what I did start&hellip;.</p>
+
+<p>But then I continued to fail.</p>
+
+<p>I decided to read some spoilers&hellip;.</p>
+
+<p>Back on.</p>
+
+<p>We can see that it saves the pets backward.</p>
+
+<p>So, we can just first create a pets that satisfies all the condition.</p>
+
+<p>Then use the race condition to make the next pet&rsquo;s name overflows to the previous one with 0xAA</p>
+
+<p>Then, we got the flag.</p>
+
+<h1 id="shoutout">Shoutout</h1>
+
+<ul>
+<li><p>pippinthedog from Facebook CTF for bringing a great challenge for me.</p></li>
+
+<li><p>WALLY0813&rsquo;s writeup. Without that writeup, I couldn&rsquo;t have finish the leftover part.</p></li>
+</ul>
+</div>
+    
+    <h4 class="page-header">File Resources</h4>
+    <ul>
+    
+    <li><a href="https://trungnguyen1909.github.io/blog/post/FBCTF19-Qual/kpets/Makefile"> Makefile </a> </li>
+    
+    <li><a href="https://trungnguyen1909.github.io/blog/post/FBCTF19-Qual/kpets/exploit.c"> exploit.c </a> </li>
+    
+    <li><a href="https://trungnguyen1909.github.io/blog/post/FBCTF19-Qual/kpets/kpets.ko"> kpets.ko </a> </li>
+    
+    <li><a href="https://trungnguyen1909.github.io/blog/post/FBCTF19-Qual/kpets/pow.py"> pow.py </a> </li>
+    
+    <li><a href="https://trungnguyen1909.github.io/blog/post/FBCTF19-Qual/kpets/start_qemu.sh"> start_qemu.sh </a> </li>
+    
+    <ul>
+    
+    
+
+    
+
+        <h4 class="page-header">Related</h4>
+
+         <div class="item">
 
     
     
@@ -231,47 +397,32 @@ if (!doNotTrack) {
     
 
 </div>
-  <div class="item">
-
-    
-    
-    
-
-    
-    
-
-    <h4><a href="/blog/post/matesctf/KSMASH/">matesCTF KSMASH</a></h4>
-    <h5>February 18, 2019</h5>
-    
-    <a href="https://trungnguyen1909.github.io/blog/tags/matesCTF"><kbd class="item-tag">matesCTF</kbd></a>
-    
-    <a href="https://trungnguyen1909.github.io/blog/tags/CTF"><kbd class="item-tag">CTF</kbd></a>
-    
-    <a href="https://trungnguyen1909.github.io/blog/tags/pwn"><kbd class="item-tag">pwn</kbd></a>
-    
-    <a href="https://trungnguyen1909.github.io/blog/tags/kernel"><kbd class="item-tag">kernel</kbd></a>
-    
-    <a href="https://trungnguyen1909.github.io/blog/tags/linux"><kbd class="item-tag">linux</kbd></a>
-    
-
-</div>
  
 
-</main>
-
-
-
-<div class="pages">
-
-     
-    <a class="icon pages-icon" href="/blog/tags/pwn/page/2/" rel="next">
-        <i class="fa fa-arrow-right"></i>
-    </a>
     
 
-</div>
+    
 
+        <h4 class="page-header">Comments</h4>
+        <div id="disqus_thread"></div>
+        <script>
 
+        
+
+        
+
+        (function() { 
+        var d = document, s = d.createElement('script');
+        s.src = 'https://ntrung03-blog.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+        })();
+        </script>
+        <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+    
+
+</main>
 
         <footer>
 

@@ -6,10 +6,19 @@
     <description>Recent content in CTF on Nguyen Hoang Trung</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 21 Apr 2019 00:46:45 +0700</lastBuildDate>
+    <lastBuildDate>Wed, 12 Jun 2019 23:15:34 +0700</lastBuildDate>
     
 	<atom:link href="https://trungnguyen1909.github.io/blog/tags/CTF/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>kpets FacebookCTF 2019 Qualification Round</title>
+      <link>https://trungnguyen1909.github.io/blog/post/FBCTF19-Qual/kpets/</link>
+      <pubDate>Wed, 12 Jun 2019 23:15:34 +0700</pubDate>
+      
+      <guid>https://trungnguyen1909.github.io/blog/post/FBCTF19-Qual/kpets/</guid>
+      <description>__ __ ______ ______ ______ ______ /\ \/ / /\ == \ /\ ___\ /\__ _\ /\ ___\ \ \ _&amp;quot;-. \ \ _-/ \ \ __\ \/_/\ \/ \ \___ \ \ \_\ \_\ \ \_\ \ \_____\ \ \_\ \/\_____\ \/_/\/_/ \/_/ \/_____/ \/_/ \/_____/ welcome to Kernel Pets Simulator!   We wrote a pet store application that was too slow, so we made a kernel module for it instead.</description>
+    </item>
     
     <item>
       <title>IPwnKit DEFCON CTF 26 Qualification Round</title>
