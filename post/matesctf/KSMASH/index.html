@@ -1,188 +1,11 @@
-<!DOCTYPE html>
-<html lang="en-us">
-    <head>
-         
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>matesCTF KSMASH</title>
-        
-        <style>
-
-    html body {
-        font-family: 'Noto Sans', sans-serif;
-        background-color: white;
-    }
-
-    :root {
-        --accent: purple;
-        --border-width:  5px ;
-    }
-
-</style>
-
-
-<link rel="stylesheet" href="https://trungnguyen1909.github.io/blog/css/main.css">
-
-
-
-
-
-<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Noto%20Sans">
-
-
- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/tomorrow-night.min.css"> 
-
-
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-
-
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
- 
-
-
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
-
-     <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/go.min.js"></script>  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/haskell.min.js"></script>  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/kotlin.min.js"></script>  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/scala.min.js"></script>  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/swift.min.js"></script> 
-
-    <script>hljs.initHighlightingOnLoad();</script>
-
-
-
-
-
-
-
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-
-
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
-
-
-<script>$(document).on('click', function() { $('.collapse').collapse('hide'); })</script>
- <meta name="generator" content="Hugo 0.55.5" />
-<script type="application/javascript">
-var doNotTrack = false;
-if (!doNotTrack) {
-	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
-	ga('create', 'UA-138000293-1', 'auto');
-	
-	ga('send', 'pageview');
-}
-</script>
-<script async src='https://www.google-analytics.com/analytics.js'></script>
-</head>
-
-    
-    
-    <script type="text/javascript" async
-      src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
-    </script>
-    
-
-    <body>
-         
-        <nav class="navbar navbar-default navbar-fixed-top">
-
-            <div class="container">
-
-                <div class="navbar-header">
-
-                    <a class="navbar-brand visible-xs" href="#">matesCTF KSMASH</a>
-
-                    <button class="navbar-toggle" data-target=".navbar-collapse" data-toggle="collapse">
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                    </button>
-
-                </div>
-
-                <div class="collapse navbar-collapse">
-
-                    
-                        <ul class="nav navbar-nav">
-                            
-                                <li><a href="/blog/">Home</a></li>
-                            
-                                <li><a href="/blog/post/">Posts</a></li>
-                            
-                                <li><a href="/blog/tags/">Tags</a></li>
-                            
-                        </ul>
-                    
-
-                    
-                        <ul class="nav navbar-nav navbar-right">
-                            
-                                <li class="navbar-icon"><a href="https://github.com/TrungNguyen1909/"><i class="fa fa-github"></i></a></li>
-                            
-                        </ul>
-                    
-
-                </div>
-
-            </div>
-
-        </nav>
-
-
-<main>
-
-    <div class="item">
-
-    
-    
-    
-
-    
-    
-
-    <h4><a href="/blog/post/matesctf/KSMASH/">matesCTF KSMASH</a></h4>
-    <h5>February 18, 2019</h5>
-    
-    <a href="https://trungnguyen1909.github.io/blog/tags/matesCTF"><kbd class="item-tag">matesCTF</kbd></a>
-    
-    <a href="https://trungnguyen1909.github.io/blog/tags/CTF"><kbd class="item-tag">CTF</kbd></a>
-    
-    <a href="https://trungnguyen1909.github.io/blog/tags/pwn"><kbd class="item-tag">pwn</kbd></a>
-    
-    <a href="https://trungnguyen1909.github.io/blog/tags/kernel"><kbd class="item-tag">kernel</kbd></a>
-    
-    <a href="https://trungnguyen1909.github.io/blog/tags/linux"><kbd class="item-tag">linux</kbd></a>
-    
-
-</div>
-
-    
-    <h4>Translation</h4>
-    <ul>
-        
-        <li>
-            <a href="https://trungnguyen1909.github.io/blog/vi/post/matesctf/KSMASH/" >vi</a>
-        </li>
-        
-    </ul>
-    
-    <br> <div class="text-justify">
-
-<h1 id="ksmash-kernel-stack-smashing">KSMASH - Kernel Stack Smashing</h1>
-
-<h2 id="background">Background</h2>
-
-<p>This is a Linux Kernel Module(LKM) exploitation challenge by nyaacate@gmail.com host in Round 3 MatesCTF 2018-2019</p>
-
-<p>I solved this challenge overtime :&lt;
-But It seems that no team solved this so I still sent the exploit to the challenge author for testing and also wrote this writeup.</p>
-
-<h2 id="challenge-description">Challenge Description</h2>
-
-<p>A kernel module is running, escape from non-root user to r00t to read <code>/root/flag</code></p>
-
-<h2 id="reversing">Reversing</h2>
-
-<p>Kernel module is named kmod, You can find the module using this command</p>
-
-<pre><code>$ modinfo kmod
+<!doctype html><html lang=en-us><head><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1"><title>matesCTF KSMASH</title><style>html body{font-family:noto sans,sans-serif;background-color:#fff}:root{--accent: purple;--border-width:  5px }</style><link rel=stylesheet href=https://trungnguyen1909.github.io/blog/css/main.css><link rel=stylesheet href="https://fonts.googleapis.com/css?family=Noto%20Sans"><link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/tomorrow-night.min.css><link rel=stylesheet href=https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css integrity=sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u crossorigin=anonymous><link rel=stylesheet href=https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css integrity=sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN crossorigin=anonymous><script src=https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js></script><script src=https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/go.min.js></script><script src=https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/haskell.min.js></script><script src=https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/kotlin.min.js></script><script src=https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/scala.min.js></script><script src=https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/swift.min.js></script><script>hljs.initHighlightingOnLoad();</script><script src=https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js></script><script src=https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js integrity=sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa crossorigin=anonymous></script><script>$(document).on('click',function(){$('.collapse').collapse('hide');})</script><meta name=generator content="Hugo 0.55.5"><script type=application/javascript>var doNotTrack=false;if(!doNotTrack){window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;ga('create','UA-138000293-1','auto');ga('send','pageview');}</script><script async src=https://www.google-analytics.com/analytics.js></script></head><script type=text/javascript async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script><body><nav class="navbar navbar-default navbar-fixed-top"><div class=container><div class=navbar-header><a class="navbar-brand visible-xs" href=#>matesCTF KSMASH</a>
+<button class=navbar-toggle data-target=.navbar-collapse data-toggle=collapse>
+<span class=icon-bar></span><span class=icon-bar></span><span class=icon-bar></span></button></div><div class="collapse navbar-collapse"><ul class="nav navbar-nav"><li><a href=/blog/>Home</a></li><li><a href=/blog/post/>Posts</a></li><li><a href=/blog/tags/>Tags</a></li></ul><ul class="nav navbar-nav navbar-right"><li class=navbar-icon><a href=https://github.com/TrungNguyen1909/><i class="fa fa-github"></i></a></li></ul></div></div></nav><main><div class=item><h4><a href=/blog/post/matesctf/KSMASH/>matesCTF KSMASH</a></h4><h5>February 18, 2019</h5><a href=https://trungnguyen1909.github.io/blog/tags/matesCTF><kbd class=item-tag>matesCTF</kbd></a>
+<a href=https://trungnguyen1909.github.io/blog/tags/CTF><kbd class=item-tag>CTF</kbd></a>
+<a href=https://trungnguyen1909.github.io/blog/tags/pwn><kbd class=item-tag>pwn</kbd></a>
+<a href=https://trungnguyen1909.github.io/blog/tags/kernel><kbd class=item-tag>kernel</kbd></a>
+<a href=https://trungnguyen1909.github.io/blog/tags/linux><kbd class=item-tag>linux</kbd></a></div><h4>Translation</h4><ul><li><a href=https://trungnguyen1909.github.io/blog/vi/post/matesctf/KSMASH/>vi</a></li></ul><br><div class=text-justify><h1 id=ksmash-kernel-stack-smashing>KSMASH - Kernel Stack Smashing</h1><h2 id=background>Background</h2><p>This is a Linux Kernel Module(LKM) exploitation challenge by nyaacate@gmail.com host in Round 3 MatesCTF 2018-2019</p><p>I solved this challenge overtime :&lt;
+But It seems that no team solved this so I still sent the exploit to the challenge author for testing and also wrote this writeup.</p><h2 id=challenge-description>Challenge Description</h2><p>A kernel module is running, escape from non-root user to r00t to read <code>/root/flag</code></p><h2 id=reversing>Reversing</h2><p>Kernel module is named kmod, You can find the module using this command</p><pre><code>$ modinfo kmod
 filename:       /lib/modules/4.18.0-15-generic/kernel/drivers/char/kmod.ko
 author:         nyaacate
 license:        Unlicense
@@ -191,42 +14,7 @@ depends:
 retpoline:      Y
 name:           kmod
 vermagic:       4.18.0-15-generic SMP mod_unload
-</code></pre>
-
-<p>Fire up IDA64, load kmod.ko, It shown that</p>
-
-<ul>
-<li><p>Kernel module can be communicated through the pseudo-file <code>/proc/havoc</code></p></li>
-
-<li><p>Read from it, the kernel module will read up the kernel stack memory for us with the function <code>careless_read</code></p></li>
-
-<li><p>Write to it, the kernel module will copy our data to the kernel stack memory for us with the function <code>careless_write</code> :)</p></li>
-
-<li><p>Both of them perform <code>copy_from_user/copy_to_user</code> for all of the input to an one-byte sized stack variable</p></li>
-
-<li><p>This is a Simple Buffer-Overflow&hellip; but at <em>Kernel</em> level.</p></li>
-</ul>
-
-<h3 id="protection">Protection :</h3>
-
-<ul>
-<li><p>kASLR (kernel level Address Space Layout Randomization)</p></li>
-
-<li><p>SMEP (Supervisor Mode Execution Protection) : Preventing Ring 0 from fetching instruction from userspace memory</p></li>
-
-<li><p>Kernel Stack Cookies (Canary)</p></li>
-</ul>
-
-<h2 id="exploit-vector">Exploit Vector :</h2>
-
-<p><strong>From kernel, we need to call <code>commit_creds(prepare_kernel_cred(0))</code> to elevate privilege to r00t then return safely to userspace.</strong></p>
-
-<ul>
-<li><p>At first, we read kernel stack memory from <code>/proc/havoc</code> to have some informations</p></li>
-
-<li><p>All important ones are located from offset 1. Below this the data layout from offset 1.</p>
-
-<pre><code>	---------------------------
+</code></pre><p>Fire up IDA64, load kmod.ko, It shown that</p><ul><li><p>Kernel module can be communicated through the pseudo-file <code>/proc/havoc</code></p></li><li><p>Read from it, the kernel module will read up the kernel stack memory for us with the function <code>careless_read</code></p></li><li><p>Write to it, the kernel module will copy our data to the kernel stack memory for us with the function <code>careless_write</code> :)</p></li><li><p>Both of them perform <code>copy_from_user/copy_to_user</code> for all of the input to an one-byte sized stack variable</p></li><li><p>This is a Simple Buffer-Overflow&hellip; but at <em>Kernel</em> level.</p></li></ul><h3 id=protection>Protection :</h3><ul><li><p>kASLR (kernel level Address Space Layout Randomization)</p></li><li><p>SMEP (Supervisor Mode Execution Protection) : Preventing Ring 0 from fetching instruction from userspace memory</p></li><li><p>Kernel Stack Cookies (Canary)</p></li></ul><h2 id=exploit-vector>Exploit Vector :</h2><p><strong>From kernel, we need to call <code>commit_creds(prepare_kernel_cred(0))</code> to elevate privilege to r00t then return safely to userspace.</strong></p><ul><li><p>At first, we read kernel stack memory from <code>/proc/havoc</code> to have some informations</p></li><li><p>All important ones are located from offset 1. Below this the data layout from offset 1.</p><pre><code>	---------------------------
 	|       Stack Canary       |
 	---------------------------
 	|       Saved RBX          |
@@ -235,24 +23,8 @@ vermagic:       4.18.0-15-generic SMP mod_unload
 	---------------------------
 	|       Saved RIP          |
 	---------------------------
-</code></pre></li>
-
-<li><p>Based on this, we can easily defeat Stack Canary and kASLR</p></li>
-
-<li><p>Kernel ASLR can be defeated by calculating saved RIP offset.</p></li>
-
-<li><p>Last job is to elevate to r00t and then safely return back.</p>
-
-<ul>
-<li><p>Although there aren&rsquo;t usable gadget <code>mov rdi, rax</code> to manipulate <code>prepare_kernel_cred</code> result for <code>commit_creds</code>,
-But RAX is the same with RDI after the call for some reason so we can skip that gadget.</p></li>
-
-<li><p>Finally do <code>SWAPGS</code> then <code>IRETQ</code> (interrupt return) to return to our exploit program from Kernel.</p></li>
-</ul>
-
-<p>IRETQ is responsible for recovering RIP, CS, RFLAGS, RSP, SS, Specifically, it will pop from stack like this figure.</p>
-
-<pre><code>
+</code></pre></li><li><p>Based on this, we can easily defeat Stack Canary and kASLR</p></li><li><p>Kernel ASLR can be defeated by calculating saved RIP offset.</p></li><li><p>Last job is to elevate to r00t and then safely return back.</p><ul><li><p>Although there aren&rsquo;t usable gadget <code>mov rdi, rax</code> to manipulate <code>prepare_kernel_cred</code> result for <code>commit_creds</code>,
+But RAX is the same with RDI after the call for some reason so we can skip that gadget.</p></li><li><p>Finally do <code>SWAPGS</code> then <code>IRETQ</code> (interrupt return) to return to our exploit program from Kernel.</p></li></ul><p>IRETQ is responsible for recovering RIP, CS, RFLAGS, RSP, SS, Specifically, it will pop from stack like this figure.</p><pre><code>
 |--------------------------|
 |       Low mem addr       |  ^        
 |--------------------------|  |
@@ -269,181 +41,20 @@ But RAX is the same with RDI after the call for some reason so we can skip that 
 |      High mem addr       |  |
 |--------------------------|  |
 
-</code></pre></li>
-</ul>
-
-<h3 id="notes-issue">Notes &amp; Issue</h3>
-
-<ul>
-<li>When <code>IRETQ</code> back, I got <code>SIGSEGV</code> on every single instruction RIP is pointed to :&lt;</li>
-</ul>
-
-<p>So I used a cool dirty trick to handle is to handle signal SIGSEGV with a function that calls <code>system(&quot;/bin/sh&quot;)</code> :))</p>
-
-<ul>
-<li>ret2usr can&rsquo;t be used since Linux 4.15, all userspace memory in kernel will be mapped as non-executable</li>
-
-<li><p><code>SIGSEGV</code> when <code>iretq</code> is caused by KPTI(Kernel Page Table Isolation) (a.k.a KAISER) which appeared since 4.15 as a patch for Meltdown
-(Can be resolved by patching CR3?)</p></li>
-
-<li><p>Everything else should be found from <code>exploit.c</code> file</p></li>
-</ul>
-
-<h2 id="gotchas">Gotchas :)</h2>
-
-<ul>
-<li>Source is available within the distribution in <code>/home/nyan</code>
-<br /></li>
-</ul>
-
-<h2 id="reference">Reference</h2>
-
-<p><a href="https://drive.google.com/file/d/1V4OtrqzHZc7TUr4h0VUGprnHcAoo5kp-/edit">Distribution</a></p>
-
-<p><a href="https://www.trustwave.com/en-us/resources/blogs/spiderlabs-blog/linux-kernel-rop-ropping-your-way-to-part-1/">ROP your way to Kernel part 1</a></p>
-
-<p><a href="https://www.trustwave.com/en-us/resources/blogs/spiderlabs-blog/linux-kernel-rop-ropping-your-way-to-part-2/">ROP your way to Kernel part 2</a></p>
-
-<p><a href="https://cyseclabs.com/slides/smep_bypass.pdf">Practical SMEP bypass techniques on Linux</a></p>
-
-<p>All 3 from Vitaly Nikolenko :O</p>
-
-<p><a href="https://outflux.net/blog/archives/2018/02/05/security-things-in-linux-v4-15/">Changes in Linux Kernel</a></p>
-</div>
-    
-    <h4 class="page-header">File Resources</h4>
-    <ul>
-    
-    <li><a href="https://trungnguyen1909.github.io/blog/post/matesctf/KSMASH/Source/Makefile"> Source/Makefile </a> </li>
-    
-    <li><a href="https://trungnguyen1909.github.io/blog/post/matesctf/KSMASH/Source/Module.symvers"> Source/Module.symvers </a> </li>
-    
-    <li><a href="https://trungnguyen1909.github.io/blog/post/matesctf/KSMASH/Source/modules.order"> Source/modules.order </a> </li>
-    
-    <li><a href="https://trungnguyen1909.github.io/blog/post/matesctf/KSMASH/Source/kmod.c"> Source/kmod.c </a> </li>
-    
-    <li><a href="https://trungnguyen1909.github.io/blog/post/matesctf/KSMASH/exploit.c"> exploit.c </a> </li>
-    
-    <ul>
-    
-    
-
-    
-
-        <h4 class="page-header">Related</h4>
-
-         <div class="item">
-
-    
-    
-    
-
-    
-    
-
-    <h4><a href="/blog/post/FBCTF19-Qual/kpets/">kpets FacebookCTF 2019 Qualification Round</a></h4>
-    <h5>June 12, 2019</h5>
-    
-    <a href="https://trungnguyen1909.github.io/blog/tags/FBCTF"><kbd class="item-tag">FBCTF</kbd></a>
-    
-    <a href="https://trungnguyen1909.github.io/blog/tags/CTF"><kbd class="item-tag">CTF</kbd></a>
-    
-    <a href="https://trungnguyen1909.github.io/blog/tags/pwn"><kbd class="item-tag">pwn</kbd></a>
-    
-    <a href="https://trungnguyen1909.github.io/blog/tags/kernel"><kbd class="item-tag">kernel</kbd></a>
-    
-    <a href="https://trungnguyen1909.github.io/blog/tags/linux"><kbd class="item-tag">linux</kbd></a>
-    
-    <a href="https://trungnguyen1909.github.io/blog/tags/race-condition"><kbd class="item-tag">race-condition</kbd></a>
-    
-    <a href="https://trungnguyen1909.github.io/blog/tags/double-fetch"><kbd class="item-tag">double-fetch</kbd></a>
-    
-
-</div>
-  <div class="item">
-
-    
-    
-    
-
-    
-    
-
-    <h4><a href="/blog/post/DEFCON26-Qual/iPwnKit/">IPwnKit DEFCON CTF 26 Qualification Round</a></h4>
-    <h5>April 21, 2019</h5>
-    
-    <a href="https://trungnguyen1909.github.io/blog/tags/DEFCON-CTF"><kbd class="item-tag">DEFCON-CTF</kbd></a>
-    
-    <a href="https://trungnguyen1909.github.io/blog/tags/CTF"><kbd class="item-tag">CTF</kbd></a>
-    
-    <a href="https://trungnguyen1909.github.io/blog/tags/pwn"><kbd class="item-tag">pwn</kbd></a>
-    
-    <a href="https://trungnguyen1909.github.io/blog/tags/xnu"><kbd class="item-tag">xnu</kbd></a>
-    
-    <a href="https://trungnguyen1909.github.io/blog/tags/IOKit"><kbd class="item-tag">IOKit</kbd></a>
-    
-    <a href="https://trungnguyen1909.github.io/blog/tags/race-condition"><kbd class="item-tag">race-condition</kbd></a>
-    
-    <a href="https://trungnguyen1909.github.io/blog/tags/double-fetch"><kbd class="item-tag">double-fetch</kbd></a>
-    
-
-</div>
-  <div class="item">
-
-    
-    
-    
-
-    
-    
-
-    <h4><a href="/blog/post/AceBear2019/house_of_loop/">AceBear Security Contest House-of-loop</a></h4>
-    <h5>April 8, 2019</h5>
-    
-    <a href="https://trungnguyen1909.github.io/blog/tags/AceBear"><kbd class="item-tag">AceBear</kbd></a>
-    
-    <a href="https://trungnguyen1909.github.io/blog/tags/CTF"><kbd class="item-tag">CTF</kbd></a>
-    
-    <a href="https://trungnguyen1909.github.io/blog/tags/pwn"><kbd class="item-tag">pwn</kbd></a>
-    
-    <a href="https://trungnguyen1909.github.io/blog/tags/heap"><kbd class="item-tag">heap</kbd></a>
-    
-
-</div>
- 
-
-    
-
-    
-
-        <h4 class="page-header">Comments</h4>
-        <div id="disqus_thread"></div>
-        <script>
-
-        
-
-        
-
-        (function() { 
-        var d = document, s = d.createElement('script');
-        s.src = 'https://ntrung03-blog.disqus.com/embed.js';
-        s.setAttribute('data-timestamp', +new Date());
-        (d.head || d.body).appendChild(s);
-        })();
-        </script>
-        <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-
-    
-
-</main>
-
-        <footer>
-
-            <p class="copyright text-muted">&copy; All rights reserved. Powered by <a href="https://gohugo.io">Hugo</a> and <a href="https://github.com/calintat/minimal">Minimal</a></p>
-
-        </footer>
-       
-    </body>
-
-</html>
-
+</code></pre></li></ul><h3 id=notes-issue>Notes &amp; Issue</h3><ul><li>When <code>IRETQ</code> back, I got <code>SIGSEGV</code> on every single instruction RIP is pointed to :&lt;</li></ul><p>So I used a cool dirty trick to handle is to handle signal SIGSEGV with a function that calls <code>system(&quot;/bin/sh&quot;)</code> :))</p><ul><li>ret2usr can&rsquo;t be used since Linux 4.15, all userspace memory in kernel will be mapped as non-executable</li><li><p><code>SIGSEGV</code> when <code>iretq</code> is caused by KPTI(Kernel Page Table Isolation) (a.k.a KAISER) which appeared since 4.15 as a patch for Meltdown
+(Can be resolved by patching CR3?)</p></li><li><p>Everything else should be found from <code>exploit.c</code> file</p></li></ul><h2 id=gotchas>Gotchas :)</h2><ul><li>Source is available within the distribution in <code>/home/nyan</code><br></li></ul><h2 id=reference>Reference</h2><p><a href=https://drive.google.com/file/d/1V4OtrqzHZc7TUr4h0VUGprnHcAoo5kp-/edit>Distribution</a></p><p><a href=https://www.trustwave.com/en-us/resources/blogs/spiderlabs-blog/linux-kernel-rop-ropping-your-way-to-part-1/>ROP your way to Kernel part 1</a></p><p><a href=https://www.trustwave.com/en-us/resources/blogs/spiderlabs-blog/linux-kernel-rop-ropping-your-way-to-part-2/>ROP your way to Kernel part 2</a></p><p><a href=https://cyseclabs.com/slides/smep_bypass.pdf>Practical SMEP bypass techniques on Linux</a></p><p>All 3 from Vitaly Nikolenko :O</p><p><a href=https://outflux.net/blog/archives/2018/02/05/security-things-in-linux-v4-15/>Changes in Linux Kernel</a></p></div><h4 class=page-header>File Resources</h4><ul><li><a href=https://trungnguyen1909.github.io/blog/post/matesctf/KSMASH/Source/Makefile>Source/Makefile</a></li><li><a href=https://trungnguyen1909.github.io/blog/post/matesctf/KSMASH/Source/Module.symvers>Source/Module.symvers</a></li><li><a href=https://trungnguyen1909.github.io/blog/post/matesctf/KSMASH/Source/kmod.c>Source/kmod.c</a></li><li><a href=https://trungnguyen1909.github.io/blog/post/matesctf/KSMASH/Source/modules.order>Source/modules.order</a></li><li><a href=https://trungnguyen1909.github.io/blog/post/matesctf/KSMASH/exploit.c>exploit.c</a></li><ul><h4 class=page-header>Related</h4><div class=item><h4><a href=/blog/post/FBCTF19-Qual/kpets/>kpets FacebookCTF 2019 Qualification Round</a></h4><h5>June 12, 2019</h5><a href=https://trungnguyen1909.github.io/blog/tags/FBCTF><kbd class=item-tag>FBCTF</kbd></a>
+<a href=https://trungnguyen1909.github.io/blog/tags/CTF><kbd class=item-tag>CTF</kbd></a>
+<a href=https://trungnguyen1909.github.io/blog/tags/pwn><kbd class=item-tag>pwn</kbd></a>
+<a href=https://trungnguyen1909.github.io/blog/tags/kernel><kbd class=item-tag>kernel</kbd></a>
+<a href=https://trungnguyen1909.github.io/blog/tags/linux><kbd class=item-tag>linux</kbd></a>
+<a href=https://trungnguyen1909.github.io/blog/tags/race-condition><kbd class=item-tag>race-condition</kbd></a>
+<a href=https://trungnguyen1909.github.io/blog/tags/double-fetch><kbd class=item-tag>double-fetch</kbd></a></div><div class=item><h4><a href=/blog/post/DEFCON26-Qual/iPwnKit/>IPwnKit DEFCON CTF 26 Qualification Round</a></h4><h5>April 21, 2019</h5><a href=https://trungnguyen1909.github.io/blog/tags/DEFCON-CTF><kbd class=item-tag>DEFCON-CTF</kbd></a>
+<a href=https://trungnguyen1909.github.io/blog/tags/CTF><kbd class=item-tag>CTF</kbd></a>
+<a href=https://trungnguyen1909.github.io/blog/tags/pwn><kbd class=item-tag>pwn</kbd></a>
+<a href=https://trungnguyen1909.github.io/blog/tags/xnu><kbd class=item-tag>xnu</kbd></a>
+<a href=https://trungnguyen1909.github.io/blog/tags/IOKit><kbd class=item-tag>IOKit</kbd></a>
+<a href=https://trungnguyen1909.github.io/blog/tags/race-condition><kbd class=item-tag>race-condition</kbd></a>
+<a href=https://trungnguyen1909.github.io/blog/tags/double-fetch><kbd class=item-tag>double-fetch</kbd></a></div><div class=item><h4><a href=/blog/post/AceBear2019/house_of_loop/>AceBear Security Contest House-of-loop</a></h4><h5>April 8, 2019</h5><a href=https://trungnguyen1909.github.io/blog/tags/AceBear><kbd class=item-tag>AceBear</kbd></a>
+<a href=https://trungnguyen1909.github.io/blog/tags/CTF><kbd class=item-tag>CTF</kbd></a>
+<a href=https://trungnguyen1909.github.io/blog/tags/pwn><kbd class=item-tag>pwn</kbd></a>
+<a href=https://trungnguyen1909.github.io/blog/tags/heap><kbd class=item-tag>heap</kbd></a></div><h4 class=page-header>Comments</h4><div id=disqus_thread></div><script>(function(){var d=document,s=d.createElement('script');s.src='https://ntrung03-blog.disqus.com/embed.js';s.setAttribute('data-timestamp',+new Date());(d.head||d.body).appendChild(s);})();</script><noscript>Please enable JavaScript to view the <a href=https://disqus.com/?ref_noscript>comments powered by Disqus.</a></noscript></main><footer><p class="copyright text-muted">&copy; All rights reserved. Powered by <a href=https://gohugo.io>Hugo</a> and <a href=https://github.com/calintat/minimal>Minimal</a></p></footer></body></html>

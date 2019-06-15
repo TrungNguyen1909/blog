@@ -1,9 +1,0 @@
-The function getFlag is our main objective
-Open the binary in gdb, break somewhere in main(preferably entry)
-Find the location of getFlag(info functions getFlag (0x080484f0))
-set eip = 0x080484f0
-break *getFlag+65(ret instruction: where the function will end)
-Continue until it reach the breakpoint
-Checkout the EAX contains a address to a string
-x/s that string and the remaining part next to it (x/2s 0xffffd5f0)
-Combine those and you will get the flag

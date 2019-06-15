@@ -1,23 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>debug on Nguyen Hoang Trung</title>
-    <link>https://trungnguyen1909.github.io/blog/tags/debug/</link>
-    <description>Recent content in debug on Nguyen Hoang Trung</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language>
-    <lastBuildDate>Mon, 18 Feb 2019 16:48:13 +0700</lastBuildDate>
-    
-	<atom:link href="https://trungnguyen1909.github.io/blog/tags/debug/index.xml" rel="self" type="application/rss+xml" />
-    
-    
-    <item>
-      <title>Linux Kernel Debugging in VM</title>
-      <link>https://trungnguyen1909.github.io/blog/post/misc/KDB/KDB/</link>
-      <pubDate>Mon, 18 Feb 2019 16:48:13 +0700</pubDate>
-      
-      <guid>https://trungnguyen1909.github.io/blog/post/misc/KDB/KDB/</guid>
-      <description>Kernel Debugging Instruction Setup I used VirtualBox for Kernel Debugging, VMWare shoud be able to do the same thing.
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>debug on Nguyen Hoang Trung</title><link>https://trungnguyen1909.github.io/blog/tags/debug/</link><description>Recent content in debug on Nguyen Hoang Trung</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Mon, 18 Feb 2019 16:48:13 +0700</lastBuildDate><atom:link href="https://trungnguyen1909.github.io/blog/tags/debug/index.xml" rel="self" type="application/rss+xml"/><item><title>Linux Kernel Debugging in VM</title><link>https://trungnguyen1909.github.io/blog/post/misc/KDB/KDB/</link><pubDate>Mon, 18 Feb 2019 16:48:13 +0700</pubDate><guid>https://trungnguyen1909.github.io/blog/post/misc/KDB/KDB/</guid><description>Kernel Debugging Instruction Setup I used VirtualBox for Kernel Debugging, VMWare shoud be able to do the same thing.
 Enter Machine Settings -&amp;gt; Ports -&amp;gt; Serial -&amp;gt; Enable Serial Port
 Port Number: Any :)))
 Port mode: Host Pipe
@@ -25,8 +6,4 @@ Connect to existing : unchecked
 Path/Address: /tmp/vbox (placeholder purpose :))
 Boot Linux normally, run as root
 $ echo ttyS0,9600 &amp;gt; /sys/module/kgdboc/parameters/kgdboc
-if Port Number is COM1, use ttyS0; if it is COM2, use ttyS1&amp;hellip; etc</description>
-    </item>
-    
-  </channel>
-</rss>
+if Port Number is COM1, use ttyS0; if it is COM2, use ttyS1&amp;hellip; etc</description></item></channel></rss>

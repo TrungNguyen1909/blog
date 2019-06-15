@@ -1,28 +1,5 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>forensics on Nguyen Hoang Trung</title>
-    <link>https://trungnguyen1909.github.io/blog/tags/forensics/</link>
-    <description>Recent content in forensics on Nguyen Hoang Trung</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language>
-    <lastBuildDate>Thu, 22 Nov 2018 21:30:28 +0700</lastBuildDate>
-    
-	<atom:link href="https://trungnguyen1909.github.io/blog/tags/forensics/index.xml" rel="self" type="application/rss+xml" />
-    
-    
-    <item>
-      <title>RITSEC18 Bucket-o-cash</title>
-      <link>https://trungnguyen1909.github.io/blog/post/RITSEC-2018/Bucket-o-cash/</link>
-      <pubDate>Thu, 22 Nov 2018 21:30:28 +0700</pubDate>
-      
-      <guid>https://trungnguyen1909.github.io/blog/post/RITSEC-2018/Bucket-o-cash/</guid>
-      <description>By cating and grepping the file, we know that there was a file named /home/memes/flag.c
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>forensics on Nguyen Hoang Trung</title><link>https://trungnguyen1909.github.io/blog/tags/forensics/</link><description>Recent content in forensics on Nguyen Hoang Trung</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Thu, 22 Nov 2018 21:30:28 +0700</lastBuildDate><atom:link href="https://trungnguyen1909.github.io/blog/tags/forensics/index.xml" rel="self" type="application/rss+xml"/><item><title>RITSEC18 Bucket-o-cash</title><link>https://trungnguyen1909.github.io/blog/post/RITSEC-2018/Bucket-o-cash/</link><pubDate>Thu, 22 Nov 2018 21:30:28 +0700</pubDate><guid>https://trungnguyen1909.github.io/blog/post/RITSEC-2018/Bucket-o-cash/</guid><description>By cating and grepping the file, we know that there was a file named /home/memes/flag.c
 It&amp;rsquo;s probably a program, so I searched for ./flag Just printing the line doesn&amp;rsquo;t seem to work so I tried
- cat memorydump | grep -A 10 -B 10 ./flag  I found an interesting base64-encoded string that is repeated multiple times.
+cat memorydump | grep -A 10 -B 10 ./flag I found an interesting base64-encoded string that is repeated multiple times.
 Decode it, the flag is yours.
-Also, later I realised that a great pattern to grep for challs like this are the base64-encoded of the beginning part of the flag format, which is constant.</description>
-    </item>
-    
-  </channel>
-</rss>
+Also, later I realised that a great pattern to grep for challs like this are the base64-encoded of the beginning part of the flag format, which is constant.</description></item></channel></rss>

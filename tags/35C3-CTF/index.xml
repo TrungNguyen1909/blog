@@ -1,26 +1,3 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>35C3-CTF on Nguyen Hoang Trung</title>
-    <link>https://trungnguyen1909.github.io/blog/tags/35C3-CTF/</link>
-    <description>Recent content in 35C3-CTF on Nguyen Hoang Trung</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language>
-    <lastBuildDate>Fri, 15 Feb 2019 00:47:48 +0700</lastBuildDate>
-    
-	<atom:link href="https://trungnguyen1909.github.io/blog/tags/35C3-CTF/index.xml" rel="self" type="application/rss+xml" />
-    
-    
-    <item>
-      <title>35C3 CTF Pillow</title>
-      <link>https://trungnguyen1909.github.io/blog/post/35c3/pillow/</link>
-      <pubDate>Fri, 15 Feb 2019 00:47:48 +0700</pubDate>
-      
-      <guid>https://trungnguyen1909.github.io/blog/post/35c3/pillow/</guid>
-      <description>Pillow Background This is the writeup for the challenge Pillow, created by Samuel Groß(@saelo) of Project Zero, of 35C3 CTF annually organized by @EatSleepPwnRpt happening at the end of year 2018.
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>35C3-CTF on Nguyen Hoang Trung</title><link>https://trungnguyen1909.github.io/blog/tags/35C3-CTF/</link><description>Recent content in 35C3-CTF on Nguyen Hoang Trung</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Fri, 15 Feb 2019 00:47:48 +0700</lastBuildDate><atom:link href="https://trungnguyen1909.github.io/blog/tags/35C3-CTF/index.xml" rel="self" type="application/rss+xml"/><item><title>35C3 CTF Pillow</title><link>https://trungnguyen1909.github.io/blog/post/35c3/pillow/</link><pubDate>Fri, 15 Feb 2019 00:47:48 +0700</pubDate><guid>https://trungnguyen1909.github.io/blog/post/35c3/pillow/</guid><description>Pillow Background This is the writeup for the challenge Pillow, created by Samuel Groß(@saelo) of Project Zero, of 35C3 CTF annually organized by @EatSleepPwnRpt happening at the end of year 2018.
 I didn&amp;rsquo;t solve this challenge during the CTF, when revisiting this challenge after checkout @LinusHenze repo, I have a big learning oppuntunity to checkout XNU exploitation, which was completely new to me.
-Basic stuff Feel free to skip this part if you have already had a basic knowledge in Mach.</description>
-    </item>
-    
-  </channel>
-</rss>
+Basic stuff Feel free to skip this part if you have already had a basic knowledge in Mach.</description></item></channel></rss>

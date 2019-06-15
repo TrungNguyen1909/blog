@@ -1,27 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>ROP on Nguyen Hoang Trung</title>
-    <link>https://trungnguyen1909.github.io/blog/tags/ROP/</link>
-    <description>Recent content in ROP on Nguyen Hoang Trung</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language>
-    <lastBuildDate>Fri, 22 Feb 2019 23:17:46 +0700</lastBuildDate>
-    
-	<atom:link href="https://trungnguyen1909.github.io/blog/tags/ROP/index.xml" rel="self" type="application/rss+xml" />
-    
-    
-    <item>
-      <title>TetCTF babySandbox</title>
-      <link>https://trungnguyen1909.github.io/blog/post/tetctf/babysandbox/</link>
-      <pubDate>Fri, 22 Feb 2019 23:17:46 +0700</pubDate>
-      
-      <guid>https://trungnguyen1909.github.io/blog/post/tetctf/babysandbox/</guid>
-      <description>Baby Sandbox This is a challenge of TetCTF, which is hosted from Jan 1st to Jan 7th by MeePwn Team of Vietnam
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>ROP on Nguyen Hoang Trung</title><link>https://trungnguyen1909.github.io/blog/tags/ROP/</link><description>Recent content in ROP on Nguyen Hoang Trung</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Fri, 22 Feb 2019 23:17:46 +0700</lastBuildDate><atom:link href="https://trungnguyen1909.github.io/blog/tags/ROP/index.xml" rel="self" type="application/rss+xml"/><item><title>TetCTF babySandbox</title><link>https://trungnguyen1909.github.io/blog/post/tetctf/babysandbox/</link><pubDate>Fri, 22 Feb 2019 23:17:46 +0700</pubDate><guid>https://trungnguyen1909.github.io/blog/post/tetctf/babysandbox/</guid><description>Baby Sandbox This is a challenge of TetCTF, which is hosted from Jan 1st to Jan 7th by MeePwn Team of Vietnam
 Challenge description We are given 2 binary, one is sandbox and the other one is program.
 sandbox, judging by its name, is a implementation of sandbox, executing the program passed in argv[1] in an sandbox environment.
-program is executed by sandbox, which is a simple static stripped executable which simply reads your input and then output it.</description>
-    </item>
-    
-  </channel>
-</rss>
+program is executed by sandbox, which is a simple static stripped executable which simply reads your input and then output it.</description></item></channel></rss>
