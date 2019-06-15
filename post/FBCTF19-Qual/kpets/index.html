@@ -204,26 +204,25 @@ welcome to Kernel Pets Simulator!
 
 <pre><code class="language-c">int dev_write(__int64 a1, char *buf, __int64 sz)
 {
-
 	v17 = sz;
 	copy_from_user(&amp;v19, buf + 4, 4LL);
 	if ( v19 &gt; 0x20 )
 	{
-		printk(&quot;kpets: invalid pet name len: 0x%02x\n&quot;, v19, v3, v4, v5);
+		printk(&quot;kpets: invalid pet name len: 0x%02x\n&quot;, v19);
 		return v17;
 	}
 	copy_from_user(&amp;v20, buf + 40, 4LL);
 	if ( v20 &gt; 0x40 )
 	{
-		printk(&quot;kpets: invalid pet description len: 0x%02x\n&quot;, v20, v6, v7, v8);
+		printk(&quot;kpets: invalid pet description len: 0x%02x\n&quot;, v20);
 		return v17;
 	}
 	//Cut off
-	printk(&quot;kpets: your new pet owner is %s!&quot;, names[v21 % 6], v21 / 6, v21 % 6, v13);
+	printk(&quot;kpets: your new pet owner is %s!&quot;, names[v21 % 6]);
 	copy_from_user(&amp;v18, buf, 1LL);
 	if ( (unsigned __int8)(v18 + 64) &gt; 1u &amp;&amp; v18 != 0xC2u )
 	{
-		printk(&quot;kpets: invalid pet type: 0x%02hhx\n&quot;, (unsigned int)(char)v18, (unsigned int)v18 + 64, v14, v15);
+		printk(&quot;kpets: invalid pet type: 0x%02hhx\n&quot;, v18);
 	}
 	else
 	{
@@ -243,10 +242,10 @@ and then copy that amount of data to kernel memory.</p>
 
 <pre><code class="language-c">copy_from_user(&amp;v19, buf + 4, 4LL);
 if ( v19 &gt; 0x20 )
-	{
-		printk(&quot;kpets: invalid pet name len: 0x%02x\n&quot;, v19, v3, v4, v5);
-		return v17;
-	}
+{
+	printk(&quot;kpets: invalid pet name len: 0x%02x\n&quot;, v19);
+	return v17;
+}
 ...
 copy_from_user(&amp;v21, buf + 4, 4LL);
 *v10 = v18;
