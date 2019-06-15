@@ -10,8 +10,12 @@
 
         <h2>{{ markdownify .Site.Params.Description }}</h2>
 
-    </div>
 
+        <div class="recent">
+            <h1>Recent post</h1>
+            {{ range (.Paginator 1).Pages }} {{ partial "list-item" . }} {{ end }}
+        </div>
+    </div>
 </main>
 
 {{ partial "footer" . }}

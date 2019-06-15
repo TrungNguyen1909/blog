@@ -11,7 +11,7 @@ disablePathToLower = true
 [languages.vi]
 [params]
     author = "Nguyen Hoang Trung"
-    description = ""
+    description = "A high schooler interested in cybersecurity"
     githubUsername = "TrungNguyen1909"
     accent = "purple"
     showBorder = true
