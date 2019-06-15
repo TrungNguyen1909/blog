@@ -79,6 +79,22 @@
   </url>
   
   <url>
+    <loc>https://trungnguyen1909.github.io/blog/tags/kernel/</loc>
+    <lastmod>2019-06-12T23:15:34+07:00</lastmod>
+    <priority>0</priority>
+    <xhtml:link
+                rel="alternate"
+                hreflang="vi"
+                href="https://trungnguyen1909.github.io/blog/vi/tags/kernel/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://trungnguyen1909.github.io/blog/tags/kernel/"
+                />
+  </url>
+  
+  <url>
     <loc>https://trungnguyen1909.github.io/blog/post/FBCTF19-Qual/kpets/</loc>
     <lastmod>2019-06-12T23:15:34+07:00</lastmod>
   </url>
@@ -218,22 +234,6 @@
                 rel="alternate"
                 hreflang="en"
                 href="https://trungnguyen1909.github.io/blog/tags/debug/"
-                />
-  </url>
-  
-  <url>
-    <loc>https://trungnguyen1909.github.io/blog/tags/kernel/</loc>
-    <lastmod>2019-02-18T16:48:13+07:00</lastmod>
-    <priority>0</priority>
-    <xhtml:link
-                rel="alternate"
-                hreflang="vi"
-                href="https://trungnguyen1909.github.io/blog/vi/tags/kernel/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://trungnguyen1909.github.io/blog/tags/kernel/"
                 />
   </url>
   
