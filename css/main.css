@@ -30,7 +30,7 @@ main {
 
 .intro > h1 {
     color: #212121;
-    font-size: 12vh;
+    font-size: 10vh;
 }
 
 .intro > h2 {
@@ -43,7 +43,10 @@ main {
     height: 10vh;
     border-radius: 50%;
 }
-
+.intro > .recent > h1 {
+	color: #212121;
+	font-size: 5vh;
+}
 /*apply accent colour to links*/
 
 a:link, a:visited {
