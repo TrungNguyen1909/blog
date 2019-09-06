@@ -45,10 +45,10 @@ disablePathToLower = true
     name = "github"
     weight = 1
 
-#[[menu.icon]]
-#    url = "https://twitter.com/username/"
-#    name = "twitter"
-#    weight = 3
+[[menu.icon]]
+    url = "https://twitter.com/ntrung03/"
+    name = "twitter"
+    weight = 2
 
 #[[menu.icon]]
 #    url = "https://www.linkedin.com/in/username/"
