@@ -1,0 +1,158 @@
+<!doctype html><html lang=en-us><head><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1"><title>CrackIt, GCI</title><style>html body{font-family:noto sans,sans-serif;background-color:#fff}:root{--accent: purple;--border-width:  5px }</style><link rel=stylesheet href=https://trungnguyen1909.github.io/blog/css/main.css><link rel=stylesheet href="https://fonts.googleapis.com/css?family=Noto%20Sans"><link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/tomorrow-night.min.css><link rel=stylesheet href=https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css integrity=sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u crossorigin=anonymous><link rel=stylesheet href=https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css integrity=sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN crossorigin=anonymous><script src=https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js></script><script src=https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/go.min.js></script><script src=https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/haskell.min.js></script><script src=https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/kotlin.min.js></script><script src=https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/scala.min.js></script><script src=https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/swift.min.js></script><script>hljs.initHighlightingOnLoad();</script><script src=https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js></script><script src=https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js integrity=sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa crossorigin=anonymous></script><script>$(document).on('click',function(){$('.collapse').collapse('hide');})</script><meta name=generator content="Hugo 0.58.3"><script type=application/javascript>var doNotTrack=false;if(!doNotTrack){window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;ga('create','UA-138000293-1','auto');ga('send','pageview');}</script><script async src=https://www.google-analytics.com/analytics.js></script></head><script type=text/javascript async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script><body><nav class="navbar navbar-default navbar-fixed-top"><div class=container><div class=navbar-header><a class="navbar-brand visible-xs" href=#>CrackIt, GCI</a>
+<button class=navbar-toggle data-target=.navbar-collapse data-toggle=collapse>
+<span class=icon-bar></span><span class=icon-bar></span><span class=icon-bar></span></button></div><div class="collapse navbar-collapse"><ul class="nav navbar-nav"><li><a href=/blog/>Home</a></li><li><a href=/blog/post/>Posts</a></li><li><a href=/blog/tags/>Tags</a></li></ul><ul class="nav navbar-nav navbar-right"><li class=navbar-icon><a href=https://github.com/TrungNguyen1909/><i class="fa fa-github"></i></a></li><li class=navbar-icon><a href=https://twitter.com/ntrung03/><i class="fa fa-twitter"></i></a></li></ul></div></div></nav><main><div class=item><h4><a href=/blog/post/GCI/CrackIt/>CrackIt, GCI</a></h4><h5>December 6, 2019</h5><a href=https://trungnguyen1909.github.io/blog/tags/GCI><kbd class=item-tag>GCI</kbd></a>
+<a href=https://trungnguyen1909.github.io/blog/tags/CodeIn><kbd class=item-tag>CodeIn</kbd></a>
+<a href=https://trungnguyen1909.github.io/blog/tags/Google><kbd class=item-tag>Google</kbd></a>
+<a href=https://trungnguyen1909.github.io/blog/tags/easy><kbd class=item-tag>easy</kbd></a>
+<a href=https://trungnguyen1909.github.io/blog/tags/reverse><kbd class=item-tag>reverse</kbd></a></div><br><div class=text-justify><h2 id=1stcrackme>1stcrackme</h2><p>easy, you can use <code>strings 1stcrackme</code> to list all strings in binary</p><p>stripped output:</p><pre><code>Enter password:
+FEDORAGCIPASSEASY
+Success!
+Error! Wrong password!
+</code></pre><p>Because the password should be around the prompt and the so we could try <code>FEDORAGCIPASSEASY</code> because it looks like a password
+(my intuition, please don&rsquo;t ask)</p><p>And it works</p><pre><code>[user@archlinux Crackit-GCI]$ ./1stcrackme
+Enter password: FEDORAGCIPASSEASY
+Success!
+Enter password:
+</code></pre><p>When I enter the string again, It didn&rsquo;t work. At this point I look the <code>strings</code> output again and then I saw 2 more suspicious strings</p><pre><code>0x1337
+0x133337
+</code></pre><p>Yeah, Who doesn&rsquo;t want to be l33t ;)</p><p>So I opened it in Ghidra to checkout the whole logic.</p><pre><code class=language-c>undefined8 main(void)
+{
+  int iVar1;
+	char local_78 [112];
+	
+	printf(&quot;Enter password: &quot;);
+	__isoc99_scanf(&amp;DAT_00102015,local_78);
+	iVar1 = strcmp(local_78,&quot;FEDORAGCIPASSEASY&quot;);
+	if (iVar1 == 0) {
+		puts(&quot;Success!\r&quot;);
+	}
+	else {
+		puts(&quot;Error! Wrong password!\r&quot;);
+	}
+	printf(&quot;Enter password: &quot;);
+	__isoc99_scanf(&amp;DAT_00102015,local_78);
+	iVar1 = strcmp(local_78,&quot;0x1337&quot;);
+	if (iVar1 == 0) {
+		puts(&quot;Success!\r&quot;);
+	}
+	else {
+		puts(&quot;Error! Wrong password!\r&quot;);
+	}
+	printf(&quot;Enter password: &quot;);
+	__isoc99_scanf(&amp;DAT_00102015,local_78);
+	iVar1 = strcmp(local_78,&quot;0x133337&quot;);
+	if (iVar1 == 0) {
+		puts(&quot;Success!\r&quot;);
+	}
+	else {
+		puts(&quot;Error! Wrong password!\r&quot;);
+	}
+	return 0;
+}
+</code></pre><p>Look at the <code>s2</code> parameter of <code>strcmp</code> call that compares our input with that hardcoded password,</p><p>we solved all 3 password challenges of this program.</p><pre><code>[user@archlinux Crackit-GCI]$ ./1stcrackme
+Enter password: FEDORAGCIPASSEASY
+Success!
+Enter password: 0x1337
+Success!
+Enter password: 0x133337
+Success!
+</code></pre><h2 id=2ndcrackme>2ndcrackme</h2><pre><code>[user@archlinux Crackit-GCI]$ ./2ndcrackme
+usage:
+./2ndcrackme &lt;password&gt;
+</code></pre><p>okok, so the binary requires us to put the password on the CLI paramter. I put a random string there.</p><pre><code>[user@archlinux Crackit-GCI]$ ./2ndcrackme a
+Error! Wrong Password!
+</code></pre><p>The <code>strings</code> command output doesn&rsquo;t show any suspicious strings like before, so I use <code>ltrace</code></p><p>Here is the output</p><pre><code>[user@archlinux Crackit-GCI]$ ltrace ./2ndcrackme a
+strcmp(&quot;a&quot;, &quot;FEd0raGCIt@sk&quot;)                                   = 27
+puts(&quot;Error! Wrong Password!&quot;Error! Wrong Password!
+)                                                              = 23
++++ exited (status 0) +++
+</code></pre><p>We can see that the program does <code>strcmp</code> our supplied password with another string</p><p>that seems to be hardcoded in a way that it doesn&rsquo;t show up in <code>strings</code></p><pre><code>[user@archlinux Crackit-GCI]$ ./2ndcrackme FEd0raGCIt@sk
+Success!
+</code></pre><p>Solved</p><h2 id=3rdcrackme>3rdcrackme</h2><p>Okay, I open the binary in GHIDRA</p><pre><code class=language-c>undefined8 main(void)
+
+{
+	int iVar1;
+	char local_48 [32];
+	undefined8 local_28;
+	undefined8 local_20;
+	undefined4 local_18;
+	undefined2 local_14;
+	int local_c;
+	
+	local_28 = 0x306b403136673030;
+	local_20 = 0x313531646e616c30;
+	local_18 = 0x6c656334;
+	local_14 = 0x21;
+	local_c = 0;
+	printf(&quot;Enter the password! &quot;);
+	gets(local_48);
+	iVar1 = memcmp(local_48,&amp;local_28,0x16);
+	if (iVar1 == 0) {
+		local_c = 1;
+	}
+	puts(&quot;\nChecking password...\n&quot;);
+	if (local_c != 0) {
+		puts(&quot;Successfully logged in!\nGood job!&quot;);
+				/* WARNING: Subroutine does not return */
+		exit(0);
+	}
+	puts(&quot;Login failed!&quot;);
+	return 0;
+}
+</code></pre><p>So it <code>gets</code> our password from <code>stdin</code> and then <code>memcmp</code> with a pointer(<code>&amp;local_28</code>) and the size is 0x16</p><p>There&rsquo;re 5 integers which is intialized with 5 hexadecimal integers</p><p>By intuition, I immediately realized that those hexs are actually ASCII character.</p><p>Because Ghidra doesn&rsquo;t know the types of those variable, It splits them into 5 integers.</p><p>The integers are named after their locations on the stack (offset from stack base).</p><p>Also, because characters are represented in memory just like integers, it&rsquo;s just the way we understand it matters.</p><p>Knowning that, we convert those integers to characters.</p><p>Don&rsquo;t forget our architecture is Little endian so we have to reverse the byte order&hellip;</p><p>Anyway, I checkout the assembly code of that pseudo code.</p><pre><code>	001011af 48 b8 30        MOV        RAX,&quot;00g61@k0&quot;
+		 30 67 36 
+		 31 40 6b 30
+	001011b9 48 ba 30        MOV        RDX,&quot;0land151&quot;
+		 6c 61 6e 
+		 64 31 35 31
+	001011c3 48 89 45 e0     MOV        qword ptr [RBP + local_28],RAX
+	001011c7 48 89 55 e8     MOV        qword ptr [RBP + local_20],RDX
+	001011cb c7 45 f0        MOV        dword ptr [RBP + local_18],&quot;4cel&quot;
+		 34 63 65 6c
+	001011d2 66 c7 45        MOV        word ptr [RBP + local_14],'!'
+		 f4 21 00
+</code></pre><p>and let Ghidra do the conversation for me.</p><p>So in the program memory, It should be <code>00g61@k00land1514cel!</code>,</p><p>which is <code>local_28+local_20+local_18+local_14+local_c</code></p><p>(plus is understood as string concatenation)</p><p>The <code>memcmp</code> get the pointer to the first character in the</p><p>Knowing the value that our password is going to be compare with, we solved the problem.</p><pre><code>[user@archlinux Crackit-GCI]$ ./3rdcrackme
+Enter the password! 00g61@k00land1514cel!
+
+Checking password...
+
+Successfully logged in!
+Good job!
+</code></pre><p>.</p><p>.</p><p>.</p><p>Wait, there&rsquo;s more.</p><p>The program used <code>gets</code> to read a string to the stack without size limitations.</p><p>This exposes the program to a buffer-over-flow vulnerbility.</p><p>We can overwrite those variables, including the correct password.</p><p>Here is a better pseudo code to look at.</p><pre><code class=language-c>int __cdecl main(int argc, const char **argv, const char **envp)
+{
+	char input[32]; // [rsp+0h] [rbp-40h]
+	char password[28]; // [rsp+20h] [rbp-20h]
+  int v6; // [rbp-8h]
+	strcpy(password, &quot;00g61@k00land1514cel!&quot;);
+	v6 = 0;
+	printf(&quot;Enter the password! &quot;, argv);
+	gets(input);
+	if ( !memcmp(input, password, 0x16uLL) )
+		v6 = 1;
+	puts(&quot;\nChecking password...\n&quot;);
+	if ( *(_DWORD *)&amp;password[28] )
+	{
+		puts(&quot;Successfully logged in!\nGood job!&quot;);
+		exit(0);
+	}
+	puts(&quot;Login failed!&quot;);
+	return 0;
+}
+</code></pre><p>At here, you can see the intialized correct password.</p><p>By the way, strcpy might have been optimized so you won&rsquo;t see it in the binary.</p><p>The input is located on top of the password. Which means that on the right of the <code>input</code> is the intialized <code>password</code></p><p>Memory:</p><pre><code>Low-------------------&gt;High
+|input(32bytes)|password(28 bytes)|v6(4 bytes)|sp(8 bytes)|ip(8 bytes)|
+</code></pre><p>So we can overwrite the password and make the input identical with the <code>password</code>.</p><pre><code>[user@archlinux Crackit-GCI]$ ./3rdcrackme
+Enter the password! AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+Checking password...
+Successfully logged in!
+Good job!
+</code></pre><p>.</p><p>.</p><p>.</p><p>Not so fast, Until I checkout the function list, I found a function named <code>secret</code> which seems to be our real destination.</p><p>The buffer-over-flow vulnerbility here is so powerful that it can drive us into any functions.</p><p>P/s: The memory representation up there still applied here.</p><p>IP = Instruction Pointer. It is saved there so we can return to our previous function. But if we overwrite it, we can go anywhere we want!</p><p>P/s 2: For the next part, I&rsquo;m gonna disable Linux&rsquo;s ASLR:</p><p>Run this command from root shell.</p><pre><code># echo 0 &gt; /proc/sys/kernel/randomize_va_space
+</code></pre><p>So if we overwrite <code>ip</code> with <code>secret</code>&rsquo;s address, we can get there.</p><p><code>secret</code> is at 0x555555555175, we convert that address to bytes then put it at the <code>ip</code>, which is at 66 bytes from the start of our <code>input</code>.</p><p>Oh, by the way, If <code>exit(0)</code> is called, <code>ip</code> won&rsquo;t be used as <code>exit</code> use a short-circuit path to exit the program.</p><p>So you will need the password to be incorrect to reach there.</p><p>Because the comparison result(<code>v6</code>) is also saved on the stack,</p><p>we need to overwrite it with 4 zero bytes (because it is an integer) to force it to be zero.</p><p>If you overwrite it with non-zero bytes, it will <code>exit(0)</code> and we can&rsquo;t get <code>secret</code> running.</p><p>Here is the command to prepare the input and <em>pipe</em> it in to the program.</p><pre><code>$ python -c &quot;print('\x41'*0x20+'\x42'*0x1c+'\x00'*4+'\xde\xad\xbe\xef'+'\x75\x51\x55\x55\x55\x55')&quot; \
+| ./3rdcrackme
+Enter the password!
+Checking password...
+
+Login failed!
+You found the secret function!
+Congrats!
+The password is: FEDORAPASSWORDGCI!
+</code></pre><p>Thanks for reading!</p></div><h4 class=page-header>File Resources</h4><ul><li><a href=https://trungnguyen1909.github.io/blog/post/GCI/CrackIt/1stcrackme>1stcrackme</a></li><li><a href=https://trungnguyen1909.github.io/blog/post/GCI/CrackIt/2ndcrackme>2ndcrackme</a></li><li><a href=https://trungnguyen1909.github.io/blog/post/GCI/CrackIt/3rdcrackme>3rdcrackme</a></li><ul><h4 class=page-header>Comments</h4><div id=disqus_thread></div><script>(function(){var d=document,s=d.createElement('script');s.src='https://ntrung03-blog.disqus.com/embed.js';s.setAttribute('data-timestamp',+new Date());(d.head||d.body).appendChild(s);})();</script><noscript>Please enable JavaScript to view the <a href=https://disqus.com/?ref_noscript>comments powered by Disqus.</a></noscript></main><footer><p class="copyright text-muted">&copy; All rights reserved. Powered by <a href=https://gohugo.io>Hugo</a> and <a href=https://github.com/calintat/minimal>Minimal</a>. Code licensed under <a href=https://github.com/TrungNguyen1909/blog/blob/master/LICENSE>MIT</a>. Content licensed under <a href=https://creativecommons.org/licenses/by/4.0/>CC BY 4.0</a></p></footer></body></html>
