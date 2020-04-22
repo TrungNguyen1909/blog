@@ -1,4 +1,23 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Posts on Nguyen Hoang Trung</title><link>https://trungnguyen1909.github.io/blog/vi/post/</link><description>Recent content in Posts on Nguyen Hoang Trung</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Mon, 18 Feb 2019 16:48:13 +0700</lastBuildDate><atom:link href="https://trungnguyen1909.github.io/blog/vi/post/index.xml" rel="self" type="application/rss+xml"/><item><title>Debug Linux Kernel trong VM</title><link>https://trungnguyen1909.github.io/blog/vi/post/misc/KDB/KDB/</link><pubDate>Mon, 18 Feb 2019 16:48:13 +0700</pubDate><guid>https://trungnguyen1909.github.io/blog/vi/post/misc/KDB/KDB/</guid><description>Kernel Debugger Setup Mình dùng VirtualBox để debug kernel, VmWare chắc cũng làm được tương tự
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Posts on Nguyen Hoang Trung</title>
+    <link>https://trungnguyen1909.github.io/blog/vi/post/</link>
+    <description>Recent content in Posts on Nguyen Hoang Trung</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 18 Feb 2019 16:48:13 +0700</lastBuildDate>
+    
+	<atom:link href="https://trungnguyen1909.github.io/blog/vi/post/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Debug Linux Kernel trong VM</title>
+      <link>https://trungnguyen1909.github.io/blog/vi/post/misc/KDB/KDB/</link>
+      <pubDate>Mon, 18 Feb 2019 16:48:13 +0700</pubDate>
+      
+      <guid>https://trungnguyen1909.github.io/blog/vi/post/misc/KDB/KDB/</guid>
+      <description>Kernel Debugger Setup Mình dùng VirtualBox để debug kernel, VmWare chắc cũng làm được tương tự
 Vào Machine Settings -&amp;gt; Ports -&amp;gt; Serial -&amp;gt; Enable Serial Port
 Port Number: Tuỳ :)))
 Port mode: Host Pipe
@@ -7,6 +26,19 @@ Path/Address: /tmp/vbox
 Boot Linux lên bình thường, Lấy root dùng
 echo ttyS0,9600 &amp;gt; /sys/module/kgdboc/parameters/kgdboc
 nếu Port Number là COM1 -&amp;gt; ttyS0, COM2 -&amp;gt; ttyS1, vv
-Sang máy host, chạy</description></item><item><title>matesCTF KSMASH</title><link>https://trungnguyen1909.github.io/blog/vi/post/matesctf/KSMASH/</link><pubDate>Mon, 18 Feb 2019 16:48:13 +0700</pubDate><guid>https://trungnguyen1909.github.io/blog/vi/post/matesctf/KSMASH/</guid><description>KSMASH Background Đây là 1 bài exploit linux kernel module của nyaacate@gmail.com host ở vòng 3 MatesCTF 2018-2019
+Sang máy host, chạy</description>
+    </item>
+    
+    <item>
+      <title>matesCTF KSMASH</title>
+      <link>https://trungnguyen1909.github.io/blog/vi/post/matesctf/KSMASH/</link>
+      <pubDate>Mon, 18 Feb 2019 16:48:13 +0700</pubDate>
+      
+      <guid>https://trungnguyen1909.github.io/blog/vi/post/matesctf/KSMASH/</guid>
+      <description>KSMASH Background Đây là 1 bài exploit linux kernel module của nyaacate@gmail.com host ở vòng 3 MatesCTF 2018-2019
 Bài này mình solve sau giờ :&amp;lt; nhưng vì trước khi kết thúc CTF khoảng 2hr mà chưa mình chưa thấy team nào solved bài này cả, nên là mình vẫn mạnh dạn gửi exploit code vào mail tác giả.
-Challenge Description Có một kernel module đang chạy, nhiệm vụ là từ non-root user escape lên r00t để đọc file /root/flag</description></item></channel></rss>
+Challenge Description Có một kernel module đang chạy, nhiệm vụ là từ non-root user escape lên r00t để đọc file /root/flag</description>
+    </item>
+    
+  </channel>
+</rss>

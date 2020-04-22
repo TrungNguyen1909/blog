@@ -1,5 +1,28 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Google on Nguyen Hoang Trung</title><link>https://trungnguyen1909.github.io/blog/tags/Google/</link><description>Recent content in Google on Nguyen Hoang Trung</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Fri, 06 Dec 2019 13:33:37 +0700</lastBuildDate><atom:link href="https://trungnguyen1909.github.io/blog/tags/Google/index.xml" rel="self" type="application/rss+xml"/><item><title>CrackIt, GCI</title><link>https://trungnguyen1909.github.io/blog/post/GCI/CrackIt/</link><pubDate>Fri, 06 Dec 2019 13:33:37 +0700</pubDate><guid>https://trungnguyen1909.github.io/blog/post/GCI/CrackIt/</guid><description>1stcrackme easy, you can use strings 1stcrackme to list all strings in binary
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Google on Nguyen Hoang Trung</title>
+    <link>https://trungnguyen1909.github.io/blog/tags/Google/</link>
+    <description>Recent content in Google on Nguyen Hoang Trung</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Fri, 06 Dec 2019 13:33:37 +0700</lastBuildDate>
+    
+	<atom:link href="https://trungnguyen1909.github.io/blog/tags/Google/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>CrackIt, GCI</title>
+      <link>https://trungnguyen1909.github.io/blog/post/GCI/CrackIt/</link>
+      <pubDate>Fri, 06 Dec 2019 13:33:37 +0700</pubDate>
+      
+      <guid>https://trungnguyen1909.github.io/blog/post/GCI/CrackIt/</guid>
+      <description>1stcrackme easy, you can use strings 1stcrackme to list all strings in binary
 stripped output:
 Enter password: FEDORAGCIPASSEASY Success! Error! Wrong password! Because the password should be around the prompt and the so we could try FEDORAGCIPASSEASY because it looks like a password (my intuition, please don&amp;rsquo;t ask)
 And it works
-[user@archlinux Crackit-GCI]$ ./1stcrackme Enter password: FEDORAGCIPASSEASY Success! Enter password: When I enter the string again, It didn&amp;rsquo;t work.</description></item></channel></rss>
+[user@archlinux Crackit-GCI]$ ./1stcrackme Enter password: FEDORAGCIPASSEASY Success! Enter password: When I enter the string again, It didn&amp;rsquo;t work. At this point I look the strings output again and then I saw 2 more suspicious strings</description>
+    </item>
+    
+  </channel>
+</rss>

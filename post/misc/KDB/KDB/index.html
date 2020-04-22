@@ -1,22 +1,315 @@
-<!doctype html><html lang=en-us><head><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1"><title>Linux Kernel Debugging in VM</title><style>html body{font-family:noto sans,sans-serif;background-color:#fff}:root{--accent: purple;--border-width:  5px }</style><link rel=stylesheet href=https://trungnguyen1909.github.io/blog/css/main.css><link rel=stylesheet href="https://fonts.googleapis.com/css?family=Noto%20Sans"><link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/tomorrow-night.min.css><link rel=stylesheet href=https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css integrity=sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u crossorigin=anonymous><link rel=stylesheet href=https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css integrity=sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN crossorigin=anonymous><script src=https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js></script><script src=https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/go.min.js></script><script src=https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/haskell.min.js></script><script src=https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/kotlin.min.js></script><script src=https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/scala.min.js></script><script src=https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/swift.min.js></script><script>hljs.initHighlightingOnLoad();</script><script src=https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js></script><script src=https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js integrity=sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa crossorigin=anonymous></script><script>$(document).on('click',function(){$('.collapse').collapse('hide');})</script><meta name=generator content="Hugo 0.58.3"><script type=application/javascript>var doNotTrack=false;if(!doNotTrack){window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;ga('create','UA-138000293-1','auto');ga('send','pageview');}</script><script async src=https://www.google-analytics.com/analytics.js></script></head><script type=text/javascript async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script><body><nav class="navbar navbar-default navbar-fixed-top"><div class=container><div class=navbar-header><a class="navbar-brand visible-xs" href=#>Linux Kernel Debugging in VM</a>
-<button class=navbar-toggle data-target=.navbar-collapse data-toggle=collapse>
-<span class=icon-bar></span><span class=icon-bar></span><span class=icon-bar></span></button></div><div class="collapse navbar-collapse"><ul class="nav navbar-nav"><li><a href=/blog/>Home</a></li><li><a href=/blog/post/>Posts</a></li><li><a href=/blog/tags/>Tags</a></li></ul><ul class="nav navbar-nav navbar-right"><li class=navbar-icon><a href=https://github.com/TrungNguyen1909/><i class="fa fa-github"></i></a></li><li class=navbar-icon><a href=https://twitter.com/ntrung03/><i class="fa fa-twitter"></i></a></li></ul></div></div></nav><main><div class=item><h4><a href=/blog/post/misc/KDB/KDB/>Linux Kernel Debugging in VM</a></h4><h5>February 18, 2019</h5><a href=https://trungnguyen1909.github.io/blog/tags/debug><kbd class=item-tag>debug</kbd></a>
-<a href=https://trungnguyen1909.github.io/blog/tags/kernel><kbd class=item-tag>kernel</kbd></a>
-<a href=https://trungnguyen1909.github.io/blog/tags/linux><kbd class=item-tag>linux</kbd></a></div><h4>Translation</h4><ul><li><a href=https://trungnguyen1909.github.io/blog/vi/post/misc/KDB/KDB/>vi</a></li></ul><br><div class=text-justify><h1 id=kernel-debugging-instruction>Kernel Debugging Instruction</h1><h2 id=setup>Setup</h2><p>I used VirtualBox for Kernel Debugging, VMWare shoud be able to do the same thing.</p><p>Enter Machine Settings -&gt; Ports -&gt; Serial -&gt; Enable Serial Port</p><p>Port Number: Any :)))</p><p>Port mode: <code>Host Pipe</code></p><p>Connect to existing : <code>unchecked</code></p><p>Path/Address: <code>/tmp/vbox</code> (placeholder purpose :))</p><p>Boot Linux normally, run as root</p><p><code>$ echo ttyS0,9600 &gt; /sys/module/kgdboc/parameters/kgdboc</code></p><p>if Port Number is COM1, use ttyS0; if it is COM2, use ttyS1&hellip; etc</p><p>Return to the host machine, run</p><p><code>$ socat -d -d /tmp/vbox pty &amp;</code></p><p>Socat will run in the background, output the debugger serial port tty.</p><p>Fetch <code>/boot/vmlinuz</code> , extract with <code>extract-vmlinux</code> (available in the Linux Source Tree)</p><pre><code>gdb vmlinuz
+<!DOCTYPE html>
+<html lang="en-us">
+    <head>
+         
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Linux Kernel Debugging in VM</title>
+        
+        <style>
+
+    html body {
+        font-family: 'Noto Sans', sans-serif;
+        background-color: white;
+    }
+
+    :root {
+        --accent: purple;
+        --border-width:  5px ;
+    }
+
+</style>
+
+
+<link rel="stylesheet" href="https://trungnguyen1909.github.io/blog/css/main.css">
+
+
+
+
+
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Noto%20Sans">
+
+
+ <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/tomorrow-night.min.css"> 
+
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+ 
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/go.min.js"></script>  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/haskell.min.js"></script>  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/kotlin.min.js"></script>  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/scala.min.js"></script>  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/swift.min.js"></script> 
+
+    <script>hljs.initHighlightingOnLoad();</script>
+
+
+
+
+
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+
+<script>$(document).on('click', function() { $('.collapse').collapse('hide'); })</script>
+ <meta name="generator" content="Hugo 0.69.1" />
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-138000293-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+</head>
+
+    
+    
+    <script type="text/javascript" async
+      src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+    </script>
+    
+
+    <body>
+         
+        <nav class="navbar navbar-default navbar-fixed-top">
+
+            <div class="container">
+
+                <div class="navbar-header">
+
+                    <a class="navbar-brand visible-xs" href="#">Linux Kernel Debugging in VM</a>
+
+                    <button class="navbar-toggle" data-target=".navbar-collapse" data-toggle="collapse">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+
+                </div>
+
+                <div class="collapse navbar-collapse">
+
+                    
+                        <ul class="nav navbar-nav">
+                            
+                                <li><a href="/blog/">Home</a></li>
+                            
+                                <li><a href="/blog/post/">Posts</a></li>
+                            
+                                <li><a href="/blog/tags/">Tags</a></li>
+                            
+                        </ul>
+                    
+
+                    
+                        <ul class="nav navbar-nav navbar-right">
+                            
+                                <li class="navbar-icon"><a href="https://github.com/TrungNguyen1909/"><i class="fa fa-github"></i></a></li>
+                            
+                                <li class="navbar-icon"><a href="https://twitter.com/ntrung03/"><i class="fa fa-twitter"></i></a></li>
+                            
+                        </ul>
+                    
+
+                </div>
+
+            </div>
+
+        </nav>
+
+
+<main>
+
+    <div class="item">
+
+    
+    
+    
+
+    
+    
+
+    <h4><a href="/blog/post/misc/KDB/KDB/">Linux Kernel Debugging in VM</a></h4>
+    <h5>February 18, 2019</h5>
+    
+    <a href="https://trungnguyen1909.github.io/blog/tags/debug"><kbd class="item-tag">debug</kbd></a>
+    
+    <a href="https://trungnguyen1909.github.io/blog/tags/kernel"><kbd class="item-tag">kernel</kbd></a>
+    
+    <a href="https://trungnguyen1909.github.io/blog/tags/linux"><kbd class="item-tag">linux</kbd></a>
+    
+
+</div>
+
+    
+    <h4>Translation</h4>
+    <ul>
+        
+        <li>
+            <a href="https://trungnguyen1909.github.io/blog/vi/post/misc/KDB/KDB/" >vi</a>
+        </li>
+        
+    </ul>
+    
+    <br> <div class="text-justify"><h1 id="kernel-debugging-instruction">Kernel Debugging Instruction</h1>
+<h2 id="setup">Setup</h2>
+<p>I used VirtualBox for Kernel Debugging, VMWare shoud be able to do the same thing.</p>
+<p>Enter Machine Settings -&gt; Ports -&gt; Serial -&gt; Enable Serial Port</p>
+<p>Port Number: Any :)))</p>
+<p>Port mode: <code>Host Pipe</code></p>
+<p>Connect to existing : <code>unchecked</code></p>
+<p>Path/Address: <code>/tmp/vbox</code> (placeholder purpose :))</p>
+<p>Boot Linux normally, run as root</p>
+<p><code>$ echo ttyS0,9600 &gt; /sys/module/kgdboc/parameters/kgdboc</code></p>
+<p>if Port Number is COM1, use ttyS0; if it is COM2, use ttyS1&hellip; etc</p>
+<p>Return to the host machine, run</p>
+<p><code>$ socat -d -d /tmp/vbox pty &amp;</code></p>
+<p>Socat will run in the background, output the debugger serial port tty.</p>
+<p>Fetch <code>/boot/vmlinuz</code> , extract with <code>extract-vmlinux</code> (available in the Linux Source Tree)</p>
+<pre><code>gdb vmlinuz
 (gdb) target remote /dev/ttyXXX //The one that socat outputed
-</code></pre><p>Enjoy!</p><h2 id=notes>Notes</h2><ul><li>You can only attach when the kernel panic, the KDB fired up</li></ul><p>P/s: Maybe we can attach from start with boot flag <code>kgdboc ttyS0,9600 kgdbwait</code>?
-But it is irrelevant for the purpose of this document so I won&rsquo;t discuss about it here</p><h2 id=reference>Reference</h2><p>Somewhere in the internet :&lt; Sorry</p></div><h4 class=page-header>File Resources</h4><ul><ul><h4 class=page-header>Related</h4><div class=item><h4><a href=/blog/post/CampCTF/PwningKernelz/>pwning your kernelz</a></h4><h5>September 4, 2019</h5><a href=https://trungnguyen1909.github.io/blog/tags/Camp-CTF><kbd class=item-tag>Camp-CTF</kbd></a>
-<a href=https://trungnguyen1909.github.io/blog/tags/pwn><kbd class=item-tag>pwn</kbd></a>
-<a href=https://trungnguyen1909.github.io/blog/tags/kernel><kbd class=item-tag>kernel</kbd></a>
-<a href=https://trungnguyen1909.github.io/blog/tags/xnu><kbd class=item-tag>xnu</kbd></a>
-<a href=https://trungnguyen1909.github.io/blog/tags/0day><kbd class=item-tag>0day</kbd></a></div><div class=item><h4><a href=/blog/post/FBCTF19-Qual/kpets/>kpets FacebookCTF 2019 Qualification Round</a></h4><h5>June 12, 2019</h5><a href=https://trungnguyen1909.github.io/blog/tags/FBCTF><kbd class=item-tag>FBCTF</kbd></a>
-<a href=https://trungnguyen1909.github.io/blog/tags/CTF><kbd class=item-tag>CTF</kbd></a>
-<a href=https://trungnguyen1909.github.io/blog/tags/pwn><kbd class=item-tag>pwn</kbd></a>
-<a href=https://trungnguyen1909.github.io/blog/tags/kernel><kbd class=item-tag>kernel</kbd></a>
-<a href=https://trungnguyen1909.github.io/blog/tags/linux><kbd class=item-tag>linux</kbd></a>
-<a href=https://trungnguyen1909.github.io/blog/tags/race-condition><kbd class=item-tag>race-condition</kbd></a>
-<a href=https://trungnguyen1909.github.io/blog/tags/double-fetch><kbd class=item-tag>double-fetch</kbd></a></div><div class=item><h4><a href=/blog/post/matesctf/KSMASH/>matesCTF KSMASH</a></h4><h5>February 18, 2019</h5><a href=https://trungnguyen1909.github.io/blog/tags/matesCTF><kbd class=item-tag>matesCTF</kbd></a>
-<a href=https://trungnguyen1909.github.io/blog/tags/CTF><kbd class=item-tag>CTF</kbd></a>
-<a href=https://trungnguyen1909.github.io/blog/tags/pwn><kbd class=item-tag>pwn</kbd></a>
-<a href=https://trungnguyen1909.github.io/blog/tags/kernel><kbd class=item-tag>kernel</kbd></a>
-<a href=https://trungnguyen1909.github.io/blog/tags/linux><kbd class=item-tag>linux</kbd></a></div><h4 class=page-header>Comments</h4><div id=disqus_thread></div><script>(function(){var d=document,s=d.createElement('script');s.src='https://ntrung03-blog.disqus.com/embed.js';s.setAttribute('data-timestamp',+new Date());(d.head||d.body).appendChild(s);})();</script><noscript>Please enable JavaScript to view the <a href=https://disqus.com/?ref_noscript>comments powered by Disqus.</a></noscript></main><footer><p class="copyright text-muted">&copy; All rights reserved. Powered by <a href=https://gohugo.io>Hugo</a> and <a href=https://github.com/calintat/minimal>Minimal</a>. Code licensed under <a href=https://github.com/TrungNguyen1909/blog/blob/master/LICENSE>MIT</a>. Content licensed under <a href=https://creativecommons.org/licenses/by/4.0/>CC BY 4.0</a></p></footer></body></html>
+</code></pre><p>Enjoy!</p>
+<h2 id="notes">Notes</h2>
+<ul>
+<li>You can only attach when the kernel panic, the KDB fired up</li>
+</ul>
+<p>P/s: Maybe we can attach from start with boot flag <code>kgdboc ttyS0,9600 kgdbwait</code>?
+But it is irrelevant for the purpose of this document so I won&rsquo;t discuss about it here</p>
+<h2 id="reference">Reference</h2>
+<p>Somewhere in the internet :&lt; Sorry</p>
+</div>
+    
+    <h4 class="page-header">File Resources</h4>
+    <ul>
+    
+    <ul>
+    
+    
+
+    
+
+        <h4 class="page-header">Related</h4>
+
+         <div class="item">
+
+    
+    
+    
+
+    
+    
+
+    <h4><a href="/blog/post/CampCTF/PwningKernelz/">pwning your kernelz</a></h4>
+    <h5>September 4, 2019</h5>
+    
+    <a href="https://trungnguyen1909.github.io/blog/tags/Camp-CTF"><kbd class="item-tag">Camp-CTF</kbd></a>
+    
+    <a href="https://trungnguyen1909.github.io/blog/tags/pwn"><kbd class="item-tag">pwn</kbd></a>
+    
+    <a href="https://trungnguyen1909.github.io/blog/tags/kernel"><kbd class="item-tag">kernel</kbd></a>
+    
+    <a href="https://trungnguyen1909.github.io/blog/tags/xnu"><kbd class="item-tag">xnu</kbd></a>
+    
+    <a href="https://trungnguyen1909.github.io/blog/tags/0day"><kbd class="item-tag">0day</kbd></a>
+    
+
+</div>
+  <div class="item">
+
+    
+    
+    
+
+    
+    
+
+    <h4><a href="/blog/post/FBCTF19-Qual/kpets/">kpets FacebookCTF 2019 Qualification Round</a></h4>
+    <h5>June 12, 2019</h5>
+    
+    <a href="https://trungnguyen1909.github.io/blog/tags/FBCTF"><kbd class="item-tag">FBCTF</kbd></a>
+    
+    <a href="https://trungnguyen1909.github.io/blog/tags/CTF"><kbd class="item-tag">CTF</kbd></a>
+    
+    <a href="https://trungnguyen1909.github.io/blog/tags/pwn"><kbd class="item-tag">pwn</kbd></a>
+    
+    <a href="https://trungnguyen1909.github.io/blog/tags/kernel"><kbd class="item-tag">kernel</kbd></a>
+    
+    <a href="https://trungnguyen1909.github.io/blog/tags/linux"><kbd class="item-tag">linux</kbd></a>
+    
+    <a href="https://trungnguyen1909.github.io/blog/tags/race-condition"><kbd class="item-tag">race-condition</kbd></a>
+    
+    <a href="https://trungnguyen1909.github.io/blog/tags/double-fetch"><kbd class="item-tag">double-fetch</kbd></a>
+    
+
+</div>
+  <div class="item">
+
+    
+    
+    
+
+    
+    
+
+    <h4><a href="/blog/post/matesctf/KSMASH/">matesCTF KSMASH</a></h4>
+    <h5>February 18, 2019</h5>
+    
+    <a href="https://trungnguyen1909.github.io/blog/tags/matesCTF"><kbd class="item-tag">matesCTF</kbd></a>
+    
+    <a href="https://trungnguyen1909.github.io/blog/tags/CTF"><kbd class="item-tag">CTF</kbd></a>
+    
+    <a href="https://trungnguyen1909.github.io/blog/tags/pwn"><kbd class="item-tag">pwn</kbd></a>
+    
+    <a href="https://trungnguyen1909.github.io/blog/tags/kernel"><kbd class="item-tag">kernel</kbd></a>
+    
+    <a href="https://trungnguyen1909.github.io/blog/tags/linux"><kbd class="item-tag">linux</kbd></a>
+    
+
+</div>
+ 
+
+    
+
+    
+
+        <h4 class="page-header">Comments</h4>
+        <div id="disqus_thread"></div>
+        <script>
+
+        
+
+        
+
+        (function() { 
+        var d = document, s = d.createElement('script');
+        s.src = 'https://ntrung03-blog.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+        })();
+        </script>
+        <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+    
+
+</main>
+
+        <footer>
+
+            <p class="copyright text-muted">© All rights reserved. Powered by <a href="https://gohugo.io">Hugo</a> and <a href="https://github.com/calintat/minimal">Minimal</a>. Code licensed under <a href="https://github.com/TrungNguyen1909/blog/blob/master/LICENSE">MIT</a>. Content licensed under <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a></p>
+
+        </footer>
+       
+    </body>
+
+</html>
+

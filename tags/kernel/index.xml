@@ -1,7 +1,44 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>kernel on Nguyen Hoang Trung</title><link>https://trungnguyen1909.github.io/blog/tags/kernel/</link><description>Recent content in kernel on Nguyen Hoang Trung</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Wed, 04 Sep 2019 23:38:50 +0700</lastBuildDate><atom:link href="https://trungnguyen1909.github.io/blog/tags/kernel/index.xml" rel="self" type="application/rss+xml"/><item><title>pwning your kernelz</title><link>https://trungnguyen1909.github.io/blog/post/CampCTF/PwningKernelz/</link><pubDate>Wed, 04 Sep 2019 23:38:50 +0700</pubDate><guid>https://trungnguyen1909.github.io/blog/post/CampCTF/PwningKernelz/</guid><description>pwning your kernelz Background Hi everyone,
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>kernel on Nguyen Hoang Trung</title>
+    <link>https://trungnguyen1909.github.io/blog/tags/kernel/</link>
+    <description>Recent content in kernel on Nguyen Hoang Trung</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 04 Sep 2019 23:38:50 +0700</lastBuildDate>
+    
+	<atom:link href="https://trungnguyen1909.github.io/blog/tags/kernel/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>pwning your kernelz</title>
+      <link>https://trungnguyen1909.github.io/blog/post/CampCTF/PwningKernelz/</link>
+      <pubDate>Wed, 04 Sep 2019 23:38:50 +0700</pubDate>
+      
+      <guid>https://trungnguyen1909.github.io/blog/post/CampCTF/PwningKernelz/</guid>
+      <description>pwning your kernelz Background Hi everyone,
 This is the writeup for the challenge pwning your kernelz, created by Linus Henze(@LinusHenze), I came across this challenge when Linus tweeted a status update for the CTF.
 Of course, I didn&amp;rsquo;t solve this challenge during the time of the CTF. In fact, no one does.
-So I decided to pick it up and exploit it with the support of Linus after the CTF ends.</description></item><item><title>kpets FacebookCTF 2019 Qualification Round</title><link>https://trungnguyen1909.github.io/blog/post/FBCTF19-Qual/kpets/</link><pubDate>Wed, 12 Jun 2019 23:15:34 +0700</pubDate><guid>https://trungnguyen1909.github.io/blog/post/FBCTF19-Qual/kpets/</guid><description>__ __ ______ ______ ______ ______ /\ \/ / /\ == \ /\ ___\ /\__ _\ /\ ___\ \ \ _&amp;quot;-. \ \ _-/ \ \ __\ \/_/\ \/ \ \___ \ \ \_\ \_\ \ \_\ \ \_____\ \ \_\ \/\_____\ \/_/\/_/ \/_/ \/_____/ \/_/ \/_____/ welcome to Kernel Pets Simulator! We wrote a pet store application that was too slow, so we made a kernel module for it instead.</description></item><item><title>Linux Kernel Debugging in VM</title><link>https://trungnguyen1909.github.io/blog/post/misc/KDB/KDB/</link><pubDate>Mon, 18 Feb 2019 16:48:13 +0700</pubDate><guid>https://trungnguyen1909.github.io/blog/post/misc/KDB/KDB/</guid><description>Kernel Debugging Instruction Setup I used VirtualBox for Kernel Debugging, VMWare shoud be able to do the same thing.
+So I decided to pick it up and exploit it with the support of Linus after the CTF ends.</description>
+    </item>
+    
+    <item>
+      <title>kpets FacebookCTF 2019 Qualification Round</title>
+      <link>https://trungnguyen1909.github.io/blog/post/FBCTF19-Qual/kpets/</link>
+      <pubDate>Wed, 12 Jun 2019 23:15:34 +0700</pubDate>
+      
+      <guid>https://trungnguyen1909.github.io/blog/post/FBCTF19-Qual/kpets/</guid>
+      <description>__ __ ______ ______ ______ ______ /\ \/ / /\ == \ /\ ___\ /\__ _\ /\ ___\ \ \ _&amp;quot;-. \ \ _-/ \ \ __\ \/_/\ \/ \ \___ \ \ \_\ \_\ \ \_\ \ \_____\ \ \_\ \/\_____\ \/_/\/_/ \/_/ \/_____/ \/_/ \/_____/ welcome to Kernel Pets Simulator!  We wrote a pet store application that was too slow, so we made a kernel module for it instead.</description>
+    </item>
+    
+    <item>
+      <title>Linux Kernel Debugging in VM</title>
+      <link>https://trungnguyen1909.github.io/blog/post/misc/KDB/KDB/</link>
+      <pubDate>Mon, 18 Feb 2019 16:48:13 +0700</pubDate>
+      
+      <guid>https://trungnguyen1909.github.io/blog/post/misc/KDB/KDB/</guid>
+      <description>Kernel Debugging Instruction Setup I used VirtualBox for Kernel Debugging, VMWare shoud be able to do the same thing.
 Enter Machine Settings -&amp;gt; Ports -&amp;gt; Serial -&amp;gt; Enable Serial Port
 Port Number: Any :)))
 Port mode: Host Pipe
@@ -9,6 +46,20 @@ Connect to existing : unchecked
 Path/Address: /tmp/vbox (placeholder purpose :))
 Boot Linux normally, run as root
 $ echo ttyS0,9600 &amp;gt; /sys/module/kgdboc/parameters/kgdboc
-if Port Number is COM1, use ttyS0; if it is COM2, use ttyS1&amp;hellip; etc</description></item><item><title>matesCTF KSMASH</title><link>https://trungnguyen1909.github.io/blog/post/matesctf/KSMASH/</link><pubDate>Mon, 18 Feb 2019 16:48:13 +0700</pubDate><guid>https://trungnguyen1909.github.io/blog/post/matesctf/KSMASH/</guid><description>KSMASH - Kernel Stack Smashing Background This is a Linux Kernel Module(LKM) exploitation challenge by nyaacate@gmail.com host in Round 3 MatesCTF 2018-2019
+if Port Number is COM1, use ttyS0; if it is COM2, use ttyS1&amp;hellip; etc</description>
+    </item>
+    
+    <item>
+      <title>matesCTF KSMASH</title>
+      <link>https://trungnguyen1909.github.io/blog/post/matesctf/KSMASH/</link>
+      <pubDate>Mon, 18 Feb 2019 16:48:13 +0700</pubDate>
+      
+      <guid>https://trungnguyen1909.github.io/blog/post/matesctf/KSMASH/</guid>
+      <description>KSMASH - Kernel Stack Smashing Background This is a Linux Kernel Module(LKM) exploitation challenge by nyaacate@gmail.com host in Round 3 MatesCTF 2018-2019
 I solved this challenge overtime :&amp;lt; But It seems that no team solved this so I still sent the exploit to the challenge author for testing and also wrote this writeup.
-Challenge Description A kernel module is running, escape from non-root user to r00t to read /root/flag</description></item></channel></rss>
+Challenge Description A kernel module is running, escape from non-root user to r00t to read /root/flag
+Reversing Kernel module is named kmod, You can find the module using this command</description>
+    </item>
+    
+  </channel>
+</rss>

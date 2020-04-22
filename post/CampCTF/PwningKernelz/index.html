@@ -1,23 +1,246 @@
-<!doctype html><html lang=en-us><head><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1"><title>pwning your kernelz</title><style>html body{font-family:noto sans,sans-serif;background-color:#fff}:root{--accent: purple;--border-width:  5px }</style><link rel=stylesheet href=https://trungnguyen1909.github.io/blog/css/main.css><link rel=stylesheet href="https://fonts.googleapis.com/css?family=Noto%20Sans"><link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/tomorrow-night.min.css><link rel=stylesheet href=https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css integrity=sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u crossorigin=anonymous><link rel=stylesheet href=https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css integrity=sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN crossorigin=anonymous><script src=https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js></script><script src=https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/go.min.js></script><script src=https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/haskell.min.js></script><script src=https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/kotlin.min.js></script><script src=https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/scala.min.js></script><script src=https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/swift.min.js></script><script>hljs.initHighlightingOnLoad();</script><script src=https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js></script><script src=https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js integrity=sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa crossorigin=anonymous></script><script>$(document).on('click',function(){$('.collapse').collapse('hide');})</script><meta name=generator content="Hugo 0.58.3"><script type=application/javascript>var doNotTrack=false;if(!doNotTrack){window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;ga('create','UA-138000293-1','auto');ga('send','pageview');}</script><script async src=https://www.google-analytics.com/analytics.js></script></head><script type=text/javascript async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script><body><nav class="navbar navbar-default navbar-fixed-top"><div class=container><div class=navbar-header><a class="navbar-brand visible-xs" href=#>pwning your kernelz</a>
-<button class=navbar-toggle data-target=.navbar-collapse data-toggle=collapse>
-<span class=icon-bar></span><span class=icon-bar></span><span class=icon-bar></span></button></div><div class="collapse navbar-collapse"><ul class="nav navbar-nav"><li><a href=/blog/>Home</a></li><li><a href=/blog/post/>Posts</a></li><li><a href=/blog/tags/>Tags</a></li></ul><ul class="nav navbar-nav navbar-right"><li class=navbar-icon><a href=https://github.com/TrungNguyen1909/><i class="fa fa-github"></i></a></li><li class=navbar-icon><a href=https://twitter.com/ntrung03/><i class="fa fa-twitter"></i></a></li></ul></div></div></nav><main><div class=item><h4><a href=/blog/post/CampCTF/PwningKernelz/>pwning your kernelz</a></h4><h5>September 4, 2019</h5><a href=https://trungnguyen1909.github.io/blog/tags/Camp-CTF><kbd class=item-tag>Camp-CTF</kbd></a>
-<a href=https://trungnguyen1909.github.io/blog/tags/pwn><kbd class=item-tag>pwn</kbd></a>
-<a href=https://trungnguyen1909.github.io/blog/tags/kernel><kbd class=item-tag>kernel</kbd></a>
-<a href=https://trungnguyen1909.github.io/blog/tags/xnu><kbd class=item-tag>xnu</kbd></a>
-<a href=https://trungnguyen1909.github.io/blog/tags/0day><kbd class=item-tag>0day</kbd></a></div><br><div class=text-justify><h1 id=pwning-your-kernelz>pwning your kernelz</h1><h2 id=background>Background</h2><p>Hi everyone,</p><p>This is the writeup for the challenge <em>pwning your kernelz</em>, created by Linus Henze(@LinusHenze),
-I came across this challenge when Linus tweeted a status update for the CTF.</p><p>Of course, I didn&rsquo;t solve this challenge during the time of the CTF. In fact, no one does.</p><p>So I decided to pick it up and exploit it with the support of Linus after the CTF ends.</p><p><strong>Update</strong>: the bug has been assigned as <a href=https://support.apple.com/en-vn/HT210634>CVE-2019-8781</a> by Apple and fixed in the macOS Catalina 10.15 release.</p><h2 id=challenge-description>Challenge description</h2><p><a href=https://camp.allesctf.net/tasks/pwning%20your%20kernelz>Original description</a></p><p>The challenge required us to perform a Local Privilege Escalation to r00t user to get the flag.</p><p>SMEP is on,</p><p>SMAP is off,</p><p>kASLR slide is provided,</p><p>and the kernel is the <em>latest</em> development macOS kernel from Apple&rsquo;s KDK.</p><p>Actually, at the time of the CTF,
-Apple messed up and unpatched the 121 day (CVE-2019-8605) and you can just port the iOS exploit code to macOS and here we go.</p><p>But I didn&rsquo;t think of that during the time of the CTF, also I was pretty busy at that time so I didn&rsquo;t think about it.</p><p>But later, I decided to pick up the intended bug.</p><h2 id=poc>POC</h2><p>So the author provided us the following POC:</p><pre><code class=language-c>x86_saved_state32_t state;
-memset(&amp;state, 0xFF, sizeof(x86_saved_state32_t));
-thread_set_state(mach_thread_self(), x86_SAVED_STATE32, (thread_state_t) &amp;state, x86_SAVED_STATE32_COUNT);
-while (1) {}
-</code></pre><p>You will need to compile it to a 32bit program <code>-m32</code> to make it works.</p><p>The POC is such a simple one that it immediately hang the whole machine.</p><h2 id=debugging>Debugging</h2><p>I wasted a lot of time to setup the VM and trying to debug with Apple&rsquo;s kdp, but with this bug, triage it with kdp is hard.</p><p>The machine just hang because it&rsquo;s constantly doublefault.</p><p>Later, when I knew about the VMWare&rsquo;s gdb debugging stub, it actually makes my life much easier</p><p><a href=http://ddeville.me/2015/08/using-the-vmware-fusion-gdb-stub-for-kernel-debugging-with-lldb>Check it out here</a></p><h2 id=triaging-the-bug>Triaging the bug</h2><p>The challenge mentioned about the need of 32bit apps, so we knows that the bug is somewhere in the <code>/osfmk/kern/i386/</code></p><p>The cross-arch code starts to differ from the <code>machine_thread_set_state</code> call.</p><p>So I found 2 snippets of code that share the same purpose but have different logic.</p><p>Inside the switch <code>flavor</code> case of the x86 version of <code>machine_thread_set_state</code>, you can find 2 different version</p><p>If the flavor is <code>x86_SAVED_STATE32</code>, the machine just hang.</p><p>If the flavor is <code>x86_THREAD_STATE32</code>, it does not cause any problem.</p><p>But they are supposed to have the similar behavior, so lets <code>diff</code> them out.</p><p>Although going through the same amount of checks, the second version forced the segment registers to be a value that&rsquo;s constantly defined</p><p>In the buggy one, we can see that it allows a wider range of segment registers&rsquo; value, which could be malicious.</p><p>So, the bug is that we can set the segment registers&rsquo; values to any malicious values.</p><p>This is similar to the <em>BadIRET</em> bug</p><h2 id=consequences>Consequences</h2><p>Attaching the debugger, tracing down through the <code>iretq</code> instruction, it failed to return due to invalid segment registers and jump to the fault handler,</p><p>Following the execution, we can observe that the fault handler does <em>MISS</em> a <code>swapgs</code> instruction.</p><p>So why does this is troublesome?</p><p>The <code>swapgs</code> instruction changes the current GS base of the running code from kernelspace to userspace and vice versa.</p><p>Some data are accessed relatively through the GS register so we control some of the kernel&rsquo;s data.</p><p>In case you don&rsquo;t know what the segment registers are, they are just the index of some entries in the GDT (Global Descriptor Table).</p><p>Each entries contains meaningful data, one of them are the base address. And we can access data relatively from that base address through the registers</p><h2 id=exploit>Exploit</h2><p>Following the buggy path, we can see that it repeatedly jump to the fault handler and always fault at the same instruction</p><pre><code class=language-asm>	cmp dword ptr gs:0x174, 0
-</code></pre><p>in the <code>ks_dispatch_kernel</code> function.</p><p>It fault because it accesses data through the GS base, which is currently pointing to the user&rsquo;s GS base and access to the unmapped memory.</p><p>The reason is that it&rsquo;s using the userspace&rsquo;s GS base has the base address at 0x0.</p><p>To get over, we need to remove the <code>_PAGEZERO</code> segment by a linker switch, and allocate memory there with <code>vm_allocate</code> call.</p><p>Continuing with our zero-filled memory we just allocated, the kernel panic in <code>kernel_trap</code> with the error type is 13 (general protection (#GP))</p><p>According to the Intel&rsquo;s SDM, <code>iretq</code> with invalid segment registers can cause a #GP fault</p><p>So how can we get over that that?</p><p>A piece of code that we did not consider yet is the specific handler for #GP fault:</p><pre><code class=language-c>if (thread != THREAD_NULL &amp;&amp; thread-&gt;recover) {
-			set_recovery_ip(saved_state, thread-&gt;recover);
-			thread-&gt;recover = 0;
-			return;
+<!DOCTYPE html>
+<html lang="en-us">
+    <head>
+         
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>pwning your kernelz</title>
+        
+        <style>
+
+    html body {
+        font-family: 'Noto Sans', sans-serif;
+        background-color: white;
+    }
+
+    :root {
+        --accent: purple;
+        --border-width:  5px ;
+    }
+
+</style>
+
+
+<link rel="stylesheet" href="https://trungnguyen1909.github.io/blog/css/main.css">
+
+
+
+
+
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Noto%20Sans">
+
+
+ <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/tomorrow-night.min.css"> 
+
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+ 
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/go.min.js"></script>  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/haskell.min.js"></script>  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/kotlin.min.js"></script>  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/scala.min.js"></script>  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/swift.min.js"></script> 
+
+    <script>hljs.initHighlightingOnLoad();</script>
+
+
+
+
+
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+
+<script>$(document).on('click', function() { $('.collapse').collapse('hide'); })</script>
+ <meta name="generator" content="Hugo 0.69.1" />
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-138000293-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+</head>
+
+    
+    
+    <script type="text/javascript" async
+      src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+    </script>
+    
+
+    <body>
+         
+        <nav class="navbar navbar-default navbar-fixed-top">
+
+            <div class="container">
+
+                <div class="navbar-header">
+
+                    <a class="navbar-brand visible-xs" href="#">pwning your kernelz</a>
+
+                    <button class="navbar-toggle" data-target=".navbar-collapse" data-toggle="collapse">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+
+                </div>
+
+                <div class="collapse navbar-collapse">
+
+                    
+                        <ul class="nav navbar-nav">
+                            
+                                <li><a href="/blog/">Home</a></li>
+                            
+                                <li><a href="/blog/post/">Posts</a></li>
+                            
+                                <li><a href="/blog/tags/">Tags</a></li>
+                            
+                        </ul>
+                    
+
+                    
+                        <ul class="nav navbar-nav navbar-right">
+                            
+                                <li class="navbar-icon"><a href="https://github.com/TrungNguyen1909/"><i class="fa fa-github"></i></a></li>
+                            
+                                <li class="navbar-icon"><a href="https://twitter.com/ntrung03/"><i class="fa fa-twitter"></i></a></li>
+                            
+                        </ul>
+                    
+
+                </div>
+
+            </div>
+
+        </nav>
+
+
+<main>
+
+    <div class="item">
+
+    
+    
+    
+
+    
+    
+
+    <h4><a href="/blog/post/CampCTF/PwningKernelz/">pwning your kernelz</a></h4>
+    <h5>September 4, 2019</h5>
+    
+    <a href="https://trungnguyen1909.github.io/blog/tags/Camp-CTF"><kbd class="item-tag">Camp-CTF</kbd></a>
+    
+    <a href="https://trungnguyen1909.github.io/blog/tags/pwn"><kbd class="item-tag">pwn</kbd></a>
+    
+    <a href="https://trungnguyen1909.github.io/blog/tags/kernel"><kbd class="item-tag">kernel</kbd></a>
+    
+    <a href="https://trungnguyen1909.github.io/blog/tags/xnu"><kbd class="item-tag">xnu</kbd></a>
+    
+    <a href="https://trungnguyen1909.github.io/blog/tags/0day"><kbd class="item-tag">0day</kbd></a>
+    
+
+</div>
+
+    
+    <br> <div class="text-justify"><h1 id="pwning-your-kernelz">pwning your kernelz</h1>
+<h2 id="background">Background</h2>
+<p>Hi everyone,</p>
+<p>This is the writeup for the challenge <em>pwning your kernelz</em>, created by Linus Henze(@LinusHenze),
+I came across this challenge when Linus tweeted a status update for the CTF.</p>
+<p>Of course, I didn&rsquo;t solve this challenge during the time of the CTF. In fact, no one does.</p>
+<p>So I decided to pick it up and exploit it with the support of Linus after the CTF ends.</p>
+<p><strong>Update</strong>: the bug has been assigned as <a href="https://support.apple.com/en-vn/HT210634">CVE-2019-8781</a> by Apple and fixed in the macOS Catalina 10.15 release.</p>
+<h2 id="challenge-description">Challenge description</h2>
+<p><a href="https://camp.allesctf.net/tasks/pwning%20your%20kernelz">Original description</a></p>
+<p>The challenge required us to perform a Local Privilege Escalation to r00t user to get the flag.</p>
+<p>SMEP is on,</p>
+<p>SMAP is off,</p>
+<p>kASLR slide is provided,</p>
+<p>and the kernel is the <em>latest</em> development macOS kernel from Apple&rsquo;s KDK.</p>
+<p>Actually, at the time of the CTF,
+Apple messed up and unpatched the 121 day (CVE-2019-8605) and you can just port the iOS exploit code to macOS and here we go.</p>
+<p>But I didn&rsquo;t think of that during the time of the CTF, also I was pretty busy at that time so I didn&rsquo;t think about it.</p>
+<p>But later, I decided to pick up the intended bug.</p>
+<h2 id="poc">POC</h2>
+<p>So the author provided us the following POC:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c" data-lang="c">x86_saved_state32_t state;
+memset(<span style="color:#f92672">&amp;</span>state, <span style="color:#ae81ff">0xFF</span>, <span style="color:#66d9ef">sizeof</span>(x86_saved_state32_t));
+thread_set_state(mach_thread_self(), x86_SAVED_STATE32, (thread_state_t) <span style="color:#f92672">&amp;</span>state, x86_SAVED_STATE32_COUNT);
+<span style="color:#66d9ef">while</span> (<span style="color:#ae81ff">1</span>) {}
+</code></pre></div><p>You will need to compile it to a 32bit program <code>-m32</code> to make it works.</p>
+<p>The POC is such a simple one that it immediately hang the whole machine.</p>
+<h2 id="debugging">Debugging</h2>
+<p>I wasted a lot of time to setup the VM and trying to debug with Apple&rsquo;s kdp, but with this bug, triage it with kdp is hard.</p>
+<p>The machine just hang because it&rsquo;s constantly doublefault.</p>
+<p>Later, when I knew about the VMWare&rsquo;s gdb debugging stub, it actually makes my life much easier</p>
+<p><a href="http://ddeville.me/2015/08/using-the-vmware-fusion-gdb-stub-for-kernel-debugging-with-lldb">Check it out here</a></p>
+<h2 id="triaging-the-bug">Triaging the bug</h2>
+<p>The challenge mentioned about the need of 32bit apps, so we knows that the bug is somewhere in the <code>/osfmk/kern/i386/</code></p>
+<p>The cross-arch code starts to differ from the <code>machine_thread_set_state</code> call.</p>
+<p>So I found 2 snippets of code that share the same purpose but have different logic.</p>
+<p>Inside the switch <code>flavor</code> case of the x86 version of <code>machine_thread_set_state</code>, you can find 2 different version</p>
+<p>If the flavor is <code>x86_SAVED_STATE32</code>, the machine just hang.</p>
+<p>If the flavor is <code>x86_THREAD_STATE32</code>, it does not cause any problem.</p>
+<p>But they are supposed to have the similar behavior, so lets <code>diff</code> them out.</p>
+<p>Although going through the same amount of checks, the second version forced the segment registers to be a value that&rsquo;s constantly defined</p>
+<p>In the buggy one, we can see that it allows a wider range of segment registers&rsquo; value, which could be malicious.</p>
+<p>So, the bug is that we can set the segment registers&rsquo; values to any malicious values.</p>
+<p>This is similar to the <em>BadIRET</em> bug</p>
+<h2 id="consequences">Consequences</h2>
+<p>Attaching the debugger, tracing down through the <code>iretq</code> instruction, it failed to return due to invalid segment registers and jump to the fault handler,</p>
+<p>Following the execution, we can observe that the fault handler does <em>MISS</em> a <code>swapgs</code> instruction.</p>
+<p>So why does this is troublesome?</p>
+<p>The <code>swapgs</code> instruction changes the current GS base of the running code from kernelspace to userspace and vice versa.</p>
+<p>Some data are accessed relatively through the GS register so we control some of the kernel&rsquo;s data.</p>
+<p>In case you don&rsquo;t know what the segment registers are, they are just the index of some entries in the GDT (Global Descriptor Table).</p>
+<p>Each entries contains meaningful data, one of them are the base address. And we can access data relatively from that base address through the registers</p>
+<h2 id="exploit">Exploit</h2>
+<p>Following the buggy path, we can see that it repeatedly jump to the fault handler and always fault at the same instruction</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-asm" data-lang="asm">	<span style="color:#a6e22e">cmp</span> <span style="color:#66d9ef">dword</span> <span style="color:#66d9ef">ptr</span> <span style="color:#66d9ef">gs</span>:<span style="color:#ae81ff">0x174</span>, <span style="color:#ae81ff">0</span>
+</code></pre></div><p>in the <code>ks_dispatch_kernel</code> function.</p>
+<p>It fault because it accesses data through the GS base, which is currently pointing to the user&rsquo;s GS base and access to the unmapped memory.</p>
+<p>The reason is that it&rsquo;s using the userspace&rsquo;s GS base has the base address at 0x0.</p>
+<p>To get over, we need to remove the <code>_PAGEZERO</code> segment by a linker switch, and allocate memory there with <code>vm_allocate</code> call.</p>
+<p>Continuing with our zero-filled memory we just allocated, the kernel panic in <code>kernel_trap</code> with the error type is 13 (general protection (#GP))</p>
+<p>According to the Intel&rsquo;s SDM, <code>iretq</code> with invalid segment registers can cause a #GP fault</p>
+<p>So how can we get over that that?</p>
+<p>A piece of code that we did not consider yet is the specific handler for #GP fault:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c" data-lang="c"><span style="color:#66d9ef">if</span> (<span style="color:#66d9ef">thread</span> <span style="color:#f92672">!=</span> THREAD_NULL <span style="color:#f92672">&amp;&amp;</span> <span style="color:#66d9ef">thread</span><span style="color:#f92672">-&gt;</span>recover) {
+			set_recovery_ip(saved_state, <span style="color:#66d9ef">thread</span><span style="color:#f92672">-&gt;</span>recover);
+			<span style="color:#66d9ef">thread</span><span style="color:#f92672">-&gt;</span>recover <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>;
+			<span style="color:#66d9ef">return</span>;
 		}
-</code></pre><p>This might seems rather unintersting,</p><p>but if you disassemble it and resolve the macro,</p><p>we can see that we controlled the <code>thread-&gt;recover</code> value because it&rsquo;s accessed that through the GS base, which we controlled.</p><p>The <code>set_recovery_ip</code> set the location of the handler code in the next time the fault is occured, then we are dismissed from the fault handler.</p><p>So, by the next time we <code>iretq</code> fails, we have control over the kernel&rsquo;s RIP.</p><p>Next, I observed that we have some registers that we control over the <code>thread_set_state</code> call. One of them is the $RBP register.</p><p>So, I find a <code>leave; ret;</code> gadget (which should be plenty in the kernel code base) to pivot the kernel&rsquo;s stack to a userspace address.</p><p>There, we set up our ROP chain to escalate ourselves.</p><p>You can find the typical privilege escalation ROP chain <a href=https://bazad.github.io/2016/05/mac-os-x-use-after-free/#elevating-privileges>here</a></p><p>But there&rsquo;s still something to note.</p><p>First, we need to bear in mind that the GS base is still in the userspace upon the start of the ROP chain,
-which causes some fault in the <code>current_proc</code> function as it used the GS base, so we need to fix that.</p><p>Second, <code>thread_exception_return</code> will <em>NOT</em> work as the <code>saved_state</code> is invalid and messed up.</p><p>Because there aren&rsquo;t any <code>swapgs</code> gadgets, we need to make ourselves at the userspace and return there.</p><p>Before we can do that, we need to ROP to turn off SMEP by unset the 20th(0-indexed) bit of the $cr4 register.</p><p>To return to the userspace, we need to set up ourselves the <code>iretq</code> stack, which looks like this</p><pre><code>
+</code></pre></div><p>This might seems rather unintersting,</p>
+<p>but if you disassemble it and resolve the macro,</p>
+<p>we can see that we controlled the <code>thread-&gt;recover</code> value because it&rsquo;s accessed that through the GS base, which we controlled.</p>
+<p>The <code>set_recovery_ip</code> set the location of the handler code in the next time the fault is occured, then we are dismissed from the fault handler.</p>
+<p>So, by the next time we <code>iretq</code> fails, we have control over the kernel&rsquo;s RIP.</p>
+<p>Next, I observed that we have some registers that we control over the <code>thread_set_state</code> call. One of them is the $RBP register.</p>
+<p>So, I find a <code>leave; ret;</code> gadget (which should be plenty in the kernel code base) to pivot the kernel&rsquo;s stack to a userspace address.</p>
+<p>There, we set up our ROP chain to escalate ourselves.</p>
+<p>You can find the typical privilege escalation ROP chain <a href="https://bazad.github.io/2016/05/mac-os-x-use-after-free/#elevating-privileges">here</a></p>
+<p>But there&rsquo;s still something to note.</p>
+<p>First, we need to bear in mind that the GS base is still in the userspace upon the start of the ROP chain,
+which causes some fault in the <code>current_proc</code> function as it used the GS base, so we need to fix that.</p>
+<p>Second, <code>thread_exception_return</code> will <em>NOT</em> work as the <code>saved_state</code> is invalid and messed up.</p>
+<p>Because there aren&rsquo;t any <code>swapgs</code> gadgets, we need to make ourselves at the userspace and return there.</p>
+<p>Before we can do that, we need to ROP to turn off SMEP by unset the 20th(0-indexed) bit of the $cr4 register.</p>
+<p>To return to the userspace, we need to set up ourselves the <code>iretq</code> stack, which looks like this</p>
+<pre><code>
 	|--------------------------|
 	|       Low mem addr       |  ^
 	|--------------------------|  |
@@ -34,20 +257,166 @@ which causes some fault in the <code>current_proc</code> function as it used the
 	|      High mem addr       |  |
 	|--------------------------|  |
 
-</code></pre><p>then <code>swapgs</code> and <code>iretq</code> should do the trick.</p><p>Upon coming back, I encountered the <code>misaligned_stack_error_</code> when going through the dyld stub.</p><p>I workaround this by catching that SIGSEGV error: <code>signal(SIGSEGV,aftermath);</code></p><h2 id=ending-words>Ending words</h2><p>During exploitation of this bug, I stuck lots of time and need to be pointed out.</p><p>I found lots of flaws in my reverse engineering and code reading skills and missed some of important points.</p><p>But at least, I make time for myself to reading through the kernel code.</p><p>Also, this&rsquo;s the first time I exploit a kernel 0 day that hasn&rsquo;t been disclosed and exploited publicly yet.</p><p>I enjoy this challenge.</p><h2 id=shoutouts>Shoutouts</h2><ul><li><p>Apple for the 0day.</p></li><li><p>Linus Henze(@LinusHenze). He created a challenge in which I learnt a lot.
-Also, he helped me a lot in exploitation by pointing out the points that I have missed. Thank you very much.</p></li></ul></div><h4 class=page-header>File Resources</h4><ul><li><a href=https://trungnguyen1909.github.io/blog/post/CampCTF/PwningKernelz/Makefile>Makefile</a></li><li><a href=https://trungnguyen1909.github.io/blog/post/CampCTF/PwningKernelz/asm.S>asm.S</a></li><li><a href=https://trungnguyen1909.github.io/blog/post/CampCTF/PwningKernelz/definitions.h>definitions.h</a></li><li><a href=https://trungnguyen1909.github.io/blog/post/CampCTF/PwningKernelz/main.c>main.c</a></li><ul><h4 class=page-header>Related</h4><div class=item><h4><a href=/blog/post/FBCTF19-Qual/kpets/>kpets FacebookCTF 2019 Qualification Round</a></h4><h5>June 12, 2019</h5><a href=https://trungnguyen1909.github.io/blog/tags/FBCTF><kbd class=item-tag>FBCTF</kbd></a>
-<a href=https://trungnguyen1909.github.io/blog/tags/CTF><kbd class=item-tag>CTF</kbd></a>
-<a href=https://trungnguyen1909.github.io/blog/tags/pwn><kbd class=item-tag>pwn</kbd></a>
-<a href=https://trungnguyen1909.github.io/blog/tags/kernel><kbd class=item-tag>kernel</kbd></a>
-<a href=https://trungnguyen1909.github.io/blog/tags/linux><kbd class=item-tag>linux</kbd></a>
-<a href=https://trungnguyen1909.github.io/blog/tags/race-condition><kbd class=item-tag>race-condition</kbd></a>
-<a href=https://trungnguyen1909.github.io/blog/tags/double-fetch><kbd class=item-tag>double-fetch</kbd></a></div><div class=item><h4><a href=/blog/post/DEFCON26-Qual/iPwnKit/>IPwnKit DEFCON CTF 26 Qualification Round</a></h4><h5>April 21, 2019</h5><a href=https://trungnguyen1909.github.io/blog/tags/DEFCON-CTF><kbd class=item-tag>DEFCON-CTF</kbd></a>
-<a href=https://trungnguyen1909.github.io/blog/tags/CTF><kbd class=item-tag>CTF</kbd></a>
-<a href=https://trungnguyen1909.github.io/blog/tags/pwn><kbd class=item-tag>pwn</kbd></a>
-<a href=https://trungnguyen1909.github.io/blog/tags/xnu><kbd class=item-tag>xnu</kbd></a>
-<a href=https://trungnguyen1909.github.io/blog/tags/IOKit><kbd class=item-tag>IOKit</kbd></a>
-<a href=https://trungnguyen1909.github.io/blog/tags/race-condition><kbd class=item-tag>race-condition</kbd></a>
-<a href=https://trungnguyen1909.github.io/blog/tags/double-fetch><kbd class=item-tag>double-fetch</kbd></a></div><div class=item><h4><a href=/blog/post/AceBear2019/house_of_loop/>AceBear Security Contest House-of-loop</a></h4><h5>April 8, 2019</h5><a href=https://trungnguyen1909.github.io/blog/tags/AceBear><kbd class=item-tag>AceBear</kbd></a>
-<a href=https://trungnguyen1909.github.io/blog/tags/CTF><kbd class=item-tag>CTF</kbd></a>
-<a href=https://trungnguyen1909.github.io/blog/tags/pwn><kbd class=item-tag>pwn</kbd></a>
-<a href=https://trungnguyen1909.github.io/blog/tags/heap><kbd class=item-tag>heap</kbd></a></div><h4 class=page-header>Comments</h4><div id=disqus_thread></div><script>(function(){var d=document,s=d.createElement('script');s.src='https://ntrung03-blog.disqus.com/embed.js';s.setAttribute('data-timestamp',+new Date());(d.head||d.body).appendChild(s);})();</script><noscript>Please enable JavaScript to view the <a href=https://disqus.com/?ref_noscript>comments powered by Disqus.</a></noscript></main><footer><p class="copyright text-muted">&copy; All rights reserved. Powered by <a href=https://gohugo.io>Hugo</a> and <a href=https://github.com/calintat/minimal>Minimal</a>. Code licensed under <a href=https://github.com/TrungNguyen1909/blog/blob/master/LICENSE>MIT</a>. Content licensed under <a href=https://creativecommons.org/licenses/by/4.0/>CC BY 4.0</a></p></footer></body></html>
+</code></pre><p>then <code>swapgs</code> and <code>iretq</code> should do the trick.</p>
+<p>Upon coming back, I encountered the <code>misaligned_stack_error_</code> when going through the dyld stub.</p>
+<p>I workaround this by catching that SIGSEGV error: <code>signal(SIGSEGV,aftermath);</code></p>
+<h2 id="ending-words">Ending words</h2>
+<p>During exploitation of this bug, I stuck lots of time and need to be pointed out.</p>
+<p>I found lots of flaws in my reverse engineering and code reading skills and missed some of important points.</p>
+<p>But at least, I make time for myself to reading through the kernel code.</p>
+<p>Also, this&rsquo;s the first time I exploit a kernel 0 day that hasn&rsquo;t been disclosed and exploited publicly yet.</p>
+<p>I enjoy this challenge.</p>
+<h2 id="shoutouts">Shoutouts</h2>
+<ul>
+<li>
+<p>Apple for the 0day.</p>
+</li>
+<li>
+<p>Linus Henze(@LinusHenze). He created a challenge in which I learnt a lot.
+Also, he helped me a lot in exploitation by pointing out the points that I have missed. Thank you very much.</p>
+</li>
+</ul>
+</div>
+    
+    <h4 class="page-header">File Resources</h4>
+    <ul>
+    
+    <li><a href="https://trungnguyen1909.github.io/blog/post/CampCTF/PwningKernelz/Makefile"> Makefile </a> </li>
+    
+    <li><a href="https://trungnguyen1909.github.io/blog/post/CampCTF/PwningKernelz/asm.S"> asm.S </a> </li>
+    
+    <li><a href="https://trungnguyen1909.github.io/blog/post/CampCTF/PwningKernelz/definitions.h"> definitions.h </a> </li>
+    
+    <li><a href="https://trungnguyen1909.github.io/blog/post/CampCTF/PwningKernelz/main.c"> main.c </a> </li>
+    
+    <ul>
+    
+    
+
+    
+
+        <h4 class="page-header">Related</h4>
+
+         <div class="item">
+
+    
+    
+    
+
+    
+    
+
+    <h4><a href="/blog/post/PlaidCTF2020/">PlaidCTF2020 PlaidStore mojo chromium</a></h4>
+    <h5>April 22, 2020</h5>
+    
+    <a href="https://trungnguyen1909.github.io/blog/tags/PlaidCTF2020"><kbd class="item-tag">PlaidCTF2020</kbd></a>
+    
+    <a href="https://trungnguyen1909.github.io/blog/tags/CTF"><kbd class="item-tag">CTF</kbd></a>
+    
+    <a href="https://trungnguyen1909.github.io/blog/tags/pwn"><kbd class="item-tag">pwn</kbd></a>
+    
+    <a href="https://trungnguyen1909.github.io/blog/tags/chromium"><kbd class="item-tag">chromium</kbd></a>
+    
+    <a href="https://trungnguyen1909.github.io/blog/tags/browser"><kbd class="item-tag">browser</kbd></a>
+    
+    <a href="https://trungnguyen1909.github.io/blog/tags/mojo"><kbd class="item-tag">mojo</kbd></a>
+    
+    <a href="https://trungnguyen1909.github.io/blog/tags/use-after-free"><kbd class="item-tag">use-after-free</kbd></a>
+    
+    <a href="https://trungnguyen1909.github.io/blog/tags/UAF"><kbd class="item-tag">UAF</kbd></a>
+    
+
+</div>
+  <div class="item">
+
+    
+    
+    
+
+    
+    
+
+    <h4><a href="/blog/post/FBCTF19-Qual/kpets/">kpets FacebookCTF 2019 Qualification Round</a></h4>
+    <h5>June 12, 2019</h5>
+    
+    <a href="https://trungnguyen1909.github.io/blog/tags/FBCTF"><kbd class="item-tag">FBCTF</kbd></a>
+    
+    <a href="https://trungnguyen1909.github.io/blog/tags/CTF"><kbd class="item-tag">CTF</kbd></a>
+    
+    <a href="https://trungnguyen1909.github.io/blog/tags/pwn"><kbd class="item-tag">pwn</kbd></a>
+    
+    <a href="https://trungnguyen1909.github.io/blog/tags/kernel"><kbd class="item-tag">kernel</kbd></a>
+    
+    <a href="https://trungnguyen1909.github.io/blog/tags/linux"><kbd class="item-tag">linux</kbd></a>
+    
+    <a href="https://trungnguyen1909.github.io/blog/tags/race-condition"><kbd class="item-tag">race-condition</kbd></a>
+    
+    <a href="https://trungnguyen1909.github.io/blog/tags/double-fetch"><kbd class="item-tag">double-fetch</kbd></a>
+    
+
+</div>
+  <div class="item">
+
+    
+    
+    
+
+    
+    
+
+    <h4><a href="/blog/post/DEFCON26-Qual/iPwnKit/">IPwnKit DEFCON CTF 26 Qualification Round</a></h4>
+    <h5>April 21, 2019</h5>
+    
+    <a href="https://trungnguyen1909.github.io/blog/tags/DEFCON-CTF"><kbd class="item-tag">DEFCON-CTF</kbd></a>
+    
+    <a href="https://trungnguyen1909.github.io/blog/tags/CTF"><kbd class="item-tag">CTF</kbd></a>
+    
+    <a href="https://trungnguyen1909.github.io/blog/tags/pwn"><kbd class="item-tag">pwn</kbd></a>
+    
+    <a href="https://trungnguyen1909.github.io/blog/tags/xnu"><kbd class="item-tag">xnu</kbd></a>
+    
+    <a href="https://trungnguyen1909.github.io/blog/tags/IOKit"><kbd class="item-tag">IOKit</kbd></a>
+    
+    <a href="https://trungnguyen1909.github.io/blog/tags/race-condition"><kbd class="item-tag">race-condition</kbd></a>
+    
+    <a href="https://trungnguyen1909.github.io/blog/tags/double-fetch"><kbd class="item-tag">double-fetch</kbd></a>
+    
+
+</div>
+ 
+
+    
+
+    
+
+        <h4 class="page-header">Comments</h4>
+        <div id="disqus_thread"></div>
+        <script>
+
+        
+
+        
+
+        (function() { 
+        var d = document, s = d.createElement('script');
+        s.src = 'https://ntrung03-blog.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+        })();
+        </script>
+        <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+    
+
+</main>
+
+        <footer>
+
+            <p class="copyright text-muted">© All rights reserved. Powered by <a href="https://gohugo.io">Hugo</a> and <a href="https://github.com/calintat/minimal">Minimal</a>. Code licensed under <a href="https://github.com/TrungNguyen1909/blog/blob/master/LICENSE">MIT</a>. Content licensed under <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a></p>
+
+        </footer>
+       
+    </body>
+
+</html>
+

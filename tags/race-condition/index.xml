@@ -1,7 +1,39 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>race-condition on Nguyen Hoang Trung</title><link>https://trungnguyen1909.github.io/blog/tags/race-condition/</link><description>Recent content in race-condition on Nguyen Hoang Trung</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Wed, 12 Jun 2019 23:15:34 +0700</lastBuildDate><atom:link href="https://trungnguyen1909.github.io/blog/tags/race-condition/index.xml" rel="self" type="application/rss+xml"/><item><title>kpets FacebookCTF 2019 Qualification Round</title><link>https://trungnguyen1909.github.io/blog/post/FBCTF19-Qual/kpets/</link><pubDate>Wed, 12 Jun 2019 23:15:34 +0700</pubDate><guid>https://trungnguyen1909.github.io/blog/post/FBCTF19-Qual/kpets/</guid><description>__ __ ______ ______ ______ ______ /\ \/ / /\ == \ /\ ___\ /\__ _\ /\ ___\ \ \ _&amp;quot;-. \ \ _-/ \ \ __\ \/_/\ \/ \ \___ \ \ \_\ \_\ \ \_\ \ \_____\ \ \_\ \/\_____\ \/_/\/_/ \/_/ \/_____/ \/_/ \/_____/ welcome to Kernel Pets Simulator! We wrote a pet store application that was too slow, so we made a kernel module for it instead.</description></item><item><title>IPwnKit DEFCON CTF 26 Qualification Round</title><link>https://trungnguyen1909.github.io/blog/post/DEFCON26-Qual/iPwnKit/</link><pubDate>Sun, 21 Apr 2019 00:46:45 +0700</pubDate><guid>https://trungnguyen1909.github.io/blog/post/DEFCON26-Qual/iPwnKit/</guid><description>IPwnKit Come and take a bite of the Apple!
-We have reserved you a very special place at the WWPC (World Wide Pwning Conference).
-Email ipwnkit@gmail.com to RSVP and we will reply with your invite.
-Come, test your skills, and win pwn2ooown!!!
-Fine print: sw_vers 17E202.
-The VM will be reset between exploit attempts.
-If you panic the kernel and don&amp;rsquo;t walk away with the flag, you are BANNED FROM THIS CHALLENGE, so make it count!</description></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>race-condition on Nguyen Hoang Trung</title>
+    <link>https://trungnguyen1909.github.io/blog/tags/race-condition/</link>
+    <description>Recent content in race-condition on Nguyen Hoang Trung</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 12 Jun 2019 23:15:34 +0700</lastBuildDate>
+    
+	<atom:link href="https://trungnguyen1909.github.io/blog/tags/race-condition/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>kpets FacebookCTF 2019 Qualification Round</title>
+      <link>https://trungnguyen1909.github.io/blog/post/FBCTF19-Qual/kpets/</link>
+      <pubDate>Wed, 12 Jun 2019 23:15:34 +0700</pubDate>
+      
+      <guid>https://trungnguyen1909.github.io/blog/post/FBCTF19-Qual/kpets/</guid>
+      <description>__ __ ______ ______ ______ ______ /\ \/ / /\ == \ /\ ___\ /\__ _\ /\ ___\ \ \ _&amp;quot;-. \ \ _-/ \ \ __\ \/_/\ \/ \ \___ \ \ \_\ \_\ \ \_\ \ \_____\ \ \_\ \/\_____\ \/_/\/_/ \/_/ \/_____/ \/_/ \/_____/ welcome to Kernel Pets Simulator!  We wrote a pet store application that was too slow, so we made a kernel module for it instead.</description>
+    </item>
+    
+    <item>
+      <title>IPwnKit DEFCON CTF 26 Qualification Round</title>
+      <link>https://trungnguyen1909.github.io/blog/post/DEFCON26-Qual/iPwnKit/</link>
+      <pubDate>Sun, 21 Apr 2019 00:46:45 +0700</pubDate>
+      
+      <guid>https://trungnguyen1909.github.io/blog/post/DEFCON26-Qual/iPwnKit/</guid>
+      <description>IPwnKit  Come and take a bite of the Apple!
+  We have reserved you a very special place at the WWPC (World Wide Pwning Conference).
+  Email ipwnkit@gmail.com to RSVP and we will reply with your invite.
+  Come, test your skills, and win pwn2ooown!!!
+  Fine print: sw_vers 17E202.
+  The VM will be reset between exploit attempts.
+  If you panic the kernel and don&amp;rsquo;t walk away with the flag, you are BANNED FROM THIS CHALLENGE, so make it count!</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,5 +1,28 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>AceBear on Nguyen Hoang Trung</title><link>https://trungnguyen1909.github.io/blog/tags/AceBear/</link><description>Recent content in AceBear on Nguyen Hoang Trung</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Mon, 08 Apr 2019 14:35:17 +0700</lastBuildDate><atom:link href="https://trungnguyen1909.github.io/blog/tags/AceBear/index.xml" rel="self" type="application/rss+xml"/><item><title>AceBear Security Contest House-of-loop</title><link>https://trungnguyen1909.github.io/blog/post/AceBear2019/house_of_loop/</link><pubDate>Mon, 08 Apr 2019 14:35:17 +0700</pubDate><guid>https://trungnguyen1909.github.io/blog/post/AceBear2019/house_of_loop/</guid><description>House-of-loop Hi everyone, this is the writeup for the challenge House-of-loop in the AceBear Security Contest 2019
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>AceBear on Nguyen Hoang Trung</title>
+    <link>https://trungnguyen1909.github.io/blog/tags/AceBear/</link>
+    <description>Recent content in AceBear on Nguyen Hoang Trung</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 08 Apr 2019 14:35:17 +0700</lastBuildDate>
+    
+	<atom:link href="https://trungnguyen1909.github.io/blog/tags/AceBear/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>AceBear Security Contest House-of-loop</title>
+      <link>https://trungnguyen1909.github.io/blog/post/AceBear2019/house_of_loop/</link>
+      <pubDate>Mon, 08 Apr 2019 14:35:17 +0700</pubDate>
+      
+      <guid>https://trungnguyen1909.github.io/blog/post/AceBear2019/house_of_loop/</guid>
+      <description>House-of-loop Hi everyone, this is the writeup for the challenge House-of-loop in the AceBear Security Contest 2019
 Description We are given a stripped ELF x64 binary which can be interacted with, our task is to get remote code execution(RCE).
 The binary presents us 3 options: Create, View and Delete a note.
 When creating a note, we have 3 fields: Title, Private, and Description.
-We have the limits on Title, Private field length but with Description, we can use as much as we specified.</description></item></channel></rss>
+We have the limits on Title, Private field length but with Description, we can use as much as we specified.</description>
+    </item>
+    
+  </channel>
+</rss>

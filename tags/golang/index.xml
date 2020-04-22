@@ -1,6 +1,38 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>golang on Nguyen Hoang Trung</title><link>https://trungnguyen1909.github.io/blog/tags/golang/</link><description>Recent content in golang on Nguyen Hoang Trung</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Thu, 22 Nov 2018 21:30:28 +0700</lastBuildDate><atom:link href="https://trungnguyen1909.github.io/blog/tags/golang/index.xml" rel="self" type="application/rss+xml"/><item><title>RITSEC18 Gimme sum fud</title><link>https://trungnguyen1909.github.io/blog/post/RITSEC-2018/Gimme-sum-fud/</link><pubDate>Thu, 22 Nov 2018 21:30:28 +0700</pubDate><guid>https://trungnguyen1909.github.io/blog/post/RITSEC-2018/Gimme-sum-fud/</guid><description>The binary loads the flag.txt to the memory and asks us to provide input.
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>golang on Nguyen Hoang Trung</title>
+    <link>https://trungnguyen1909.github.io/blog/tags/golang/</link>
+    <description>Recent content in golang on Nguyen Hoang Trung</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Thu, 22 Nov 2018 21:30:28 +0700</lastBuildDate>
+    
+	<atom:link href="https://trungnguyen1909.github.io/blog/tags/golang/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>RITSEC18 Gimme sum fud</title>
+      <link>https://trungnguyen1909.github.io/blog/post/RITSEC-2018/Gimme-sum-fud/</link>
+      <pubDate>Thu, 22 Nov 2018 21:30:28 +0700</pubDate>
+      
+      <guid>https://trungnguyen1909.github.io/blog/post/RITSEC-2018/Gimme-sum-fud/</guid>
+      <description>The binary loads the flag.txt to the memory and asks us to provide input.
 Interesting things is that it loads to the same memory segment with the input.
 Debugging locally, I found it at the offset 752 from the first input bytes.
-Running it multiple times on the server and at sometimes, the null bytes will be all-cleared and puts will print it all.</description></item><item><title>RITSEC18 Yet another HR Management Framework</title><link>https://trungnguyen1909.github.io/blog/post/RITSEC-2018/Yet-another-HR-Management-Framework/</link><pubDate>Thu, 22 Nov 2018 21:30:28 +0700</pubDate><guid>https://trungnguyen1909.github.io/blog/post/RITSEC-2018/Yet-another-HR-Management-Framework/</guid><description>By judging the program&amp;rsquo;s interface, we know that it was a heap challenge.
+Running it multiple times on the server and at sometimes, the null bytes will be all-cleared and puts will print it all.</description>
+    </item>
+    
+    <item>
+      <title>RITSEC18 Yet another HR Management Framework</title>
+      <link>https://trungnguyen1909.github.io/blog/post/RITSEC-2018/Yet-another-HR-Management-Framework/</link>
+      <pubDate>Thu, 22 Nov 2018 21:30:28 +0700</pubDate>
+      
+      <guid>https://trungnguyen1909.github.io/blog/post/RITSEC-2018/Yet-another-HR-Management-Framework/</guid>
+      <description>By judging the program&amp;rsquo;s interface, we know that it was a heap challenge.
 Spent quite a lot of time reversing it, I figured it out that it malloc a few bytes for the person struct on the heap, then the name will be malloc with the size entered and that address will be put in the person struct.
-The person struct also has a function pointer which is set to the printPerson function.</description></item></channel></rss>
+The person struct also has a function pointer which is set to the printPerson function.</description>
+    </item>
+    
+  </channel>
+</rss>

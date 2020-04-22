@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html lang="en-us">
+    <head>
+         
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>PlaidCTF2020 PlaidStore mojo chromium</title>
+        
+        <style>
+
+    html body {
+        font-family: 'Noto Sans', sans-serif;
+        background-color: white;
+    }
+
+    :root {
+        --accent: purple;
+        --border-width:  5px ;
+    }
+
+</style>
+
+
+<link rel="stylesheet" href="https://trungnguyen1909.github.io/blog/css/main.css">
+
+
+
+
+
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Noto%20Sans">
+
+
+ <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/tomorrow-night.min.css"> 
+
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+ 
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/go.min.js"></script>  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/haskell.min.js"></script>  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/kotlin.min.js"></script>  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/scala.min.js"></script>  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/swift.min.js"></script> 
+
+    <script>hljs.initHighlightingOnLoad();</script>
+
+
+
+
+
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+
+<script>$(document).on('click', function() { $('.collapse').collapse('hide'); })</script>
+ <meta name="generator" content="Hugo 0.69.1" />
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-138000293-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+</head>
+
+    
+    
+    <script type="text/javascript" async
+      src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+    </script>
+    
+
+    <body>
+         
+        <nav class="navbar navbar-default navbar-fixed-top">
+
+            <div class="container">
+
+                <div class="navbar-header">
+
+                    <a class="navbar-brand visible-xs" href="#">PlaidCTF2020 PlaidStore mojo chromium</a>
+
+                    <button class="navbar-toggle" data-target=".navbar-collapse" data-toggle="collapse">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+
+                </div>
+
+                <div class="collapse navbar-collapse">
+
+                    
+                        <ul class="nav navbar-nav">
+                            
+                                <li><a href="/blog/">Home</a></li>
+                            
+                                <li><a href="/blog/post/">Posts</a></li>
+                            
+                                <li><a href="/blog/tags/">Tags</a></li>
+                            
+                        </ul>
+                    
+
+                    
+                        <ul class="nav navbar-nav navbar-right">
+                            
+                                <li class="navbar-icon"><a href="https://github.com/TrungNguyen1909/"><i class="fa fa-github"></i></a></li>
+                            
+                                <li class="navbar-icon"><a href="https://twitter.com/ntrung03/"><i class="fa fa-twitter"></i></a></li>
+                            
+                        </ul>
+                    
+
+                </div>
+
+            </div>
+
+        </nav>
+
+
+<main>
+
+    <div class="item">
+
+    
+    
+    
+
+    
+    
+
+    <h4><a href="/blog/post/PlaidCTF2020/">PlaidCTF2020 PlaidStore mojo chromium</a></h4>
+    <h5>April 22, 2020</h5>
+    
+    <a href="https://trungnguyen1909.github.io/blog/tags/PlaidCTF2020"><kbd class="item-tag">PlaidCTF2020</kbd></a>
+    
+    <a href="https://trungnguyen1909.github.io/blog/tags/CTF"><kbd class="item-tag">CTF</kbd></a>
+    
+    <a href="https://trungnguyen1909.github.io/blog/tags/pwn"><kbd class="item-tag">pwn</kbd></a>
+    
+    <a href="https://trungnguyen1909.github.io/blog/tags/chromium"><kbd class="item-tag">chromium</kbd></a>
+    
+    <a href="https://trungnguyen1909.github.io/blog/tags/browser"><kbd class="item-tag">browser</kbd></a>
+    
+    <a href="https://trungnguyen1909.github.io/blog/tags/mojo"><kbd class="item-tag">mojo</kbd></a>
+    
+    <a href="https://trungnguyen1909.github.io/blog/tags/use-after-free"><kbd class="item-tag">use-after-free</kbd></a>
+    
+    <a href="https://trungnguyen1909.github.io/blog/tags/UAF"><kbd class="item-tag">UAF</kbd></a>
+    
+
+</div>
+
+    
+    <br> <div class="text-justify"><h1 id="plaidstore">PlaidStore</h1>
+<h2 id="story">Story</h2>
+<p>Hi, everyone, this is the writeup for the challenge 500pts &ldquo;mojo&rdquo; of PlaidCTF 2020.</p>
+<p>As usual, I got the flag after the CTF has ended :&lt;</p>
+<p>Well, currently I am not in any active teams, so I decided to pick a hard challenge and do it on my own.</p>
+<h2 id="challenge-description">Challenge Description</h2>
+<pre><code>Chromium commit detached at 81.0.4044.92 (commit hash 82e68b9038ab5679543b300b42202bc053c50930).
+</code></pre><p>Our task is to RCE chromium browser, after applying this <a href="./plaidstore.ctf">diff</a></p>
+<p>We are also provided generated mojo-js files to interact with the IPC.</p>
+<pre><code>+++ b/third_party/blink/public/mojom/plaidstore/plaidstore.mojom
+@@ -0,0 +1,11 @@
++module blink.mojom;
++
++// This interface provides a data store
++interface PlaidStore {
++
++  // Stores data in the data store
++  StoreData(string key, array&lt;uint8&gt; data);
++
++  // Gets data from the data store
++  GetData(string key, uint32 count) =&gt; (array&lt;uint8&gt; data);
++};
+</code></pre><p>We now have access to the new interface through MojoJS.</p>
+<h2 id="path-of-exploitation">Path of Exploitation</h2>
+<h3 id="creating-connection">Creating connection</h3>
+<p>Urghhh, I stuck on this part for more than a day just to find the way to interact with the interface.
+Lots of google-fu, renderer bad messages, promise rejection :&lt;</p>
+<p>But it&rsquo;s actually really easy :&lt;. Just add those lines to your html</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#f92672">script</span> <span style="color:#a6e22e">src</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;mojo/public/js/mojo_bindings_lite.js&#34;</span>&gt;&lt;/<span style="color:#f92672">script</span>&gt;
+&lt;<span style="color:#f92672">script</span> <span style="color:#a6e22e">src</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;third_party/blink/public/mojom/plaidstore/plaidstore.mojom-lite.js&#34;</span>&gt;&lt;/<span style="color:#f92672">script</span>&gt;
+</code></pre></div><p>and in an async function of your Javascript, use this line to get a handle of the object, owned by the current frame, and interact.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#66d9ef">let</span> <span style="color:#a6e22e">p</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">blink</span>.<span style="color:#a6e22e">mojom</span>.<span style="color:#a6e22e">PlaidStore</span>.<span style="color:#a6e22e">getRemote</span>(<span style="color:#66d9ef">true</span>);
+<span style="color:#a6e22e">await</span> <span style="color:#a6e22e">p</span>.<span style="color:#a6e22e">storeData</span>(<span style="color:#e6db74">&#34;yeet&#34;</span>,<span style="color:#66d9ef">new</span> <span style="color:#a6e22e">Uint8Array</span>(<span style="color:#ae81ff">0x28</span>).<span style="color:#a6e22e">fill</span>(<span style="color:#ae81ff">0x41</span>));
+(<span style="color:#a6e22e">await</span> <span style="color:#a6e22e">p</span>.<span style="color:#a6e22e">getData</span>(<span style="color:#e6db74">&#34;yeet&#34;</span>, <span style="color:#a6e22e">count</span>).<span style="color:#a6e22e">data</span>;
+</code></pre></div><p>smh.</p>
+<h3 id="the-first-bug">The first bug</h3>
+<p>Well, the first bug I noticed was this one</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#66d9ef">void</span> PlaidStoreImpl<span style="color:#f92672">::</span>GetData(
+	    <span style="color:#66d9ef">const</span> std<span style="color:#f92672">::</span>string <span style="color:#f92672">&amp;</span>key,
+	    <span style="color:#66d9ef">uint32_t</span> count,
+	    GetDataCallback callback) {
+	  <span style="color:#66d9ef">if</span> (<span style="color:#f92672">!</span>render_frame_host_<span style="color:#f92672">-&gt;</span>IsRenderFrameLive()) {
+	    std<span style="color:#f92672">::</span>move(callback).Run({});
+	    <span style="color:#66d9ef">return</span>;
+	  }
+	  <span style="color:#66d9ef">auto</span> it <span style="color:#f92672">=</span> data_store_.find(key);
+	  <span style="color:#66d9ef">if</span> (it <span style="color:#f92672">==</span> data_store_.end()) {
+	    std<span style="color:#f92672">::</span>move(callback).Run({});
+	    <span style="color:#66d9ef">return</span>;
+	  }
+	  std<span style="color:#f92672">::</span>vector<span style="color:#f92672">&lt;</span><span style="color:#66d9ef">uint8_t</span><span style="color:#f92672">&gt;</span> result(it<span style="color:#f92672">-&gt;</span>second.begin(), it<span style="color:#f92672">-&gt;</span>second.begin() <span style="color:#f92672">+</span> count);
+	  std<span style="color:#f92672">::</span>move(callback).Run(result);
+	}
+</code></pre></div><p>Can you spot the most obvious bug?</p>
+<p>The <code>count</code> parameter has no checks on it.
+As a result, the <code>result</code> array is being intialized with out-of-bound memory if <code>count</code> is larger than <code>it-&gt;second.size()</code>
+So we got a heap out-of-bound read here.</p>
+<p>To leak useful pointers from the heap, I put 0x40 arrays of (0x28 bytes) to the <code>PlaidStore</code>,
+while attempting to allocate <code>PlaidStore</code> object right after each allocation.
+Most of the time, the <code>PlaidStore</code> objects will lie after those arrays, which means we can read their pointers.</p>
+<p>The most interesting one is their C++ <code>vtable</code> pointer, it points to the DATA section of the binary and contains pointers to instance methods.
+So we could read that pointer, subtract it from the offset and find the base of the binary in memory.</p>
+<p><code>PlaidStoreImpl</code> objects will have the <code>vtable</code> pointer at offset <code>0</code> (always) and to its <code>render_frame_host_</code> at offset <code>8</code> (C++ classes are like structs).</p>
+<p>Because a few high bits of the vtable address is always the same, and same goes to the highest byte, we could find them easily in the leak.</p>
+<p><code>content::PlaidStoreImpl::PlaidStoreImpl</code> is the constructor of the object so it will set the vtable</p>
+<pre><code>chrome[0x3c584a8] &lt;+24&gt;:  call   0x57044b0                 ; operator new(unsigned long)
+chrome[0x3c584ad] &lt;+29&gt;:  lea    rcx, [rip + 0x635e2ec]    ; vtable for content::PlaidStoreImpl + 16
+chrome[0x3c584b4] &lt;+36&gt;:  mov    qword ptr [rax], rcx
+&gt;&gt;&gt; hex(0x3c584b4+0x635e2ec)
+'0x9fb67a0' -&gt; the pointer(unslided) will be stored at offset 0
+</code></pre><p>Or <code>(lldb) image lookup -r -v -s &quot;vtable for content::PlaidStoreImpl&quot;</code> will do the trick.</p>
+<p>Keep it mind that the stored address will be off <code>+16</code> bytes from the symbol</p>
+<p>Anyway, so we should find the pointer that looks like <code>0x5x..7a0</code></p>
+<p>And the pointer lie next to that will be its <code>render_frame_host_</code></p>
+<h3 id="get-code-execution">Get code execution&hellip;</h3>
+<p>At the starts of all methods of <code>PlaidStore</code>, there&rsquo;s a check <code>(!render_frame_host_-&gt;IsRenderFrameLive())</code> seems to check whether its frame is live.
+But it doesn&rsquo;t take into account that its <code>render_frame_host_</code> is valid or not.</p>
+<p>If the <code>PlaidStore</code>'s frame has been freed, its <code>render_frame_host_</code> will be dangling and the memory it is pointing to is subjected to reallocation.</p>
+<p>So there&rsquo;s definitely an use-after-free bug here.</p>
+<p>To exploit that, we could create an <code>iframe</code> in the <code>document.body</code> and get its <code>PlaidStore</code> pointer, which will have its <code>render_frame_host_</code> pointed to the <code>iframe</code>.</p>
+<p>We can easily access the <code>iframe</code>'s properties, as long as its source is in the same origin.</p>
+<p>After get the <code>PlaidStore</code> pointer from there, we could deallocate the <code>iframe</code> by remove it from the <code>document.body</code>.</p>
+<p>The best way to reallocate it back is to creating some allocations of the same size, for example 1024 allocations.
+By doing that, we are creating pressure to the memory and most of the time, the frame will ended up being garbage-collected and let us allocate to the same memory.</p>
+<p>Also, you can&rsquo;t rely on the fact that that memory is returned to allocation immediately, and by allocating numerous of times, it will increase the chance of successful reallocation.</p>
+<p>The <code>RenderFrameHost</code> object&rsquo;s size is <code>0xc28</code>, which could be found by the method below:</p>
+<ul>
+<li>
+<p><code>content::RenderFrameHostImpl::RenderFrameHostImpl()</code> is called after that C++ object is allocated (a.k.a. constructor)</p>
+</li>
+<li>
+<p>Searching in the chromium source, it&rsquo;s called from content::RenderFrameHostFactory::Create(), looking into that function&hellip;</p>
+</li>
+<li>
+<p>Just before the constructor is called, the object&rsquo;s allocated using <code>operator new(unsigned long size)</code></p>
+</li>
+<li>
+<p>So we can figure out the size using a <code>new</code> called that comes before the constructor is called.</p>
+</li>
+</ul>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-asm" data-lang="asm">	<span style="color:#a6e22e">mov</span>    <span style="color:#66d9ef">edi</span>, <span style="color:#ae81ff">0xc28</span><span style="color:#75715e">;
+</span><span style="color:#75715e"></span>	<span style="color:#66d9ef">call</span> <span style="color:#66d9ef">operator</span> <span style="color:#66d9ef">new</span>()<span style="color:#75715e">; =&gt; size = 0xc28
+</span></code></pre></div><p>So now we have a handle to a fake <code>RenderFrameHost</code> object that its content is controlled by us.</p>
+<p>With that primitive, we could fake its vtable, and now <code>render_frame_host_-&gt;IsRenderFrameLive()</code>'s now ours.</p>
+<pre><code>//content::PlaidStoreImpl::StoreData
+chrome[0x3c581da] &lt;+26&gt;:  mov    rdi, qword ptr [rdi + 0x8] //rdi = this-&gt;render_frame_host_
+chrome[0x3c581de] &lt;+30&gt;:  mov    rax, qword ptr [rdi]//rax = vtable
+chrome[0x3c581e1] &lt;+33&gt;:  call   qword ptr [rax + 0x160]//call vtable-&gt;IsRenderFrameLive
+</code></pre><p>So the pointer at offset <code>0x160</code> of the fake object&rsquo;s vtable is called (<code>fake-&gt;vtable[0x160]()</code>), we could put the address of our first gadget in the ROP chain there.</p>
+<p>I put a <code>xchg rax, rsp</code> first to change the stack pointer to point to our controlled data.</p>
+<p>From here, we do a classic ROP chain to <code>execvp@plt</code> to read the flag.</p>
+<blockquote>
+<p>Use <code>ROPgadget</code> to find gadgets in the binary. <code>ropper</code> analysis took me forever.</p>
+</blockquote>
+<p>Further details about the ROP chain could be found in <a href="./pwn.js">pwn.js</a></p>
+<h3 id="exploit">Exploit</h3>
+<p>Most of the parts are contained in <a href="./pwn.js">pwn.js</a>.</p>
+<p>The HTMLs parts are zipped in <a href="./exploit.zip">exploit.zip</a>.
+Put them inside the extracted directory of <code>mojo_js.zip</code></p>
+<h3 id="the-flag">The Flag</h3>
+<p>The flag is</p>
+<blockquote>
+<p>PCTF{PlaidStore_more_like_BadStore}</p>
+</blockquote>
+<p>But it didn&rsquo;t bring me any 500pts :&lt;</p>
+<p>Thanks~</p>
+<ul>
+<li>
+<p>The challenge author for making me get into chromium for the first time.</p>
+</li>
+<li>
+<p>You, for reading till here.</p>
+</li>
+</ul>
+</div>
+    
+    <h4 class="page-header">File Resources</h4>
+    <ul>
+    
+    <li><a href="https://trungnguyen1909.github.io/blog/post/PlaidCTF2020/plaidstore.diff"> plaidstore.diff </a> </li>
+    
+    <li><a href="https://trungnguyen1909.github.io/blog/post/PlaidCTF2020/pwn.js"> pwn.js </a> </li>
+    
+    <li><a href="https://trungnguyen1909.github.io/blog/post/PlaidCTF2020/exploit.zip"> exploit.zip </a> </li>
+    
+    <ul>
+    
+    
+
+    
+
+        <h4 class="page-header">Related</h4>
+
+         <div class="item">
+
+    
+    
+    
+
+    
+    
+
+    <h4><a href="/blog/post/CampCTF/PwningKernelz/">pwning your kernelz</a></h4>
+    <h5>September 4, 2019</h5>
+    
+    <a href="https://trungnguyen1909.github.io/blog/tags/Camp-CTF"><kbd class="item-tag">Camp-CTF</kbd></a>
+    
+    <a href="https://trungnguyen1909.github.io/blog/tags/pwn"><kbd class="item-tag">pwn</kbd></a>
+    
+    <a href="https://trungnguyen1909.github.io/blog/tags/kernel"><kbd class="item-tag">kernel</kbd></a>
+    
+    <a href="https://trungnguyen1909.github.io/blog/tags/xnu"><kbd class="item-tag">xnu</kbd></a>
+    
+    <a href="https://trungnguyen1909.github.io/blog/tags/0day"><kbd class="item-tag">0day</kbd></a>
+    
+
+</div>
+  <div class="item">
+
+    
+    
+    
+
+    
+    
+
+    <h4><a href="/blog/post/FBCTF19-Qual/kpets/">kpets FacebookCTF 2019 Qualification Round</a></h4>
+    <h5>June 12, 2019</h5>
+    
+    <a href="https://trungnguyen1909.github.io/blog/tags/FBCTF"><kbd class="item-tag">FBCTF</kbd></a>
+    
+    <a href="https://trungnguyen1909.github.io/blog/tags/CTF"><kbd class="item-tag">CTF</kbd></a>
+    
+    <a href="https://trungnguyen1909.github.io/blog/tags/pwn"><kbd class="item-tag">pwn</kbd></a>
+    
+    <a href="https://trungnguyen1909.github.io/blog/tags/kernel"><kbd class="item-tag">kernel</kbd></a>
+    
+    <a href="https://trungnguyen1909.github.io/blog/tags/linux"><kbd class="item-tag">linux</kbd></a>
+    
+    <a href="https://trungnguyen1909.github.io/blog/tags/race-condition"><kbd class="item-tag">race-condition</kbd></a>
+    
+    <a href="https://trungnguyen1909.github.io/blog/tags/double-fetch"><kbd class="item-tag">double-fetch</kbd></a>
+    
+
+</div>
+  <div class="item">
+
+    
+    
+    
+
+    
+    
+
+    <h4><a href="/blog/post/DEFCON26-Qual/iPwnKit/">IPwnKit DEFCON CTF 26 Qualification Round</a></h4>
+    <h5>April 21, 2019</h5>
+    
+    <a href="https://trungnguyen1909.github.io/blog/tags/DEFCON-CTF"><kbd class="item-tag">DEFCON-CTF</kbd></a>
+    
+    <a href="https://trungnguyen1909.github.io/blog/tags/CTF"><kbd class="item-tag">CTF</kbd></a>
+    
+    <a href="https://trungnguyen1909.github.io/blog/tags/pwn"><kbd class="item-tag">pwn</kbd></a>
+    
+    <a href="https://trungnguyen1909.github.io/blog/tags/xnu"><kbd class="item-tag">xnu</kbd></a>
+    
+    <a href="https://trungnguyen1909.github.io/blog/tags/IOKit"><kbd class="item-tag">IOKit</kbd></a>
+    
+    <a href="https://trungnguyen1909.github.io/blog/tags/race-condition"><kbd class="item-tag">race-condition</kbd></a>
+    
+    <a href="https://trungnguyen1909.github.io/blog/tags/double-fetch"><kbd class="item-tag">double-fetch</kbd></a>
+    
+
+</div>
+ 
+
+    
+
+    
+
+        <h4 class="page-header">Comments</h4>
+        <div id="disqus_thread"></div>
+        <script>
+
+        
+
+        
+
+        (function() { 
+        var d = document, s = d.createElement('script');
+        s.src = 'https://ntrung03-blog.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+        })();
+        </script>
+        <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+    
+
+</main>
+
+        <footer>
+
+            <p class="copyright text-muted">© All rights reserved. Powered by <a href="https://gohugo.io">Hugo</a> and <a href="https://github.com/calintat/minimal">Minimal</a>. Code licensed under <a href="https://github.com/TrungNguyen1909/blog/blob/master/LICENSE">MIT</a>. Content licensed under <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a></p>
+
+        </footer>
+       
+    </body>
+
+</html>
+
