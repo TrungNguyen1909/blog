@@ -340,18 +340,18 @@ and derive the renderer&rsquo;s <code>_text</code> base.</p>
   <span style="color:#66d9ef">return</span> node_controller_.get();
 }
 </code></pre></div><p><code>this</code> pointer is always passed as the first argument</p>
-<pre><code>  0x0000000003723fba &lt;+10&gt;:	mov  r15,rdi
-</code></pre><p>and this time, it is stored in <code>r15</code> register</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-asm" data-lang="asm">  <span style="color:#960050;background-color:#1e0010">0</span><span style="color:#a6e22e">x0000000003723fba</span> <span style="color:#960050;background-color:#1e0010">&lt;+</span><span style="color:#ae81ff">10</span><span style="color:#960050;background-color:#1e0010">&gt;</span>:	<span style="color:#66d9ef">mov</span>  <span style="color:#66d9ef">r15</span>,<span style="color:#66d9ef">rdi</span>
+</code></pre></div><p>and this time, it is stored in <code>r15</code> register</p>
 <p>The following code should be equivalent to the <code>if(!node_controller_)</code></p>
-<pre><code>  0x0000000003723fc9 &lt;+25&gt;: mov  rbx,QWORD PTR [r15+0x30]
-  0x0000000003723fcd &lt;+29&gt;: test rbx,rbx
-</code></pre><p>Or the below should be equivalent to the return</p>
-<pre><code>  0x0000000003723ffd &lt;+77&gt;:  mov  rbx,QWORD PTR [r15+0x30]
-  0x0000000003724001 &lt;+81&gt;:  mov  rdi,r14
-  0x0000000003724004 &lt;+84&gt;:  call 0xa00fad0
-  0x0000000003724009 &lt;+89&gt;:  mov  rax,rbx
-  0x000000000372400c &lt;+92&gt;:  add  rsp,0x8
-</code></pre><p>So the offset is probably <code>+0x30</code>.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-asm" data-lang="asm">  <span style="color:#960050;background-color:#1e0010">0</span><span style="color:#a6e22e">x0000000003723fc9</span> <span style="color:#960050;background-color:#1e0010">&lt;+</span><span style="color:#ae81ff">25</span><span style="color:#960050;background-color:#1e0010">&gt;</span>: <span style="color:#66d9ef">mov</span>  <span style="color:#66d9ef">rbx</span>,<span style="color:#66d9ef">QWORD</span> <span style="color:#66d9ef">PTR</span> [<span style="color:#66d9ef">r15</span><span style="color:#960050;background-color:#1e0010">+</span><span style="color:#ae81ff">0x30</span>]
+  <span style="color:#960050;background-color:#1e0010">0</span><span style="color:#a6e22e">x0000000003723fcd</span> <span style="color:#960050;background-color:#1e0010">&lt;+</span><span style="color:#ae81ff">29</span><span style="color:#960050;background-color:#1e0010">&gt;</span>: <span style="color:#66d9ef">test</span> <span style="color:#66d9ef">rbx</span>,<span style="color:#66d9ef">rbx</span>
+</code></pre></div><p>Or the below should be equivalent to the return</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-asm" data-lang="asm">  <span style="color:#960050;background-color:#1e0010">0</span><span style="color:#a6e22e">x0000000003723ffd</span> <span style="color:#960050;background-color:#1e0010">&lt;+</span><span style="color:#ae81ff">77</span><span style="color:#960050;background-color:#1e0010">&gt;</span>:  <span style="color:#66d9ef">mov</span>  <span style="color:#66d9ef">rbx</span>,<span style="color:#66d9ef">QWORD</span> <span style="color:#66d9ef">PTR</span> [<span style="color:#66d9ef">r15</span><span style="color:#960050;background-color:#1e0010">+</span><span style="color:#ae81ff">0x30</span>]
+  <span style="color:#960050;background-color:#1e0010">0</span><span style="color:#a6e22e">x0000000003724001</span> <span style="color:#960050;background-color:#1e0010">&lt;+</span><span style="color:#ae81ff">81</span><span style="color:#960050;background-color:#1e0010">&gt;</span>:  <span style="color:#66d9ef">mov</span>  <span style="color:#66d9ef">rdi</span>,<span style="color:#66d9ef">r14</span>
+  <span style="color:#960050;background-color:#1e0010">0</span><span style="color:#a6e22e">x0000000003724004</span> <span style="color:#960050;background-color:#1e0010">&lt;+</span><span style="color:#ae81ff">84</span><span style="color:#960050;background-color:#1e0010">&gt;</span>:  <span style="color:#66d9ef">call</span> <span style="color:#ae81ff">0xa00fad0</span>
+  <span style="color:#960050;background-color:#1e0010">0</span><span style="color:#a6e22e">x0000000003724009</span> <span style="color:#960050;background-color:#1e0010">&lt;+</span><span style="color:#ae81ff">89</span><span style="color:#960050;background-color:#1e0010">&gt;</span>:  <span style="color:#66d9ef">mov</span>  <span style="color:#66d9ef">rax</span>,<span style="color:#66d9ef">rbx</span>
+  <span style="color:#960050;background-color:#1e0010">0</span><span style="color:#a6e22e">x000000000372400c</span> <span style="color:#960050;background-color:#1e0010">&lt;+</span><span style="color:#ae81ff">92</span><span style="color:#960050;background-color:#1e0010">&gt;</span>:  <span style="color:#66d9ef">add</span>  <span style="color:#66d9ef">rsp</span>,<span style="color:#ae81ff">0x8</span>
+</code></pre></div><p>So the offset is probably <code>+0x30</code>.</p>
 <p>The way of finding the remaining offsets is left as an exercise to the readers.</p>
 <h3 id="712-fck-ctraversing-stdunordered_map">7.1.2. F*ck C++/Traversing <code>std::unordered_map</code></h3>
 <p>Okay, now how do we dump all ports?</p>
