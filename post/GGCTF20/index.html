@@ -1,0 +1,623 @@
+<!DOCTYPE html>
+<html lang="en-us">
+    <head>
+         
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Google CTF 2020 teleport Chromium sandbox escape</title>
+        
+        <style>
+
+    html body {
+        font-family: 'Noto Sans', sans-serif;
+        background-color: white;
+    }
+
+    :root {
+        --accent: purple;
+        --border-width:  5px ;
+    }
+
+</style>
+
+
+<link rel="stylesheet" href="https://trungnguyen1909.github.io/blog/css/main.css">
+
+
+
+
+
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Noto%20Sans">
+
+
+ <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/tomorrow-night.min.css"> 
+
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+ 
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/go.min.js"></script>  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/haskell.min.js"></script>  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/kotlin.min.js"></script>  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/scala.min.js"></script>  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/swift.min.js"></script> 
+
+    <script>hljs.initHighlightingOnLoad();</script>
+
+
+
+
+
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+
+<script>$(document).on('click', function() { $('.collapse').collapse('hide'); })</script>
+ <meta name="generator" content="Hugo 0.74.3" />
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-138000293-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+</head>
+
+    
+    
+    <script type="text/javascript" async
+      src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+    </script>
+    
+
+    <body>
+         
+        <nav class="navbar navbar-default navbar-fixed-top">
+
+            <div class="container">
+
+                <div class="navbar-header">
+
+                    <a class="navbar-brand visible-xs" href="#">Google CTF 2020 teleport Chromium sandbox escape</a>
+
+                    <button class="navbar-toggle" data-target=".navbar-collapse" data-toggle="collapse">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+
+                </div>
+
+                <div class="collapse navbar-collapse">
+
+                    
+                        <ul class="nav navbar-nav">
+                            
+                                <li><a href="/blog/">Home</a></li>
+                            
+                                <li><a href="/blog/post/">Posts</a></li>
+                            
+                                <li><a href="/blog/tags/">Tags</a></li>
+                            
+                        </ul>
+                    
+
+                    
+                        <ul class="nav navbar-nav navbar-right">
+                            
+                                <li class="navbar-icon"><a href="https://github.com/TrungNguyen1909/"><i class="fa fa-github"></i></a></li>
+                            
+                                <li class="navbar-icon"><a href="https://twitter.com/ntrung03/"><i class="fa fa-twitter"></i></a></li>
+                            
+                        </ul>
+                    
+
+                </div>
+
+            </div>
+
+        </nav>
+
+
+<main>
+
+    <div class="item">
+
+    
+    
+    
+
+    
+    
+
+    <h4><a href="/blog/post/GGCTF20/">Google CTF 2020 teleport Chromium sandbox escape</a></h4>
+    <h5>September 2, 2020</h5>
+    
+    <a href="https://trungnguyen1909.github.io/blog/tags/GGCTF2020"><kbd class="item-tag">GGCTF2020</kbd></a>
+    
+    <a href="https://trungnguyen1909.github.io/blog/tags/CTF"><kbd class="item-tag">CTF</kbd></a>
+    
+    <a href="https://trungnguyen1909.github.io/blog/tags/pwn"><kbd class="item-tag">pwn</kbd></a>
+    
+    <a href="https://trungnguyen1909.github.io/blog/tags/sandbox"><kbd class="item-tag">sandbox</kbd></a>
+    
+    <a href="https://trungnguyen1909.github.io/blog/tags/chromium"><kbd class="item-tag">chromium</kbd></a>
+    
+    <a href="https://trungnguyen1909.github.io/blog/tags/browser"><kbd class="item-tag">browser</kbd></a>
+    
+    <a href="https://trungnguyen1909.github.io/blog/tags/mojo"><kbd class="item-tag">mojo</kbd></a>
+    
+    <a href="https://trungnguyen1909.github.io/blog/tags/reversing"><kbd class="item-tag">reversing</kbd></a>
+    
+    <a href="https://trungnguyen1909.github.io/blog/tags/offset"><kbd class="item-tag">offset</kbd></a>
+    
+
+</div>
+
+    
+    <br> <div class="text-justify"><h1 id="teleport">Teleport</h1>
+<blockquote>
+<p>Please write a full-chain exploit for Chrome. The flag is at /home/user/flag. Maybe there&rsquo;s some way to tele<!-- raw HTML omitted --> it out of there?</p>
+</blockquote>
+<h1 id="1-story">1. Story</h1>
+<p>Hi, last week I participated in Google CTF 2020 with my team <code>pwnPHOfun</code></p>
+<p>Although I didn&rsquo;t solve the challenge in time for the points;
+still, here is a writeup for the challenge <code>teleport</code> for you.</p>
+<p>I like to write detailed articles that are understandable and replicable to my past self. Feel free to skip any parts. Here is a table of content for you.</p>
+<!-- raw HTML omitted -->
+<ul>
+<li><a href="#teleport">Teleport</a></li>
+<li><a href="#1-story">1. Story</a></li>
+<li><a href="#2-overview">2. Overview</a>
+<ul>
+<li><a href="#21-sandboxed-or-not-sandboxed">2.1. Sandboxed or not sandboxed</a></li>
+<li><a href="#22-provided-primitives">2.2. Provided primitives</a></li>
+</ul>
+</li>
+<li><a href="#3-leaking-the-browser-process">3. Leaking the browser process</a></li>
+<li><a href="#4-googling">4. Googling</a></li>
+<li><a href="#5-leaking-the-renderer-process">5. Leaking the renderer process</a></li>
+<li><a href="#6-nodes-and-ports">6. Nodes and Ports</a></li>
+<li><a href="#7-leaking-ports-names">7. Leaking ports&rsquo; names</a>
+<ul>
+<li><a href="#71-finding-offsets">7.1. Finding offsets</a>
+<ul>
+<li><a href="#711-simple-structures">7.1.1. Simple structures</a></li>
+<li><a href="#712-fck-ctraversing-stdunordered_map">7.1.2. F*ck C++/Traversing <code>std::unordered_map</code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#8-what-do-we-do-with-stolen-ports">8. What do we do with stolen ports?</a>
+<ul>
+<li><a href="#81-factory-of-network-requests">8.1. Factory of network requests</a></li>
+<li><a href="#82-making-the-leaked-ports-ours">8.2. Making the leaked ports ours</a>
+<ul>
+<li><a href="#821-calling-functions-from-shellcode">8.2.1. Calling functions from shellcode</a></li>
+</ul>
+</li>
+<li><a href="#83-sending-our-messages">8.3. Sending our messages</a></li>
+<li><a href="#84-writing-our-messages">8.4. Writing our messages</a></li>
+<li><a href="#85-to-know-who-our-receivers-are">8.5. To know who our receivers are</a></li>
+<li><a href="#86-where-are-my-factory-">8.6. Where are my factory ??</a>
+<ul>
+<li><a href="#861-setting-the-sequence_num">8.6.1. Setting the sequence_num</a></li>
+<li><a href="#862-getting-the-correct-function-parameters">8.6.2. Getting the correct function parameters</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#9-closing-words">9. Closing words</a>
+<ul>
+<li><a href="#91-shoutout">9.1. Shoutout</a></li>
+<li><a href="#92-reference">9.2. Reference</a></li>
+</ul>
+</li>
+</ul>
+<!-- raw HTML omitted -->
+<p>You may want to checkout the <a href="https://github.com/TrungNguyen1909/ggctf20-teleport">exploit code</a>.</p>
+<p>No IDA/Ghidra were used during the creation of this work. I used only GDB.</p>
+<h1 id="2-overview">2. Overview</h1>
+<p>The challenge files include a patch for chromium version 84.0.4147.94,
+which basically has 2 features.</p>
+<p>The first one is the <code>Pwn</code> object, and a code execution(?) primitive <code>Mojo::rce</code></p>
+<p>Both could be trivially used through <code>MojoJS</code>, which is enabled for us.</p>
+<h2 id="21-sandboxed-or-not-sandboxed">2.1. Sandboxed or not sandboxed</h2>
+<p>On the first sight, the challenge seems unexpectedly easy, or wasn&rsquo;t it ;)</p>
+<p>But the <code>rce</code> primitive only provides us code execution inside the <em>renderer</em> process, which is strictly sandboxed.</p>
+<p>The <code>Pwn</code> object is on the <em>browser</em> process, and provides an address leak of itself and a memory read primitive.</p>
+<h2 id="22-provided-primitives">2.2. Provided primitives</h2>
+<p>So we have 2 things</p>
+<ul>
+<li>Sandboxed code execution inside <em>renderer</em> process</li>
+<li>Arbitrary read inside <em>browser</em> process</li>
+</ul>
+<h1 id="3-leaking-the-browser-process">3. Leaking the browser process</h1>
+<p>The primitive <code>Pwn::this</code> will return the address of itself, which is a C++ object.</p>
+<p>As every C++ object have its <code>vtable</code> located at offset <code>0x0</code>, by dereference the pointer returned by <code>Pwn::this</code> twice, you will get a function pointer. Subtracting it to a constant value, you can find the <code>_text</code> base of the browser&rsquo;s process</p>
+<h1 id="4-googling">4. Googling</h1>
+<p>Because no obvious way to get code execution inside the browser&rsquo;s process, I started looking around on the internet and found <a href="https://googleprojectzero.blogspot.com/2020/02/escaping-chrome-sandbox-with-ridl.html">this article</a>,</p>
+<p>Which is, by itself, interesting:</p>
+<ul>
+<li>
+<p>First the article is written by <code>@_tsuro</code> or <code>Stephen Roettger</code>, and you can find his name in <code>chall.patch</code></p>
+</li>
+<li>
+<p>Second, these words in the article is also interesting:</p>
+<blockquote>
+<p>&hellip; used from a compromised renderer
+&hellip; if you have an info leak vulnerability in the browser process</p>
+</blockquote>
+</li>
+</ul>
+<p>Isn&rsquo;t that was our case ;)</p>
+<p>Later, my teammate found <a href="https://www.youtube.com/watch?v=ugZzQvXUTIk">this video</a>, also by <code>tsuro</code></p>
+<p>Wasn&rsquo;t that a smart way to make people read your article and watch your talk? ;)</p>
+<p>Anyway, I highly recommend you watch those to get a basic overview of the solution and even solve it yourself.</p>
+<h1 id="5-leaking-the-renderer-process">5. Leaking the renderer process</h1>
+<p>With the <code>rce</code> primitive in our hands, the sky is your limit&hellip;</p>
+<p>First, we want a pointer in our renderer process to be able to reuse chrome&rsquo;s code.</p>
+<p>Take a look at the <code>Mojo::rce</code> function</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#f92672">+</span><span style="color:#66d9ef">void</span> Mojo<span style="color:#f92672">::</span>rce(DOMArrayBuffer<span style="color:#f92672">*</span> shellcode) {
+  size_t sz <span style="color:#f92672">=</span> shellcode<span style="color:#f92672">-&gt;</span>ByteLengthAsSizeT();
+  sz <span style="color:#f92672">+=</span> <span style="color:#ae81ff">4096</span>;
+  sz <span style="color:#f92672">&amp;=</span> <span style="color:#f92672">~</span>(<span style="color:#ae81ff">4096llu</span><span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>);
+  <span style="color:#66d9ef">void</span> <span style="color:#f92672">*</span>mm <span style="color:#f92672">=</span> mmap(<span style="color:#ae81ff">0</span>, sz, PROT_READ<span style="color:#f92672">|</span>PROT_WRITE<span style="color:#f92672">|</span>PROT_EXEC, MAP_ANONYMOUS<span style="color:#f92672">|</span>MAP_PRIVATE, <span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">0</span>);
+  ...
+  memcpy(mm, shellcode<span style="color:#f92672">-&gt;</span>Data(), shellcode<span style="color:#f92672">-&gt;</span>ByteLengthAsSizeT());
+  <span style="color:#66d9ef">void</span> (<span style="color:#f92672">*</span>fn)(<span style="color:#66d9ef">void</span>) <span style="color:#f92672">=</span> (<span style="color:#66d9ef">void</span> (<span style="color:#f92672">*</span>)(<span style="color:#66d9ef">void</span>)) mm;
+  fn();
+}
+</code></pre></div><p>So the function copy our code into a newly-allocated Read-Write-Executable(rwx) page, and then execute it right?</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-asm" data-lang="asm">   <span style="color:#960050;background-color:#1e0010">0</span><span style="color:#a6e22e">x0000000009088315</span> <span style="color:#960050;background-color:#1e0010">&lt;+</span><span style="color:#ae81ff">277</span><span style="color:#960050;background-color:#1e0010">&gt;</span>:	<span style="color:#66d9ef">mov</span>    <span style="color:#66d9ef">rdi</span>,<span style="color:#66d9ef">rbx</span> <span style="color:#75715e">; dest
+</span><span style="color:#75715e"></span>   <span style="color:#ae81ff">0x0000000009088318</span> <span style="color:#960050;background-color:#1e0010">&lt;+</span><span style="color:#ae81ff">280</span><span style="color:#960050;background-color:#1e0010">&gt;</span>:	<span style="color:#66d9ef">mov</span>    <span style="color:#66d9ef">rsi</span>,<span style="color:#66d9ef">r15</span> <span style="color:#75715e">; source
+</span><span style="color:#75715e"></span>   <span style="color:#ae81ff">0x000000000908831b</span> <span style="color:#960050;background-color:#1e0010">&lt;+</span><span style="color:#ae81ff">283</span><span style="color:#960050;background-color:#1e0010">&gt;</span>:	<span style="color:#66d9ef">call</span>   <span style="color:#ae81ff">0xa00f7e0</span> &lt;<span style="color:#66d9ef">memcpy@plt</span>&gt;
+   <span style="color:#960050;background-color:#1e0010">0</span><span style="color:#a6e22e">x0000000009088320</span> <span style="color:#960050;background-color:#1e0010">&lt;+</span><span style="color:#ae81ff">288</span><span style="color:#960050;background-color:#1e0010">&gt;</span>:	<span style="color:#66d9ef">call</span>   <span style="color:#66d9ef">rbx</span>
+</code></pre></div><p>The above was the assembly equivalent for 3 last lines of code. There are 2 things worth mentioned:</p>
+<ul>
+<li><code>rbx</code> and <code>rdi</code> will store the address of the rwx page</li>
+<li><code>r15</code> will store the address of our original buffer</li>
+</ul>
+<p>This enables us to RETURN an arbitrary number of values by write to <code>r15+X</code>,
+then read it back in JavaScript.</p>
+<p>For me, I read the return pointer from <code>[rsp]</code> to get a function pointer,
+and derive the renderer&rsquo;s <code>_text</code> base.</p>
+<h1 id="6-nodes-and-ports">6. Nodes and Ports</h1>
+<p>Node could be understood as <em>process</em>; when you launch chrome, it will spawn multiple children to isolate their data in case of compromisation, and each of them is a node.</p>
+<p>Node&rsquo;s name is a 128-bit random integer</p>
+<p>A node has multiple ports listening for messages, each of them has an attached endpoint which will consume the messages.</p>
+<p>Similar to node, port&rsquo;s name is also a 128-bit random integer</p>
+<p>A port is addressed using its node&rsquo;s name and its name (node:port)</p>
+<p>Knowing a port&rsquo;s name and its node&rsquo;s name is equivalent to have a send right to that port.</p>
+<blockquote>
+<p>“[&hellip;] any Node can send any Message to any Port of any other Node so long as it has knowledge of the Port and Node names. [&hellip;] It is therefore important not to leak Port names into Nodes that shouldn&rsquo;t be granted the corresponding Capability.”
+<a href="https://chromium.googlesource.com/chromium/src/+/master/mojo/core/README.md#security">Security section of Mojo core</a></p>
+</blockquote>
+<p>A <a href="https://source.chromium.org/chromium/chromium/src/+/master:mojo/core/ports/node.h;bpv=1;bpt=1;l=69?gsn=Node">node</a> knows its own name</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">COMPONENT_EXPORT</span>(MOJO_CORE_PORTS) Node {
+  ...
+  <span style="color:#66d9ef">const</span> NodeName name_;
+  ...
+}
+</code></pre></div><p>A <a href="https://source.chromium.org/chromium/chromium/src/+/master:mojo/core/ports/port.h;bpv=1;bpt=1;l=64?gsn=Port">port</a> knows its name and its node</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Port</span> <span style="color:#f92672">:</span> <span style="color:#66d9ef">public</span> base<span style="color:#f92672">::</span>RefCountedThreadSafe<span style="color:#f92672">&lt;</span>Port<span style="color:#f92672">&gt;</span> {
+  <span style="color:#75715e">// The Node and Port address to which events should be routed FROM this Port.
+</span><span style="color:#75715e"></span>  <span style="color:#75715e">// Note that this is NOT necessarily the address of the Port currently sending
+</span><span style="color:#75715e"></span>  <span style="color:#75715e">// events TO this Port.
+</span><span style="color:#75715e"></span>  NodeName peer_node_name;
+  PortName peer_port_name;
+}
+</code></pre></div><h1 id="7-leaking-ports-names">7. Leaking ports&rsquo; names</h1>
+<p>A node keeps track of its name, its local ports, and its remote ports (ports from another nodes that is known to this node)</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">COMPONENT_EXPORT</span>(MOJO_CORE_PORTS) Node {
+  ...
+  <span style="color:#66d9ef">const</span> NodeName name_;
+  ...
+  std<span style="color:#f92672">::</span>unordered_map<span style="color:#f92672">&lt;</span>LocalPortName, scoped_refptr<span style="color:#f92672">&lt;</span>Port<span style="color:#f92672">&gt;&gt;</span> ports_;
+  ...
+}
+</code></pre></div><p>By reading the browser process&rsquo;s memory and traverse through <code>ports_</code>, it&rsquo;s possible to <em>steal</em> a privileged port.</p>
+<p>One possible pointer path is <code>g_core-&gt;node_controller_-&gt;node_</code></p>
+<p>Just traverse that and dump all the ports&rsquo; names.</p>
+<h2 id="71-finding-offsets">7.1. Finding offsets</h2>
+<h3 id="711-simple-structures">7.1.1. Simple structures</h3>
+<p>Finding offsets isn&rsquo;t a trivial task when you haven&rsquo;t familiar with memory, but a way to do that is to disassemble functions where that field is used.</p>
+<p><em>If you are experienced in finding offsets, it is okay to skip this part.</em></p>
+<p>For example, to find the offset of <code>node_controller_</code> in <code>g_core</code>, you could try disassemble this function</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp">NodeController<span style="color:#f92672">*</span> Core<span style="color:#f92672">::</span>GetNodeController() {
+  base<span style="color:#f92672">::</span>AutoLock lock(node_controller_lock_);
+  <span style="color:#66d9ef">if</span> (<span style="color:#f92672">!</span>node_controller_)
+    node_controller_.reset(<span style="color:#66d9ef">new</span> NodeController(<span style="color:#66d9ef">this</span>));
+  <span style="color:#66d9ef">return</span> node_controller_.get();
+}
+</code></pre></div><p><code>this</code> pointer is always passed as the first argument</p>
+<pre><code>  0x0000000003723fba &lt;+10&gt;:	mov  r15,rdi
+</code></pre><p>and this time, it is stored in <code>r15</code> register</p>
+<p>The following code should be equivalent to the <code>if(!node_controller_)</code></p>
+<pre><code>  0x0000000003723fc9 &lt;+25&gt;: mov  rbx,QWORD PTR [r15+0x30]
+  0x0000000003723fcd &lt;+29&gt;: test rbx,rbx
+</code></pre><p>Or the below should be equivalent to the return</p>
+<pre><code>  0x0000000003723ffd &lt;+77&gt;:  mov  rbx,QWORD PTR [r15+0x30]
+  0x0000000003724001 &lt;+81&gt;:  mov  rdi,r14
+  0x0000000003724004 &lt;+84&gt;:  call 0xa00fad0
+  0x0000000003724009 &lt;+89&gt;:  mov  rax,rbx
+  0x000000000372400c &lt;+92&gt;:  add  rsp,0x8
+</code></pre><p>So the offset is probably <code>+0x30</code>.</p>
+<p>The way of finding the remaining offsets is left as an exercise to the readers.</p>
+<h3 id="712-fck-ctraversing-stdunordered_map">7.1.2. F*ck C++/Traversing <code>std::unordered_map</code></h3>
+<p>Okay, now how do we dump all ports?</p>
+<p>The worst thing about C++ containers is that their methods are inlined</p>
+<p>One of our candidates for disassembling this time is</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#66d9ef">int</span> Node<span style="color:#f92672">::</span>GetPort(<span style="color:#66d9ef">const</span> PortName<span style="color:#f92672">&amp;</span> port_name, PortRef<span style="color:#f92672">*</span> port_ref) {
+  PortLocker<span style="color:#f92672">::</span>AssertNoPortsLockedOnCurrentThread();
+  base<span style="color:#f92672">::</span>AutoLock lock(ports_lock_);
+  <span style="color:#66d9ef">auto</span> iter <span style="color:#f92672">=</span> ports_.find(port_name);
+  <span style="color:#66d9ef">if</span> (iter <span style="color:#f92672">==</span> ports_.end())
+    <span style="color:#66d9ef">return</span> ERROR_PORT_UNKNOWN;
+...
+  <span style="color:#f92672">*</span>port_ref <span style="color:#f92672">=</span> PortRef(port_name, iter<span style="color:#f92672">-&gt;</span>second);
+  <span style="color:#66d9ef">return</span> OK;
+}
+</code></pre></div><p>because it used the <a href="https://source.chromium.org/chromium/chromium/llvm-project/libcxx.git/+/78d6a7767ed57b50122a161b91f59f19c9bd0d19:include/__hash_table;drc=3c73561841650afb4718223958b4b6e86983c862;l=2485"><code>.find</code> method</a></p>
+<p>Disassembling it will give you a loooong and complicated(?) function, but there are a few interesting points</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-asm" data-lang="asm">  <span style="color:#960050;background-color:#1e0010">0</span><span style="color:#a6e22e">x0000000006d6c443</span> <span style="color:#960050;background-color:#1e0010">&lt;+</span><span style="color:#ae81ff">51</span><span style="color:#960050;background-color:#1e0010">&gt;</span>:	<span style="color:#66d9ef">mov</span>  <span style="color:#66d9ef">rdi</span>,<span style="color:#66d9ef">QWORD</span> <span style="color:#66d9ef">PTR</span> [<span style="color:#66d9ef">r14</span><span style="color:#960050;background-color:#1e0010">+</span><span style="color:#ae81ff">0x50</span>]
+  <span style="color:#960050;background-color:#1e0010">0</span><span style="color:#a6e22e">x0000000006d6c447</span> <span style="color:#960050;background-color:#1e0010">&lt;+</span><span style="color:#ae81ff">55</span><span style="color:#960050;background-color:#1e0010">&gt;</span>:	<span style="color:#66d9ef">mov</span>  <span style="color:#66d9ef">r12d</span>,<span style="color:#ae81ff">0xfffffff6</span>
+  <span style="color:#960050;background-color:#1e0010">0</span><span style="color:#a6e22e">x0000000006d6c44d</span> <span style="color:#960050;background-color:#1e0010">&lt;+</span><span style="color:#ae81ff">61</span><span style="color:#960050;background-color:#1e0010">&gt;</span>:	<span style="color:#66d9ef">test</span> <span style="color:#66d9ef">rdi</span>,<span style="color:#66d9ef">rdi</span>
+  <span style="color:#960050;background-color:#1e0010">0</span><span style="color:#a6e22e">x0000000006d6c450</span> <span style="color:#960050;background-color:#1e0010">&lt;+</span><span style="color:#ae81ff">64</span><span style="color:#960050;background-color:#1e0010">&gt;</span>:	<span style="color:#66d9ef">je</span>   <span style="color:#ae81ff">0x6d6c5d2</span> <span style="color:#75715e">; not found
+</span></code></pre></div><p>There&rsquo;s a nullcheck here, which is equivalent to <a href="https://source.chromium.org/chromium/chromium/llvm-project/libcxx.git/+/78d6a7767ed57b50122a161b91f59f19c9bd0d19:include/__hash_table;drc=3c73561841650afb4718223958b4b6e86983c862;l=2489">this one</a>. So <code>0x50</code> is probably where <code>bucket_count()</code> is</p>
+<p>Continuing the path through a bunch of calculation with constants:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-asm" data-lang="asm">  <span style="color:#960050;background-color:#1e0010">0</span><span style="color:#a6e22e">x0000000006d6c4f4</span> <span style="color:#960050;background-color:#1e0010">&lt;+</span><span style="color:#ae81ff">228</span><span style="color:#960050;background-color:#1e0010">&gt;</span>: <span style="color:#66d9ef">mov</span>  <span style="color:#66d9ef">rax</span>,<span style="color:#66d9ef">QWORD</span> <span style="color:#66d9ef">PTR</span> [<span style="color:#66d9ef">r14</span><span style="color:#960050;background-color:#1e0010">+</span><span style="color:#ae81ff">0x48</span>]
+  <span style="color:#960050;background-color:#1e0010">0</span><span style="color:#a6e22e">x0000000006d6c4f8</span> <span style="color:#960050;background-color:#1e0010">&lt;+</span><span style="color:#ae81ff">232</span><span style="color:#960050;background-color:#1e0010">&gt;</span>: <span style="color:#66d9ef">mov</span>  <span style="color:#66d9ef">rax</span>,<span style="color:#66d9ef">QWORD</span> <span style="color:#66d9ef">PTR</span> [<span style="color:#66d9ef">rax</span><span style="color:#960050;background-color:#1e0010">+</span><span style="color:#66d9ef">r8</span>*<span style="color:#ae81ff">8</span>]
+  <span style="color:#960050;background-color:#1e0010">0</span><span style="color:#a6e22e">x0000000006d6c4fc</span> <span style="color:#960050;background-color:#1e0010">&lt;+</span><span style="color:#ae81ff">236</span><span style="color:#960050;background-color:#1e0010">&gt;</span>: <span style="color:#66d9ef">test</span> <span style="color:#66d9ef">rax</span>,<span style="color:#66d9ef">rax</span>
+</code></pre></div><p>The second line of the above snippet is what we want to talk about.</p>
+<p><code>[rax+r8*8]</code> is an array access, with <code>rax</code> holding the base address, <code>r8</code> is probably the index and <code>8</code> is surely the element size.</p>
+<p>And it&rsquo;s definitely <a href="https://source.chromium.org/chromium/chromium/llvm-project/libcxx.git/+/78d6a7767ed57b50122a161b91f59f19c9bd0d19:include/__hash_table;drc=3c73561841650afb4718223958b4b6e86983c862;l=2492">this line</a></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp">size_t __chash <span style="color:#f92672">=</span> __constrain_hash(__hash, __bc);
+__next_pointer __nd <span style="color:#f92672">=</span> __bucket_list_[__chash];
+</code></pre></div><p>So <code>__bucket_list_</code> is probably at offset <code>+0x48</code></p>
+<p>At this point, it is reasonable for anyone to try to go through all non-null elements(bucket) to dump all the elements by traversing the linked list.</p>
+<p>However, this turns out to be a bad way to do so and I could even find duplicate elements and bad pointers.</p>
+<p>However, with a bit of more time, you will find this defintion</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp">__bucket_list                         __bucket_list_;
+pair<span style="color:#f92672">&lt;</span>__first_node, __node_allocator<span style="color:#f92672">&gt;</span>  __p1_;
+pair<span style="color:#f92672">&lt;</span>size_type, hasher<span style="color:#f92672">&gt;</span>               __p2_;
+pair<span style="color:#f92672">&lt;</span><span style="color:#66d9ef">float</span>, key_equal<span style="color:#f92672">&gt;</span>                __p3_;
+</code></pre></div><p>So <code>__p1_.first</code> will be our first element (<code>.begin()</code>).</p>
+<p>With the <code>.begin()</code> pointer, it is possible to iterate through all elements just like a linked list. Inspecting the memory, you will find that <code>+0x10</code> from the <code>__bucket_list_</code> is a good educated guess for the <code>.begin()</code> pointer.</p>
+<p><a href="http://llvm.org/viewvc/llvm-project/lldb/trunk/examples/synthetic/unordered_multi.py?view=markup&amp;pathrev=189964">Reference</a></p>
+<h1 id="8-what-do-we-do-with-stolen-ports">8. What do we do with stolen ports?</h1>
+<h2 id="81-factory-of-network-requests">8.1. Factory of network requests</h2>
+<p>One of the good candidates for a good target is a <em>privileged</em> <code>URLLoaderFactory</code>, which relies in the network service, and has the ability to make network requests (<a href="https://source.chromium.org/chromium/chromium/src/+/master:services/network/url_loader_factory.h;drc=6e8b402a6231405b753919029c9027404325ea00;bpv=1;bpt=1;l=57?q=URLLoaderFactory::CreateLoaderAndStart"><code>URLLoaderFactory::CreateLoaderAndStart</code></a>), with files</p>
+<p><code>URLLoaderFactories</code> are wrapped by <code>CorsURLLoaderFactories</code>, which enforced CORS to all requests.</p>
+<p>To isolate origins, factories created with renderers cannot be used to make requests to another origins.
+However, the browser can create factories (<code>process_id_==kBrowserProcess</code>) that allow it to make arbitrary requests with no CORS enforced.</p>
+<p>If we could get such a loader from the browser,  we could upload any files to our server.</p>
+<blockquote>
+<p>However, I noticed a code path that allows you to create a large amount of privileged URLLoaderFactories using service workers. If you create a service worker with <a href="https://developers.google.com/web/updates/2017/02/navigation-preload">navigation preload</a> enabled, every top-level navigation would <a href="https://cs.chromium.org/chromium/src/content/browser/service_worker/service_worker_fetch_dispatcher.cc?l=334&amp;rcl=a129610c20b22dd77f65f137d88fc37dd1eb064f">create such a loader</a>. By simply creating a number of iframes and stalling the requests on the server side, you can keep a few thousand loaders alive at the same time.
+@_tsuro</p>
+</blockquote>
+<p>To do so is pretty trivial, just make sure to use HTTPS and you are good to go.</p>
+<h2 id="82-making-the-leaked-ports-ours">8.2. Making the leaked ports ours</h2>
+<p>To send messages to the leaked ports&rsquo; names, we need to register it to our node. Below is my way of doing it:</p>
+<ul>
+<li>Create a new port on our node using <a href="https://source.chromium.org/chromium/chromium/src/+/master:mojo/core/ports/node.h;bpv=1;bpt=1;l=100?gsn=CreateUninitializedPort"><code>Node::CreateUninitializedPort</code></a></li>
+<li>Initialize it with our leaked names using <a href="https://source.chromium.org/chromium/chromium/src/+/master:mojo/core/ports/node.h;bpv=1;bpt=1;l=103?gsn=InitializePort"><code>Node::InitializePort</code></a></li>
+</ul>
+<p>After doing that, the leaked port will be inserted into your node&rsquo;s <code>ports_</code> map.</p>
+<h3 id="821-calling-functions-from-shellcode">8.2.1. Calling functions from shellcode</h3>
+<p>It is impractical to run an assembler to compile your shellcode with the functions&rsquo; addresses, providing that they shift around all the time under ASLR.</p>
+<p>There are probably many ways of doing this, including <a href="https://github.com/xerub/acorn">ways</a> that allow you to call functions directly from JavaScript.
+However, I will stick to the assembly this time and use the <code>Mojo::rce</code> primitive.</p>
+<p>In my shellcode, there will be a common pattern, which looks like this</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-asm" data-lang="asm">  <span style="color:#a6e22e">mov</span> <span style="color:#66d9ef">rax</span>, <span style="color:#ae81ff">0x4141414141414141</span>
+  <span style="color:#a6e22e">call</span> <span style="color:#66d9ef">rax</span>
+</code></pre></div><p>The <code>0x4141414141414141</code> value will be encoded as 8 consecutive little-endian bytes in the machine code. The JavaScript will be responsible to replace it with the correct address calculated from the leak.</p>
+<h2 id="83-sending-our-messages">8.3. Sending our messages</h2>
+<p>In the <code>Core</code> object, there are some interesting APIs</p>
+<ul>
+<li><a href="https://source.chromium.org/chromium/chromium/src/+/master:mojo/core/core.h;bpv=1;bpt=1;l=169?gsn=CreateMessage"><code>Core::CreateMessage</code></a></li>
+<li><a href="https://source.chromium.org/chromium/chromium/src/+/master:mojo/core/core.h;bpv=1;bpt=1;l=174?gsn=AppendMessageData"><code>Core::AppendMessageData</code></a></li>
+<li><a href="https://source.chromium.org/chromium/chromium/src/+/master:mojo/core/core.h;bpv=1;bpt=1;l=201?gsn=WriteMessage"><code>Core::SendMessage</code></a></li>
+</ul>
+<p>The purposes of them are clear just by their names.</p>
+<p>However, the <code>Core::SendMessage</code> API takes a <code>MojoHandle message_pipe_handle</code> (an <code>uint32_t</code>) as a parameter, which is the receiving port.</p>
+<p>To get a <code>MojoHandle</code>, we can use the API</p>
+<p><code>MojoHandle CreatePartialMessagePipe(const ports::PortRef&amp; port)</code>,</p>
+<p>which creates handles for our newly-created ports.</p>
+<p>Later, I found the function <a href="https://source.chromium.org/chromium/chromium/src/+/master:mojo/public/cpp/system/message_pipe.cc;drc=6e8b402a6231405b753919029c9027404325ea00;bpv=1;bpt=1;l=13?gsn=WriteMessageRaw"><code>mojo::WriteMessageRaw</code></a>, which takes our port&rsquo;s <code>MojoHandle</code>, message buffer, and an array of <code>MojoHandles</code>(?) and send the message.</p>
+<p>Unfortunately, it takes a C++ object <a href="https://source.chromium.org/chromium/chromium/src/+/master:mojo/public/cpp/system/message_pipe.h;drc=6e8b402a6231405b753919029c9027404325ea00;bpv=1;bpt=1;l=30?gsn=MessagePipeHandle"><code>MessagePipeHandle</code></a>, which is not so easy to create. So all I can do was replicate its behavior.</p>
+<h2 id="84-writing-our-messages">8.4. Writing our messages</h2>
+<p>If you take a look at the binding JS code (i.e. <code>URLLoaderFactoryProxy.prototype.createLoaderAndStart</code>), you will see that it uses the API <code>MessageV0Builder</code> to craft a message. That function will return a <code>Message</code> object, which contains a buffer, and an array of handles.</p>
+<p>Our message obviously should contain the buffer, but what are the handles?</p>
+<p>The function <code>URLLoaderFactory::CreateLoaderAndStart</code> has 2 special parameters: <code>mojo::PendingReceiver&lt;mojom::URLLoader&gt; receiver</code> and <code>mojo::PendingRemote&lt;mojom::URLLoaderClient&gt; client</code>.  <code>PendingReceiver</code> and <code>PendingRemote</code> indicate that these are shared objects, which are used through ports.</p>
+<p>To pass these objects as parameters, you need to pass their handles, just 2 <code>uint32_t</code> to <code>Core::AppendMessageData</code>.</p>
+<p>If you inspect the message generated by <code>MessageV0Builder</code>, its array of handles will contain 2 elements, equivalent to <code>receiver</code> and <code>client</code>. These elements are strings: <code>URLLoaderInterfaceRequest</code>, and <code>URLLoaderClientPtr</code>, respectively.</p>
+<p>So we need to pass 2 handles, an <code>InterfaceRequest</code> and an <code>Ptr</code>. But how do we figure them out?</p>
+<p>Here is the code to create a client</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js">  <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">client</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">network</span>.<span style="color:#a6e22e">mojom</span>.<span style="color:#a6e22e">URLLoaderClientPtr</span>();
+  <span style="color:#a6e22e">Mojo</span>.<span style="color:#a6e22e">bindInterface</span>(
+    <span style="color:#a6e22e">network</span>.<span style="color:#a6e22e">mojom</span>.<span style="color:#a6e22e">URLLoaderClient</span>.<span style="color:#a6e22e">name</span>,
+    <span style="color:#a6e22e">mojo</span>.<span style="color:#a6e22e">makeRequest</span>(<span style="color:#a6e22e">client</span>).<span style="color:#a6e22e">handle</span>,
+    <span style="color:#e6db74">&#34;process&#34;</span>
+  );
+</code></pre></div><p>This parameter <code>mojo.makeRequest(client).handle</code> also seems like a handle. Its implementation can be viewed <a href="https://source.chromium.org/chromium/chromium/src/+/master:mojo/public/cpp/bindings/interface_request.h;drc=6e8b402a6231405b753919029c9027404325ea00;bpv=1;bpt=1;l=161?q=mojo::makeRequest">here</a>.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#66d9ef">template</span> <span style="color:#f92672">&lt;</span><span style="color:#66d9ef">typename</span> Interface<span style="color:#f92672">&gt;</span>
+InterfaceRequest<span style="color:#f92672">&lt;</span>Interface<span style="color:#f92672">&gt;</span> MakeRequest(
+    InterfacePtr<span style="color:#f92672">&lt;</span>Interface<span style="color:#f92672">&gt;*</span> ptr,
+    scoped_refptr<span style="color:#f92672">&lt;</span>base<span style="color:#f92672">::</span>SequencedTaskRunner<span style="color:#f92672">&gt;</span> runner <span style="color:#f92672">=</span> <span style="color:#66d9ef">nullptr</span>) {
+  MessagePipe pipe;
+  ptr<span style="color:#f92672">-&gt;</span>Bind(InterfacePtrInfo<span style="color:#f92672">&lt;</span>Interface<span style="color:#f92672">&gt;</span>(std<span style="color:#f92672">::</span>move(pipe.handle0), <span style="color:#ae81ff">0u</span>),
+            std<span style="color:#f92672">::</span>move(runner));
+  <span style="color:#66d9ef">return</span> InterfaceRequest<span style="color:#f92672">&lt;</span>Interface<span style="color:#f92672">&gt;</span>(std<span style="color:#f92672">::</span>move(pipe.handle1));
+}
+</code></pre></div><p>It seems to create a MessagePipe, which will create 2 <code>MojoHandles</code>: <code>handle0</code> and <code>handle1</code>.</p>
+<ul>
+<li><code>handle0</code> is binded to the passed <code>Ptr</code></li>
+<li><code>handle1</code> is binded to a newly created <code>InterfaceRequest</code></li>
+</ul>
+<p>Lucky to us, handles are <a href="https://source.chromium.org/chromium/chromium/src/+/master:mojo/core/handle_table.cc;drc=6e8b402a6231405b753919029c9027404325ea00;l=56">generated increasingly</a>. So we are able to predict the handles of the <code>Ptr</code> and <code>InterfaceRequest</code> from the handle of our port.</p>
+<h2 id="85-to-know-who-our-receivers-are">8.5. To know who our receivers are</h2>
+<p>While creating this exploit, I ran into a programming bug which prevents my message buffer being copied. This leads me to discover a way to know which object is behind the port:</p>
+<p>By sending an invalid message (set <a href="https://source.chromium.org/chromium/chromium/src/+/master:mojo/public/cpp/bindings/lib/validation_util.cc;drc=6e8b402a6231405b753919029c9027404325ea00;bpv=1;bpt=1;l=30?q=ValidateStructHeader&amp;ss=chromium%2Fchromium%2Fsrc&amp;gsn=ValidateStructHeaderAndClaimMemory">the first <code>uint32_t</code>(<code>header_size</code>)</a> 0), you can trigger a validation error at <a href="https://source.chromium.org/chromium/chromium/src/+/master:mojo/public/cpp/bindings/lib/validation_util.cc;drc=6e8b402a6231405b753919029c9027404325ea00;l=45">this line</a> and the verbose logging willl print something like this</p>
+<pre><code>Mojo error in NetworkService:Validation failed for network.mojom.CookieAccessObserver [master] MessageHeaderValidator [VALIDATION_ERROR_UNEXPECTED_STRUCT_HEADER]
+</code></pre><p>That&rsquo;s it, you now know who are you sending to.</p>
+<h2 id="86-where-are-my-factory-">8.6. Where are my factory ??</h2>
+<p>I stucked and cannot find any factories within the ports. There are even some ports which never responds to my messages.</p>
+<p>At this point (ofc after the CTF has ended), Stephen points out my missing bit: I didn&rsquo;t set the messages&rsquo; <a href="https://source.chromium.org/chromium/chromium/src/+/master:mojo/core/ports/event.h;drc=6e8b402a6231405b753919029c9027404325ea00;l=157"><code>sequence_num</code></a>. It seems like the Mojo system use this number to prevent message duplication.</p>
+<p><a href="https://source.chromium.org/chromium/chromium/src/+/master:mojo/core/ports/node.cc;drc=6e8b402a6231405b753919029c9027404325ea00;l=1293">This number is increased by one when a message is sent.</a> Fortunately, the correct <code>sequence_num</code> is stored in the <code>Port</code> object in the <a href="https://source.chromium.org/chromium/chromium/src/+/master:mojo/core/ports/port.h;drc=6e8b402a6231405b753919029c9027404325ea00;l=111">field <code>next_sequence_num_to_send</code></a>, which can be leaked from where we found our ports in browser process&rsquo;s memory.</p>
+<h3 id="861-setting-the-sequence_num">8.6.1. Setting the sequence_num</h3>
+<p>Let me remind you that <code>MojoMessageHandle</code> is actually a <a href="https://source.chromium.org/chromium/chromium/src/+/master:mojo/core/core.cc;drc=6e8b402a6231405b753919029c9027404325ea00;l=349">pointer</a> to a <code>UserMessageEvent</code>. Unfortunately, the function <code>set_sequence_num</code> is inlined so the offset isn&rsquo;t free. However, you could get it by disassembling <a href="https://source.chromium.org/chromium/chromium/src/+/master:mojo/core/ports/node.cc;drc=6e8b402a6231405b753919029c9027404325ea00;bpv=1;bpt=1;l=1230?gsn=PrepareToForwardUserMessage"><code>Node::PrepareToForwardUserMessage</code></a></p>
+<h3 id="862-getting-the-correct-function-parameters">8.6.2. Getting the correct function parameters</h3>
+<p>This is a trivial part. Just take a look at the JavaScript Mojo binding code.</p>
+<h1 id="9-closing-words">9. Closing words</h1>
+<p>The devil is actually in the details, isn&rsquo;t it ;)</p>
+<h2 id="91-shoutout">9.1. Shoutout</h2>
+<ul>
+<li>To Stephen, for creating this challenge, and pointing out my missing bit (after the CTF, ofc). Thank you a lot.</li>
+</ul>
+<h2 id="92-reference">9.2. Reference</h2>
+<ul>
+<li><a href="https://googleprojectzero.blogspot.com/2020/02/escaping-chrome-sandbox-with-ridl.html">Stephen&rsquo;s article on P0 blog</a></li>
+<li><a href="https://www.youtube.com/watch?v=ugZzQvXUTIk">Stephen&rsquo;s talk at OffensiveCon20</a></li>
+</ul>
+</div>
+    
+    <h4 class="page-header">File Resources</h4>
+    <ul>
+    
+    <ul>
+    
+    
+
+    
+
+        <h4 class="page-header">Related</h4>
+
+         <div class="item">
+
+    
+    
+    
+
+    
+    
+
+    <h4><a href="/blog/post/PlaidCTF2020/">PlaidCTF2020 PlaidStore mojo chromium</a></h4>
+    <h5>April 22, 2020</h5>
+    
+    <a href="https://trungnguyen1909.github.io/blog/tags/PlaidCTF2020"><kbd class="item-tag">PlaidCTF2020</kbd></a>
+    
+    <a href="https://trungnguyen1909.github.io/blog/tags/CTF"><kbd class="item-tag">CTF</kbd></a>
+    
+    <a href="https://trungnguyen1909.github.io/blog/tags/pwn"><kbd class="item-tag">pwn</kbd></a>
+    
+    <a href="https://trungnguyen1909.github.io/blog/tags/chromium"><kbd class="item-tag">chromium</kbd></a>
+    
+    <a href="https://trungnguyen1909.github.io/blog/tags/browser"><kbd class="item-tag">browser</kbd></a>
+    
+    <a href="https://trungnguyen1909.github.io/blog/tags/mojo"><kbd class="item-tag">mojo</kbd></a>
+    
+    <a href="https://trungnguyen1909.github.io/blog/tags/use-after-free"><kbd class="item-tag">use-after-free</kbd></a>
+    
+    <a href="https://trungnguyen1909.github.io/blog/tags/UAF"><kbd class="item-tag">UAF</kbd></a>
+    
+
+</div>
+  <div class="item">
+
+    
+    
+    
+
+    
+    
+
+    <h4><a href="/blog/post/CampCTF/PwningKernelz/">pwning your kernelz</a></h4>
+    <h5>September 4, 2019</h5>
+    
+    <a href="https://trungnguyen1909.github.io/blog/tags/Camp-CTF"><kbd class="item-tag">Camp-CTF</kbd></a>
+    
+    <a href="https://trungnguyen1909.github.io/blog/tags/pwn"><kbd class="item-tag">pwn</kbd></a>
+    
+    <a href="https://trungnguyen1909.github.io/blog/tags/kernel"><kbd class="item-tag">kernel</kbd></a>
+    
+    <a href="https://trungnguyen1909.github.io/blog/tags/xnu"><kbd class="item-tag">xnu</kbd></a>
+    
+    <a href="https://trungnguyen1909.github.io/blog/tags/0day"><kbd class="item-tag">0day</kbd></a>
+    
+
+</div>
+  <div class="item">
+
+    
+    
+    
+
+    
+    
+
+    <h4><a href="/blog/post/FBCTF19-Qual/kpets/">kpets FacebookCTF 2019 Qualification Round</a></h4>
+    <h5>June 12, 2019</h5>
+    
+    <a href="https://trungnguyen1909.github.io/blog/tags/FBCTF"><kbd class="item-tag">FBCTF</kbd></a>
+    
+    <a href="https://trungnguyen1909.github.io/blog/tags/CTF"><kbd class="item-tag">CTF</kbd></a>
+    
+    <a href="https://trungnguyen1909.github.io/blog/tags/pwn"><kbd class="item-tag">pwn</kbd></a>
+    
+    <a href="https://trungnguyen1909.github.io/blog/tags/kernel"><kbd class="item-tag">kernel</kbd></a>
+    
+    <a href="https://trungnguyen1909.github.io/blog/tags/linux"><kbd class="item-tag">linux</kbd></a>
+    
+    <a href="https://trungnguyen1909.github.io/blog/tags/race-condition"><kbd class="item-tag">race-condition</kbd></a>
+    
+    <a href="https://trungnguyen1909.github.io/blog/tags/double-fetch"><kbd class="item-tag">double-fetch</kbd></a>
+    
+
+</div>
+ 
+
+    
+
+    
+
+        <h4 class="page-header">Comments</h4>
+        <div id="disqus_thread"></div>
+        <script>
+
+        
+
+        
+
+        (function() { 
+        var d = document, s = d.createElement('script');
+        s.src = 'https://ntrung03-blog.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+        })();
+        </script>
+        <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+    
+
+</main>
+
+        <footer>
+
+            <p class="copyright text-muted">© All rights reserved. Powered by <a href="https://gohugo.io">Hugo</a> and <a href="https://github.com/calintat/minimal">Minimal</a>. Code licensed under <a href="https://github.com/TrungNguyen1909/blog/blob/master/LICENSE">MIT</a>. Content licensed under <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a></p>
+
+        </footer>
+       
+    </body>
+
+</html>
+

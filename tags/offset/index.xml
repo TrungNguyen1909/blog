@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>offset on Nguyen Hoang Trung</title>
+    <link>https://trungnguyen1909.github.io/blog/tags/offset/</link>
+    <description>Recent content in offset on Nguyen Hoang Trung</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 02 Sep 2020 19:48:00 +0700</lastBuildDate>
+    
+	<atom:link href="https://trungnguyen1909.github.io/blog/tags/offset/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Google CTF 2020 teleport Chromium sandbox escape</title>
+      <link>https://trungnguyen1909.github.io/blog/post/GGCTF20/</link>
+      <pubDate>Wed, 02 Sep 2020 19:48:00 +0700</pubDate>
+      
+      <guid>https://trungnguyen1909.github.io/blog/post/GGCTF20/</guid>
+      <description>Teleport  Please write a full-chain exploit for Chrome. The flag is at /home/user/flag. Maybe there&amp;rsquo;s some way to teleit out of there?
+ 1. Story Hi, last week I participated in Google CTF 2020 with my team pwnPHOfun
+Although I didn&amp;rsquo;t solve the challenge in time for the points; still, here is a writeup for the challenge teleport for you.
+I like to write detailed articles that are understandable and replicable to my past self.</description>
+    </item>
+    
+  </channel>
+</rss>

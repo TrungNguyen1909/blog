@@ -6,7 +6,7 @@
     <description>Recent content in Tags on Nguyen Hoang Trung</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 22 Apr 2020 19:42:49 +0700</lastBuildDate>
+    <lastBuildDate>Wed, 02 Sep 2020 19:48:00 +0700</lastBuildDate>
     
 	<atom:link href="https://trungnguyen1909.github.io/blog/tags/index.xml" rel="self" type="application/rss+xml" />
     
@@ -14,7 +14,7 @@
     <item>
       <title>browser</title>
       <link>https://trungnguyen1909.github.io/blog/tags/browser/</link>
-      <pubDate>Wed, 22 Apr 2020 19:42:49 +0700</pubDate>
+      <pubDate>Wed, 02 Sep 2020 19:48:00 +0700</pubDate>
       
       <guid>https://trungnguyen1909.github.io/blog/tags/browser/</guid>
       <description></description>
@@ -23,7 +23,7 @@
     <item>
       <title>chromium</title>
       <link>https://trungnguyen1909.github.io/blog/tags/chromium/</link>
-      <pubDate>Wed, 22 Apr 2020 19:42:49 +0700</pubDate>
+      <pubDate>Wed, 02 Sep 2020 19:48:00 +0700</pubDate>
       
       <guid>https://trungnguyen1909.github.io/blog/tags/chromium/</guid>
       <description></description>
@@ -32,18 +32,63 @@
     <item>
       <title>CTF</title>
       <link>https://trungnguyen1909.github.io/blog/tags/CTF/</link>
-      <pubDate>Wed, 22 Apr 2020 19:42:49 +0700</pubDate>
+      <pubDate>Wed, 02 Sep 2020 19:48:00 +0700</pubDate>
       
       <guid>https://trungnguyen1909.github.io/blog/tags/CTF/</guid>
       <description></description>
     </item>
     
     <item>
+      <title>GGCTF2020</title>
+      <link>https://trungnguyen1909.github.io/blog/tags/GGCTF2020/</link>
+      <pubDate>Wed, 02 Sep 2020 19:48:00 +0700</pubDate>
+      
+      <guid>https://trungnguyen1909.github.io/blog/tags/GGCTF2020/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>mojo</title>
       <link>https://trungnguyen1909.github.io/blog/tags/mojo/</link>
-      <pubDate>Wed, 22 Apr 2020 19:42:49 +0700</pubDate>
+      <pubDate>Wed, 02 Sep 2020 19:48:00 +0700</pubDate>
       
       <guid>https://trungnguyen1909.github.io/blog/tags/mojo/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>offset</title>
+      <link>https://trungnguyen1909.github.io/blog/tags/offset/</link>
+      <pubDate>Wed, 02 Sep 2020 19:48:00 +0700</pubDate>
+      
+      <guid>https://trungnguyen1909.github.io/blog/tags/offset/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>pwn</title>
+      <link>https://trungnguyen1909.github.io/blog/tags/pwn/</link>
+      <pubDate>Wed, 02 Sep 2020 19:48:00 +0700</pubDate>
+      
+      <guid>https://trungnguyen1909.github.io/blog/tags/pwn/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>reversing</title>
+      <link>https://trungnguyen1909.github.io/blog/tags/reversing/</link>
+      <pubDate>Wed, 02 Sep 2020 19:48:00 +0700</pubDate>
+      
+      <guid>https://trungnguyen1909.github.io/blog/tags/reversing/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>sandbox</title>
+      <link>https://trungnguyen1909.github.io/blog/tags/sandbox/</link>
+      <pubDate>Wed, 02 Sep 2020 19:48:00 +0700</pubDate>
+      
+      <guid>https://trungnguyen1909.github.io/blog/tags/sandbox/</guid>
       <description></description>
     </item>
     
@@ -53,15 +98,6 @@
       <pubDate>Wed, 22 Apr 2020 19:42:49 +0700</pubDate>
       
       <guid>https://trungnguyen1909.github.io/blog/tags/PlaidCTF2020/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>pwn</title>
-      <link>https://trungnguyen1909.github.io/blog/tags/pwn/</link>
-      <pubDate>Wed, 22 Apr 2020 19:42:49 +0700</pubDate>
-      
-      <guid>https://trungnguyen1909.github.io/blog/tags/pwn/</guid>
       <description></description>
     </item>
     
@@ -255,15 +291,6 @@
     </item>
     
     <item>
-      <title>sandbox</title>
-      <link>https://trungnguyen1909.github.io/blog/tags/sandbox/</link>
-      <pubDate>Fri, 22 Feb 2019 23:17:46 +0700</pubDate>
-      
-      <guid>https://trungnguyen1909.github.io/blog/tags/sandbox/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>TetCTF</title>
       <link>https://trungnguyen1909.github.io/blog/tags/TetCTF/</link>
       <pubDate>Fri, 22 Feb 2019 23:17:46 +0700</pubDate>
@@ -323,15 +350,6 @@
       <pubDate>Thu, 22 Nov 2018 21:30:28 +0700</pubDate>
       
       <guid>https://trungnguyen1909.github.io/blog/tags/Python/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>reversing</title>
-      <link>https://trungnguyen1909.github.io/blog/tags/reversing/</link>
-      <pubDate>Thu, 22 Nov 2018 21:30:28 +0700</pubDate>
-      
-      <guid>https://trungnguyen1909.github.io/blog/tags/reversing/</guid>
       <description></description>
     </item>
     

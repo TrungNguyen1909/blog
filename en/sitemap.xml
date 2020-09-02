@@ -4,17 +4,17 @@
   
   <url>
     <loc>https://trungnguyen1909.github.io/blog/tags/browser/</loc>
-    <lastmod>2020-04-22T19:42:49+07:00</lastmod>
+    <lastmod>2020-09-02T19:48:00+07:00</lastmod>
   </url>
   
   <url>
     <loc>https://trungnguyen1909.github.io/blog/tags/chromium/</loc>
-    <lastmod>2020-04-22T19:42:49+07:00</lastmod>
+    <lastmod>2020-09-02T19:48:00+07:00</lastmod>
   </url>
   
   <url>
     <loc>https://trungnguyen1909.github.io/blog/tags/CTF/</loc>
-    <lastmod>2020-04-22T19:42:49+07:00</lastmod>
+    <lastmod>2020-09-02T19:48:00+07:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="vi"
@@ -28,13 +28,23 @@
   </url>
   
   <url>
+    <loc>https://trungnguyen1909.github.io/blog/tags/GGCTF2020/</loc>
+    <lastmod>2020-09-02T19:48:00+07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://trungnguyen1909.github.io/blog/post/GGCTF20/</loc>
+    <lastmod>2020-09-02T19:48:00+07:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://trungnguyen1909.github.io/blog/tags/mojo/</loc>
-    <lastmod>2020-04-22T19:42:49+07:00</lastmod>
+    <lastmod>2020-09-02T19:48:00+07:00</lastmod>
   </url>
   
   <url>
     <loc>https://trungnguyen1909.github.io/blog/</loc>
-    <lastmod>2020-04-22T19:42:49+07:00</lastmod>
+    <lastmod>2020-09-02T19:48:00+07:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="vi"
@@ -48,18 +58,13 @@
   </url>
   
   <url>
-    <loc>https://trungnguyen1909.github.io/blog/tags/PlaidCTF2020/</loc>
-    <lastmod>2020-04-22T19:42:49+07:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://trungnguyen1909.github.io/blog/post/PlaidCTF2020/</loc>
-    <lastmod>2020-04-22T19:42:49+07:00</lastmod>
+    <loc>https://trungnguyen1909.github.io/blog/tags/offset/</loc>
+    <lastmod>2020-09-02T19:48:00+07:00</lastmod>
   </url>
   
   <url>
     <loc>https://trungnguyen1909.github.io/blog/post/</loc>
-    <lastmod>2020-04-22T19:42:49+07:00</lastmod>
+    <lastmod>2020-09-02T19:48:00+07:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="vi"
@@ -74,7 +79,7 @@
   
   <url>
     <loc>https://trungnguyen1909.github.io/blog/tags/pwn/</loc>
-    <lastmod>2020-04-22T19:42:49+07:00</lastmod>
+    <lastmod>2020-09-02T19:48:00+07:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="vi"
@@ -88,8 +93,18 @@
   </url>
   
   <url>
+    <loc>https://trungnguyen1909.github.io/blog/tags/reversing/</loc>
+    <lastmod>2020-09-02T19:48:00+07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://trungnguyen1909.github.io/blog/tags/sandbox/</loc>
+    <lastmod>2020-09-02T19:48:00+07:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://trungnguyen1909.github.io/blog/tags/</loc>
-    <lastmod>2020-04-22T19:42:49+07:00</lastmod>
+    <lastmod>2020-09-02T19:48:00+07:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="vi"
@@ -100,6 +115,16 @@
                 hreflang="en"
                 href="https://trungnguyen1909.github.io/blog/tags/"
                 />
+  </url>
+  
+  <url>
+    <loc>https://trungnguyen1909.github.io/blog/tags/PlaidCTF2020/</loc>
+    <lastmod>2020-04-22T19:42:49+07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://trungnguyen1909.github.io/blog/post/PlaidCTF2020/</loc>
+    <lastmod>2020-04-22T19:42:49+07:00</lastmod>
   </url>
   
   <url>
@@ -253,11 +278,6 @@
   </url>
   
   <url>
-    <loc>https://trungnguyen1909.github.io/blog/tags/sandbox/</loc>
-    <lastmod>2019-02-22T23:17:46+07:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://trungnguyen1909.github.io/blog/tags/TetCTF/</loc>
     <lastmod>2019-02-22T23:17:46+07:00</lastmod>
   </url>
@@ -349,11 +369,6 @@
   
   <url>
     <loc>https://trungnguyen1909.github.io/blog/tags/Python/</loc>
-    <lastmod>2018-11-22T21:30:28+07:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://trungnguyen1909.github.io/blog/tags/reversing/</loc>
     <lastmod>2018-11-22T21:30:28+07:00</lastmod>
   </url>
   
