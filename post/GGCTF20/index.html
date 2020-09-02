@@ -170,7 +170,7 @@ if (!doNotTrack) {
 </blockquote>
 <h1 id="1-story">1. Story</h1>
 <p>Hi, last week I participated in Google CTF 2020 with my team <code>pwnPHOfun</code></p>
-<p>Although I didn&rsquo;t solve the challenge in time for the points;
+<p>Although I didn&rsquo;t solve the challenge in time for the points,
 still, here is a writeup for the challenge <code>teleport</code> for you.</p>
 <p>I like to write detailed articles that are understandable and replicable to my past self. Feel free to skip any parts. Here is a table of content for you.</p>
 <!-- raw HTML omitted -->
@@ -179,7 +179,7 @@ still, here is a writeup for the challenge <code>teleport</code> for you.</p>
 <li><a href="#1-story">1. Story</a></li>
 <li><a href="#2-overview">2. Overview</a>
 <ul>
-<li><a href="#21-sandboxed-or-not-sandboxed">2.1. Sandboxed or not sandboxed</a></li>
+<li><a href="#21-sandboxed-or-unsandboxed">2.1. Sandboxed or unsandboxed</a></li>
 <li><a href="#22-provided-primitives">2.2. Provided primitives</a></li>
 </ul>
 </li>
@@ -192,7 +192,7 @@ still, here is a writeup for the challenge <code>teleport</code> for you.</p>
 <li><a href="#71-finding-offsets">7.1. Finding offsets</a>
 <ul>
 <li><a href="#711-simple-structures">7.1.1. Simple structures</a></li>
-<li><a href="#712-fck-ctraversing-stdunordered_map">7.1.2. F*ck C++/Traversing <code>std::unordered_map</code></a></li>
+<li><a href="#712-fk-ctraversing-stdunordered_map">7.1.2. F**k C++/Traversing <code>std::unordered_map</code></a></li>
 </ul>
 </li>
 </ul>
@@ -231,19 +231,19 @@ still, here is a writeup for the challenge <code>teleport</code> for you.</p>
 which basically has 2 features.</p>
 <p>The first one is the <code>Pwn</code> object, and a code execution(?) primitive <code>Mojo::rce</code></p>
 <p>Both could be trivially used through <code>MojoJS</code>, which is enabled for us.</p>
-<h2 id="21-sandboxed-or-not-sandboxed">2.1. Sandboxed or not sandboxed</h2>
+<h2 id="21-sandboxed-or-unsandboxed">2.1. Sandboxed or unsandboxed</h2>
 <p>On the first sight, the challenge seems unexpectedly easy, or wasn&rsquo;t it ;)</p>
-<p>But the <code>rce</code> primitive only provides us code execution inside the <em>renderer</em> process, which is strictly sandboxed.</p>
-<p>The <code>Pwn</code> object is on the <em>browser</em> process, and provides an address leak of itself and a memory read primitive.</p>
+<p>But the <code>rce</code> primitive only provides us code execution inside the <em>renderer</em> process, which is strictly <strong>sandboxed</strong>.</p>
+<p>The <code>Pwn</code> object is on the <strong>unsandboxed</strong> <em>browser</em> process, provides an address leak of itself and an arbitrary memory read primitive.</p>
 <h2 id="22-provided-primitives">2.2. Provided primitives</h2>
-<p>So we have 2 things</p>
+<p>So we have 2 primitives</p>
 <ul>
 <li>Sandboxed code execution inside <em>renderer</em> process</li>
 <li>Arbitrary read inside <em>browser</em> process</li>
 </ul>
 <h1 id="3-leaking-the-browser-process">3. Leaking the browser process</h1>
-<p>The primitive <code>Pwn::this</code> will return the address of itself, which is a C++ object.</p>
-<p>As every C++ object have its <code>vtable</code> located at offset <code>0x0</code>, by dereference the pointer returned by <code>Pwn::this</code> twice, you will get a function pointer. Subtracting it to a constant value, you can find the <code>_text</code> base of the browser&rsquo;s process</p>
+<p>The primitive <code>Pwn::this()</code> will return the address of itself, which is a C++ object.</p>
+<p>As every C++ object have its <code>vtable</code>, containing pointers to all instance methods, located at offset <code>0x0</code>. By dereference the pointer returned by <code>Pwn::this()</code> twice, you will get a function pointer. Subtracting it to a constant offset, you can find the <code>_text</code> base of the browser&rsquo;s process.</p>
 <h1 id="4-googling">4. Googling</h1>
 <p>Because no obvious way to get code execution inside the browser&rsquo;s process, I started looking around on the internet and found <a href="https://googleprojectzero.blogspot.com/2020/02/escaping-chrome-sandbox-with-ridl.html">this article</a>,</p>
 <p>Which is, by itself, interesting:</p>
@@ -254,30 +254,32 @@ which basically has 2 features.</p>
 <li>
 <p>Second, these words in the article is also interesting:</p>
 <blockquote>
-<p>&hellip; used from a compromised renderer
-&hellip; if you have an info leak vulnerability in the browser process</p>
+<p>&hellip; used from a compromised renderer</p>
+</blockquote>
+<blockquote>
+<p>&hellip; if you have an info leak vulnerability in the browser process</p>
 </blockquote>
 </li>
 </ul>
 <p>Isn&rsquo;t that was our case ;)</p>
-<p>Later, my teammate found <a href="https://www.youtube.com/watch?v=ugZzQvXUTIk">this video</a>, also by <code>tsuro</code></p>
+<p>Later, my teammate found <a href="https://www.youtube.com/watch?v=ugZzQvXUTIk">this speech</a>, also given by Stephen</p>
 <p>Wasn&rsquo;t that a smart way to make people read your article and watch your talk? ;)</p>
-<p>Anyway, I highly recommend you watch those to get a basic overview of the solution and even solve it yourself.</p>
+<p>Anyway, I highly recommend you watch those to get a basic overview of the solution or even solve it yourself.</p>
 <h1 id="5-leaking-the-renderer-process">5. Leaking the renderer process</h1>
 <p>With the <code>rce</code> primitive in our hands, the sky is your limit&hellip;</p>
-<p>First, we want a pointer in our renderer process to be able to reuse chrome&rsquo;s code.</p>
+<p>First, we want a pointer in our renderer process to be able to reuse Chrome&rsquo;s code.</p>
 <p>Take a look at the <code>Mojo::rce</code> function</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#f92672">+</span><span style="color:#66d9ef">void</span> Mojo<span style="color:#f92672">::</span>rce(DOMArrayBuffer<span style="color:#f92672">*</span> shellcode) {
-  size_t sz <span style="color:#f92672">=</span> shellcode<span style="color:#f92672">-&gt;</span>ByteLengthAsSizeT();
-  sz <span style="color:#f92672">+=</span> <span style="color:#ae81ff">4096</span>;
-  sz <span style="color:#f92672">&amp;=</span> <span style="color:#f92672">~</span>(<span style="color:#ae81ff">4096llu</span><span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>);
-  <span style="color:#66d9ef">void</span> <span style="color:#f92672">*</span>mm <span style="color:#f92672">=</span> mmap(<span style="color:#ae81ff">0</span>, sz, PROT_READ<span style="color:#f92672">|</span>PROT_WRITE<span style="color:#f92672">|</span>PROT_EXEC, MAP_ANONYMOUS<span style="color:#f92672">|</span>MAP_PRIVATE, <span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">0</span>);
-  ...
-  memcpy(mm, shellcode<span style="color:#f92672">-&gt;</span>Data(), shellcode<span style="color:#f92672">-&gt;</span>ByteLengthAsSizeT());
-  <span style="color:#66d9ef">void</span> (<span style="color:#f92672">*</span>fn)(<span style="color:#66d9ef">void</span>) <span style="color:#f92672">=</span> (<span style="color:#66d9ef">void</span> (<span style="color:#f92672">*</span>)(<span style="color:#66d9ef">void</span>)) mm;
-  fn();
-}
-</code></pre></div><p>So the function copy our code into a newly-allocated Read-Write-Executable(rwx) page, and then execute it right?</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp">  <span style="color:#66d9ef">void</span> Mojo<span style="color:#f92672">::</span>rce(DOMArrayBuffer<span style="color:#f92672">*</span> shellcode) {
+    size_t sz <span style="color:#f92672">=</span> shellcode<span style="color:#f92672">-&gt;</span>ByteLengthAsSizeT();
+    sz <span style="color:#f92672">+=</span> <span style="color:#ae81ff">4096</span>;
+    sz <span style="color:#f92672">&amp;=</span> <span style="color:#f92672">~</span>(<span style="color:#ae81ff">4096llu</span><span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>);
+    <span style="color:#66d9ef">void</span> <span style="color:#f92672">*</span>mm <span style="color:#f92672">=</span> mmap(<span style="color:#ae81ff">0</span>, sz, PROT_READ<span style="color:#f92672">|</span>PROT_WRITE<span style="color:#f92672">|</span>PROT_EXEC, MAP_ANONYMOUS<span style="color:#f92672">|</span>MAP_PRIVATE, <span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">0</span>);
+    ...
+    memcpy(mm, shellcode<span style="color:#f92672">-&gt;</span>Data(), shellcode<span style="color:#f92672">-&gt;</span>ByteLengthAsSizeT());
+    <span style="color:#66d9ef">void</span> (<span style="color:#f92672">*</span>fn)(<span style="color:#66d9ef">void</span>) <span style="color:#f92672">=</span> (<span style="color:#66d9ef">void</span> (<span style="color:#f92672">*</span>)(<span style="color:#66d9ef">void</span>)) mm;
+    fn();
+  }
+</code></pre></div><p>So the function copy our code into a newly-allocated Read-Write-Executable(rwx) page, and then execute it, right?</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-asm" data-lang="asm">   <span style="color:#960050;background-color:#1e0010">0</span><span style="color:#a6e22e">x0000000009088315</span> <span style="color:#960050;background-color:#1e0010">&lt;+</span><span style="color:#ae81ff">277</span><span style="color:#960050;background-color:#1e0010">&gt;</span>:	<span style="color:#66d9ef">mov</span>    <span style="color:#66d9ef">rdi</span>,<span style="color:#66d9ef">rbx</span> <span style="color:#75715e">; dest
 </span><span style="color:#75715e"></span>   <span style="color:#ae81ff">0x0000000009088318</span> <span style="color:#960050;background-color:#1e0010">&lt;+</span><span style="color:#ae81ff">280</span><span style="color:#960050;background-color:#1e0010">&gt;</span>:	<span style="color:#66d9ef">mov</span>    <span style="color:#66d9ef">rsi</span>,<span style="color:#66d9ef">r15</span> <span style="color:#75715e">; source
 </span><span style="color:#75715e"></span>   <span style="color:#ae81ff">0x000000000908831b</span> <span style="color:#960050;background-color:#1e0010">&lt;+</span><span style="color:#ae81ff">283</span><span style="color:#960050;background-color:#1e0010">&gt;</span>:	<span style="color:#66d9ef">call</span>   <span style="color:#ae81ff">0xa00f7e0</span> &lt;<span style="color:#66d9ef">memcpy@plt</span>&gt;
@@ -287,17 +289,17 @@ which basically has 2 features.</p>
 <li><code>rbx</code> and <code>rdi</code> will store the address of the rwx page</li>
 <li><code>r15</code> will store the address of our original buffer</li>
 </ul>
-<p>This enables us to RETURN an arbitrary number of values by write to <code>r15+X</code>,
+<p>This enables us to RETURN an arbitrary number of values from the shellcode by writing to <code>[r15+X]</code>,
 then read it back in JavaScript.</p>
 <p>For me, I read the return pointer from <code>[rsp]</code> to get a function pointer,
 and derive the renderer&rsquo;s <code>_text</code> base.</p>
 <h1 id="6-nodes-and-ports">6. Nodes and Ports</h1>
 <p>Node could be understood as <em>process</em>; when you launch chrome, it will spawn multiple children to isolate their data in case of compromisation, and each of them is a node.</p>
 <p>Node&rsquo;s name is a 128-bit random integer</p>
-<p>A node has multiple ports listening for messages, each of them has an attached endpoint which will consume the messages.</p>
+<p>A node has multiple local ports listening for messages; each of them has an attached endpoint which will consume the messages.</p>
 <p>Similar to node, port&rsquo;s name is also a 128-bit random integer</p>
-<p>A port is addressed using its node&rsquo;s name and its name (node:port)</p>
-<p>Knowing a port&rsquo;s name and its node&rsquo;s name is equivalent to have a send right to that port.</p>
+<p>A port is addressed using its node&rsquo;s name and its name (<code>node:port</code>)</p>
+<p>Knowing a port&rsquo;s name and its node&rsquo;s name is equivalent to being able to send messages to that port.</p>
 <blockquote>
 <p>“[&hellip;] any Node can send any Message to any Port of any other Node so long as it has knowledge of the Port and Node names. [&hellip;] It is therefore important not to leak Port names into Nodes that shouldn&rsquo;t be granted the corresponding Capability.”
 <a href="https://chromium.googlesource.com/chromium/src/+/master/mojo/core/README.md#security">Security section of Mojo core</a></p>
@@ -308,7 +310,7 @@ and derive the renderer&rsquo;s <code>_text</code> base.</p>
   <span style="color:#66d9ef">const</span> NodeName name_;
   ...
 }
-</code></pre></div><p>A <a href="https://source.chromium.org/chromium/chromium/src/+/master:mojo/core/ports/port.h;bpv=1;bpt=1;l=64?gsn=Port">port</a> knows its name and its node</p>
+</code></pre></div><p>A <a href="https://source.chromium.org/chromium/chromium/src/+/master:mojo/core/ports/port.h;bpv=1;bpt=1;l=64?gsn=Port">port</a> knows its name and its node&rsquo;s name</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Port</span> <span style="color:#f92672">:</span> <span style="color:#66d9ef">public</span> base<span style="color:#f92672">::</span>RefCountedThreadSafe<span style="color:#f92672">&lt;</span>Port<span style="color:#f92672">&gt;</span> {
   <span style="color:#75715e">// The Node and Port address to which events should be routed FROM this Port.
 </span><span style="color:#75715e"></span>  <span style="color:#75715e">// Note that this is NOT necessarily the address of the Port currently sending
@@ -330,7 +332,7 @@ and derive the renderer&rsquo;s <code>_text</code> base.</p>
 <p>Just traverse that and dump all the ports&rsquo; names.</p>
 <h2 id="71-finding-offsets">7.1. Finding offsets</h2>
 <h3 id="711-simple-structures">7.1.1. Simple structures</h3>
-<p>Finding offsets isn&rsquo;t a trivial task when you haven&rsquo;t familiar with memory, but a way to do that is to disassemble functions where that field is used.</p>
+<p>Finding offsets isn&rsquo;t a trivial task when you haven&rsquo;t familiar with assembly and memory, but a way to do that is to disassemble functions where that field is accessed.</p>
 <p><em>If you are experienced in finding offsets, it is okay to skip this part.</em></p>
 <p>For example, to find the offset of <code>node_controller_</code> in <code>g_core</code>, you could try disassemble this function</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp">NodeController<span style="color:#f92672">*</span> Core<span style="color:#f92672">::</span>GetNodeController() {
@@ -345,15 +347,15 @@ and derive the renderer&rsquo;s <code>_text</code> base.</p>
 <p>The following code should be equivalent to the <code>if(!node_controller_)</code></p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-asm" data-lang="asm">  <span style="color:#960050;background-color:#1e0010">0</span><span style="color:#a6e22e">x0000000003723fc9</span> <span style="color:#960050;background-color:#1e0010">&lt;+</span><span style="color:#ae81ff">25</span><span style="color:#960050;background-color:#1e0010">&gt;</span>: <span style="color:#66d9ef">mov</span>  <span style="color:#66d9ef">rbx</span>,<span style="color:#66d9ef">QWORD</span> <span style="color:#66d9ef">PTR</span> [<span style="color:#66d9ef">r15</span><span style="color:#960050;background-color:#1e0010">+</span><span style="color:#ae81ff">0x30</span>]
   <span style="color:#960050;background-color:#1e0010">0</span><span style="color:#a6e22e">x0000000003723fcd</span> <span style="color:#960050;background-color:#1e0010">&lt;+</span><span style="color:#ae81ff">29</span><span style="color:#960050;background-color:#1e0010">&gt;</span>: <span style="color:#66d9ef">test</span> <span style="color:#66d9ef">rbx</span>,<span style="color:#66d9ef">rbx</span>
-</code></pre></div><p>Or the below should be equivalent to the return</p>
+</code></pre></div><p>Or the below should be equivalent to the return statement</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-asm" data-lang="asm">  <span style="color:#960050;background-color:#1e0010">0</span><span style="color:#a6e22e">x0000000003723ffd</span> <span style="color:#960050;background-color:#1e0010">&lt;+</span><span style="color:#ae81ff">77</span><span style="color:#960050;background-color:#1e0010">&gt;</span>:  <span style="color:#66d9ef">mov</span>  <span style="color:#66d9ef">rbx</span>,<span style="color:#66d9ef">QWORD</span> <span style="color:#66d9ef">PTR</span> [<span style="color:#66d9ef">r15</span><span style="color:#960050;background-color:#1e0010">+</span><span style="color:#ae81ff">0x30</span>]
   <span style="color:#960050;background-color:#1e0010">0</span><span style="color:#a6e22e">x0000000003724001</span> <span style="color:#960050;background-color:#1e0010">&lt;+</span><span style="color:#ae81ff">81</span><span style="color:#960050;background-color:#1e0010">&gt;</span>:  <span style="color:#66d9ef">mov</span>  <span style="color:#66d9ef">rdi</span>,<span style="color:#66d9ef">r14</span>
   <span style="color:#960050;background-color:#1e0010">0</span><span style="color:#a6e22e">x0000000003724004</span> <span style="color:#960050;background-color:#1e0010">&lt;+</span><span style="color:#ae81ff">84</span><span style="color:#960050;background-color:#1e0010">&gt;</span>:  <span style="color:#66d9ef">call</span> <span style="color:#ae81ff">0xa00fad0</span>
-  <span style="color:#960050;background-color:#1e0010">0</span><span style="color:#a6e22e">x0000000003724009</span> <span style="color:#960050;background-color:#1e0010">&lt;+</span><span style="color:#ae81ff">89</span><span style="color:#960050;background-color:#1e0010">&gt;</span>:  <span style="color:#66d9ef">mov</span>  <span style="color:#66d9ef">rax</span>,<span style="color:#66d9ef">rbx</span>
-  <span style="color:#960050;background-color:#1e0010">0</span><span style="color:#a6e22e">x000000000372400c</span> <span style="color:#960050;background-color:#1e0010">&lt;+</span><span style="color:#ae81ff">92</span><span style="color:#960050;background-color:#1e0010">&gt;</span>:  <span style="color:#66d9ef">add</span>  <span style="color:#66d9ef">rsp</span>,<span style="color:#ae81ff">0x8</span>
+  <span style="color:#960050;background-color:#1e0010">0</span><span style="color:#a6e22e">x0000000003724009</span> <span style="color:#960050;background-color:#1e0010">&lt;+</span><span style="color:#ae81ff">89</span><span style="color:#960050;background-color:#1e0010">&gt;</span>:  <span style="color:#66d9ef">mov</span>  <span style="color:#66d9ef">rax</span>,<span style="color:#66d9ef">rbx</span> <span style="color:#75715e">; return value
+</span><span style="color:#75715e"></span>  <span style="color:#ae81ff">0x000000000372400c</span> <span style="color:#960050;background-color:#1e0010">&lt;+</span><span style="color:#ae81ff">92</span><span style="color:#960050;background-color:#1e0010">&gt;</span>:  <span style="color:#66d9ef">add</span>  <span style="color:#66d9ef">rsp</span>,<span style="color:#ae81ff">0x8</span>
 </code></pre></div><p>So the offset is probably <code>+0x30</code>.</p>
 <p>The way of finding the remaining offsets is left as an exercise to the readers.</p>
-<h3 id="712-fck-ctraversing-stdunordered_map">7.1.2. F*ck C++/Traversing <code>std::unordered_map</code></h3>
+<h3 id="712-fk-ctraversing-stdunordered_map">7.1.2. F**k C++/Traversing <code>std::unordered_map</code></h3>
 <p>Okay, now how do we dump all ports?</p>
 <p>The worst thing about C++ containers is that their methods are inlined</p>
 <p>One of our candidates for disassembling this time is</p>
@@ -378,13 +380,14 @@ and derive the renderer&rsquo;s <code>_text</code> base.</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-asm" data-lang="asm">  <span style="color:#960050;background-color:#1e0010">0</span><span style="color:#a6e22e">x0000000006d6c4f4</span> <span style="color:#960050;background-color:#1e0010">&lt;+</span><span style="color:#ae81ff">228</span><span style="color:#960050;background-color:#1e0010">&gt;</span>: <span style="color:#66d9ef">mov</span>  <span style="color:#66d9ef">rax</span>,<span style="color:#66d9ef">QWORD</span> <span style="color:#66d9ef">PTR</span> [<span style="color:#66d9ef">r14</span><span style="color:#960050;background-color:#1e0010">+</span><span style="color:#ae81ff">0x48</span>]
   <span style="color:#960050;background-color:#1e0010">0</span><span style="color:#a6e22e">x0000000006d6c4f8</span> <span style="color:#960050;background-color:#1e0010">&lt;+</span><span style="color:#ae81ff">232</span><span style="color:#960050;background-color:#1e0010">&gt;</span>: <span style="color:#66d9ef">mov</span>  <span style="color:#66d9ef">rax</span>,<span style="color:#66d9ef">QWORD</span> <span style="color:#66d9ef">PTR</span> [<span style="color:#66d9ef">rax</span><span style="color:#960050;background-color:#1e0010">+</span><span style="color:#66d9ef">r8</span>*<span style="color:#ae81ff">8</span>]
   <span style="color:#960050;background-color:#1e0010">0</span><span style="color:#a6e22e">x0000000006d6c4fc</span> <span style="color:#960050;background-color:#1e0010">&lt;+</span><span style="color:#ae81ff">236</span><span style="color:#960050;background-color:#1e0010">&gt;</span>: <span style="color:#66d9ef">test</span> <span style="color:#66d9ef">rax</span>,<span style="color:#66d9ef">rax</span>
-</code></pre></div><p>The second line of the above snippet is what we want to talk about.</p>
-<p><code>[rax+r8*8]</code> is an array access, with <code>rax</code> holding the base address, <code>r8</code> is probably the index and <code>8</code> is surely the element size.</p>
+</code></pre></div><p>The second statement of the above code is what we want.</p>
+<p><code>[rax+r8*8]</code> is an array access, with <code>rax</code> holding the base address, <code>r8</code> is probably the array index and <code>8</code> is surely the element size.</p>
 <p>And it&rsquo;s definitely <a href="https://source.chromium.org/chromium/chromium/llvm-project/libcxx.git/+/78d6a7767ed57b50122a161b91f59f19c9bd0d19:include/__hash_table;drc=3c73561841650afb4718223958b4b6e86983c862;l=2492">this line</a></p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp">size_t __chash <span style="color:#f92672">=</span> __constrain_hash(__hash, __bc);
-__next_pointer __nd <span style="color:#f92672">=</span> __bucket_list_[__chash];
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp">__next_pointer __nd <span style="color:#f92672">=</span> __bucket_list_[__chash];
 </code></pre></div><p>So <code>__bucket_list_</code> is probably at offset <code>+0x48</code></p>
-<p>At this point, it is reasonable for anyone to try to go through all non-null elements(bucket) to dump all the elements by traversing the linked list.</p>
+<p>An <code>std::unordered_map</code> works by calculate the <code>__constrain_hash()</code> of the key and put the element(key-value) in the equivalent bucket.</p>
+<p>Each bucket is implemented as a linked list.</p>
+<p>At this point, it is reasonable for anyone to try to iterate all non-null elements(bucket) to dump all the elements by traversing the linked list.</p>
 <p>However, this turns out to be a bad way to do so and I could even find duplicate elements and bad pointers.</p>
 <p>However, with a bit of more time, you will find this defintion</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp">__bucket_list                         __bucket_list_;
@@ -392,20 +395,20 @@ pair<span style="color:#f92672">&lt;</span>__first_node, __node_allocator<span s
 pair<span style="color:#f92672">&lt;</span>size_type, hasher<span style="color:#f92672">&gt;</span>               __p2_;
 pair<span style="color:#f92672">&lt;</span><span style="color:#66d9ef">float</span>, key_equal<span style="color:#f92672">&gt;</span>                __p3_;
 </code></pre></div><p>So <code>__p1_.first</code> will be our first element (<code>.begin()</code>).</p>
-<p>With the <code>.begin()</code> pointer, it is possible to iterate through all elements just like a linked list. Inspecting the memory, you will find that <code>+0x10</code> from the <code>__bucket_list_</code> is a good educated guess for the <code>.begin()</code> pointer.</p>
+<p>With the <code>.begin()</code> pointer, it is possible to iterate through all elements just like a linked list. Inspecting the memory, you will find that <code>+0x10</code> from the <code>__bucket_list_</code> (<code>+0x58</code>) is a good educated guess for the <code>.begin()</code> pointer.</p>
 <p><a href="http://llvm.org/viewvc/llvm-project/lldb/trunk/examples/synthetic/unordered_multi.py?view=markup&amp;pathrev=189964">Reference</a></p>
 <h1 id="8-what-do-we-do-with-stolen-ports">8. What do we do with stolen ports?</h1>
 <h2 id="81-factory-of-network-requests">8.1. Factory of network requests</h2>
 <p>One of the good candidates for a good target is a <em>privileged</em> <code>URLLoaderFactory</code>, which relies in the network service, and has the ability to make network requests (<a href="https://source.chromium.org/chromium/chromium/src/+/master:services/network/url_loader_factory.h;drc=6e8b402a6231405b753919029c9027404325ea00;bpv=1;bpt=1;l=57?q=URLLoaderFactory::CreateLoaderAndStart"><code>URLLoaderFactory::CreateLoaderAndStart</code></a>), with files</p>
 <p><code>URLLoaderFactories</code> are wrapped by <code>CorsURLLoaderFactories</code>, which enforced CORS to all requests.</p>
 <p>To isolate origins, factories created with renderers cannot be used to make requests to another origins.
-However, the browser can create factories (<code>process_id_==kBrowserProcess</code>) that allow it to make arbitrary requests with no CORS enforced.</p>
-<p>If we could get such a loader from the browser,  we could upload any files to our server.</p>
+However, the browser can create factories (<code>process_id_==kBrowserProcess</code>) allowing arbitrary network requests with no CORS enforced to be made.</p>
+<p>If we could get such factory from the browser,  we could upload any files to our server.</p>
 <blockquote>
 <p>However, I noticed a code path that allows you to create a large amount of privileged URLLoaderFactories using service workers. If you create a service worker with <a href="https://developers.google.com/web/updates/2017/02/navigation-preload">navigation preload</a> enabled, every top-level navigation would <a href="https://cs.chromium.org/chromium/src/content/browser/service_worker/service_worker_fetch_dispatcher.cc?l=334&amp;rcl=a129610c20b22dd77f65f137d88fc37dd1eb064f">create such a loader</a>. By simply creating a number of iframes and stalling the requests on the server side, you can keep a few thousand loaders alive at the same time.
 @_tsuro</p>
 </blockquote>
-<p>To do so is pretty trivial, just make sure to use HTTPS and you are good to go.</p>
+<p>To do so is pretty trivial, just make sure to use HTTPS and you are good to go with the service worker.</p>
 <h2 id="82-making-the-leaked-ports-ours">8.2. Making the leaked ports ours</h2>
 <p>To send messages to the leaked ports&rsquo; names, we need to register it to our node. Below is my way of doing it:</p>
 <ul>
@@ -414,13 +417,13 @@ However, the browser can create factories (<code>process_id_==kBrowserProcess</c
 </ul>
 <p>After doing that, the leaked port will be inserted into your node&rsquo;s <code>ports_</code> map.</p>
 <h3 id="821-calling-functions-from-shellcode">8.2.1. Calling functions from shellcode</h3>
-<p>It is impractical to run an assembler to compile your shellcode with the functions&rsquo; addresses, providing that they shift around all the time under ASLR.</p>
+<p>It is impractical to run an assembler in the exploit to compile your shellcode with the functions&rsquo; addresses, as they shift around all the time under ASLR.</p>
 <p>There are probably many ways of doing this, including <a href="https://github.com/xerub/acorn">ways</a> that allow you to call functions directly from JavaScript.
 However, I will stick to the assembly this time and use the <code>Mojo::rce</code> primitive.</p>
 <p>In my shellcode, there will be a common pattern, which looks like this</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-asm" data-lang="asm">  <span style="color:#a6e22e">mov</span> <span style="color:#66d9ef">rax</span>, <span style="color:#ae81ff">0x4141414141414141</span>
   <span style="color:#a6e22e">call</span> <span style="color:#66d9ef">rax</span>
-</code></pre></div><p>The <code>0x4141414141414141</code> value will be encoded as 8 consecutive little-endian bytes in the machine code. The JavaScript will be responsible to replace it with the correct address calculated from the leak.</p>
+</code></pre></div><p>The <code>0x4141414141414141</code> value will be encoded as it as 8 consecutive little-endian bytes in the machine code. The JavaScript code will be responsible to replace it with the correct address calculated from the leak.</p>
 <h2 id="83-sending-our-messages">8.3. Sending our messages</h2>
 <p>In the <code>Core</code> object, there are some interesting APIs</p>
 <ul>
@@ -434,15 +437,15 @@ However, I will stick to the assembly this time and use the <code>Mojo::rce</cod
 <p><code>MojoHandle CreatePartialMessagePipe(const ports::PortRef&amp; port)</code>,</p>
 <p>which creates handles for our newly-created ports.</p>
 <p>Later, I found the function <a href="https://source.chromium.org/chromium/chromium/src/+/master:mojo/public/cpp/system/message_pipe.cc;drc=6e8b402a6231405b753919029c9027404325ea00;bpv=1;bpt=1;l=13?gsn=WriteMessageRaw"><code>mojo::WriteMessageRaw</code></a>, which takes our port&rsquo;s <code>MojoHandle</code>, message buffer, and an array of <code>MojoHandles</code>(?) and send the message.</p>
-<p>Unfortunately, it takes a C++ object <a href="https://source.chromium.org/chromium/chromium/src/+/master:mojo/public/cpp/system/message_pipe.h;drc=6e8b402a6231405b753919029c9027404325ea00;bpv=1;bpt=1;l=30?gsn=MessagePipeHandle"><code>MessagePipeHandle</code></a>, which is not so easy to create. So all I can do was replicate its behavior.</p>
+<p>Unfortunately, it takes a C++ object <a href="https://source.chromium.org/chromium/chromium/src/+/master:mojo/public/cpp/system/message_pipe.h;drc=6e8b402a6231405b753919029c9027404325ea00;bpv=1;bpt=1;l=30?gsn=MessagePipeHandle"><code>MessagePipeHandle</code></a>, which is not so easy to create. So all I can do was replicate its function calls.</p>
 <h2 id="84-writing-our-messages">8.4. Writing our messages</h2>
-<p>If you take a look at the binding JS code (i.e. <code>URLLoaderFactoryProxy.prototype.createLoaderAndStart</code>), you will see that it uses the API <code>MessageV0Builder</code> to craft a message. That function will return a <code>Message</code> object, which contains a buffer, and an array of handles.</p>
+<p>If you take a look at the binding JS code (i.e. <code>URLLoaderFactoryProxy.prototype.createLoaderAndStart</code>), you will see that it uses the JavaScript API <code>MessageV0Builder</code> to craft a message. That function will return a <code>Message</code> object, which contains a buffer, and an array of handles.</p>
 <p>Our message obviously should contain the buffer, but what are the handles?</p>
-<p>The function <code>URLLoaderFactory::CreateLoaderAndStart</code> has 2 special parameters: <code>mojo::PendingReceiver&lt;mojom::URLLoader&gt; receiver</code> and <code>mojo::PendingRemote&lt;mojom::URLLoaderClient&gt; client</code>.  <code>PendingReceiver</code> and <code>PendingRemote</code> indicate that these are shared objects, which are used through ports.</p>
+<p>The function <code>URLLoaderFactory::CreateLoaderAndStart</code> has 2 special parameters: <code>mojo::PendingReceiver&lt;mojom::URLLoader&gt; receiver</code> and <code>mojo::PendingRemote&lt;mojom::URLLoaderClient&gt; client</code>.  <code>PendingReceiver</code> and <code>PendingRemote</code> indicate that these are shared objects, which are accessed through ports.</p>
 <p>To pass these objects as parameters, you need to pass their handles, just 2 <code>uint32_t</code> to <code>Core::AppendMessageData</code>.</p>
 <p>If you inspect the message generated by <code>MessageV0Builder</code>, its array of handles will contain 2 elements, equivalent to <code>receiver</code> and <code>client</code>. These elements are strings: <code>URLLoaderInterfaceRequest</code>, and <code>URLLoaderClientPtr</code>, respectively.</p>
 <p>So we need to pass 2 handles, an <code>InterfaceRequest</code> and an <code>Ptr</code>. But how do we figure them out?</p>
-<p>Here is the code to create a client</p>
+<p>Here is the code to create a <code>URLLoaderClient</code></p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js">  <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">client</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">network</span>.<span style="color:#a6e22e">mojom</span>.<span style="color:#a6e22e">URLLoaderClientPtr</span>();
   <span style="color:#a6e22e">Mojo</span>.<span style="color:#a6e22e">bindInterface</span>(
     <span style="color:#a6e22e">network</span>.<span style="color:#a6e22e">mojom</span>.<span style="color:#a6e22e">URLLoaderClient</span>.<span style="color:#a6e22e">name</span>,
@@ -464,14 +467,14 @@ InterfaceRequest<span style="color:#f92672">&lt;</span>Interface<span style="col
 <li><code>handle0</code> is binded to the passed <code>Ptr</code></li>
 <li><code>handle1</code> is binded to a newly created <code>InterfaceRequest</code></li>
 </ul>
-<p>Lucky to us, handles are <a href="https://source.chromium.org/chromium/chromium/src/+/master:mojo/core/handle_table.cc;drc=6e8b402a6231405b753919029c9027404325ea00;l=56">generated increasingly</a>. So we are able to predict the handles of the <code>Ptr</code> and <code>InterfaceRequest</code> from the handle of our port.</p>
+<p>Lucky to us, handles are <a href="https://source.chromium.org/chromium/chromium/src/+/master:mojo/core/handle_table.cc;drc=6e8b402a6231405b753919029c9027404325ea00;l=56">generated increasingly</a>. So we can predict the handles of the <code>Ptr</code> and <code>InterfaceRequest</code> from the handle of our port.</p>
 <h2 id="85-to-know-who-our-receivers-are">8.5. To know who our receivers are</h2>
 <p>While creating this exploit, I ran into a programming bug which prevents my message buffer being copied. This leads me to discover a way to know which object is behind the port:</p>
-<p>By sending an invalid message (set <a href="https://source.chromium.org/chromium/chromium/src/+/master:mojo/public/cpp/bindings/lib/validation_util.cc;drc=6e8b402a6231405b753919029c9027404325ea00;bpv=1;bpt=1;l=30?q=ValidateStructHeader&amp;ss=chromium%2Fchromium%2Fsrc&amp;gsn=ValidateStructHeaderAndClaimMemory">the first <code>uint32_t</code>(<code>header_size</code>)</a> 0), you can trigger a validation error at <a href="https://source.chromium.org/chromium/chromium/src/+/master:mojo/public/cpp/bindings/lib/validation_util.cc;drc=6e8b402a6231405b753919029c9027404325ea00;l=45">this line</a> and the verbose logging willl print something like this</p>
+<p>By sending an invalid message (set <a href="https://source.chromium.org/chromium/chromium/src/+/master:mojo/public/cpp/bindings/lib/validation_util.cc;drc=6e8b402a6231405b753919029c9027404325ea00;bpv=1;bpt=1;l=30?q=ValidateStructHeader&amp;ss=chromium%2Fchromium%2Fsrc&amp;gsn=ValidateStructHeaderAndClaimMemory">the first <code>uint32_t</code> (<code>num_bytes</code>)</a> to 0), you can trigger a validation error at <a href="https://source.chromium.org/chromium/chromium/src/+/master:mojo/public/cpp/bindings/lib/validation_util.cc;drc=6e8b402a6231405b753919029c9027404325ea00;l=45">this line</a> and the verbose logging will print something like this</p>
 <pre><code>Mojo error in NetworkService:Validation failed for network.mojom.CookieAccessObserver [master] MessageHeaderValidator [VALIDATION_ERROR_UNEXPECTED_STRUCT_HEADER]
-</code></pre><p>That&rsquo;s it, you now know who are you sending to.</p>
+</code></pre><p>That&rsquo;s it, now you know who are you sending to.</p>
 <h2 id="86-where-are-my-factory-">8.6. Where are my factory ??</h2>
-<p>I stucked and cannot find any factories within the ports. There are even some ports which never responds to my messages.</p>
+<p>I stucked and cannot find any factories within the leaked ports. There are even some ports which never responds to any of my messages.</p>
 <p>At this point (ofc after the CTF has ended), Stephen points out my missing bit: I didn&rsquo;t set the messages&rsquo; <a href="https://source.chromium.org/chromium/chromium/src/+/master:mojo/core/ports/event.h;drc=6e8b402a6231405b753919029c9027404325ea00;l=157"><code>sequence_num</code></a>. It seems like the Mojo system use this number to prevent message duplication.</p>
 <p><a href="https://source.chromium.org/chromium/chromium/src/+/master:mojo/core/ports/node.cc;drc=6e8b402a6231405b753919029c9027404325ea00;l=1293">This number is increased by one when a message is sent.</a> Fortunately, the correct <code>sequence_num</code> is stored in the <code>Port</code> object in the <a href="https://source.chromium.org/chromium/chromium/src/+/master:mojo/core/ports/port.h;drc=6e8b402a6231405b753919029c9027404325ea00;l=111">field <code>next_sequence_num_to_send</code></a>, which can be leaked from where we found our ports in browser process&rsquo;s memory.</p>
 <h3 id="861-setting-the-sequence_num">8.6.1. Setting the sequence_num</h3>
