@@ -1,27 +1,71 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" 
+  xmlns:content="http://purl.org/rss/1.0/modules/content/" 
+  xmlns:dc="http://purl.org/dc/elements/1.1/" 
+  xmlns:atom="http://www.w3.org/2005/Atom" 
+  xmlns:sy="http://purl.org/rss/1.0/modules/syndication/" 
+  xmlns:media="http://search.yahoo.com/mrss/">
   <channel>
-    <title>0day on Nguyen Hoang Trung</title>
+    <title>0day on Blog</title>
     <link>https://trungnguyen1909.github.io/blog/tags/0day/</link>
-    <description>Recent content in 0day on Nguyen Hoang Trung</description>
+    <description>Recent content in 0day on Blog</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language>
+    <language>en</language>
+    <managingEditor>ntrung03@gmail.com (Nguyen Hoang Trung)</managingEditor>
+    <webMaster>ntrung03@gmail.com (Nguyen Hoang Trung)</webMaster>
+    <copyright>©{year}, All Rights Reserved. Content licensed under CC BY 4.0</copyright>
     <lastBuildDate>Wed, 04 Sep 2019 23:38:50 +0700</lastBuildDate>
     
-	<atom:link href="https://trungnguyen1909.github.io/blog/tags/0day/index.xml" rel="self" type="application/rss+xml" />
+        <atom:link href="https://trungnguyen1909.github.io/blog/tags/0day/index.xml" rel="self" type="application/rss+xml" />
     
     
-    <item>
-      <title>pwning your kernelz</title>
-      <link>https://trungnguyen1909.github.io/blog/post/CampCTF/PwningKernelz/</link>
-      <pubDate>Wed, 04 Sep 2019 23:38:50 +0700</pubDate>
+    
+
       
-      <guid>https://trungnguyen1909.github.io/blog/post/CampCTF/PwningKernelz/</guid>
-      <description>pwning your kernelz Background Hi everyone,
-This is the writeup for the challenge pwning your kernelz, created by Linus Henze(@LinusHenze), I came across this challenge when Linus tweeted a status update for the CTF.
-Of course, I didn&amp;rsquo;t solve this challenge during the time of the CTF. In fact, no one does.
-So I decided to pick it up and exploit it with the support of Linus after the CTF ends.</description>
-    </item>
+      <item>
+        <title>pwning your kernelz: macOS 0day LPE</title>
+        <link>https://trungnguyen1909.github.io/blog/post/campctf/pwningkernelz/</link>
+        <pubDate>Wed, 04 Sep 2019 23:38:50 +0700</pubDate>
+        <author>ntrung03@gmail.com (Nguyen Hoang Trung)</author>
+        <atom:modified>Wed, 04 Sep 2019 23:38:50 +0700</atom:modified>
+        <guid>https://trungnguyen1909.github.io/blog/post/campctf/pwningkernelz/</guid>
+        <description>pwning your kernelz Background Hi everyone,
+This is the writeup for the challenge pwning your kernelz, created by Linus Henze(@LinusHenze),
+I came across this challenge when Linus tweeted a status update for the CTF.
+Of course, I didn&amp;rsquo;t solve this challenge during the time of the CTF.</description>
+        
+        <dc:creator>Nguyen Hoang Trung</dc:creator>
+        
+        
+        
+        
+          
+            
+              <category>Camp-CTF</category>
+            
+          
+            
+              <category>pwn</category>
+            
+          
+            
+              <category>kernel</category>
+            
+          
+            
+              <category>xnu</category>
+            
+          
+            
+              <category>0day</category>
+            
+          
+        
+        
+        
+      </item>
+      
+
     
   </channel>
 </rss>

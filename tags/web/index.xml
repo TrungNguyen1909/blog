@@ -1,26 +1,62 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" 
+  xmlns:content="http://purl.org/rss/1.0/modules/content/" 
+  xmlns:dc="http://purl.org/dc/elements/1.1/" 
+  xmlns:atom="http://www.w3.org/2005/Atom" 
+  xmlns:sy="http://purl.org/rss/1.0/modules/syndication/" 
+  xmlns:media="http://search.yahoo.com/mrss/">
   <channel>
-    <title>web on Nguyen Hoang Trung</title>
+    <title>web on Blog</title>
     <link>https://trungnguyen1909.github.io/blog/tags/web/</link>
-    <description>Recent content in web on Nguyen Hoang Trung</description>
+    <description>Recent content in web on Blog</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language>
+    <language>en</language>
+    <managingEditor>ntrung03@gmail.com (Nguyen Hoang Trung)</managingEditor>
+    <webMaster>ntrung03@gmail.com (Nguyen Hoang Trung)</webMaster>
+    <copyright>©{year}, All Rights Reserved. Content licensed under CC BY 4.0</copyright>
     <lastBuildDate>Thu, 22 Nov 2018 21:30:28 +0700</lastBuildDate>
     
-	<atom:link href="https://trungnguyen1909.github.io/blog/tags/web/index.xml" rel="self" type="application/rss+xml" />
+        <atom:link href="https://trungnguyen1909.github.io/blog/tags/web/index.xml" rel="self" type="application/rss+xml" />
     
     
-    <item>
-      <title>RITSEC18 The tangled web</title>
-      <link>https://trungnguyen1909.github.io/blog/post/RITSEC-2018/The-tangled-web/</link>
-      <pubDate>Thu, 22 Nov 2018 21:30:28 +0700</pubDate>
+    
+
       
-      <guid>https://trungnguyen1909.github.io/blog/post/RITSEC-2018/The-tangled-web/</guid>
-      <description>wget -r fun.ritsec.club:8007
+      <item>
+        <title>RITSEC18 The tangled web</title>
+        <link>https://trungnguyen1909.github.io/blog/post/ritsec-2018/the-tangled-web/</link>
+        <pubDate>Thu, 22 Nov 2018 21:30:28 +0700</pubDate>
+        <author>ntrung03@gmail.com (Nguyen Hoang Trung)</author>
+        <atom:modified>Thu, 22 Nov 2018 21:30:28 +0700</atom:modified>
+        <guid>https://trungnguyen1909.github.io/blog/post/ritsec-2018/the-tangled-web/</guid>
+        <description>wget -r fun.ritsec.club:8007
 You may find the file Fl4gggg1337.html is referenced or has already been download. The flag wasn&amp;rsquo;t there, but it has link to Stars.html.
 Fetch that file, the base64 encoded string is the flag for this challenge.</description>
-    </item>
+        
+        <dc:creator>Nguyen Hoang Trung</dc:creator>
+        
+        
+        
+        
+          
+            
+              <category>RITSEC</category>
+            
+          
+            
+              <category>CTF</category>
+            
+          
+            
+              <category>web</category>
+            
+          
+        
+        
+        
+      </item>
+      
+
     
   </channel>
 </rss>

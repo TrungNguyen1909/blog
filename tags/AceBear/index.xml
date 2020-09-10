@@ -1,28 +1,66 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" 
+  xmlns:content="http://purl.org/rss/1.0/modules/content/" 
+  xmlns:dc="http://purl.org/dc/elements/1.1/" 
+  xmlns:atom="http://www.w3.org/2005/Atom" 
+  xmlns:sy="http://purl.org/rss/1.0/modules/syndication/" 
+  xmlns:media="http://search.yahoo.com/mrss/">
   <channel>
-    <title>AceBear on Nguyen Hoang Trung</title>
-    <link>https://trungnguyen1909.github.io/blog/tags/AceBear/</link>
-    <description>Recent content in AceBear on Nguyen Hoang Trung</description>
+    <title>AceBear on Blog</title>
+    <link>https://trungnguyen1909.github.io/blog/tags/acebear/</link>
+    <description>Recent content in AceBear on Blog</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language>
+    <language>en</language>
+    <managingEditor>ntrung03@gmail.com (Nguyen Hoang Trung)</managingEditor>
+    <webMaster>ntrung03@gmail.com (Nguyen Hoang Trung)</webMaster>
+    <copyright>©{year}, All Rights Reserved. Content licensed under CC BY 4.0</copyright>
     <lastBuildDate>Mon, 08 Apr 2019 14:35:17 +0700</lastBuildDate>
     
-	<atom:link href="https://trungnguyen1909.github.io/blog/tags/AceBear/index.xml" rel="self" type="application/rss+xml" />
+        <atom:link href="https://trungnguyen1909.github.io/blog/tags/acebear/index.xml" rel="self" type="application/rss+xml" />
     
     
-    <item>
-      <title>AceBear Security Contest House-of-loop</title>
-      <link>https://trungnguyen1909.github.io/blog/post/AceBear2019/house_of_loop/</link>
-      <pubDate>Mon, 08 Apr 2019 14:35:17 +0700</pubDate>
+    
+
       
-      <guid>https://trungnguyen1909.github.io/blog/post/AceBear2019/house_of_loop/</guid>
-      <description>House-of-loop Hi everyone, this is the writeup for the challenge House-of-loop in the AceBear Security Contest 2019
-Description We are given a stripped ELF x64 binary which can be interacted with, our task is to get remote code execution(RCE).
-The binary presents us 3 options: Create, View and Delete a note.
-When creating a note, we have 3 fields: Title, Private, and Description.
-We have the limits on Title, Private field length but with Description, we can use as much as we specified.</description>
-    </item>
+      <item>
+        <title>AceBear Security Contest House-of-loop</title>
+        <link>https://trungnguyen1909.github.io/blog/post/acebear2019/house_of_loop/</link>
+        <pubDate>Mon, 08 Apr 2019 14:35:17 +0700</pubDate>
+        <author>ntrung03@gmail.com (Nguyen Hoang Trung)</author>
+        <atom:modified>Mon, 08 Apr 2019 14:35:17 +0700</atom:modified>
+        <guid>https://trungnguyen1909.github.io/blog/post/acebear2019/house_of_loop/</guid>
+        <description>House-of-loop Hi everyone, this is the writeup for the challenge House-of-loop in the AceBear Security Contest 2019
+You may want to checkout the exploit code
+Description We are given a stripped ELF x64 binary which can be interacted with, our task is to get remote code execution(RCE).</description>
+        
+        <dc:creator>Nguyen Hoang Trung</dc:creator>
+        
+        
+        
+        
+          
+            
+              <category>AceBear</category>
+            
+          
+            
+              <category>CTF</category>
+            
+          
+            
+              <category>pwn</category>
+            
+          
+            
+              <category>heap</category>
+            
+          
+        
+        
+        
+      </item>
+      
+
     
   </channel>
 </rss>

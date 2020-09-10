@@ -1,28 +1,67 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" 
+  xmlns:content="http://purl.org/rss/1.0/modules/content/" 
+  xmlns:dc="http://purl.org/dc/elements/1.1/" 
+  xmlns:atom="http://www.w3.org/2005/Atom" 
+  xmlns:sy="http://purl.org/rss/1.0/modules/syndication/" 
+  xmlns:media="http://search.yahoo.com/mrss/">
   <channel>
-    <title>Python on Nguyen Hoang Trung</title>
-    <link>https://trungnguyen1909.github.io/blog/tags/Python/</link>
-    <description>Recent content in Python on Nguyen Hoang Trung</description>
+    <title>Python on Blog</title>
+    <link>https://trungnguyen1909.github.io/blog/tags/python/</link>
+    <description>Recent content in Python on Blog</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language>
+    <language>en</language>
+    <managingEditor>ntrung03@gmail.com (Nguyen Hoang Trung)</managingEditor>
+    <webMaster>ntrung03@gmail.com (Nguyen Hoang Trung)</webMaster>
+    <copyright>©{year}, All Rights Reserved. Content licensed under CC BY 4.0</copyright>
     <lastBuildDate>Thu, 22 Nov 2018 21:30:28 +0700</lastBuildDate>
     
-	<atom:link href="https://trungnguyen1909.github.io/blog/tags/Python/index.xml" rel="self" type="application/rss+xml" />
+        <atom:link href="https://trungnguyen1909.github.io/blog/tags/python/index.xml" rel="self" type="application/rss+xml" />
     
     
-    <item>
-      <title>RITSEC18 Freeze</title>
-      <link>https://trungnguyen1909.github.io/blog/post/RITSEC-2018/Freeze/</link>
-      <pubDate>Thu, 22 Nov 2018 21:30:28 +0700</pubDate>
+    
+
       
-      <guid>https://trungnguyen1909.github.io/blog/post/RITSEC-2018/Freeze/</guid>
-      <description>It&amp;rsquo;s clearly a python compiled program since there is a libpython and also, when using decompiler, there was a function name PyDontWriteByteCode
+      <item>
+        <title>RITSEC18 Freeze</title>
+        <link>https://trungnguyen1909.github.io/blog/post/ritsec-2018/freeze/</link>
+        <pubDate>Thu, 22 Nov 2018 21:30:28 +0700</pubDate>
+        <author>ntrung03@gmail.com (Nguyen Hoang Trung)</author>
+        <atom:modified>Thu, 22 Nov 2018 21:30:28 +0700</atom:modified>
+        <guid>https://trungnguyen1909.github.io/blog/post/ritsec-2018/freeze/</guid>
+        <description>It&amp;rsquo;s clearly a python compiled program since there is a libpython and also, when using decompiler, there was a function name PyDontWriteByteCode
 using &amp;lsquo;pyi-archive-viewer&amp;rsquo; we can extract the main function.
 Append headers to the file
- &amp;quot;\x03\xf3\x0d\x0a\xf1\x32\x75\x5a&amp;quot; using uncompyle, we can get the main function.
-Change the key a little bit ±k*360 and we will get the flag.</description>
-    </item>
+ &amp;quot;\x03\xf3\x0d\x0a\xf1\x32\x75\x5a&amp;quot; using uncompyle, we can get the main function.</description>
+        
+        <dc:creator>Nguyen Hoang Trung</dc:creator>
+        
+        
+        
+        
+          
+            
+              <category>RITSEC</category>
+            
+          
+            
+              <category>CTF</category>
+            
+          
+            
+              <category>reversing</category>
+            
+          
+            
+              <category>Python</category>
+            
+          
+        
+        
+        
+      </item>
+      
+
     
   </channel>
 </rss>

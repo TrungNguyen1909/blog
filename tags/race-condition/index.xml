@@ -1,39 +1,129 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" 
+  xmlns:content="http://purl.org/rss/1.0/modules/content/" 
+  xmlns:dc="http://purl.org/dc/elements/1.1/" 
+  xmlns:atom="http://www.w3.org/2005/Atom" 
+  xmlns:sy="http://purl.org/rss/1.0/modules/syndication/" 
+  xmlns:media="http://search.yahoo.com/mrss/">
   <channel>
-    <title>race-condition on Nguyen Hoang Trung</title>
+    <title>race-condition on Blog</title>
     <link>https://trungnguyen1909.github.io/blog/tags/race-condition/</link>
-    <description>Recent content in race-condition on Nguyen Hoang Trung</description>
+    <description>Recent content in race-condition on Blog</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language>
+    <language>en</language>
+    <managingEditor>ntrung03@gmail.com (Nguyen Hoang Trung)</managingEditor>
+    <webMaster>ntrung03@gmail.com (Nguyen Hoang Trung)</webMaster>
+    <copyright>©{year}, All Rights Reserved. Content licensed under CC BY 4.0</copyright>
     <lastBuildDate>Wed, 12 Jun 2019 23:15:34 +0700</lastBuildDate>
     
-	<atom:link href="https://trungnguyen1909.github.io/blog/tags/race-condition/index.xml" rel="self" type="application/rss+xml" />
+        <atom:link href="https://trungnguyen1909.github.io/blog/tags/race-condition/index.xml" rel="self" type="application/rss+xml" />
     
     
-    <item>
-      <title>kpets FacebookCTF 2019 Qualification Round</title>
-      <link>https://trungnguyen1909.github.io/blog/post/FBCTF19-Qual/kpets/</link>
-      <pubDate>Wed, 12 Jun 2019 23:15:34 +0700</pubDate>
+    
+
       
-      <guid>https://trungnguyen1909.github.io/blog/post/FBCTF19-Qual/kpets/</guid>
-      <description>__ __ ______ ______ ______ ______ /\ \/ / /\ == \ /\ ___\ /\__ _\ /\ ___\ \ \ _&amp;quot;-. \ \ _-/ \ \ __\ \/_/\ \/ \ \___ \ \ \_\ \_\ \ \_\ \ \_____\ \ \_\ \/\_____\ \/_/\/_/ \/_/ \/_____/ \/_/ \/_____/ welcome to Kernel Pets Simulator!  We wrote a pet store application that was too slow, so we made a kernel module for it instead.</description>
-    </item>
-    
-    <item>
-      <title>IPwnKit DEFCON CTF 26 Qualification Round</title>
-      <link>https://trungnguyen1909.github.io/blog/post/DEFCON26-Qual/iPwnKit/</link>
-      <pubDate>Sun, 21 Apr 2019 00:46:45 +0700</pubDate>
+      <item>
+        <title>kpets FacebookCTF 2019 QR</title>
+        <link>https://trungnguyen1909.github.io/blog/post/fbctf19-qual/kpets/</link>
+        <pubDate>Wed, 12 Jun 2019 23:15:34 +0700</pubDate>
+        <author>ntrung03@gmail.com (Nguyen Hoang Trung)</author>
+        <atom:modified>Wed, 12 Jun 2019 23:15:34 +0700</atom:modified>
+        <guid>https://trungnguyen1909.github.io/blog/post/fbctf19-qual/kpets/</guid>
+        <description>kpets  welcome to Kernel Pets Simulator!
+  We wrote a pet store application that was too slow, so we made a kernel module for it instead.
+  Author: pippinthedog
+ Hi everyone, this is the writeup for the Facebook CTF 2019 Qualification Round kpets challenge</description>
+        
+        <dc:creator>Nguyen Hoang Trung</dc:creator>
+        
+        
+        
+        
+          
+            
+              <category>FBCTF</category>
+            
+          
+            
+              <category>CTF</category>
+            
+          
+            
+              <category>pwn</category>
+            
+          
+            
+              <category>kernel</category>
+            
+          
+            
+              <category>linux</category>
+            
+          
+            
+              <category>race-condition</category>
+            
+          
+            
+              <category>double-fetch</category>
+            
+          
+        
+        
+        
+      </item>
       
-      <guid>https://trungnguyen1909.github.io/blog/post/DEFCON26-Qual/iPwnKit/</guid>
-      <description>IPwnKit  Come and take a bite of the Apple!
+      <item>
+        <title>IPwnKit DEFCON CTF 26 QR</title>
+        <link>https://trungnguyen1909.github.io/blog/post/defcon26-qual/ipwnkit/</link>
+        <pubDate>Sun, 21 Apr 2019 00:46:45 +0700</pubDate>
+        <author>ntrung03@gmail.com (Nguyen Hoang Trung)</author>
+        <atom:modified>Sun, 21 Apr 2019 00:46:45 +0700</atom:modified>
+        <guid>https://trungnguyen1909.github.io/blog/post/defcon26-qual/ipwnkit/</guid>
+        <description>IPwnKit  Come and take a bite of the Apple!
   We have reserved you a very special place at the WWPC (World Wide Pwning Conference).
-  Email ipwnkit@gmail.com to RSVP and we will reply with your invite.
-  Come, test your skills, and win pwn2ooown!!!
-  Fine print: sw_vers 17E202.
-  The VM will be reset between exploit attempts.
-  If you panic the kernel and don&amp;rsquo;t walk away with the flag, you are BANNED FROM THIS CHALLENGE, so make it count!</description>
-    </item>
+  Email ipwnkit@gmail.com to RSVP and we will reply with your invite.</description>
+        
+        <dc:creator>Nguyen Hoang Trung</dc:creator>
+        
+        
+        
+        
+          
+            
+              <category>DEFCON-CTF</category>
+            
+          
+            
+              <category>CTF</category>
+            
+          
+            
+              <category>pwn</category>
+            
+          
+            
+              <category>xnu</category>
+            
+          
+            
+              <category>IOKit</category>
+            
+          
+            
+              <category>race-condition</category>
+            
+          
+            
+              <category>double-fetch</category>
+            
+          
+        
+        
+        
+      </item>
+      
+
     
   </channel>
 </rss>

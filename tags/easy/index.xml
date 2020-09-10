@@ -1,28 +1,71 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" 
+  xmlns:content="http://purl.org/rss/1.0/modules/content/" 
+  xmlns:dc="http://purl.org/dc/elements/1.1/" 
+  xmlns:atom="http://www.w3.org/2005/Atom" 
+  xmlns:sy="http://purl.org/rss/1.0/modules/syndication/" 
+  xmlns:media="http://search.yahoo.com/mrss/">
   <channel>
-    <title>easy on Nguyen Hoang Trung</title>
+    <title>easy on Blog</title>
     <link>https://trungnguyen1909.github.io/blog/tags/easy/</link>
-    <description>Recent content in easy on Nguyen Hoang Trung</description>
+    <description>Recent content in easy on Blog</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language>
+    <language>en</language>
+    <managingEditor>ntrung03@gmail.com (Nguyen Hoang Trung)</managingEditor>
+    <webMaster>ntrung03@gmail.com (Nguyen Hoang Trung)</webMaster>
+    <copyright>©{year}, All Rights Reserved. Content licensed under CC BY 4.0</copyright>
     <lastBuildDate>Fri, 06 Dec 2019 13:33:37 +0700</lastBuildDate>
     
-	<atom:link href="https://trungnguyen1909.github.io/blog/tags/easy/index.xml" rel="self" type="application/rss+xml" />
+        <atom:link href="https://trungnguyen1909.github.io/blog/tags/easy/index.xml" rel="self" type="application/rss+xml" />
     
     
-    <item>
-      <title>CrackIt, GCI</title>
-      <link>https://trungnguyen1909.github.io/blog/post/GCI/CrackIt/</link>
-      <pubDate>Fri, 06 Dec 2019 13:33:37 +0700</pubDate>
+    
+
       
-      <guid>https://trungnguyen1909.github.io/blog/post/GCI/CrackIt/</guid>
-      <description>1stcrackme easy, you can use strings 1stcrackme to list all strings in binary
+      <item>
+        <title>CrackIt, GCI</title>
+        <link>https://trungnguyen1909.github.io/blog/post/gci/crackit/</link>
+        <pubDate>Fri, 06 Dec 2019 13:33:37 +0700</pubDate>
+        <author>ntrung03@gmail.com (Nguyen Hoang Trung)</author>
+        <atom:modified>Fri, 06 Dec 2019 13:33:37 +0700</atom:modified>
+        <guid>https://trungnguyen1909.github.io/blog/post/gci/crackit/</guid>
+        <description>CrackIT Writeup for CrackIt task at Google CodeIn 2019
+1stcrackme easy, you can use strings 1stcrackme to list all strings in binary
 stripped output:
-Enter password: FEDORAGCIPASSEASY Success! Error! Wrong password! Because the password should be around the prompt and the so we could try FEDORAGCIPASSEASY because it looks like a password (my intuition, please don&amp;rsquo;t ask)
-And it works
-[user@archlinux Crackit-GCI]$ ./1stcrackme Enter password: FEDORAGCIPASSEASY Success! Enter password: When I enter the string again, It didn&amp;rsquo;t work. At this point I look the strings output again and then I saw 2 more suspicious strings</description>
-    </item>
+Enter password: FEDORAGCIPASSEASY Success! Error! Wrong password! Because the password should be around the prompt and the so we could try FEDORAGCIPASSEASY because it looks like a password</description>
+        
+        <dc:creator>Nguyen Hoang Trung</dc:creator>
+        
+        
+        
+        
+          
+            
+              <category>GCI</category>
+            
+          
+            
+              <category>CodeIn</category>
+            
+          
+            
+              <category>Google</category>
+            
+          
+            
+              <category>easy</category>
+            
+          
+            
+              <category>reverse</category>
+            
+          
+        
+        
+        
+      </item>
+      
+
     
   </channel>
 </rss>

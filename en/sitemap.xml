@@ -3,46 +3,6 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>https://trungnguyen1909.github.io/blog/tags/browser/</loc>
-    <lastmod>2020-09-02T19:48:00+07:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://trungnguyen1909.github.io/blog/tags/chromium/</loc>
-    <lastmod>2020-09-02T19:48:00+07:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://trungnguyen1909.github.io/blog/tags/CTF/</loc>
-    <lastmod>2020-09-02T19:48:00+07:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="vi"
-                href="https://trungnguyen1909.github.io/blog/vi/tags/CTF/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://trungnguyen1909.github.io/blog/tags/CTF/"
-                />
-  </url>
-  
-  <url>
-    <loc>https://trungnguyen1909.github.io/blog/tags/GGCTF2020/</loc>
-    <lastmod>2020-09-02T19:48:00+07:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://trungnguyen1909.github.io/blog/post/GGCTF20/</loc>
-    <lastmod>2020-09-02T19:48:00+07:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://trungnguyen1909.github.io/blog/tags/mojo/</loc>
-    <lastmod>2020-09-02T19:48:00+07:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://trungnguyen1909.github.io/blog/</loc>
     <lastmod>2020-09-02T19:48:00+07:00</lastmod>
     <xhtml:link
@@ -55,6 +15,46 @@
                 hreflang="en"
                 href="https://trungnguyen1909.github.io/blog/"
                 />
+  </url>
+  
+  <url>
+    <loc>https://trungnguyen1909.github.io/blog/tags/browser/</loc>
+    <lastmod>2020-09-02T19:48:00+07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://trungnguyen1909.github.io/blog/tags/chromium/</loc>
+    <lastmod>2020-09-02T19:48:00+07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://trungnguyen1909.github.io/blog/tags/ctf/</loc>
+    <lastmod>2020-09-02T19:48:00+07:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="vi"
+                href="https://trungnguyen1909.github.io/blog/vi/tags/ctf/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://trungnguyen1909.github.io/blog/tags/ctf/"
+                />
+  </url>
+  
+  <url>
+    <loc>https://trungnguyen1909.github.io/blog/tags/ggctf2020/</loc>
+    <lastmod>2020-09-02T19:48:00+07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://trungnguyen1909.github.io/blog/post/ggctf20/</loc>
+    <lastmod>2020-09-02T19:48:00+07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://trungnguyen1909.github.io/blog/tags/mojo/</loc>
+    <lastmod>2020-09-02T19:48:00+07:00</lastmod>
   </url>
   
   <url>
@@ -118,17 +118,17 @@
   </url>
   
   <url>
-    <loc>https://trungnguyen1909.github.io/blog/tags/PlaidCTF2020/</loc>
+    <loc>https://trungnguyen1909.github.io/blog/tags/plaidctf2020/</loc>
     <lastmod>2020-04-22T19:42:49+07:00</lastmod>
   </url>
   
   <url>
-    <loc>https://trungnguyen1909.github.io/blog/post/PlaidCTF2020/</loc>
+    <loc>https://trungnguyen1909.github.io/blog/post/plaidctf2020/</loc>
     <lastmod>2020-04-22T19:42:49+07:00</lastmod>
   </url>
   
   <url>
-    <loc>https://trungnguyen1909.github.io/blog/tags/UAF/</loc>
+    <loc>https://trungnguyen1909.github.io/blog/tags/uaf/</loc>
     <lastmod>2020-04-22T19:42:49+07:00</lastmod>
   </url>
   
@@ -138,12 +138,12 @@
   </url>
   
   <url>
-    <loc>https://trungnguyen1909.github.io/blog/tags/CodeIn/</loc>
+    <loc>https://trungnguyen1909.github.io/blog/tags/codein/</loc>
     <lastmod>2019-12-06T13:33:37+07:00</lastmod>
   </url>
   
   <url>
-    <loc>https://trungnguyen1909.github.io/blog/post/GCI/CrackIt/</loc>
+    <loc>https://trungnguyen1909.github.io/blog/post/gci/crackit/</loc>
     <lastmod>2019-12-06T13:33:37+07:00</lastmod>
   </url>
   
@@ -153,12 +153,12 @@
   </url>
   
   <url>
-    <loc>https://trungnguyen1909.github.io/blog/tags/GCI/</loc>
+    <loc>https://trungnguyen1909.github.io/blog/tags/gci/</loc>
     <lastmod>2019-12-06T13:33:37+07:00</lastmod>
   </url>
   
   <url>
-    <loc>https://trungnguyen1909.github.io/blog/tags/Google/</loc>
+    <loc>https://trungnguyen1909.github.io/blog/tags/google/</loc>
     <lastmod>2019-12-06T13:33:37+07:00</lastmod>
   </url>
   
@@ -173,7 +173,7 @@
   </url>
   
   <url>
-    <loc>https://trungnguyen1909.github.io/blog/tags/Camp-CTF/</loc>
+    <loc>https://trungnguyen1909.github.io/blog/tags/camp-ctf/</loc>
     <lastmod>2019-09-04T23:38:50+07:00</lastmod>
   </url>
   
@@ -193,7 +193,7 @@
   </url>
   
   <url>
-    <loc>https://trungnguyen1909.github.io/blog/post/CampCTF/PwningKernelz/</loc>
+    <loc>https://trungnguyen1909.github.io/blog/post/campctf/pwningkernelz/</loc>
     <lastmod>2019-09-04T23:38:50+07:00</lastmod>
   </url>
   
@@ -208,12 +208,12 @@
   </url>
   
   <url>
-    <loc>https://trungnguyen1909.github.io/blog/tags/FBCTF/</loc>
+    <loc>https://trungnguyen1909.github.io/blog/tags/fbctf/</loc>
     <lastmod>2019-06-12T23:15:34+07:00</lastmod>
   </url>
   
   <url>
-    <loc>https://trungnguyen1909.github.io/blog/post/FBCTF19-Qual/kpets/</loc>
+    <loc>https://trungnguyen1909.github.io/blog/post/fbctf19-qual/kpets/</loc>
     <lastmod>2019-06-12T23:15:34+07:00</lastmod>
   </url>
   
@@ -238,47 +238,57 @@
   </url>
   
   <url>
-    <loc>https://trungnguyen1909.github.io/blog/tags/DEFCON-CTF/</loc>
+    <loc>https://trungnguyen1909.github.io/blog/tags/defcon-ctf/</loc>
     <lastmod>2019-04-21T00:46:45+07:00</lastmod>
   </url>
   
   <url>
-    <loc>https://trungnguyen1909.github.io/blog/tags/IOKit/</loc>
+    <loc>https://trungnguyen1909.github.io/blog/tags/iokit/</loc>
     <lastmod>2019-04-21T00:46:45+07:00</lastmod>
   </url>
   
   <url>
-    <loc>https://trungnguyen1909.github.io/blog/post/DEFCON26-Qual/iPwnKit/</loc>
+    <loc>https://trungnguyen1909.github.io/blog/post/defcon26-qual/ipwnkit/</loc>
     <lastmod>2019-04-21T00:46:45+07:00</lastmod>
   </url>
   
   <url>
-    <loc>https://trungnguyen1909.github.io/blog/tags/AceBear/</loc>
+    <loc>https://trungnguyen1909.github.io/blog/tags/acebear/</loc>
     <lastmod>2019-04-08T14:35:17+07:00</lastmod>
   </url>
   
   <url>
-    <loc>https://trungnguyen1909.github.io/blog/post/AceBear2019/house_of_loop/</loc>
+    <loc>https://trungnguyen1909.github.io/blog/post/acebear2019/house_of_loop/</loc>
     <lastmod>2019-04-08T14:35:17+07:00</lastmod>
   </url>
   
   <url>
     <loc>https://trungnguyen1909.github.io/blog/tags/heap/</loc>
     <lastmod>2019-04-08T14:35:17+07:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="vi"
+                href="https://trungnguyen1909.github.io/blog/vi/tags/heap/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://trungnguyen1909.github.io/blog/tags/heap/"
+                />
   </url>
   
   <url>
-    <loc>https://trungnguyen1909.github.io/blog/tags/NX/</loc>
+    <loc>https://trungnguyen1909.github.io/blog/tags/nx/</loc>
     <lastmod>2019-02-22T23:17:46+07:00</lastmod>
   </url>
   
   <url>
-    <loc>https://trungnguyen1909.github.io/blog/tags/ROP/</loc>
+    <loc>https://trungnguyen1909.github.io/blog/tags/rop/</loc>
     <lastmod>2019-02-22T23:17:46+07:00</lastmod>
   </url>
   
   <url>
-    <loc>https://trungnguyen1909.github.io/blog/tags/TetCTF/</loc>
+    <loc>https://trungnguyen1909.github.io/blog/tags/tetctf/</loc>
     <lastmod>2019-02-22T23:17:46+07:00</lastmod>
   </url>
   
@@ -303,47 +313,47 @@
   </url>
   
   <url>
-    <loc>https://trungnguyen1909.github.io/blog/post/misc/KDB/KDB/</loc>
+    <loc>https://trungnguyen1909.github.io/blog/post/misc/kdb/kdb/</loc>
     <lastmod>2019-02-18T16:48:13+07:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="vi"
-                href="https://trungnguyen1909.github.io/blog/vi/post/misc/KDB/KDB/"
+                href="https://trungnguyen1909.github.io/blog/vi/post/misc/kdb/kdb/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://trungnguyen1909.github.io/blog/post/misc/KDB/KDB/"
+                href="https://trungnguyen1909.github.io/blog/post/misc/kdb/kdb/"
                 />
   </url>
   
   <url>
-    <loc>https://trungnguyen1909.github.io/blog/tags/matesCTF/</loc>
+    <loc>https://trungnguyen1909.github.io/blog/tags/matesctf/</loc>
     <lastmod>2019-02-18T16:48:13+07:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="vi"
-                href="https://trungnguyen1909.github.io/blog/vi/tags/matesCTF/"
+                href="https://trungnguyen1909.github.io/blog/vi/tags/matesctf/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://trungnguyen1909.github.io/blog/tags/matesCTF/"
+                href="https://trungnguyen1909.github.io/blog/tags/matesctf/"
                 />
   </url>
   
   <url>
-    <loc>https://trungnguyen1909.github.io/blog/post/matesctf/KSMASH/</loc>
+    <loc>https://trungnguyen1909.github.io/blog/post/matesctf/ksmash/</loc>
     <lastmod>2019-02-18T16:48:13+07:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="vi"
-                href="https://trungnguyen1909.github.io/blog/vi/post/matesctf/KSMASH/"
+                href="https://trungnguyen1909.github.io/blog/vi/post/matesctf/ksmash/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://trungnguyen1909.github.io/blog/post/matesctf/KSMASH/"
+                href="https://trungnguyen1909.github.io/blog/post/matesctf/ksmash/"
                 />
   </url>
   
@@ -353,7 +363,17 @@
   </url>
   
   <url>
-    <loc>https://trungnguyen1909.github.io/blog/tags/35C3-CTF/</loc>
+    <loc>https://trungnguyen1909.github.io/blog/tags/35c3-ctf/</loc>
+    <lastmod>2019-02-15T00:47:48+07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://trungnguyen1909.github.io/blog/tags/mach/</loc>
+    <lastmod>2019-02-15T00:47:48+07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://trungnguyen1909.github.io/blog/tags/mig/</loc>
     <lastmod>2019-02-15T00:47:48+07:00</lastmod>
   </url>
   
@@ -368,37 +388,37 @@
   </url>
   
   <url>
-    <loc>https://trungnguyen1909.github.io/blog/tags/Python/</loc>
+    <loc>https://trungnguyen1909.github.io/blog/tags/python/</loc>
     <lastmod>2018-11-22T21:30:28+07:00</lastmod>
   </url>
   
   <url>
-    <loc>https://trungnguyen1909.github.io/blog/tags/RITSEC/</loc>
+    <loc>https://trungnguyen1909.github.io/blog/tags/ritsec/</loc>
     <lastmod>2018-11-22T21:30:28+07:00</lastmod>
   </url>
   
   <url>
-    <loc>https://trungnguyen1909.github.io/blog/post/RITSEC-2018/Bucket-o-cash/</loc>
+    <loc>https://trungnguyen1909.github.io/blog/post/ritsec-2018/bucket-o-cash/</loc>
     <lastmod>2018-11-22T21:30:28+07:00</lastmod>
   </url>
   
   <url>
-    <loc>https://trungnguyen1909.github.io/blog/post/RITSEC-2018/Freeze/</loc>
+    <loc>https://trungnguyen1909.github.io/blog/post/ritsec-2018/freeze/</loc>
     <lastmod>2018-11-22T21:30:28+07:00</lastmod>
   </url>
   
   <url>
-    <loc>https://trungnguyen1909.github.io/blog/post/RITSEC-2018/Gimme-sum-fud/</loc>
+    <loc>https://trungnguyen1909.github.io/blog/post/ritsec-2018/gimme-sum-fud/</loc>
     <lastmod>2018-11-22T21:30:28+07:00</lastmod>
   </url>
   
   <url>
-    <loc>https://trungnguyen1909.github.io/blog/post/RITSEC-2018/The-tangled-web/</loc>
+    <loc>https://trungnguyen1909.github.io/blog/post/ritsec-2018/the-tangled-web/</loc>
     <lastmod>2018-11-22T21:30:28+07:00</lastmod>
   </url>
   
   <url>
-    <loc>https://trungnguyen1909.github.io/blog/post/RITSEC-2018/Yet-another-HR-Management-Framework/</loc>
+    <loc>https://trungnguyen1909.github.io/blog/post/ritsec-2018/yet-another-hr-management-framework/</loc>
     <lastmod>2018-11-22T21:30:28+07:00</lastmod>
   </url>
   
@@ -408,12 +428,7 @@
   </url>
   
   <url>
-    <loc>https://trungnguyen1909.github.io/blog/post/matesctf/notebook/</loc>
-    <lastmod>2018-10-10T11:56:50+07:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://trungnguyen1909.github.io/blog/post/matesctf/babyOVERFLOW/</loc>
+    <loc>https://trungnguyen1909.github.io/blog/post/matesctf/babyoverflow/</loc>
     <lastmod>2018-10-10T11:35:23+07:00</lastmod>
   </url>
   
@@ -433,6 +448,20 @@
                 rel="alternate"
                 hreflang="en"
                 href="https://trungnguyen1909.github.io/blog/categories/"
+                />
+  </url>
+  
+  <url>
+    <loc>https://trungnguyen1909.github.io/blog/series/</loc>
+    <xhtml:link
+                rel="alternate"
+                hreflang="vi"
+                href="https://trungnguyen1909.github.io/blog/vi/series/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://trungnguyen1909.github.io/blog/series/"
                 />
   </url>
   

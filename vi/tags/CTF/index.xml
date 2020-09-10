@@ -1,26 +1,109 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" 
+  xmlns:content="http://purl.org/rss/1.0/modules/content/" 
+  xmlns:dc="http://purl.org/dc/elements/1.1/" 
+  xmlns:atom="http://www.w3.org/2005/Atom" 
+  xmlns:sy="http://purl.org/rss/1.0/modules/syndication/" 
+  xmlns:media="http://search.yahoo.com/mrss/">
   <channel>
-    <title>CTF on Nguyen Hoang Trung</title>
-    <link>https://trungnguyen1909.github.io/blog/vi/tags/CTF/</link>
-    <description>Recent content in CTF on Nguyen Hoang Trung</description>
+    <title>CTF on Blog</title>
+    <link>https://trungnguyen1909.github.io/blog/vi/tags/ctf/</link>
+    <description>Recent content in CTF on Blog</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language>
+    <language>vi</language>
+    <managingEditor>ntrung03@gmail.com (Nguyen Hoang Trung)</managingEditor>
+    <webMaster>ntrung03@gmail.com (Nguyen Hoang Trung)</webMaster>
+    <copyright>©{year}, All Rights Reserved. Content licensed under CC BY 4.0</copyright>
     <lastBuildDate>Mon, 18 Feb 2019 16:48:13 +0700</lastBuildDate>
     
-	<atom:link href="https://trungnguyen1909.github.io/blog/vi/tags/CTF/index.xml" rel="self" type="application/rss+xml" />
+        <atom:link href="https://trungnguyen1909.github.io/blog/vi/tags/ctf/index.xml" rel="self" type="application/rss+xml" />
     
     
-    <item>
-      <title>matesCTF KSMASH</title>
-      <link>https://trungnguyen1909.github.io/blog/vi/post/matesctf/KSMASH/</link>
-      <pubDate>Mon, 18 Feb 2019 16:48:13 +0700</pubDate>
+    
+
       
-      <guid>https://trungnguyen1909.github.io/blog/vi/post/matesctf/KSMASH/</guid>
-      <description>KSMASH Background Đây là 1 bài exploit linux kernel module của nyaacate@gmail.com host ở vòng 3 MatesCTF 2018-2019
-Bài này mình solve sau giờ :&amp;lt; nhưng vì trước khi kết thúc CTF khoảng 2hr mà chưa mình chưa thấy team nào solved bài này cả, nên là mình vẫn mạnh dạn gửi exploit code vào mail tác giả.
-Challenge Description Có một kernel module đang chạy, nhiệm vụ là từ non-root user escape lên r00t để đọc file /root/flag</description>
-    </item>
+      <item>
+        <title>matesCTF KSMASH</title>
+        <link>https://trungnguyen1909.github.io/blog/vi/post/matesctf/ksmash/</link>
+        <pubDate>Mon, 18 Feb 2019 16:48:13 +0700</pubDate>
+        <author>ntrung03@gmail.com (Nguyen Hoang Trung)</author>
+        <atom:modified>Mon, 18 Feb 2019 16:48:13 +0700</atom:modified>
+        <guid>https://trungnguyen1909.github.io/blog/vi/post/matesctf/ksmash/</guid>
+        <description>KSMASH Background Đây là 1 bài exploit linux kernel module của nyaacate@gmail.com host ở vòng 3 MatesCTF 2018-2019
+Bài này mình solve sau giờ :&amp;lt; nhưng vì trước khi kết thúc CTF khoảng 2hr mà chưa mình chưa thấy team nào solved bài này cả,</description>
+        
+        <dc:creator>Nguyen Hoang Trung</dc:creator>
+        
+        
+        
+        
+          
+            
+              <category>matesCTF</category>
+            
+          
+            
+              <category>CTF</category>
+            
+          
+            
+              <category>pwn</category>
+            
+          
+            
+              <category>kernel</category>
+            
+          
+            
+              <category>linux</category>
+            
+          
+        
+        
+        
+      </item>
+      
+      <item>
+        <title>matesCTF notebook</title>
+        <link>https://trungnguyen1909.github.io/blog/vi/post/matesctf/notebook/</link>
+        <pubDate>Wed, 10 Oct 2018 11:56:50 +0700</pubDate>
+        <author>ntrung03@gmail.com (Nguyen Hoang Trung)</author>
+        <atom:modified>Wed, 10 Oct 2018 11:56:50 +0700</atom:modified>
+        <guid>https://trungnguyen1909.github.io/blog/vi/post/matesctf/notebook/</guid>
+        <description>Notebook Exploit
+Bài này mình pwn được sau khi được tiền bối Đào Xuân Nghĩa thông não sau giờ.
+Đây là 1 bài Heap overflow.
+checksec:
+[*] &#39;/root/matesctf/notebook&#39; Arch: amd64-64-little RELRO: Partial RELRO Stack: No canary found NX: NX enabled PIE: No PIE (0x400000) Có 2 loại note (bình thường: 1000bytes.</description>
+        
+        <dc:creator>Nguyen Hoang Trung</dc:creator>
+        
+        
+        
+        
+          
+            
+              <category>matesCTF</category>
+            
+          
+            
+              <category>CTF</category>
+            
+          
+            
+              <category>pwn</category>
+            
+          
+            
+              <category>heap</category>
+            
+          
+        
+        
+        
+      </item>
+      
+
     
   </channel>
 </rss>

@@ -1,30 +1,78 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" 
+  xmlns:content="http://purl.org/rss/1.0/modules/content/" 
+  xmlns:dc="http://purl.org/dc/elements/1.1/" 
+  xmlns:atom="http://www.w3.org/2005/Atom" 
+  xmlns:sy="http://purl.org/rss/1.0/modules/syndication/" 
+  xmlns:media="http://search.yahoo.com/mrss/">
   <channel>
-    <title>DEFCON-CTF on Nguyen Hoang Trung</title>
-    <link>https://trungnguyen1909.github.io/blog/tags/DEFCON-CTF/</link>
-    <description>Recent content in DEFCON-CTF on Nguyen Hoang Trung</description>
+    <title>DEFCON-CTF on Blog</title>
+    <link>https://trungnguyen1909.github.io/blog/tags/defcon-ctf/</link>
+    <description>Recent content in DEFCON-CTF on Blog</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language>
+    <language>en</language>
+    <managingEditor>ntrung03@gmail.com (Nguyen Hoang Trung)</managingEditor>
+    <webMaster>ntrung03@gmail.com (Nguyen Hoang Trung)</webMaster>
+    <copyright>©{year}, All Rights Reserved. Content licensed under CC BY 4.0</copyright>
     <lastBuildDate>Sun, 21 Apr 2019 00:46:45 +0700</lastBuildDate>
     
-	<atom:link href="https://trungnguyen1909.github.io/blog/tags/DEFCON-CTF/index.xml" rel="self" type="application/rss+xml" />
+        <atom:link href="https://trungnguyen1909.github.io/blog/tags/defcon-ctf/index.xml" rel="self" type="application/rss+xml" />
     
     
-    <item>
-      <title>IPwnKit DEFCON CTF 26 Qualification Round</title>
-      <link>https://trungnguyen1909.github.io/blog/post/DEFCON26-Qual/iPwnKit/</link>
-      <pubDate>Sun, 21 Apr 2019 00:46:45 +0700</pubDate>
+    
+
       
-      <guid>https://trungnguyen1909.github.io/blog/post/DEFCON26-Qual/iPwnKit/</guid>
-      <description>IPwnKit  Come and take a bite of the Apple!
+      <item>
+        <title>IPwnKit DEFCON CTF 26 QR</title>
+        <link>https://trungnguyen1909.github.io/blog/post/defcon26-qual/ipwnkit/</link>
+        <pubDate>Sun, 21 Apr 2019 00:46:45 +0700</pubDate>
+        <author>ntrung03@gmail.com (Nguyen Hoang Trung)</author>
+        <atom:modified>Sun, 21 Apr 2019 00:46:45 +0700</atom:modified>
+        <guid>https://trungnguyen1909.github.io/blog/post/defcon26-qual/ipwnkit/</guid>
+        <description>IPwnKit  Come and take a bite of the Apple!
   We have reserved you a very special place at the WWPC (World Wide Pwning Conference).
-  Email ipwnkit@gmail.com to RSVP and we will reply with your invite.
-  Come, test your skills, and win pwn2ooown!!!
-  Fine print: sw_vers 17E202.
-  The VM will be reset between exploit attempts.
-  If you panic the kernel and don&amp;rsquo;t walk away with the flag, you are BANNED FROM THIS CHALLENGE, so make it count!</description>
-    </item>
+  Email ipwnkit@gmail.com to RSVP and we will reply with your invite.</description>
+        
+        <dc:creator>Nguyen Hoang Trung</dc:creator>
+        
+        
+        
+        
+          
+            
+              <category>DEFCON-CTF</category>
+            
+          
+            
+              <category>CTF</category>
+            
+          
+            
+              <category>pwn</category>
+            
+          
+            
+              <category>xnu</category>
+            
+          
+            
+              <category>IOKit</category>
+            
+          
+            
+              <category>race-condition</category>
+            
+          
+            
+              <category>double-fetch</category>
+            
+          
+        
+        
+        
+      </item>
+      
+
     
   </channel>
 </rss>

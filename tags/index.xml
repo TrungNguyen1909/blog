@@ -1,384 +1,802 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" 
+  xmlns:content="http://purl.org/rss/1.0/modules/content/" 
+  xmlns:dc="http://purl.org/dc/elements/1.1/" 
+  xmlns:atom="http://www.w3.org/2005/Atom" 
+  xmlns:sy="http://purl.org/rss/1.0/modules/syndication/" 
+  xmlns:media="http://search.yahoo.com/mrss/">
   <channel>
-    <title>Tags on Nguyen Hoang Trung</title>
+    <title>Tags on Blog</title>
     <link>https://trungnguyen1909.github.io/blog/tags/</link>
-    <description>Recent content in Tags on Nguyen Hoang Trung</description>
+    <description>Recent content in Tags on Blog</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language>
+    <language>en</language>
+    <managingEditor>ntrung03@gmail.com (Nguyen Hoang Trung)</managingEditor>
+    <webMaster>ntrung03@gmail.com (Nguyen Hoang Trung)</webMaster>
+    <copyright>©{year}, All Rights Reserved. Content licensed under CC BY 4.0</copyright>
     <lastBuildDate>Wed, 02 Sep 2020 19:48:00 +0700</lastBuildDate>
     
-	<atom:link href="https://trungnguyen1909.github.io/blog/tags/index.xml" rel="self" type="application/rss+xml" />
+        <atom:link href="https://trungnguyen1909.github.io/blog/tags/index.xml" rel="self" type="application/rss+xml" />
     
     
-    <item>
-      <title>browser</title>
-      <link>https://trungnguyen1909.github.io/blog/tags/browser/</link>
-      <pubDate>Wed, 02 Sep 2020 19:48:00 +0700</pubDate>
+    
+
       
-      <guid>https://trungnguyen1909.github.io/blog/tags/browser/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>chromium</title>
-      <link>https://trungnguyen1909.github.io/blog/tags/chromium/</link>
-      <pubDate>Wed, 02 Sep 2020 19:48:00 +0700</pubDate>
+      <item>
+        <title>browser</title>
+        <link>https://trungnguyen1909.github.io/blog/tags/browser/</link>
+        <pubDate>Wed, 02 Sep 2020 19:48:00 +0700</pubDate>
+        <author>ntrung03@gmail.com (Nguyen Hoang Trung)</author>
+        
+        <guid>https://trungnguyen1909.github.io/blog/tags/browser/</guid>
+        <description></description>
+        
+        <dc:creator>Nguyen Hoang Trung</dc:creator>
+        
+        
+        
+        
+        
+        
+      </item>
       
-      <guid>https://trungnguyen1909.github.io/blog/tags/chromium/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>CTF</title>
-      <link>https://trungnguyen1909.github.io/blog/tags/CTF/</link>
-      <pubDate>Wed, 02 Sep 2020 19:48:00 +0700</pubDate>
+      <item>
+        <title>chromium</title>
+        <link>https://trungnguyen1909.github.io/blog/tags/chromium/</link>
+        <pubDate>Wed, 02 Sep 2020 19:48:00 +0700</pubDate>
+        <author>ntrung03@gmail.com (Nguyen Hoang Trung)</author>
+        
+        <guid>https://trungnguyen1909.github.io/blog/tags/chromium/</guid>
+        <description></description>
+        
+        <dc:creator>Nguyen Hoang Trung</dc:creator>
+        
+        
+        
+        
+        
+        
+      </item>
       
-      <guid>https://trungnguyen1909.github.io/blog/tags/CTF/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>GGCTF2020</title>
-      <link>https://trungnguyen1909.github.io/blog/tags/GGCTF2020/</link>
-      <pubDate>Wed, 02 Sep 2020 19:48:00 +0700</pubDate>
+      <item>
+        <title>CTF</title>
+        <link>https://trungnguyen1909.github.io/blog/tags/ctf/</link>
+        <pubDate>Wed, 02 Sep 2020 19:48:00 +0700</pubDate>
+        <author>ntrung03@gmail.com (Nguyen Hoang Trung)</author>
+        
+        <guid>https://trungnguyen1909.github.io/blog/tags/ctf/</guid>
+        <description></description>
+        
+        <dc:creator>Nguyen Hoang Trung</dc:creator>
+        
+        
+        
+        
+        
+        
+      </item>
       
-      <guid>https://trungnguyen1909.github.io/blog/tags/GGCTF2020/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>mojo</title>
-      <link>https://trungnguyen1909.github.io/blog/tags/mojo/</link>
-      <pubDate>Wed, 02 Sep 2020 19:48:00 +0700</pubDate>
+      <item>
+        <title>GGCTF2020</title>
+        <link>https://trungnguyen1909.github.io/blog/tags/ggctf2020/</link>
+        <pubDate>Wed, 02 Sep 2020 19:48:00 +0700</pubDate>
+        <author>ntrung03@gmail.com (Nguyen Hoang Trung)</author>
+        
+        <guid>https://trungnguyen1909.github.io/blog/tags/ggctf2020/</guid>
+        <description></description>
+        
+        <dc:creator>Nguyen Hoang Trung</dc:creator>
+        
+        
+        
+        
+        
+        
+      </item>
       
-      <guid>https://trungnguyen1909.github.io/blog/tags/mojo/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>offset</title>
-      <link>https://trungnguyen1909.github.io/blog/tags/offset/</link>
-      <pubDate>Wed, 02 Sep 2020 19:48:00 +0700</pubDate>
+      <item>
+        <title>mojo</title>
+        <link>https://trungnguyen1909.github.io/blog/tags/mojo/</link>
+        <pubDate>Wed, 02 Sep 2020 19:48:00 +0700</pubDate>
+        <author>ntrung03@gmail.com (Nguyen Hoang Trung)</author>
+        
+        <guid>https://trungnguyen1909.github.io/blog/tags/mojo/</guid>
+        <description></description>
+        
+        <dc:creator>Nguyen Hoang Trung</dc:creator>
+        
+        
+        
+        
+        
+        
+      </item>
       
-      <guid>https://trungnguyen1909.github.io/blog/tags/offset/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>pwn</title>
-      <link>https://trungnguyen1909.github.io/blog/tags/pwn/</link>
-      <pubDate>Wed, 02 Sep 2020 19:48:00 +0700</pubDate>
+      <item>
+        <title>offset</title>
+        <link>https://trungnguyen1909.github.io/blog/tags/offset/</link>
+        <pubDate>Wed, 02 Sep 2020 19:48:00 +0700</pubDate>
+        <author>ntrung03@gmail.com (Nguyen Hoang Trung)</author>
+        
+        <guid>https://trungnguyen1909.github.io/blog/tags/offset/</guid>
+        <description></description>
+        
+        <dc:creator>Nguyen Hoang Trung</dc:creator>
+        
+        
+        
+        
+        
+        
+      </item>
       
-      <guid>https://trungnguyen1909.github.io/blog/tags/pwn/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>reversing</title>
-      <link>https://trungnguyen1909.github.io/blog/tags/reversing/</link>
-      <pubDate>Wed, 02 Sep 2020 19:48:00 +0700</pubDate>
+      <item>
+        <title>pwn</title>
+        <link>https://trungnguyen1909.github.io/blog/tags/pwn/</link>
+        <pubDate>Wed, 02 Sep 2020 19:48:00 +0700</pubDate>
+        <author>ntrung03@gmail.com (Nguyen Hoang Trung)</author>
+        
+        <guid>https://trungnguyen1909.github.io/blog/tags/pwn/</guid>
+        <description></description>
+        
+        <dc:creator>Nguyen Hoang Trung</dc:creator>
+        
+        
+        
+        
+        
+        
+      </item>
       
-      <guid>https://trungnguyen1909.github.io/blog/tags/reversing/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>sandbox</title>
-      <link>https://trungnguyen1909.github.io/blog/tags/sandbox/</link>
-      <pubDate>Wed, 02 Sep 2020 19:48:00 +0700</pubDate>
+      <item>
+        <title>reversing</title>
+        <link>https://trungnguyen1909.github.io/blog/tags/reversing/</link>
+        <pubDate>Wed, 02 Sep 2020 19:48:00 +0700</pubDate>
+        <author>ntrung03@gmail.com (Nguyen Hoang Trung)</author>
+        
+        <guid>https://trungnguyen1909.github.io/blog/tags/reversing/</guid>
+        <description></description>
+        
+        <dc:creator>Nguyen Hoang Trung</dc:creator>
+        
+        
+        
+        
+        
+        
+      </item>
       
-      <guid>https://trungnguyen1909.github.io/blog/tags/sandbox/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>PlaidCTF2020</title>
-      <link>https://trungnguyen1909.github.io/blog/tags/PlaidCTF2020/</link>
-      <pubDate>Wed, 22 Apr 2020 19:42:49 +0700</pubDate>
+      <item>
+        <title>sandbox</title>
+        <link>https://trungnguyen1909.github.io/blog/tags/sandbox/</link>
+        <pubDate>Wed, 02 Sep 2020 19:48:00 +0700</pubDate>
+        <author>ntrung03@gmail.com (Nguyen Hoang Trung)</author>
+        
+        <guid>https://trungnguyen1909.github.io/blog/tags/sandbox/</guid>
+        <description></description>
+        
+        <dc:creator>Nguyen Hoang Trung</dc:creator>
+        
+        
+        
+        
+        
+        
+      </item>
       
-      <guid>https://trungnguyen1909.github.io/blog/tags/PlaidCTF2020/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>UAF</title>
-      <link>https://trungnguyen1909.github.io/blog/tags/UAF/</link>
-      <pubDate>Wed, 22 Apr 2020 19:42:49 +0700</pubDate>
+      <item>
+        <title>PlaidCTF2020</title>
+        <link>https://trungnguyen1909.github.io/blog/tags/plaidctf2020/</link>
+        <pubDate>Wed, 22 Apr 2020 19:42:49 +0700</pubDate>
+        <author>ntrung03@gmail.com (Nguyen Hoang Trung)</author>
+        
+        <guid>https://trungnguyen1909.github.io/blog/tags/plaidctf2020/</guid>
+        <description></description>
+        
+        <dc:creator>Nguyen Hoang Trung</dc:creator>
+        
+        
+        
+        
+        
+        
+      </item>
       
-      <guid>https://trungnguyen1909.github.io/blog/tags/UAF/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>use-after-free</title>
-      <link>https://trungnguyen1909.github.io/blog/tags/use-after-free/</link>
-      <pubDate>Wed, 22 Apr 2020 19:42:49 +0700</pubDate>
+      <item>
+        <title>UAF</title>
+        <link>https://trungnguyen1909.github.io/blog/tags/uaf/</link>
+        <pubDate>Wed, 22 Apr 2020 19:42:49 +0700</pubDate>
+        <author>ntrung03@gmail.com (Nguyen Hoang Trung)</author>
+        
+        <guid>https://trungnguyen1909.github.io/blog/tags/uaf/</guid>
+        <description></description>
+        
+        <dc:creator>Nguyen Hoang Trung</dc:creator>
+        
+        
+        
+        
+        
+        
+      </item>
       
-      <guid>https://trungnguyen1909.github.io/blog/tags/use-after-free/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>CodeIn</title>
-      <link>https://trungnguyen1909.github.io/blog/tags/CodeIn/</link>
-      <pubDate>Fri, 06 Dec 2019 13:33:37 +0700</pubDate>
+      <item>
+        <title>use-after-free</title>
+        <link>https://trungnguyen1909.github.io/blog/tags/use-after-free/</link>
+        <pubDate>Wed, 22 Apr 2020 19:42:49 +0700</pubDate>
+        <author>ntrung03@gmail.com (Nguyen Hoang Trung)</author>
+        
+        <guid>https://trungnguyen1909.github.io/blog/tags/use-after-free/</guid>
+        <description></description>
+        
+        <dc:creator>Nguyen Hoang Trung</dc:creator>
+        
+        
+        
+        
+        
+        
+      </item>
       
-      <guid>https://trungnguyen1909.github.io/blog/tags/CodeIn/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>easy</title>
-      <link>https://trungnguyen1909.github.io/blog/tags/easy/</link>
-      <pubDate>Fri, 06 Dec 2019 13:33:37 +0700</pubDate>
+      <item>
+        <title>CodeIn</title>
+        <link>https://trungnguyen1909.github.io/blog/tags/codein/</link>
+        <pubDate>Fri, 06 Dec 2019 13:33:37 +0700</pubDate>
+        <author>ntrung03@gmail.com (Nguyen Hoang Trung)</author>
+        
+        <guid>https://trungnguyen1909.github.io/blog/tags/codein/</guid>
+        <description></description>
+        
+        <dc:creator>Nguyen Hoang Trung</dc:creator>
+        
+        
+        
+        
+        
+        
+      </item>
       
-      <guid>https://trungnguyen1909.github.io/blog/tags/easy/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>GCI</title>
-      <link>https://trungnguyen1909.github.io/blog/tags/GCI/</link>
-      <pubDate>Fri, 06 Dec 2019 13:33:37 +0700</pubDate>
+      <item>
+        <title>easy</title>
+        <link>https://trungnguyen1909.github.io/blog/tags/easy/</link>
+        <pubDate>Fri, 06 Dec 2019 13:33:37 +0700</pubDate>
+        <author>ntrung03@gmail.com (Nguyen Hoang Trung)</author>
+        
+        <guid>https://trungnguyen1909.github.io/blog/tags/easy/</guid>
+        <description></description>
+        
+        <dc:creator>Nguyen Hoang Trung</dc:creator>
+        
+        
+        
+        
+        
+        
+      </item>
       
-      <guid>https://trungnguyen1909.github.io/blog/tags/GCI/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Google</title>
-      <link>https://trungnguyen1909.github.io/blog/tags/Google/</link>
-      <pubDate>Fri, 06 Dec 2019 13:33:37 +0700</pubDate>
+      <item>
+        <title>GCI</title>
+        <link>https://trungnguyen1909.github.io/blog/tags/gci/</link>
+        <pubDate>Fri, 06 Dec 2019 13:33:37 +0700</pubDate>
+        <author>ntrung03@gmail.com (Nguyen Hoang Trung)</author>
+        
+        <guid>https://trungnguyen1909.github.io/blog/tags/gci/</guid>
+        <description></description>
+        
+        <dc:creator>Nguyen Hoang Trung</dc:creator>
+        
+        
+        
+        
+        
+        
+      </item>
       
-      <guid>https://trungnguyen1909.github.io/blog/tags/Google/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>reverse</title>
-      <link>https://trungnguyen1909.github.io/blog/tags/reverse/</link>
-      <pubDate>Fri, 06 Dec 2019 13:33:37 +0700</pubDate>
+      <item>
+        <title>Google</title>
+        <link>https://trungnguyen1909.github.io/blog/tags/google/</link>
+        <pubDate>Fri, 06 Dec 2019 13:33:37 +0700</pubDate>
+        <author>ntrung03@gmail.com (Nguyen Hoang Trung)</author>
+        
+        <guid>https://trungnguyen1909.github.io/blog/tags/google/</guid>
+        <description></description>
+        
+        <dc:creator>Nguyen Hoang Trung</dc:creator>
+        
+        
+        
+        
+        
+        
+      </item>
       
-      <guid>https://trungnguyen1909.github.io/blog/tags/reverse/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>0day</title>
-      <link>https://trungnguyen1909.github.io/blog/tags/0day/</link>
-      <pubDate>Wed, 04 Sep 2019 23:38:50 +0700</pubDate>
+      <item>
+        <title>reverse</title>
+        <link>https://trungnguyen1909.github.io/blog/tags/reverse/</link>
+        <pubDate>Fri, 06 Dec 2019 13:33:37 +0700</pubDate>
+        <author>ntrung03@gmail.com (Nguyen Hoang Trung)</author>
+        
+        <guid>https://trungnguyen1909.github.io/blog/tags/reverse/</guid>
+        <description></description>
+        
+        <dc:creator>Nguyen Hoang Trung</dc:creator>
+        
+        
+        
+        
+        
+        
+      </item>
       
-      <guid>https://trungnguyen1909.github.io/blog/tags/0day/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Camp-CTF</title>
-      <link>https://trungnguyen1909.github.io/blog/tags/Camp-CTF/</link>
-      <pubDate>Wed, 04 Sep 2019 23:38:50 +0700</pubDate>
+      <item>
+        <title>0day</title>
+        <link>https://trungnguyen1909.github.io/blog/tags/0day/</link>
+        <pubDate>Wed, 04 Sep 2019 23:38:50 +0700</pubDate>
+        <author>ntrung03@gmail.com (Nguyen Hoang Trung)</author>
+        
+        <guid>https://trungnguyen1909.github.io/blog/tags/0day/</guid>
+        <description></description>
+        
+        <dc:creator>Nguyen Hoang Trung</dc:creator>
+        
+        
+        
+        
+        
+        
+      </item>
       
-      <guid>https://trungnguyen1909.github.io/blog/tags/Camp-CTF/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>kernel</title>
-      <link>https://trungnguyen1909.github.io/blog/tags/kernel/</link>
-      <pubDate>Wed, 04 Sep 2019 23:38:50 +0700</pubDate>
+      <item>
+        <title>Camp-CTF</title>
+        <link>https://trungnguyen1909.github.io/blog/tags/camp-ctf/</link>
+        <pubDate>Wed, 04 Sep 2019 23:38:50 +0700</pubDate>
+        <author>ntrung03@gmail.com (Nguyen Hoang Trung)</author>
+        
+        <guid>https://trungnguyen1909.github.io/blog/tags/camp-ctf/</guid>
+        <description></description>
+        
+        <dc:creator>Nguyen Hoang Trung</dc:creator>
+        
+        
+        
+        
+        
+        
+      </item>
       
-      <guid>https://trungnguyen1909.github.io/blog/tags/kernel/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>xnu</title>
-      <link>https://trungnguyen1909.github.io/blog/tags/xnu/</link>
-      <pubDate>Wed, 04 Sep 2019 23:38:50 +0700</pubDate>
+      <item>
+        <title>kernel</title>
+        <link>https://trungnguyen1909.github.io/blog/tags/kernel/</link>
+        <pubDate>Wed, 04 Sep 2019 23:38:50 +0700</pubDate>
+        <author>ntrung03@gmail.com (Nguyen Hoang Trung)</author>
+        
+        <guid>https://trungnguyen1909.github.io/blog/tags/kernel/</guid>
+        <description></description>
+        
+        <dc:creator>Nguyen Hoang Trung</dc:creator>
+        
+        
+        
+        
+        
+        
+      </item>
       
-      <guid>https://trungnguyen1909.github.io/blog/tags/xnu/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>double-fetch</title>
-      <link>https://trungnguyen1909.github.io/blog/tags/double-fetch/</link>
-      <pubDate>Wed, 12 Jun 2019 23:15:34 +0700</pubDate>
+      <item>
+        <title>xnu</title>
+        <link>https://trungnguyen1909.github.io/blog/tags/xnu/</link>
+        <pubDate>Wed, 04 Sep 2019 23:38:50 +0700</pubDate>
+        <author>ntrung03@gmail.com (Nguyen Hoang Trung)</author>
+        
+        <guid>https://trungnguyen1909.github.io/blog/tags/xnu/</guid>
+        <description></description>
+        
+        <dc:creator>Nguyen Hoang Trung</dc:creator>
+        
+        
+        
+        
+        
+        
+      </item>
       
-      <guid>https://trungnguyen1909.github.io/blog/tags/double-fetch/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>FBCTF</title>
-      <link>https://trungnguyen1909.github.io/blog/tags/FBCTF/</link>
-      <pubDate>Wed, 12 Jun 2019 23:15:34 +0700</pubDate>
+      <item>
+        <title>double-fetch</title>
+        <link>https://trungnguyen1909.github.io/blog/tags/double-fetch/</link>
+        <pubDate>Wed, 12 Jun 2019 23:15:34 +0700</pubDate>
+        <author>ntrung03@gmail.com (Nguyen Hoang Trung)</author>
+        
+        <guid>https://trungnguyen1909.github.io/blog/tags/double-fetch/</guid>
+        <description></description>
+        
+        <dc:creator>Nguyen Hoang Trung</dc:creator>
+        
+        
+        
+        
+        
+        
+      </item>
       
-      <guid>https://trungnguyen1909.github.io/blog/tags/FBCTF/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>linux</title>
-      <link>https://trungnguyen1909.github.io/blog/tags/linux/</link>
-      <pubDate>Wed, 12 Jun 2019 23:15:34 +0700</pubDate>
+      <item>
+        <title>FBCTF</title>
+        <link>https://trungnguyen1909.github.io/blog/tags/fbctf/</link>
+        <pubDate>Wed, 12 Jun 2019 23:15:34 +0700</pubDate>
+        <author>ntrung03@gmail.com (Nguyen Hoang Trung)</author>
+        
+        <guid>https://trungnguyen1909.github.io/blog/tags/fbctf/</guid>
+        <description></description>
+        
+        <dc:creator>Nguyen Hoang Trung</dc:creator>
+        
+        
+        
+        
+        
+        
+      </item>
       
-      <guid>https://trungnguyen1909.github.io/blog/tags/linux/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>race-condition</title>
-      <link>https://trungnguyen1909.github.io/blog/tags/race-condition/</link>
-      <pubDate>Wed, 12 Jun 2019 23:15:34 +0700</pubDate>
+      <item>
+        <title>linux</title>
+        <link>https://trungnguyen1909.github.io/blog/tags/linux/</link>
+        <pubDate>Wed, 12 Jun 2019 23:15:34 +0700</pubDate>
+        <author>ntrung03@gmail.com (Nguyen Hoang Trung)</author>
+        
+        <guid>https://trungnguyen1909.github.io/blog/tags/linux/</guid>
+        <description></description>
+        
+        <dc:creator>Nguyen Hoang Trung</dc:creator>
+        
+        
+        
+        
+        
+        
+      </item>
       
-      <guid>https://trungnguyen1909.github.io/blog/tags/race-condition/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>DEFCON-CTF</title>
-      <link>https://trungnguyen1909.github.io/blog/tags/DEFCON-CTF/</link>
-      <pubDate>Sun, 21 Apr 2019 00:46:45 +0700</pubDate>
+      <item>
+        <title>race-condition</title>
+        <link>https://trungnguyen1909.github.io/blog/tags/race-condition/</link>
+        <pubDate>Wed, 12 Jun 2019 23:15:34 +0700</pubDate>
+        <author>ntrung03@gmail.com (Nguyen Hoang Trung)</author>
+        
+        <guid>https://trungnguyen1909.github.io/blog/tags/race-condition/</guid>
+        <description></description>
+        
+        <dc:creator>Nguyen Hoang Trung</dc:creator>
+        
+        
+        
+        
+        
+        
+      </item>
       
-      <guid>https://trungnguyen1909.github.io/blog/tags/DEFCON-CTF/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>IOKit</title>
-      <link>https://trungnguyen1909.github.io/blog/tags/IOKit/</link>
-      <pubDate>Sun, 21 Apr 2019 00:46:45 +0700</pubDate>
+      <item>
+        <title>DEFCON-CTF</title>
+        <link>https://trungnguyen1909.github.io/blog/tags/defcon-ctf/</link>
+        <pubDate>Sun, 21 Apr 2019 00:46:45 +0700</pubDate>
+        <author>ntrung03@gmail.com (Nguyen Hoang Trung)</author>
+        
+        <guid>https://trungnguyen1909.github.io/blog/tags/defcon-ctf/</guid>
+        <description></description>
+        
+        <dc:creator>Nguyen Hoang Trung</dc:creator>
+        
+        
+        
+        
+        
+        
+      </item>
       
-      <guid>https://trungnguyen1909.github.io/blog/tags/IOKit/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>AceBear</title>
-      <link>https://trungnguyen1909.github.io/blog/tags/AceBear/</link>
-      <pubDate>Mon, 08 Apr 2019 14:35:17 +0700</pubDate>
+      <item>
+        <title>IOKit</title>
+        <link>https://trungnguyen1909.github.io/blog/tags/iokit/</link>
+        <pubDate>Sun, 21 Apr 2019 00:46:45 +0700</pubDate>
+        <author>ntrung03@gmail.com (Nguyen Hoang Trung)</author>
+        
+        <guid>https://trungnguyen1909.github.io/blog/tags/iokit/</guid>
+        <description></description>
+        
+        <dc:creator>Nguyen Hoang Trung</dc:creator>
+        
+        
+        
+        
+        
+        
+      </item>
       
-      <guid>https://trungnguyen1909.github.io/blog/tags/AceBear/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>heap</title>
-      <link>https://trungnguyen1909.github.io/blog/tags/heap/</link>
-      <pubDate>Mon, 08 Apr 2019 14:35:17 +0700</pubDate>
+      <item>
+        <title>AceBear</title>
+        <link>https://trungnguyen1909.github.io/blog/tags/acebear/</link>
+        <pubDate>Mon, 08 Apr 2019 14:35:17 +0700</pubDate>
+        <author>ntrung03@gmail.com (Nguyen Hoang Trung)</author>
+        
+        <guid>https://trungnguyen1909.github.io/blog/tags/acebear/</guid>
+        <description></description>
+        
+        <dc:creator>Nguyen Hoang Trung</dc:creator>
+        
+        
+        
+        
+        
+        
+      </item>
       
-      <guid>https://trungnguyen1909.github.io/blog/tags/heap/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>NX</title>
-      <link>https://trungnguyen1909.github.io/blog/tags/NX/</link>
-      <pubDate>Fri, 22 Feb 2019 23:17:46 +0700</pubDate>
+      <item>
+        <title>heap</title>
+        <link>https://trungnguyen1909.github.io/blog/tags/heap/</link>
+        <pubDate>Mon, 08 Apr 2019 14:35:17 +0700</pubDate>
+        <author>ntrung03@gmail.com (Nguyen Hoang Trung)</author>
+        
+        <guid>https://trungnguyen1909.github.io/blog/tags/heap/</guid>
+        <description></description>
+        
+        <dc:creator>Nguyen Hoang Trung</dc:creator>
+        
+        
+        
+        
+        
+        
+      </item>
       
-      <guid>https://trungnguyen1909.github.io/blog/tags/NX/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>ROP</title>
-      <link>https://trungnguyen1909.github.io/blog/tags/ROP/</link>
-      <pubDate>Fri, 22 Feb 2019 23:17:46 +0700</pubDate>
+      <item>
+        <title>NX</title>
+        <link>https://trungnguyen1909.github.io/blog/tags/nx/</link>
+        <pubDate>Fri, 22 Feb 2019 23:17:46 +0700</pubDate>
+        <author>ntrung03@gmail.com (Nguyen Hoang Trung)</author>
+        
+        <guid>https://trungnguyen1909.github.io/blog/tags/nx/</guid>
+        <description></description>
+        
+        <dc:creator>Nguyen Hoang Trung</dc:creator>
+        
+        
+        
+        
+        
+        
+      </item>
       
-      <guid>https://trungnguyen1909.github.io/blog/tags/ROP/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>TetCTF</title>
-      <link>https://trungnguyen1909.github.io/blog/tags/TetCTF/</link>
-      <pubDate>Fri, 22 Feb 2019 23:17:46 +0700</pubDate>
+      <item>
+        <title>ROP</title>
+        <link>https://trungnguyen1909.github.io/blog/tags/rop/</link>
+        <pubDate>Fri, 22 Feb 2019 23:17:46 +0700</pubDate>
+        <author>ntrung03@gmail.com (Nguyen Hoang Trung)</author>
+        
+        <guid>https://trungnguyen1909.github.io/blog/tags/rop/</guid>
+        <description></description>
+        
+        <dc:creator>Nguyen Hoang Trung</dc:creator>
+        
+        
+        
+        
+        
+        
+      </item>
       
-      <guid>https://trungnguyen1909.github.io/blog/tags/TetCTF/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>debug</title>
-      <link>https://trungnguyen1909.github.io/blog/tags/debug/</link>
-      <pubDate>Mon, 18 Feb 2019 16:48:13 +0700</pubDate>
+      <item>
+        <title>TetCTF</title>
+        <link>https://trungnguyen1909.github.io/blog/tags/tetctf/</link>
+        <pubDate>Fri, 22 Feb 2019 23:17:46 +0700</pubDate>
+        <author>ntrung03@gmail.com (Nguyen Hoang Trung)</author>
+        
+        <guid>https://trungnguyen1909.github.io/blog/tags/tetctf/</guid>
+        <description></description>
+        
+        <dc:creator>Nguyen Hoang Trung</dc:creator>
+        
+        
+        
+        
+        
+        
+      </item>
       
-      <guid>https://trungnguyen1909.github.io/blog/tags/debug/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>matesCTF</title>
-      <link>https://trungnguyen1909.github.io/blog/tags/matesCTF/</link>
-      <pubDate>Mon, 18 Feb 2019 16:48:13 +0700</pubDate>
+      <item>
+        <title>debug</title>
+        <link>https://trungnguyen1909.github.io/blog/tags/debug/</link>
+        <pubDate>Mon, 18 Feb 2019 16:48:13 +0700</pubDate>
+        <author>ntrung03@gmail.com (Nguyen Hoang Trung)</author>
+        
+        <guid>https://trungnguyen1909.github.io/blog/tags/debug/</guid>
+        <description></description>
+        
+        <dc:creator>Nguyen Hoang Trung</dc:creator>
+        
+        
+        
+        
+        
+        
+      </item>
       
-      <guid>https://trungnguyen1909.github.io/blog/tags/matesCTF/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>35C3-CTF</title>
-      <link>https://trungnguyen1909.github.io/blog/tags/35C3-CTF/</link>
-      <pubDate>Fri, 15 Feb 2019 00:47:48 +0700</pubDate>
+      <item>
+        <title>matesCTF</title>
+        <link>https://trungnguyen1909.github.io/blog/tags/matesctf/</link>
+        <pubDate>Mon, 18 Feb 2019 16:48:13 +0700</pubDate>
+        <author>ntrung03@gmail.com (Nguyen Hoang Trung)</author>
+        
+        <guid>https://trungnguyen1909.github.io/blog/tags/matesctf/</guid>
+        <description></description>
+        
+        <dc:creator>Nguyen Hoang Trung</dc:creator>
+        
+        
+        
+        
+        
+        
+      </item>
       
-      <guid>https://trungnguyen1909.github.io/blog/tags/35C3-CTF/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>forensics</title>
-      <link>https://trungnguyen1909.github.io/blog/tags/forensics/</link>
-      <pubDate>Thu, 22 Nov 2018 21:30:28 +0700</pubDate>
+      <item>
+        <title>35C3-CTF</title>
+        <link>https://trungnguyen1909.github.io/blog/tags/35c3-ctf/</link>
+        <pubDate>Fri, 15 Feb 2019 00:47:48 +0700</pubDate>
+        <author>ntrung03@gmail.com (Nguyen Hoang Trung)</author>
+        
+        <guid>https://trungnguyen1909.github.io/blog/tags/35c3-ctf/</guid>
+        <description></description>
+        
+        <dc:creator>Nguyen Hoang Trung</dc:creator>
+        
+        
+        
+        
+        
+        
+      </item>
       
-      <guid>https://trungnguyen1909.github.io/blog/tags/forensics/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>golang</title>
-      <link>https://trungnguyen1909.github.io/blog/tags/golang/</link>
-      <pubDate>Thu, 22 Nov 2018 21:30:28 +0700</pubDate>
+      <item>
+        <title>mach</title>
+        <link>https://trungnguyen1909.github.io/blog/tags/mach/</link>
+        <pubDate>Fri, 15 Feb 2019 00:47:48 +0700</pubDate>
+        <author>ntrung03@gmail.com (Nguyen Hoang Trung)</author>
+        
+        <guid>https://trungnguyen1909.github.io/blog/tags/mach/</guid>
+        <description></description>
+        
+        <dc:creator>Nguyen Hoang Trung</dc:creator>
+        
+        
+        
+        
+        
+        
+      </item>
       
-      <guid>https://trungnguyen1909.github.io/blog/tags/golang/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Python</title>
-      <link>https://trungnguyen1909.github.io/blog/tags/Python/</link>
-      <pubDate>Thu, 22 Nov 2018 21:30:28 +0700</pubDate>
+      <item>
+        <title>mig</title>
+        <link>https://trungnguyen1909.github.io/blog/tags/mig/</link>
+        <pubDate>Fri, 15 Feb 2019 00:47:48 +0700</pubDate>
+        <author>ntrung03@gmail.com (Nguyen Hoang Trung)</author>
+        
+        <guid>https://trungnguyen1909.github.io/blog/tags/mig/</guid>
+        <description></description>
+        
+        <dc:creator>Nguyen Hoang Trung</dc:creator>
+        
+        
+        
+        
+        
+        
+      </item>
       
-      <guid>https://trungnguyen1909.github.io/blog/tags/Python/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>RITSEC</title>
-      <link>https://trungnguyen1909.github.io/blog/tags/RITSEC/</link>
-      <pubDate>Thu, 22 Nov 2018 21:30:28 +0700</pubDate>
+      <item>
+        <title>forensics</title>
+        <link>https://trungnguyen1909.github.io/blog/tags/forensics/</link>
+        <pubDate>Thu, 22 Nov 2018 21:30:28 +0700</pubDate>
+        <author>ntrung03@gmail.com (Nguyen Hoang Trung)</author>
+        
+        <guid>https://trungnguyen1909.github.io/blog/tags/forensics/</guid>
+        <description></description>
+        
+        <dc:creator>Nguyen Hoang Trung</dc:creator>
+        
+        
+        
+        
+        
+        
+      </item>
       
-      <guid>https://trungnguyen1909.github.io/blog/tags/RITSEC/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>web</title>
-      <link>https://trungnguyen1909.github.io/blog/tags/web/</link>
-      <pubDate>Thu, 22 Nov 2018 21:30:28 +0700</pubDate>
+      <item>
+        <title>golang</title>
+        <link>https://trungnguyen1909.github.io/blog/tags/golang/</link>
+        <pubDate>Thu, 22 Nov 2018 21:30:28 +0700</pubDate>
+        <author>ntrung03@gmail.com (Nguyen Hoang Trung)</author>
+        
+        <guid>https://trungnguyen1909.github.io/blog/tags/golang/</guid>
+        <description></description>
+        
+        <dc:creator>Nguyen Hoang Trung</dc:creator>
+        
+        
+        
+        
+        
+        
+      </item>
       
-      <guid>https://trungnguyen1909.github.io/blog/tags/web/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>stack-buffer-overflow</title>
-      <link>https://trungnguyen1909.github.io/blog/tags/stack-buffer-overflow/</link>
-      <pubDate>Wed, 10 Oct 2018 11:35:23 +0700</pubDate>
+      <item>
+        <title>Python</title>
+        <link>https://trungnguyen1909.github.io/blog/tags/python/</link>
+        <pubDate>Thu, 22 Nov 2018 21:30:28 +0700</pubDate>
+        <author>ntrung03@gmail.com (Nguyen Hoang Trung)</author>
+        
+        <guid>https://trungnguyen1909.github.io/blog/tags/python/</guid>
+        <description></description>
+        
+        <dc:creator>Nguyen Hoang Trung</dc:creator>
+        
+        
+        
+        
+        
+        
+      </item>
       
-      <guid>https://trungnguyen1909.github.io/blog/tags/stack-buffer-overflow/</guid>
-      <description></description>
-    </item>
+      <item>
+        <title>RITSEC</title>
+        <link>https://trungnguyen1909.github.io/blog/tags/ritsec/</link>
+        <pubDate>Thu, 22 Nov 2018 21:30:28 +0700</pubDate>
+        <author>ntrung03@gmail.com (Nguyen Hoang Trung)</author>
+        
+        <guid>https://trungnguyen1909.github.io/blog/tags/ritsec/</guid>
+        <description></description>
+        
+        <dc:creator>Nguyen Hoang Trung</dc:creator>
+        
+        
+        
+        
+        
+        
+      </item>
+      
+      <item>
+        <title>web</title>
+        <link>https://trungnguyen1909.github.io/blog/tags/web/</link>
+        <pubDate>Thu, 22 Nov 2018 21:30:28 +0700</pubDate>
+        <author>ntrung03@gmail.com (Nguyen Hoang Trung)</author>
+        
+        <guid>https://trungnguyen1909.github.io/blog/tags/web/</guid>
+        <description></description>
+        
+        <dc:creator>Nguyen Hoang Trung</dc:creator>
+        
+        
+        
+        
+        
+        
+      </item>
+      
+      <item>
+        <title>stack-buffer-overflow</title>
+        <link>https://trungnguyen1909.github.io/blog/tags/stack-buffer-overflow/</link>
+        <pubDate>Wed, 10 Oct 2018 11:35:23 +0700</pubDate>
+        <author>ntrung03@gmail.com (Nguyen Hoang Trung)</author>
+        
+        <guid>https://trungnguyen1909.github.io/blog/tags/stack-buffer-overflow/</guid>
+        <description></description>
+        
+        <dc:creator>Nguyen Hoang Trung</dc:creator>
+        
+        
+        
+        
+        
+        
+      </item>
+      
+
     
   </channel>
 </rss>

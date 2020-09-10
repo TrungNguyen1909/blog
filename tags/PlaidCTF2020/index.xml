@@ -1,27 +1,82 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" 
+  xmlns:content="http://purl.org/rss/1.0/modules/content/" 
+  xmlns:dc="http://purl.org/dc/elements/1.1/" 
+  xmlns:atom="http://www.w3.org/2005/Atom" 
+  xmlns:sy="http://purl.org/rss/1.0/modules/syndication/" 
+  xmlns:media="http://search.yahoo.com/mrss/">
   <channel>
-    <title>PlaidCTF2020 on Nguyen Hoang Trung</title>
-    <link>https://trungnguyen1909.github.io/blog/tags/PlaidCTF2020/</link>
-    <description>Recent content in PlaidCTF2020 on Nguyen Hoang Trung</description>
+    <title>PlaidCTF2020 on Blog</title>
+    <link>https://trungnguyen1909.github.io/blog/tags/plaidctf2020/</link>
+    <description>Recent content in PlaidCTF2020 on Blog</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language>
+    <language>en</language>
+    <managingEditor>ntrung03@gmail.com (Nguyen Hoang Trung)</managingEditor>
+    <webMaster>ntrung03@gmail.com (Nguyen Hoang Trung)</webMaster>
+    <copyright>©{year}, All Rights Reserved. Content licensed under CC BY 4.0</copyright>
     <lastBuildDate>Wed, 22 Apr 2020 19:42:49 +0700</lastBuildDate>
     
-	<atom:link href="https://trungnguyen1909.github.io/blog/tags/PlaidCTF2020/index.xml" rel="self" type="application/rss+xml" />
+        <atom:link href="https://trungnguyen1909.github.io/blog/tags/plaidctf2020/index.xml" rel="self" type="application/rss+xml" />
     
     
-    <item>
-      <title>PlaidCTF2020 PlaidStore mojo chromium</title>
-      <link>https://trungnguyen1909.github.io/blog/post/PlaidCTF2020/</link>
-      <pubDate>Wed, 22 Apr 2020 19:42:49 +0700</pubDate>
+    
+
       
-      <guid>https://trungnguyen1909.github.io/blog/post/PlaidCTF2020/</guid>
-      <description>PlaidStore Story Hi, everyone, this is the writeup for the challenge 500pts &amp;ldquo;mojo&amp;rdquo; of PlaidCTF 2020.
+      <item>
+        <title>PlaidCTF2020 PlaidStore mojo chromium</title>
+        <link>https://trungnguyen1909.github.io/blog/post/plaidctf2020/</link>
+        <pubDate>Wed, 22 Apr 2020 19:42:49 +0700</pubDate>
+        <author>ntrung03@gmail.com (Nguyen Hoang Trung)</author>
+        <atom:modified>Wed, 22 Apr 2020 19:42:49 +0700</atom:modified>
+        <guid>https://trungnguyen1909.github.io/blog/post/plaidctf2020/</guid>
+        <description>PlaidStore Story Hi, everyone, this is the writeup for the challenge 500pts &amp;ldquo;mojo&amp;rdquo; of PlaidCTF 2020.
 As usual, I got the flag after the CTF has ended :&amp;lt;
-Well, currently I am not in any active teams, so I decided to pick a hard challenge and do it on my own.
-Challenge Description Chromium commit detached at 81.0.4044.92 (commit hash 82e68b9038ab5679543b300b42202bc053c50930). Our task is to RCE chromium browser, after applying this diff</description>
-    </item>
+Well, currently I am not in any active teams, so I decided to pick a hard challenge and do it on my own.</description>
+        
+        <dc:creator>Nguyen Hoang Trung</dc:creator>
+        
+        
+        
+        
+          
+            
+              <category>PlaidCTF2020</category>
+            
+          
+            
+              <category>CTF</category>
+            
+          
+            
+              <category>pwn</category>
+            
+          
+            
+              <category>chromium</category>
+            
+          
+            
+              <category>browser</category>
+            
+          
+            
+              <category>mojo</category>
+            
+          
+            
+              <category>use-after-free</category>
+            
+          
+            
+              <category>UAF</category>
+            
+          
+        
+        
+        
+      </item>
+      
+
     
   </channel>
 </rss>

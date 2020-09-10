@@ -3,17 +3,32 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>https://trungnguyen1909.github.io/blog/vi/tags/CTF/</loc>
+    <loc>https://trungnguyen1909.github.io/blog/vi/</loc>
     <lastmod>2019-02-18T16:48:13+07:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://trungnguyen1909.github.io/blog/tags/CTF/"
+                href="https://trungnguyen1909.github.io/blog/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="vi"
-                href="https://trungnguyen1909.github.io/blog/vi/tags/CTF/"
+                href="https://trungnguyen1909.github.io/blog/vi/"
+                />
+  </url>
+  
+  <url>
+    <loc>https://trungnguyen1909.github.io/blog/vi/tags/ctf/</loc>
+    <lastmod>2019-02-18T16:48:13+07:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://trungnguyen1909.github.io/blog/tags/ctf/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="vi"
+                href="https://trungnguyen1909.github.io/blog/vi/tags/ctf/"
                 />
   </url>
   
@@ -33,17 +48,17 @@
   </url>
   
   <url>
-    <loc>https://trungnguyen1909.github.io/blog/vi/post/misc/KDB/KDB/</loc>
+    <loc>https://trungnguyen1909.github.io/blog/vi/post/misc/kdb/kdb/</loc>
     <lastmod>2019-02-18T16:48:13+07:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://trungnguyen1909.github.io/blog/post/misc/KDB/KDB/"
+                href="https://trungnguyen1909.github.io/blog/post/misc/kdb/kdb/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="vi"
-                href="https://trungnguyen1909.github.io/blog/vi/post/misc/KDB/KDB/"
+                href="https://trungnguyen1909.github.io/blog/vi/post/misc/kdb/kdb/"
                 />
   </url>
   
@@ -78,47 +93,32 @@
   </url>
   
   <url>
-    <loc>https://trungnguyen1909.github.io/blog/vi/tags/matesCTF/</loc>
+    <loc>https://trungnguyen1909.github.io/blog/vi/tags/matesctf/</loc>
     <lastmod>2019-02-18T16:48:13+07:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://trungnguyen1909.github.io/blog/tags/matesCTF/"
+                href="https://trungnguyen1909.github.io/blog/tags/matesctf/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="vi"
-                href="https://trungnguyen1909.github.io/blog/vi/tags/matesCTF/"
+                href="https://trungnguyen1909.github.io/blog/vi/tags/matesctf/"
                 />
   </url>
   
   <url>
-    <loc>https://trungnguyen1909.github.io/blog/vi/post/matesctf/KSMASH/</loc>
+    <loc>https://trungnguyen1909.github.io/blog/vi/post/matesctf/ksmash/</loc>
     <lastmod>2019-02-18T16:48:13+07:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://trungnguyen1909.github.io/blog/post/matesctf/KSMASH/"
+                href="https://trungnguyen1909.github.io/blog/post/matesctf/ksmash/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="vi"
-                href="https://trungnguyen1909.github.io/blog/vi/post/matesctf/KSMASH/"
-                />
-  </url>
-  
-  <url>
-    <loc>https://trungnguyen1909.github.io/blog/vi/</loc>
-    <lastmod>2019-02-18T16:48:13+07:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://trungnguyen1909.github.io/blog/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="vi"
-                href="https://trungnguyen1909.github.io/blog/vi/"
+                href="https://trungnguyen1909.github.io/blog/vi/post/matesctf/ksmash/"
                 />
   </url>
   
@@ -168,6 +168,26 @@
   </url>
   
   <url>
+    <loc>https://trungnguyen1909.github.io/blog/vi/tags/heap/</loc>
+    <lastmod>2018-10-10T11:56:50+07:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://trungnguyen1909.github.io/blog/tags/heap/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="vi"
+                href="https://trungnguyen1909.github.io/blog/vi/tags/heap/"
+                />
+  </url>
+  
+  <url>
+    <loc>https://trungnguyen1909.github.io/blog/vi/post/matesctf/notebook/</loc>
+    <lastmod>2018-10-10T11:56:50+07:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://trungnguyen1909.github.io/blog/vi/categories/</loc>
     <xhtml:link
                 rel="alternate"
@@ -178,6 +198,20 @@
                 rel="alternate"
                 hreflang="vi"
                 href="https://trungnguyen1909.github.io/blog/vi/categories/"
+                />
+  </url>
+  
+  <url>
+    <loc>https://trungnguyen1909.github.io/blog/vi/series/</loc>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://trungnguyen1909.github.io/blog/series/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="vi"
+                href="https://trungnguyen1909.github.io/blog/vi/series/"
                 />
   </url>
   

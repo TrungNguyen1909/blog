@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" 
+  xmlns:content="http://purl.org/rss/1.0/modules/content/" 
+  xmlns:dc="http://purl.org/dc/elements/1.1/" 
+  xmlns:atom="http://www.w3.org/2005/Atom" 
+  xmlns:sy="http://purl.org/rss/1.0/modules/syndication/" 
+  xmlns:media="http://search.yahoo.com/mrss/">
+  <channel>
+    <title>mig on Blog</title>
+    <link>https://trungnguyen1909.github.io/blog/tags/mig/</link>
+    <description>Recent content in mig on Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <managingEditor>ntrung03@gmail.com (Nguyen Hoang Trung)</managingEditor>
+    <webMaster>ntrung03@gmail.com (Nguyen Hoang Trung)</webMaster>
+    <copyright>©{year}, All Rights Reserved. Content licensed under CC BY 4.0</copyright>
+    <lastBuildDate>Fri, 15 Feb 2019 00:47:48 +0700</lastBuildDate>
+    
+        <atom:link href="https://trungnguyen1909.github.io/blog/tags/mig/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    
+
+      
+      <item>
+        <title>35C3 CTF Pillow</title>
+        <link>https://trungnguyen1909.github.io/blog/post/35c3/pillow/</link>
+        <pubDate>Fri, 15 Feb 2019 00:47:48 +0700</pubDate>
+        <author>ntrung03@gmail.com (Nguyen Hoang Trung)</author>
+        <atom:modified>Fri, 15 Feb 2019 00:47:48 +0700</atom:modified>
+        <guid>https://trungnguyen1909.github.io/blog/post/35c3/pillow/</guid>
+        <description>Pillow Background This is the writeup for the challenge Pillow, created by Samuel Groß(@saelo) of Project Zero, of 35C3 CTF annually organized by @EatSleepPwnRpt happening at the end of year 2018.
+I didn&amp;rsquo;t solve this challenge during the CTF, when revisiting this challenge after checkout @LinusHenze repo, I have a big learning oppuntunity to checkout XNU exploitation, which was completely new to me.</description>
+        
+        <dc:creator>Nguyen Hoang Trung</dc:creator>
+        
+        
+        
+        
+          
+            
+              <category>35C3-CTF</category>
+            
+          
+            
+              <category>CTF</category>
+            
+          
+            
+              <category>pwn</category>
+            
+          
+            
+              <category>xnu</category>
+            
+          
+            
+              <category>mach</category>
+            
+          
+            
+              <category>mig</category>
+            
+          
+        
+        
+        
+      </item>
+      
+
+    
+  </channel>
+</rss>
