@@ -1,0 +1,9 @@
+[en]
+  title = "Blog"
+  languageName = "English"
+  weight = 1
+
+[vi]
+  title = "Blog"
+  languageName = "Tiếng Việt"
+  weight = 2

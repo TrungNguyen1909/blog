@@ -4,3 +4,6 @@
 [submodule "content/post"]
 	path = content/post
 	url = git@github.com:TrungNguyen1909/writeups.git
+[submodule "themes/zzo"]
+	path = themes/zzo
+	url = https://github.com/zzossig/hugo-theme-zzo.git
