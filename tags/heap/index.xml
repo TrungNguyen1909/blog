@@ -24,11 +24,11 @@
       
       <item>
         <title>AceBear Security Contest House-of-loop</title>
-        <link>https://trungnguyen1909.github.io/blog/post/acebear2019/house_of_loop/</link>
+        <link>https://trungnguyen1909.github.io/blog/post/AceBear2019/house_of_loop/</link>
         <pubDate>Mon, 08 Apr 2019 14:35:17 +0700</pubDate>
         <author>ntrung03@gmail.com (Nguyen Hoang Trung)</author>
         <atom:modified>Mon, 08 Apr 2019 14:35:17 +0700</atom:modified>
-        <guid>https://trungnguyen1909.github.io/blog/post/acebear2019/house_of_loop/</guid>
+        <guid>https://trungnguyen1909.github.io/blog/post/AceBear2019/house_of_loop/</guid>
         <description>House-of-loop Hi everyone, this is the writeup for the challenge House-of-loop in the AceBear Security Contest 2019
 You may want to checkout the exploit code
 Description We are given a stripped ELF x64 binary which can be interacted with, our task is to get remote code execution(RCE).</description>
@@ -62,11 +62,11 @@ Description We are given a stripped ELF x64 binary which can be interacted with,
       
       <item>
         <title>RITSEC18 Yet another HR Management Framework</title>
-        <link>https://trungnguyen1909.github.io/blog/post/ritsec-2018/yet-another-hr-management-framework/</link>
+        <link>https://trungnguyen1909.github.io/blog/post/RITSEC-2018/Yet-another-HR-Management-Framework/</link>
         <pubDate>Thu, 22 Nov 2018 21:30:28 +0700</pubDate>
         <author>ntrung03@gmail.com (Nguyen Hoang Trung)</author>
         <atom:modified>Thu, 22 Nov 2018 21:30:28 +0700</atom:modified>
-        <guid>https://trungnguyen1909.github.io/blog/post/ritsec-2018/yet-another-hr-management-framework/</guid>
+        <guid>https://trungnguyen1909.github.io/blog/post/RITSEC-2018/Yet-another-HR-Management-Framework/</guid>
         <description>By judging the program&amp;rsquo;s interface, we know that it was a heap challenge.
 Spent quite a lot of time reversing it, I figured it out that it malloc a few bytes for the person struct on the heap, then the name will be malloc with the size entered and that address will be put in the person struct.</description>
         

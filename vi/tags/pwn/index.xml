@@ -24,11 +24,11 @@
       
       <item>
         <title>matesCTF KSMASH</title>
-        <link>https://trungnguyen1909.github.io/blog/vi/post/matesctf/ksmash/</link>
+        <link>https://trungnguyen1909.github.io/blog/vi/post/matesctf/KSMASH/</link>
         <pubDate>Mon, 18 Feb 2019 16:48:13 +0700</pubDate>
         <author>ntrung03@gmail.com (Nguyen Hoang Trung)</author>
         <atom:modified>Mon, 18 Feb 2019 16:48:13 +0700</atom:modified>
-        <guid>https://trungnguyen1909.github.io/blog/vi/post/matesctf/ksmash/</guid>
+        <guid>https://trungnguyen1909.github.io/blog/vi/post/matesctf/KSMASH/</guid>
         <description>KSMASH Background Đây là 1 bài exploit linux kernel module của nyaacate@gmail.com host ở vòng 3 MatesCTF 2018-2019
 Bài này mình solve sau giờ :&amp;lt; nhưng vì trước khi kết thúc CTF khoảng 2hr mà chưa mình chưa thấy team nào solved bài này cả,</description>
         

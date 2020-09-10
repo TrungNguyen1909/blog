@@ -24,11 +24,11 @@
       
       <item>
         <title>Debug Linux Kernel trong VM</title>
-        <link>https://trungnguyen1909.github.io/blog/vi/post/misc/kdb/kdb/</link>
+        <link>https://trungnguyen1909.github.io/blog/vi/post/misc/KDB/KDB/</link>
         <pubDate>Mon, 18 Feb 2019 16:48:13 +0700</pubDate>
         <author>ntrung03@gmail.com (Nguyen Hoang Trung)</author>
         <atom:modified>Mon, 18 Feb 2019 16:48:13 +0700</atom:modified>
-        <guid>https://trungnguyen1909.github.io/blog/vi/post/misc/kdb/kdb/</guid>
+        <guid>https://trungnguyen1909.github.io/blog/vi/post/misc/KDB/KDB/</guid>
         <description>Kernel Debugger Setup Mình dùng VirtualBox để debug kernel, VmWare chắc cũng làm được tương tự
 Vào Machine Settings -&amp;gt; Ports -&amp;gt; Serial -&amp;gt; Enable Serial Port
 Port Number: Tuỳ :)))

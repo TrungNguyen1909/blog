@@ -24,11 +24,11 @@
       
       <item>
         <title>Google CTF 2020 teleport: Chromium sandbox escape</title>
-        <link>https://trungnguyen1909.github.io/blog/post/ggctf20/</link>
+        <link>https://trungnguyen1909.github.io/blog/post/GGCTF20/</link>
         <pubDate>Wed, 02 Sep 2020 19:48:00 +0700</pubDate>
         <author>ntrung03@gmail.com (Nguyen Hoang Trung)</author>
         <atom:modified>Wed, 02 Sep 2020 19:48:00 +0700</atom:modified>
-        <guid>https://trungnguyen1909.github.io/blog/post/ggctf20/</guid>
+        <guid>https://trungnguyen1909.github.io/blog/post/GGCTF20/</guid>
         <description>Teleport  Please write a full-chain exploit for Chrome. The flag is at /home/user/flag. Maybe there&amp;rsquo;s some way to tele&amp;lt;port&amp;gt; it out of there?
  1. Story Hi, last week I participated in Google CTF 2020 with my team pwnPHOfun</description>
         
@@ -81,11 +81,11 @@
       
       <item>
         <title>PlaidCTF2020 PlaidStore mojo chromium</title>
-        <link>https://trungnguyen1909.github.io/blog/post/plaidctf2020/</link>
+        <link>https://trungnguyen1909.github.io/blog/post/PlaidCTF2020/</link>
         <pubDate>Wed, 22 Apr 2020 19:42:49 +0700</pubDate>
         <author>ntrung03@gmail.com (Nguyen Hoang Trung)</author>
         <atom:modified>Wed, 22 Apr 2020 19:42:49 +0700</atom:modified>
-        <guid>https://trungnguyen1909.github.io/blog/post/plaidctf2020/</guid>
+        <guid>https://trungnguyen1909.github.io/blog/post/PlaidCTF2020/</guid>
         <description>PlaidStore Story Hi, everyone, this is the writeup for the challenge 500pts &amp;ldquo;mojo&amp;rdquo; of PlaidCTF 2020.
 As usual, I got the flag after the CTF has ended :&amp;lt;
 Well, currently I am not in any active teams, so I decided to pick a hard challenge and do it on my own.</description>
@@ -135,11 +135,11 @@ Well, currently I am not in any active teams, so I decided to pick a hard challe
       
       <item>
         <title>pwning your kernelz: macOS 0day LPE</title>
-        <link>https://trungnguyen1909.github.io/blog/post/campctf/pwningkernelz/</link>
+        <link>https://trungnguyen1909.github.io/blog/post/CampCTF/PwningKernelz/</link>
         <pubDate>Wed, 04 Sep 2019 23:38:50 +0700</pubDate>
         <author>ntrung03@gmail.com (Nguyen Hoang Trung)</author>
         <atom:modified>Wed, 04 Sep 2019 23:38:50 +0700</atom:modified>
-        <guid>https://trungnguyen1909.github.io/blog/post/campctf/pwningkernelz/</guid>
+        <guid>https://trungnguyen1909.github.io/blog/post/CampCTF/PwningKernelz/</guid>
         <description>pwning your kernelz Background Hi everyone,
 This is the writeup for the challenge pwning your kernelz, created by Linus Henze(@LinusHenze),
 I came across this challenge when Linus tweeted a status update for the CTF.
@@ -178,11 +178,11 @@ Of course, I didn&amp;rsquo;t solve this challenge during the time of the CTF.</
       
       <item>
         <title>kpets FacebookCTF 2019 QR</title>
-        <link>https://trungnguyen1909.github.io/blog/post/fbctf19-qual/kpets/</link>
+        <link>https://trungnguyen1909.github.io/blog/post/FBCTF19-Qual/kpets/</link>
         <pubDate>Wed, 12 Jun 2019 23:15:34 +0700</pubDate>
         <author>ntrung03@gmail.com (Nguyen Hoang Trung)</author>
         <atom:modified>Wed, 12 Jun 2019 23:15:34 +0700</atom:modified>
-        <guid>https://trungnguyen1909.github.io/blog/post/fbctf19-qual/kpets/</guid>
+        <guid>https://trungnguyen1909.github.io/blog/post/FBCTF19-Qual/kpets/</guid>
         <description>kpets  welcome to Kernel Pets Simulator!
   We wrote a pet store application that was too slow, so we made a kernel module for it instead.
   Author: pippinthedog
@@ -229,11 +229,11 @@ Of course, I didn&amp;rsquo;t solve this challenge during the time of the CTF.</
       
       <item>
         <title>IPwnKit DEFCON CTF 26 QR</title>
-        <link>https://trungnguyen1909.github.io/blog/post/defcon26-qual/ipwnkit/</link>
+        <link>https://trungnguyen1909.github.io/blog/post/DEFCON26-Qual/iPwnKit/</link>
         <pubDate>Sun, 21 Apr 2019 00:46:45 +0700</pubDate>
         <author>ntrung03@gmail.com (Nguyen Hoang Trung)</author>
         <atom:modified>Sun, 21 Apr 2019 00:46:45 +0700</atom:modified>
-        <guid>https://trungnguyen1909.github.io/blog/post/defcon26-qual/ipwnkit/</guid>
+        <guid>https://trungnguyen1909.github.io/blog/post/DEFCON26-Qual/iPwnKit/</guid>
         <description>IPwnKit  Come and take a bite of the Apple!
   We have reserved you a very special place at the WWPC (World Wide Pwning Conference).
   Email ipwnkit@gmail.com to RSVP and we will reply with your invite.</description>
@@ -279,11 +279,11 @@ Of course, I didn&amp;rsquo;t solve this challenge during the time of the CTF.</
       
       <item>
         <title>AceBear Security Contest House-of-loop</title>
-        <link>https://trungnguyen1909.github.io/blog/post/acebear2019/house_of_loop/</link>
+        <link>https://trungnguyen1909.github.io/blog/post/AceBear2019/house_of_loop/</link>
         <pubDate>Mon, 08 Apr 2019 14:35:17 +0700</pubDate>
         <author>ntrung03@gmail.com (Nguyen Hoang Trung)</author>
         <atom:modified>Mon, 08 Apr 2019 14:35:17 +0700</atom:modified>
-        <guid>https://trungnguyen1909.github.io/blog/post/acebear2019/house_of_loop/</guid>
+        <guid>https://trungnguyen1909.github.io/blog/post/AceBear2019/house_of_loop/</guid>
         <description>House-of-loop Hi everyone, this is the writeup for the challenge House-of-loop in the AceBear Security Contest 2019
 You may want to checkout the exploit code
 Description We are given a stripped ELF x64 binary which can be interacted with, our task is to get remote code execution(RCE).</description>
@@ -363,11 +363,11 @@ Challenge description We are given 2 binary, one is sandbox and the other one is
       
       <item>
         <title>matesCTF KSMASH</title>
-        <link>https://trungnguyen1909.github.io/blog/post/matesctf/ksmash/</link>
+        <link>https://trungnguyen1909.github.io/blog/post/matesctf/KSMASH/</link>
         <pubDate>Mon, 18 Feb 2019 16:48:13 +0700</pubDate>
         <author>ntrung03@gmail.com (Nguyen Hoang Trung)</author>
         <atom:modified>Mon, 18 Feb 2019 16:48:13 +0700</atom:modified>
-        <guid>https://trungnguyen1909.github.io/blog/post/matesctf/ksmash/</guid>
+        <guid>https://trungnguyen1909.github.io/blog/post/matesctf/KSMASH/</guid>
         <description>KSMASH - Kernel Stack Smashing Background This is a Linux Kernel Module(LKM) exploitation challenge by nyaacate@gmail.com host in Round 3 MatesCTF 2018-2019
 I solved this challenge overtime :&amp;lt;
 But It seems that no team solved this so I still sent the exploit to the challenge author for testing and also wrote this writeup.</description>
@@ -450,11 +450,11 @@ I didn&amp;rsquo;t solve this challenge during the CTF, when revisiting this cha
       
       <item>
         <title>RITSEC18 Gimme sum fud</title>
-        <link>https://trungnguyen1909.github.io/blog/post/ritsec-2018/gimme-sum-fud/</link>
+        <link>https://trungnguyen1909.github.io/blog/post/RITSEC-2018/Gimme-sum-fud/</link>
         <pubDate>Thu, 22 Nov 2018 21:30:28 +0700</pubDate>
         <author>ntrung03@gmail.com (Nguyen Hoang Trung)</author>
         <atom:modified>Thu, 22 Nov 2018 21:30:28 +0700</atom:modified>
-        <guid>https://trungnguyen1909.github.io/blog/post/ritsec-2018/gimme-sum-fud/</guid>
+        <guid>https://trungnguyen1909.github.io/blog/post/RITSEC-2018/Gimme-sum-fud/</guid>
         <description>The binary loads the flag.txt to the memory and asks us to provide input.
 Interesting things is that it loads to the same memory segment with the input.
 Debugging locally, I found it at the offset 752 from the first input bytes.</description>
@@ -488,11 +488,11 @@ Debugging locally, I found it at the offset 752 from the first input bytes.</des
       
       <item>
         <title>RITSEC18 Yet another HR Management Framework</title>
-        <link>https://trungnguyen1909.github.io/blog/post/ritsec-2018/yet-another-hr-management-framework/</link>
+        <link>https://trungnguyen1909.github.io/blog/post/RITSEC-2018/Yet-another-HR-Management-Framework/</link>
         <pubDate>Thu, 22 Nov 2018 21:30:28 +0700</pubDate>
         <author>ntrung03@gmail.com (Nguyen Hoang Trung)</author>
         <atom:modified>Thu, 22 Nov 2018 21:30:28 +0700</atom:modified>
-        <guid>https://trungnguyen1909.github.io/blog/post/ritsec-2018/yet-another-hr-management-framework/</guid>
+        <guid>https://trungnguyen1909.github.io/blog/post/RITSEC-2018/Yet-another-HR-Management-Framework/</guid>
         <description>By judging the program&amp;rsquo;s interface, we know that it was a heap challenge.
 Spent quite a lot of time reversing it, I figured it out that it malloc a few bytes for the person struct on the heap, then the name will be malloc with the size entered and that address will be put in the person struct.</description>
         
@@ -529,11 +529,11 @@ Spent quite a lot of time reversing it, I figured it out that it malloc a few by
       
       <item>
         <title>matesCTF babyOVERFLOW</title>
-        <link>https://trungnguyen1909.github.io/blog/post/matesctf/babyoverflow/</link>
+        <link>https://trungnguyen1909.github.io/blog/post/matesctf/babyOVERFLOW/</link>
         <pubDate>Wed, 10 Oct 2018 11:35:23 +0700</pubDate>
         <author>ntrung03@gmail.com (Nguyen Hoang Trung)</author>
         <atom:modified>Wed, 10 Oct 2018 11:35:23 +0700</atom:modified>
-        <guid>https://trungnguyen1909.github.io/blog/post/matesctf/babyoverflow/</guid>
+        <guid>https://trungnguyen1909.github.io/blog/post/matesctf/babyOVERFLOW/</guid>
         <description>babyOVERFLOW Exploit
 Tên file bài này gợi ý rất nhiều.
 &amp;ldquo;baby&amp;rdquo; thường được dùng trong CTF chỉ những bài đơn giản dành cho người mới

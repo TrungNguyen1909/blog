@@ -7,7 +7,7 @@
   xmlns:media="http://search.yahoo.com/mrss/">
   <channel>
     <title>CTF on Blog</title>
-    <link>https://trungnguyen1909.github.io/blog/vi/tags/ctf/</link>
+    <link>https://trungnguyen1909.github.io/blog/vi/tags/CTF/</link>
     <description>Recent content in CTF on Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>vi</language>
@@ -16,7 +16,7 @@
     <copyright>©{year}, All Rights Reserved. Content licensed under CC BY 4.0</copyright>
     <lastBuildDate>Mon, 18 Feb 2019 16:48:13 +0700</lastBuildDate>
     
-        <atom:link href="https://trungnguyen1909.github.io/blog/vi/tags/ctf/index.xml" rel="self" type="application/rss+xml" />
+        <atom:link href="https://trungnguyen1909.github.io/blog/vi/tags/CTF/index.xml" rel="self" type="application/rss+xml" />
     
     
     
@@ -24,11 +24,11 @@
       
       <item>
         <title>matesCTF KSMASH</title>
-        <link>https://trungnguyen1909.github.io/blog/vi/post/matesctf/ksmash/</link>
+        <link>https://trungnguyen1909.github.io/blog/vi/post/matesctf/KSMASH/</link>
         <pubDate>Mon, 18 Feb 2019 16:48:13 +0700</pubDate>
         <author>ntrung03@gmail.com (Nguyen Hoang Trung)</author>
         <atom:modified>Mon, 18 Feb 2019 16:48:13 +0700</atom:modified>
-        <guid>https://trungnguyen1909.github.io/blog/vi/post/matesctf/ksmash/</guid>
+        <guid>https://trungnguyen1909.github.io/blog/vi/post/matesctf/KSMASH/</guid>
         <description>KSMASH Background Đây là 1 bài exploit linux kernel module của nyaacate@gmail.com host ở vòng 3 MatesCTF 2018-2019
 Bài này mình solve sau giờ :&amp;lt; nhưng vì trước khi kết thúc CTF khoảng 2hr mà chưa mình chưa thấy team nào solved bài này cả,</description>
         

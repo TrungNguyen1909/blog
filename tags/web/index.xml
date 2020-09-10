@@ -24,11 +24,11 @@
       
       <item>
         <title>RITSEC18 The tangled web</title>
-        <link>https://trungnguyen1909.github.io/blog/post/ritsec-2018/the-tangled-web/</link>
+        <link>https://trungnguyen1909.github.io/blog/post/RITSEC-2018/The-tangled-web/</link>
         <pubDate>Thu, 22 Nov 2018 21:30:28 +0700</pubDate>
         <author>ntrung03@gmail.com (Nguyen Hoang Trung)</author>
         <atom:modified>Thu, 22 Nov 2018 21:30:28 +0700</atom:modified>
-        <guid>https://trungnguyen1909.github.io/blog/post/ritsec-2018/the-tangled-web/</guid>
+        <guid>https://trungnguyen1909.github.io/blog/post/RITSEC-2018/The-tangled-web/</guid>
         <description>wget -r fun.ritsec.club:8007
 You may find the file Fl4gggg1337.html is referenced or has already been download. The flag wasn&amp;rsquo;t there, but it has link to Stars.html.
 Fetch that file, the base64 encoded string is the flag for this challenge.</description>

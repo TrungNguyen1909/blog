@@ -7,7 +7,7 @@
   xmlns:media="http://search.yahoo.com/mrss/">
   <channel>
     <title>DEFCON-CTF on Blog</title>
-    <link>https://trungnguyen1909.github.io/blog/tags/defcon-ctf/</link>
+    <link>https://trungnguyen1909.github.io/blog/tags/DEFCON-CTF/</link>
     <description>Recent content in DEFCON-CTF on Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
@@ -16,7 +16,7 @@
     <copyright>©{year}, All Rights Reserved. Content licensed under CC BY 4.0</copyright>
     <lastBuildDate>Sun, 21 Apr 2019 00:46:45 +0700</lastBuildDate>
     
-        <atom:link href="https://trungnguyen1909.github.io/blog/tags/defcon-ctf/index.xml" rel="self" type="application/rss+xml" />
+        <atom:link href="https://trungnguyen1909.github.io/blog/tags/DEFCON-CTF/index.xml" rel="self" type="application/rss+xml" />
     
     
     
@@ -24,11 +24,11 @@
       
       <item>
         <title>IPwnKit DEFCON CTF 26 QR</title>
-        <link>https://trungnguyen1909.github.io/blog/post/defcon26-qual/ipwnkit/</link>
+        <link>https://trungnguyen1909.github.io/blog/post/DEFCON26-Qual/iPwnKit/</link>
         <pubDate>Sun, 21 Apr 2019 00:46:45 +0700</pubDate>
         <author>ntrung03@gmail.com (Nguyen Hoang Trung)</author>
         <atom:modified>Sun, 21 Apr 2019 00:46:45 +0700</atom:modified>
-        <guid>https://trungnguyen1909.github.io/blog/post/defcon26-qual/ipwnkit/</guid>
+        <guid>https://trungnguyen1909.github.io/blog/post/DEFCON26-Qual/iPwnKit/</guid>
         <description>IPwnKit  Come and take a bite of the Apple!
   We have reserved you a very special place at the WWPC (World Wide Pwning Conference).
   Email ipwnkit@gmail.com to RSVP and we will reply with your invite.</description>

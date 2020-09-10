@@ -24,11 +24,11 @@
       
       <item>
         <title>pwning your kernelz: macOS 0day LPE</title>
-        <link>https://trungnguyen1909.github.io/blog/post/campctf/pwningkernelz/</link>
+        <link>https://trungnguyen1909.github.io/blog/post/CampCTF/PwningKernelz/</link>
         <pubDate>Wed, 04 Sep 2019 23:38:50 +0700</pubDate>
         <author>ntrung03@gmail.com (Nguyen Hoang Trung)</author>
         <atom:modified>Wed, 04 Sep 2019 23:38:50 +0700</atom:modified>
-        <guid>https://trungnguyen1909.github.io/blog/post/campctf/pwningkernelz/</guid>
+        <guid>https://trungnguyen1909.github.io/blog/post/CampCTF/PwningKernelz/</guid>
         <description>pwning your kernelz Background Hi everyone,
 This is the writeup for the challenge pwning your kernelz, created by Linus Henze(@LinusHenze),
 I came across this challenge when Linus tweeted a status update for the CTF.
@@ -67,11 +67,11 @@ Of course, I didn&amp;rsquo;t solve this challenge during the time of the CTF.</
       
       <item>
         <title>IPwnKit DEFCON CTF 26 QR</title>
-        <link>https://trungnguyen1909.github.io/blog/post/defcon26-qual/ipwnkit/</link>
+        <link>https://trungnguyen1909.github.io/blog/post/DEFCON26-Qual/iPwnKit/</link>
         <pubDate>Sun, 21 Apr 2019 00:46:45 +0700</pubDate>
         <author>ntrung03@gmail.com (Nguyen Hoang Trung)</author>
         <atom:modified>Sun, 21 Apr 2019 00:46:45 +0700</atom:modified>
-        <guid>https://trungnguyen1909.github.io/blog/post/defcon26-qual/ipwnkit/</guid>
+        <guid>https://trungnguyen1909.github.io/blog/post/DEFCON26-Qual/iPwnKit/</guid>
         <description>IPwnKit  Come and take a bite of the Apple!
   We have reserved you a very special place at the WWPC (World Wide Pwning Conference).
   Email ipwnkit@gmail.com to RSVP and we will reply with your invite.</description>

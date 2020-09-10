@@ -7,7 +7,7 @@
   xmlns:media="http://search.yahoo.com/mrss/">
   <channel>
     <title>Camp-CTF on Blog</title>
-    <link>https://trungnguyen1909.github.io/blog/tags/camp-ctf/</link>
+    <link>https://trungnguyen1909.github.io/blog/tags/Camp-CTF/</link>
     <description>Recent content in Camp-CTF on Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
@@ -16,7 +16,7 @@
     <copyright>©{year}, All Rights Reserved. Content licensed under CC BY 4.0</copyright>
     <lastBuildDate>Wed, 04 Sep 2019 23:38:50 +0700</lastBuildDate>
     
-        <atom:link href="https://trungnguyen1909.github.io/blog/tags/camp-ctf/index.xml" rel="self" type="application/rss+xml" />
+        <atom:link href="https://trungnguyen1909.github.io/blog/tags/Camp-CTF/index.xml" rel="self" type="application/rss+xml" />
     
     
     
@@ -24,11 +24,11 @@
       
       <item>
         <title>pwning your kernelz: macOS 0day LPE</title>
-        <link>https://trungnguyen1909.github.io/blog/post/campctf/pwningkernelz/</link>
+        <link>https://trungnguyen1909.github.io/blog/post/CampCTF/PwningKernelz/</link>
         <pubDate>Wed, 04 Sep 2019 23:38:50 +0700</pubDate>
         <author>ntrung03@gmail.com (Nguyen Hoang Trung)</author>
         <atom:modified>Wed, 04 Sep 2019 23:38:50 +0700</atom:modified>
-        <guid>https://trungnguyen1909.github.io/blog/post/campctf/pwningkernelz/</guid>
+        <guid>https://trungnguyen1909.github.io/blog/post/CampCTF/PwningKernelz/</guid>
         <description>pwning your kernelz Background Hi everyone,
 This is the writeup for the challenge pwning your kernelz, created by Linus Henze(@LinusHenze),
 I came across this challenge when Linus tweeted a status update for the CTF.
