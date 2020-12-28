@@ -1239,7 +1239,7 @@
 <meta property="og:type" content="article">
 <meta property="og:description" content="">
 
-<meta name="generator" content="Hugo 0.74.3" />
+<meta name="generator" content="Hugo 0.79.1" />
 <meta name="msapplication-TileColor" content="#fff">
 
 <meta name="theme-color" content="#fff">
@@ -1589,7 +1589,7 @@ still, here is a writeup for the challenge <code>teleport</code> for you.</p>
 <li><a href="#4-googling">4. Googling</a></li>
 <li><a href="#5-leaking-the-renderer-process">5. Leaking the renderer process</a></li>
 <li><a href="#6-nodes-and-ports">6. Nodes and Ports</a></li>
-<li><a href="#7-leaking-ports-names">7. Leaking ports&rsquo; names</a>
+<li><a href="#7-leaking-ports-names">7. Leaking ports' names</a>
 <ul>
 <li><a href="#71-finding-offsets">7.1. Finding offsets</a>
 <ul>
@@ -1772,7 +1772,7 @@ and derive the renderer&rsquo;s <code>_text</code> base.</p>
 <span class="p">}</span>
 </code></pre></td></tr></table>
 </div>
-</div><h2 id="7-leaking-ports-names">7. Leaking ports&rsquo; names</h2>
+</div><h2 id="7-leaking-ports-names">7. Leaking ports' names</h2>
 <p>A node keeps track of its name, its local ports, and its remote ports (ports from another nodes that is known to this node)</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
@@ -1796,7 +1796,7 @@ and derive the renderer&rsquo;s <code>_text</code> base.</p>
 </div>
 </div><p>By reading the browser process&rsquo;s memory and traverse through <code>ports_</code>, it&rsquo;s possible to <em>steal</em> a privileged port.</p>
 <p>One possible pointer path is <code>g_core-&gt;node_controller_-&gt;node_</code></p>
-<p>Just traverse that and dump all the ports&rsquo; names.</p>
+<p>Just traverse that and dump all the ports' names.</p>
 <h3 id="71-finding-offsets">7.1. Finding offsets</h3>
 <h4 id="711-simple-structures">7.1.1. Simple structures</h4>
 <p>Finding offsets isn&rsquo;t a trivial task when you haven&rsquo;t familiar with assembly and memory, but a way to do that is to disassemble functions where that field is accessed.</p>
@@ -1967,14 +1967,14 @@ However, the browser can create factories (<code>process_id_==kBrowserProcess</c
 </blockquote>
 <p>To do so is pretty trivial, just make sure to use HTTPS and you are good to go with the service worker.</p>
 <h3 id="82-making-the-leaked-ports-ours">8.2. Making the leaked ports ours</h3>
-<p>To send messages to the leaked ports&rsquo; names, we need to register it to our node. Below is my way of doing it:</p>
+<p>To send messages to the leaked ports' names, we need to register it to our node. Below is my way of doing it:</p>
 <ul>
 <li>Create a new port on our node using <a href="https://source.chromium.org/chromium/chromium/src/+/master:mojo/core/ports/node.h;bpv=1;bpt=1;l=100?gsn=CreateUninitializedPort"><code>Node::CreateUninitializedPort</code></a></li>
 <li>Initialize it with our leaked names using <a href="https://source.chromium.org/chromium/chromium/src/+/master:mojo/core/ports/node.h;bpv=1;bpt=1;l=103?gsn=InitializePort"><code>Node::InitializePort</code></a></li>
 </ul>
 <p>After doing that, the leaked port will be inserted into your node&rsquo;s <code>ports_</code> map.</p>
 <h4 id="821-calling-functions-from-shellcode">8.2.1. Calling functions from shellcode</h4>
-<p>It is impractical to run an assembler in the exploit to compile your shellcode with the functions&rsquo; addresses, as they shift around all the time under ASLR.</p>
+<p>It is impractical to run an assembler in the exploit to compile your shellcode with the functions' addresses, as they shift around all the time under ASLR.</p>
 <p>There are probably many ways of doing this, including <a href="https://github.com/xerub/acorn">ways</a> that allow you to call functions directly from JavaScript.<br />
 However, I will stick to the assembly this time and use the <code>Mojo::rce</code> primitive.</p>
 <p>In my shellcode, there will be a common pattern, which looks like this</p>
@@ -2067,7 +2067,7 @@ However, I will stick to the assembly this time and use the <code>Mojo::rce</cod
 </code></pre><p>That&rsquo;s it, now you know who are you sending to.</p>
 <h3 id="86-where-are-my-factory-">8.6. Where are my factory ??</h3>
 <p>I stucked and cannot find any factories within the leaked ports. There are even some ports which never responds to any of my messages.</p>
-<p>At this point (ofc after the CTF has ended), Stephen points out my missing bit: I didn&rsquo;t set the messages&rsquo; <a href="https://source.chromium.org/chromium/chromium/src/+/master:mojo/core/ports/event.h;drc=6e8b402a6231405b753919029c9027404325ea00;l=157"><code>sequence_num</code></a>. It seems like the Mojo system use this number to prevent message duplication.</p>
+<p>At this point (ofc after the CTF has ended), Stephen points out my missing bit: I didn&rsquo;t set the messages' <a href="https://source.chromium.org/chromium/chromium/src/+/master:mojo/core/ports/event.h;drc=6e8b402a6231405b753919029c9027404325ea00;l=157"><code>sequence_num</code></a>. It seems like the Mojo system use this number to prevent message duplication.</p>
 <p><a href="https://source.chromium.org/chromium/chromium/src/+/master:mojo/core/ports/node.cc;drc=6e8b402a6231405b753919029c9027404325ea00;l=1293">This number is increased by one when a message is sent.</a> Fortunately, the correct <code>sequence_num</code> is stored in the <code>Port</code> object in the <a href="https://source.chromium.org/chromium/chromium/src/+/master:mojo/core/ports/port.h;drc=6e8b402a6231405b753919029c9027404325ea00;l=111">field <code>next_sequence_num_to_send</code></a>, which can be leaked from where we found our ports in browser process&rsquo;s memory.</p>
 <h4 id="861-setting-the-sequence_num">8.6.1. Setting the sequence_num</h4>
 <p>Let me remind you that <code>MojoMessageHandle</code> is actually a <a href="https://source.chromium.org/chromium/chromium/src/+/master:mojo/core/core.cc;drc=6e8b402a6231405b753919029c9027404325ea00;l=349">pointer</a> to a <code>UserMessageEvent</code>. Unfortunately, the function <code>set_sequence_num</code> is inlined so the offset isn&rsquo;t free. However, you could get it by disassembling <a href="https://source.chromium.org/chromium/chromium/src/+/master:mojo/core/ports/node.cc;drc=6e8b402a6231405b753919029c9027404325ea00;bpv=1;bpt=1;l=1230?gsn=PrepareToForwardUserMessage"><code>Node::PrepareToForwardUserMessage</code></a></p>
@@ -2325,6 +2325,13 @@ However, I will stick to the assembly this time and use the <code>Mojo::rce</cod
       </a>
     
     <div class="grow"></div>
+    
+      <a href="https://trungnguyen1909.github.io/blog/post/WhiteHatGrandPrix06/Pwn01/" class="pagination-single__right">      
+        <div class="pagination-single__right-title">Pwnable01 scull - Whitehat Grandprix 06</div>
+        <div class="pagination-single__icon">
+          <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 24 24"><path fill="none" d="M0 0h24v24H0V0z"/><path fill="currentColor" d="M5 13h11.17l-4.88 4.88c-.39.39-.39 1.03 0 1.42.39.39 1.02.39 1.41 0l6.59-6.59c.39-.39.39-1.02 0-1.41l-6.58-6.6c-.39-.39-1.02-.39-1.41 0-.39.39-.39 1.02 0 1.41L16.17 11H5c-.55 0-1 .45-1 1s.45 1 1 1z"/></svg>
+        </div>
+      </a>
     
   
 </nav>
@@ -2693,7 +2700,7 @@ document.addEventListener('DOMContentLoaded', function () {
     <li><a href="#4-googling">4. Googling</a></li>
     <li><a href="#5-leaking-the-renderer-process">5. Leaking the renderer process</a></li>
     <li><a href="#6-nodes-and-ports">6. Nodes and Ports</a></li>
-    <li><a href="#7-leaking-ports-names">7. Leaking ports&rsquo; names</a>
+    <li><a href="#7-leaking-ports-names">7. Leaking ports' names</a>
       <ul>
         <li><a href="#71-finding-offsets">7.1. Finding offsets</a></li>
       </ul>

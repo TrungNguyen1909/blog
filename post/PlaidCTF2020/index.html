@@ -1239,7 +1239,7 @@
 <meta property="og:type" content="article">
 <meta property="og:description" content="">
 
-<meta name="generator" content="Hugo 0.74.3" />
+<meta name="generator" content="Hugo 0.79.1" />
 <meta name="msapplication-TileColor" content="#fff">
 
 <meta name="theme-color" content="#fff">
@@ -1611,8 +1611,8 @@ Lots of google-fu, renderer bad messages, promise rejection :&lt;</p>
 </span></code></pre></td>
 <td class="lntd">
 <pre class="chroma"><code class="language-js" data-lang="js"><span class="kd">let</span> <span class="nx">p</span> <span class="o">=</span> <span class="nx">blink</span><span class="p">.</span><span class="nx">mojom</span><span class="p">.</span><span class="nx">PlaidStore</span><span class="p">.</span><span class="nx">getRemote</span><span class="p">(</span><span class="kc">true</span><span class="p">);</span>
-<span class="nx">await</span> <span class="nx">p</span><span class="p">.</span><span class="nx">storeData</span><span class="p">(</span><span class="s2">&#34;yeet&#34;</span><span class="p">,</span><span class="k">new</span> <span class="nx">Uint8Array</span><span class="p">(</span><span class="mh">0x28</span><span class="p">).</span><span class="nx">fill</span><span class="p">(</span><span class="mh">0x41</span><span class="p">));</span>
-<span class="p">(</span><span class="nx">await</span> <span class="nx">p</span><span class="p">.</span><span class="nx">getData</span><span class="p">(</span><span class="s2">&#34;yeet&#34;</span><span class="p">,</span> <span class="nx">count</span><span class="p">).</span><span class="nx">data</span><span class="p">;</span>
+<span class="kr">await</span> <span class="nx">p</span><span class="p">.</span><span class="nx">storeData</span><span class="p">(</span><span class="s2">&#34;yeet&#34;</span><span class="p">,</span><span class="k">new</span> <span class="nx">Uint8Array</span><span class="p">(</span><span class="mh">0x28</span><span class="p">).</span><span class="nx">fill</span><span class="p">(</span><span class="mh">0x41</span><span class="p">));</span>
+<span class="p">(</span><span class="kr">await</span> <span class="nx">p</span><span class="p">.</span><span class="nx">getData</span><span class="p">(</span><span class="s2">&#34;yeet&#34;</span><span class="p">,</span> <span class="nx">count</span><span class="p">).</span><span class="nx">data</span><span class="p">;</span>
 </code></pre></td></tr></table>
 </div>
 </div><p>smh.</p>
@@ -1680,10 +1680,10 @@ chrome[0x3c584b4] &lt;+36&gt;:  mov    qword ptr [rax], rcx
 <h3 id="get-code-execution">Get code execution&hellip;</h3>
 <p>At the starts of all methods of <code>PlaidStore</code>, there&rsquo;s a check <code>(!render_frame_host_-&gt;IsRenderFrameLive())</code> seems to check whether its frame is live.<br />
 But it doesn&rsquo;t take into account that its <code>render_frame_host_</code> is valid or not.</p>
-<p>If the <code>PlaidStore</code>'s frame has been freed, its <code>render_frame_host_</code> will be dangling and the memory it is pointing to is subjected to reallocation.</p>
+<p>If the <code>PlaidStore</code>&rsquo;s frame has been freed, its <code>render_frame_host_</code> will be dangling and the memory it is pointing to is subjected to reallocation.</p>
 <p>So there&rsquo;s definitely an use-after-free bug here.</p>
 <p>To exploit that, we could create an <code>iframe</code> in the <code>document.body</code> and get its <code>PlaidStore</code> pointer, which will have its <code>render_frame_host_</code> pointed to the <code>iframe</code>.</p>
-<p>We can easily access the <code>iframe</code>'s properties, as long as its source is in the same origin.</p>
+<p>We can easily access the <code>iframe</code>&rsquo;s properties, as long as its source is in the same origin.</p>
 <p>After get the <code>PlaidStore</code> pointer from there, we could deallocate the <code>iframe</code> by remove it from the <code>document.body</code>.</p>
 <p>The best way to reallocate it back is to creating some allocations of the same size, for example 1024 allocations.<br />
 By doing that, we are creating pressure to the memory and most of the time, the frame will ended up being garbage-collected and let us allocate to the same memory.</p>
@@ -1714,7 +1714,7 @@ By doing that, we are creating pressure to the memory and most of the time, the 
 </span></code></pre></td></tr></table>
 </div>
 </div><p>So now we have a handle to a fake <code>RenderFrameHost</code> object that its content is controlled by us.</p>
-<p>With that primitive, we could fake its vtable, and now <code>render_frame_host_-&gt;IsRenderFrameLive()</code>'s now ours.</p>
+<p>With that primitive, we could fake its vtable, and now <code>render_frame_host_-&gt;IsRenderFrameLive()</code>&rsquo;s now ours.</p>
 <pre><code>//content::PlaidStoreImpl::StoreData
 chrome[0x3c581da] &lt;+26&gt;:  mov    rdi, qword ptr [rdi + 0x8] //rdi = this-&gt;render_frame_host_
 chrome[0x3c581de] &lt;+30&gt;:  mov    rax, qword ptr [rdi]//rax = vtable

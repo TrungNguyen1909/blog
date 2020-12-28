@@ -14,13 +14,68 @@
     <managingEditor>ntrung03@gmail.com (Nguyen Hoang Trung)</managingEditor>
     <webMaster>ntrung03@gmail.com (Nguyen Hoang Trung)</webMaster>
     <copyright>©{year}, All Rights Reserved. Content licensed under CC BY 4.0</copyright>
-    <lastBuildDate>Wed, 02 Sep 2020 19:48:00 +0700</lastBuildDate>
+    <lastBuildDate>Mon, 28 Dec 2020 17:22:26 +0700</lastBuildDate>
     
         <atom:link href="https://trungnguyen1909.github.io/blog/tags/CTF/index.xml" rel="self" type="application/rss+xml" />
     
     
     
 
+      
+      <item>
+        <title>Pwnable01 scull - Whitehat Grandprix 06</title>
+        <link>https://trungnguyen1909.github.io/blog/post/WhiteHatGrandPrix06/Pwn01/</link>
+        <pubDate>Mon, 28 Dec 2020 17:22:26 +0700</pubDate>
+        <author>ntrung03@gmail.com (Nguyen Hoang Trung)</author>
+        <atom:modified>Mon, 28 Dec 2020 17:22:26 +0700</atom:modified>
+        <guid>https://trungnguyen1909.github.io/blog/post/WhiteHatGrandPrix06/Pwn01/</guid>
+        <description>Pwnable01 Intro Hi guys, this is the writeup for the challenge Pwnable01 from Whitehat Grandprix 06 Final
+You may want to checkout the exploit code and challenge&amp;rsquo;s source
+Challenge  #pwn01:
+You can ssh into our server as a low-privilege user.</description>
+        
+        <dc:creator>Nguyen Hoang Trung</dc:creator>
+        
+        
+        
+        
+          
+            
+              <category>WhiteHatGrandprix</category>
+            
+          
+            
+              <category>CTF</category>
+            
+          
+            
+              <category>pwn</category>
+            
+          
+            
+              <category>linux</category>
+            
+          
+            
+              <category>kernel</category>
+            
+          
+            
+              <category>race-condition</category>
+            
+          
+            
+              <category>use-after-free</category>
+            
+          
+            
+              <category>UAF</category>
+            
+          
+        
+        
+        
+      </item>
       
       <item>
         <title>Google CTF 2020 teleport: Chromium sandbox escape</title>

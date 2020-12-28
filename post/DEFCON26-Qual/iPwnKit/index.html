@@ -1239,7 +1239,7 @@
 <meta property="og:type" content="article">
 <meta property="og:description" content="">
 
-<meta name="generator" content="Hugo 0.74.3" />
+<meta name="generator" content="Hugo 0.79.1" />
 <meta name="msapplication-TileColor" content="#fff">
 
 <meta name="theme-color" content="#fff">
@@ -1625,7 +1625,7 @@
 </div>
 </div><p>The data in this struct will be used to check the input/output size before it jumps to our selected function</p>
 <p>When a check does not need to be enforced, the value <code>kIOUCVariableStructureSize</code> (-1) will be there.</p>
-<p>According to the dispatch table in the kernel extension, it will dispatch to the methods that are prefixed with &rsquo;s&rsquo; before the actual function.</p>
+<p>According to the dispatch table in the kernel extension, it will dispatch to the methods that are prefixed with &rsquo;s' before the actual function.</p>
 <p>Obviously, the interesting methods are <code>ReadNum</code>, <code>WriteNum</code>, and <code>FillArray</code></p>
 <p>But before we can get there, we have to go through <code>sReadNum</code>, <code>sWriteNum</code>, and <code>sFillArray</code>, correspondingly.</p>
 <p>I will not cover reverse-engineer stuff because after I finished my first exploit, I&rsquo;d realized that I did lots of obsolete stuff due to errors in reverse engineer, and I will mostly show the source code instead.</p>

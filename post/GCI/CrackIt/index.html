@@ -1239,7 +1239,7 @@
 <meta property="og:type" content="article">
 <meta property="og:description" content="">
 
-<meta name="generator" content="Hugo 0.74.3" />
+<meta name="generator" content="Hugo 0.79.1" />
 <meta name="msapplication-TileColor" content="#fff">
 
 <meta name="theme-color" content="#fff">
@@ -1860,7 +1860,7 @@ Good job!
 <p>P/s 2: For the next part, I&rsquo;m gonna disable Linux&rsquo;s ASLR:</p>
 <p>Run this command from root shell.</p>
 <pre><code># echo 0 &gt; /proc/sys/kernel/randomize_va_space
-</code></pre><p>So if we overwrite <code>ip</code> with <code>secret</code>'s address, we can get there.</p>
+</code></pre><p>So if we overwrite <code>ip</code> with <code>secret</code>&rsquo;s address, we can get there.</p>
 <p><code>secret</code> is at 0x555555555175, we convert that address to bytes then put it at the <code>ip</code>, which is at 66 bytes from the start of our <code>input</code>.</p>
 <p>Oh, by the way, If <code>exit(0)</code> is called, <code>ip</code> won&rsquo;t be used as <code>exit</code> use a short-circuit path to exit the program.</p>
 <p>So you will need the password to be incorrect to reach there.</p>

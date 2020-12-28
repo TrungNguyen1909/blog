@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" 
+  xmlns:content="http://purl.org/rss/1.0/modules/content/" 
+  xmlns:dc="http://purl.org/dc/elements/1.1/" 
+  xmlns:atom="http://www.w3.org/2005/Atom" 
+  xmlns:sy="http://purl.org/rss/1.0/modules/syndication/" 
+  xmlns:media="http://search.yahoo.com/mrss/">
+  <channel>
+    <title>WhiteHatGrandprix on Blog</title>
+    <link>https://trungnguyen1909.github.io/blog/tags/WhiteHatGrandprix/</link>
+    <description>Recent content in WhiteHatGrandprix on Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <managingEditor>ntrung03@gmail.com (Nguyen Hoang Trung)</managingEditor>
+    <webMaster>ntrung03@gmail.com (Nguyen Hoang Trung)</webMaster>
+    <copyright>©{year}, All Rights Reserved. Content licensed under CC BY 4.0</copyright>
+    <lastBuildDate>Mon, 28 Dec 2020 17:22:26 +0700</lastBuildDate>
+    
+        <atom:link href="https://trungnguyen1909.github.io/blog/tags/WhiteHatGrandprix/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    
+
+      
+      <item>
+        <title>Pwnable01 scull - Whitehat Grandprix 06</title>
+        <link>https://trungnguyen1909.github.io/blog/post/WhiteHatGrandPrix06/Pwn01/</link>
+        <pubDate>Mon, 28 Dec 2020 17:22:26 +0700</pubDate>
+        <author>ntrung03@gmail.com (Nguyen Hoang Trung)</author>
+        <atom:modified>Mon, 28 Dec 2020 17:22:26 +0700</atom:modified>
+        <guid>https://trungnguyen1909.github.io/blog/post/WhiteHatGrandPrix06/Pwn01/</guid>
+        <description>Pwnable01 Intro Hi guys, this is the writeup for the challenge Pwnable01 from Whitehat Grandprix 06 Final
+You may want to checkout the exploit code and challenge&amp;rsquo;s source
+Challenge  #pwn01:
+You can ssh into our server as a low-privilege user.</description>
+        
+        <dc:creator>Nguyen Hoang Trung</dc:creator>
+        
+        
+        
+        
+          
+            
+              <category>WhiteHatGrandprix</category>
+            
+          
+            
+              <category>CTF</category>
+            
+          
+            
+              <category>pwn</category>
+            
+          
+            
+              <category>linux</category>
+            
+          
+            
+              <category>kernel</category>
+            
+          
+            
+              <category>race-condition</category>
+            
+          
+            
+              <category>use-after-free</category>
+            
+          
+            
+              <category>UAF</category>
+            
+          
+        
+        
+        
+      </item>
+      
+
+    
+  </channel>
+</rss>

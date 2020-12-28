@@ -1239,7 +1239,7 @@
 <meta property="og:type" content="article">
 <meta property="og:description" content="">
 
-<meta name="generator" content="Hugo 0.74.3" />
+<meta name="generator" content="Hugo 0.79.1" />
 <meta name="msapplication-TileColor" content="#fff">
 
 <meta name="theme-color" content="#fff">
@@ -1609,8 +1609,8 @@ Apple messed up and unpatched the 121 day (CVE-2019-8605) and you can just port 
 <p>If the flavor is <code>x86_THREAD_STATE32</code>, it does not cause any problem.</p>
 <p>But they are supposed to have the similar behavior, so lets <code>diff</code> them out.</p>
 <p>Although going through the same amount of checks, the second version forced the segment registers to be a value that&rsquo;s constantly defined</p>
-<p>In the buggy one, we can see that it allows a wider range of segment registers&rsquo; value, which could be malicious.</p>
-<p>So, the bug is that we can set the segment registers&rsquo; values to any malicious values.</p>
+<p>In the buggy one, we can see that it allows a wider range of segment registers' value, which could be malicious.</p>
+<p>So, the bug is that we can set the segment registers' values to any malicious values.</p>
 <p>This is similar to the <em>BadIRET</em> bug</p>
 <h2 id="consequences">Consequences</h2>
 <p>Attaching the debugger, tracing down through the <code>iretq</code> instruction, it failed to return due to invalid segment registers and jump to the fault handler,</p>

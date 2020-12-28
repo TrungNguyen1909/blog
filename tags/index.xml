@@ -14,13 +14,157 @@
     <managingEditor>ntrung03@gmail.com (Nguyen Hoang Trung)</managingEditor>
     <webMaster>ntrung03@gmail.com (Nguyen Hoang Trung)</webMaster>
     <copyright>©{year}, All Rights Reserved. Content licensed under CC BY 4.0</copyright>
-    <lastBuildDate>Wed, 02 Sep 2020 19:48:00 +0700</lastBuildDate>
+    <lastBuildDate>Mon, 28 Dec 2020 17:22:26 +0700</lastBuildDate>
     
         <atom:link href="https://trungnguyen1909.github.io/blog/tags/index.xml" rel="self" type="application/rss+xml" />
     
     
     
 
+      
+      <item>
+        <title>CTF</title>
+        <link>https://trungnguyen1909.github.io/blog/tags/CTF/</link>
+        <pubDate>Mon, 28 Dec 2020 17:22:26 +0700</pubDate>
+        <author>ntrung03@gmail.com (Nguyen Hoang Trung)</author>
+        
+        <guid>https://trungnguyen1909.github.io/blog/tags/CTF/</guid>
+        <description></description>
+        
+        <dc:creator>Nguyen Hoang Trung</dc:creator>
+        
+        
+        
+        
+        
+        
+      </item>
+      
+      <item>
+        <title>kernel</title>
+        <link>https://trungnguyen1909.github.io/blog/tags/kernel/</link>
+        <pubDate>Mon, 28 Dec 2020 17:22:26 +0700</pubDate>
+        <author>ntrung03@gmail.com (Nguyen Hoang Trung)</author>
+        
+        <guid>https://trungnguyen1909.github.io/blog/tags/kernel/</guid>
+        <description></description>
+        
+        <dc:creator>Nguyen Hoang Trung</dc:creator>
+        
+        
+        
+        
+        
+        
+      </item>
+      
+      <item>
+        <title>linux</title>
+        <link>https://trungnguyen1909.github.io/blog/tags/linux/</link>
+        <pubDate>Mon, 28 Dec 2020 17:22:26 +0700</pubDate>
+        <author>ntrung03@gmail.com (Nguyen Hoang Trung)</author>
+        
+        <guid>https://trungnguyen1909.github.io/blog/tags/linux/</guid>
+        <description></description>
+        
+        <dc:creator>Nguyen Hoang Trung</dc:creator>
+        
+        
+        
+        
+        
+        
+      </item>
+      
+      <item>
+        <title>pwn</title>
+        <link>https://trungnguyen1909.github.io/blog/tags/pwn/</link>
+        <pubDate>Mon, 28 Dec 2020 17:22:26 +0700</pubDate>
+        <author>ntrung03@gmail.com (Nguyen Hoang Trung)</author>
+        
+        <guid>https://trungnguyen1909.github.io/blog/tags/pwn/</guid>
+        <description></description>
+        
+        <dc:creator>Nguyen Hoang Trung</dc:creator>
+        
+        
+        
+        
+        
+        
+      </item>
+      
+      <item>
+        <title>race-condition</title>
+        <link>https://trungnguyen1909.github.io/blog/tags/race-condition/</link>
+        <pubDate>Mon, 28 Dec 2020 17:22:26 +0700</pubDate>
+        <author>ntrung03@gmail.com (Nguyen Hoang Trung)</author>
+        
+        <guid>https://trungnguyen1909.github.io/blog/tags/race-condition/</guid>
+        <description></description>
+        
+        <dc:creator>Nguyen Hoang Trung</dc:creator>
+        
+        
+        
+        
+        
+        
+      </item>
+      
+      <item>
+        <title>UAF</title>
+        <link>https://trungnguyen1909.github.io/blog/tags/UAF/</link>
+        <pubDate>Mon, 28 Dec 2020 17:22:26 +0700</pubDate>
+        <author>ntrung03@gmail.com (Nguyen Hoang Trung)</author>
+        
+        <guid>https://trungnguyen1909.github.io/blog/tags/UAF/</guid>
+        <description></description>
+        
+        <dc:creator>Nguyen Hoang Trung</dc:creator>
+        
+        
+        
+        
+        
+        
+      </item>
+      
+      <item>
+        <title>use-after-free</title>
+        <link>https://trungnguyen1909.github.io/blog/tags/use-after-free/</link>
+        <pubDate>Mon, 28 Dec 2020 17:22:26 +0700</pubDate>
+        <author>ntrung03@gmail.com (Nguyen Hoang Trung)</author>
+        
+        <guid>https://trungnguyen1909.github.io/blog/tags/use-after-free/</guid>
+        <description></description>
+        
+        <dc:creator>Nguyen Hoang Trung</dc:creator>
+        
+        
+        
+        
+        
+        
+      </item>
+      
+      <item>
+        <title>WhiteHatGrandprix</title>
+        <link>https://trungnguyen1909.github.io/blog/tags/WhiteHatGrandprix/</link>
+        <pubDate>Mon, 28 Dec 2020 17:22:26 +0700</pubDate>
+        <author>ntrung03@gmail.com (Nguyen Hoang Trung)</author>
+        
+        <guid>https://trungnguyen1909.github.io/blog/tags/WhiteHatGrandprix/</guid>
+        <description></description>
+        
+        <dc:creator>Nguyen Hoang Trung</dc:creator>
+        
+        
+        
+        
+        
+        
+      </item>
       
       <item>
         <title>browser</title>
@@ -47,24 +191,6 @@
         <author>ntrung03@gmail.com (Nguyen Hoang Trung)</author>
         
         <guid>https://trungnguyen1909.github.io/blog/tags/chromium/</guid>
-        <description></description>
-        
-        <dc:creator>Nguyen Hoang Trung</dc:creator>
-        
-        
-        
-        
-        
-        
-      </item>
-      
-      <item>
-        <title>CTF</title>
-        <link>https://trungnguyen1909.github.io/blog/tags/CTF/</link>
-        <pubDate>Wed, 02 Sep 2020 19:48:00 +0700</pubDate>
-        <author>ntrung03@gmail.com (Nguyen Hoang Trung)</author>
-        
-        <guid>https://trungnguyen1909.github.io/blog/tags/CTF/</guid>
         <description></description>
         
         <dc:creator>Nguyen Hoang Trung</dc:creator>
@@ -131,24 +257,6 @@
       </item>
       
       <item>
-        <title>pwn</title>
-        <link>https://trungnguyen1909.github.io/blog/tags/pwn/</link>
-        <pubDate>Wed, 02 Sep 2020 19:48:00 +0700</pubDate>
-        <author>ntrung03@gmail.com (Nguyen Hoang Trung)</author>
-        
-        <guid>https://trungnguyen1909.github.io/blog/tags/pwn/</guid>
-        <description></description>
-        
-        <dc:creator>Nguyen Hoang Trung</dc:creator>
-        
-        
-        
-        
-        
-        
-      </item>
-      
-      <item>
         <title>reversing</title>
         <link>https://trungnguyen1909.github.io/blog/tags/reversing/</link>
         <pubDate>Wed, 02 Sep 2020 19:48:00 +0700</pubDate>
@@ -191,42 +299,6 @@
         <author>ntrung03@gmail.com (Nguyen Hoang Trung)</author>
         
         <guid>https://trungnguyen1909.github.io/blog/tags/PlaidCTF2020/</guid>
-        <description></description>
-        
-        <dc:creator>Nguyen Hoang Trung</dc:creator>
-        
-        
-        
-        
-        
-        
-      </item>
-      
-      <item>
-        <title>UAF</title>
-        <link>https://trungnguyen1909.github.io/blog/tags/UAF/</link>
-        <pubDate>Wed, 22 Apr 2020 19:42:49 +0700</pubDate>
-        <author>ntrung03@gmail.com (Nguyen Hoang Trung)</author>
-        
-        <guid>https://trungnguyen1909.github.io/blog/tags/UAF/</guid>
-        <description></description>
-        
-        <dc:creator>Nguyen Hoang Trung</dc:creator>
-        
-        
-        
-        
-        
-        
-      </item>
-      
-      <item>
-        <title>use-after-free</title>
-        <link>https://trungnguyen1909.github.io/blog/tags/use-after-free/</link>
-        <pubDate>Wed, 22 Apr 2020 19:42:49 +0700</pubDate>
-        <author>ntrung03@gmail.com (Nguyen Hoang Trung)</author>
-        
-        <guid>https://trungnguyen1909.github.io/blog/tags/use-after-free/</guid>
         <description></description>
         
         <dc:creator>Nguyen Hoang Trung</dc:creator>
@@ -365,24 +437,6 @@
       </item>
       
       <item>
-        <title>kernel</title>
-        <link>https://trungnguyen1909.github.io/blog/tags/kernel/</link>
-        <pubDate>Wed, 04 Sep 2019 23:38:50 +0700</pubDate>
-        <author>ntrung03@gmail.com (Nguyen Hoang Trung)</author>
-        
-        <guid>https://trungnguyen1909.github.io/blog/tags/kernel/</guid>
-        <description></description>
-        
-        <dc:creator>Nguyen Hoang Trung</dc:creator>
-        
-        
-        
-        
-        
-        
-      </item>
-      
-      <item>
         <title>xnu</title>
         <link>https://trungnguyen1909.github.io/blog/tags/xnu/</link>
         <pubDate>Wed, 04 Sep 2019 23:38:50 +0700</pubDate>
@@ -425,42 +479,6 @@
         <author>ntrung03@gmail.com (Nguyen Hoang Trung)</author>
         
         <guid>https://trungnguyen1909.github.io/blog/tags/FBCTF/</guid>
-        <description></description>
-        
-        <dc:creator>Nguyen Hoang Trung</dc:creator>
-        
-        
-        
-        
-        
-        
-      </item>
-      
-      <item>
-        <title>linux</title>
-        <link>https://trungnguyen1909.github.io/blog/tags/linux/</link>
-        <pubDate>Wed, 12 Jun 2019 23:15:34 +0700</pubDate>
-        <author>ntrung03@gmail.com (Nguyen Hoang Trung)</author>
-        
-        <guid>https://trungnguyen1909.github.io/blog/tags/linux/</guid>
-        <description></description>
-        
-        <dc:creator>Nguyen Hoang Trung</dc:creator>
-        
-        
-        
-        
-        
-        
-      </item>
-      
-      <item>
-        <title>race-condition</title>
-        <link>https://trungnguyen1909.github.io/blog/tags/race-condition/</link>
-        <pubDate>Wed, 12 Jun 2019 23:15:34 +0700</pubDate>
-        <author>ntrung03@gmail.com (Nguyen Hoang Trung)</author>
-        
-        <guid>https://trungnguyen1909.github.io/blog/tags/race-condition/</guid>
         <description></description>
         
         <dc:creator>Nguyen Hoang Trung</dc:creator>
