@@ -18,9 +18,9 @@
 
 <script defer src="/blog/js/lazysizes.min.fb649fcae62177dfe63e67081ddceb830b5ce1f05a4184e9bbb7d87ac4b8f4e5.js"></script>
 
-<script defer src="/blog/js/helper/getParents.min.1618c696be7c98933f9a92677f518b512a74e55bdbb976b09936b4182e93181b.js"></script>
+<script defer src="/blog/js/helper/getParents.min.ccd45f158c1b17849307ba913a72beac239c410f2b6e648496a79842da84e55b.js"></script>
 
-<script defer src="/blog/js/helper/fadeinout.min.efa35f4c090622130b3f4cfae6971448b5ffb61c5f0a8f21cdfd157fa712abc4.js"></script>
+<script defer src="/blog/js/helper/fadeinout.min.1d13d3e810c3940e80cbba6216a1c76fbf42b5431fc83537ea6997863802362b.js"></script>
 
 <script defer src="/blog/js/helper/closest.min.js"></script>
   
@@ -663,6 +663,12 @@
     
     var enableSearch = JSON.parse("true");
     
+    var searchDistance = JSON.parse("null");
+    
+    var searchThreshold = JSON.parse("null");
+    
+    var searchContent = JSON.parse("null");
+    
     var enableSearchHighlight = JSON.parse("true");
     
     var searchResultPosition = JSON.parse("null");
@@ -686,12 +692,13 @@
         xhr.onload = function () {
           if (xhr.status === 200) {
             fuse = new Fuse(JSON.parse(xhr.response.toString('utf-8')), {
-              keys: sectionType.includes('publication') ? ['title', 'abstract'] : ['title', 'description', 'content'],
+              keys: sectionType.includes('publication') ? ['title', 'abstract'] : 
+                searchContent ? ['title', 'description', 'content'] : ['title', 'description'],
               includeMatches: enableSearchHighlight,
               shouldSort: true, 
-              threshold: 0.4, 
+              threshold: searchThreshold ? searchThreshold : 0.4, 
               location: 0, 
-              distance: 100, 
+              distance: searchDistance ? searchDistance : 100, 
               maxPatternLength: 32,
               minMatchCharLength: 1,
               isCaseSensitive: false, 
@@ -715,7 +722,7 @@
       var a = document.createElement('a');
       a.innerHTML = obj.item.title;
       a.setAttribute('class', 'search-result__item--title');
-      a.setAttribute('href', obj.item.permalink);
+      a.setAttribute('href', obj.item.uri);
 
       var descDiv = document.createElement('div');
       descDiv.setAttribute('class', 'search-result__item--desc');
@@ -1315,7 +1322,8 @@
     }
   
   });
-</script>    
+</script>
+    
     
 
 
@@ -1328,9 +1336,9 @@
 <meta name="description" content="" />
 
 
-<meta name="created" content="2020-12-28T17:22:26&#43;0700">
-<meta name="modified" content="2020-12-28T17:22:26&#43;0700">
-<meta property="article:published_time" content="2020-12-28T17:22:26&#43;0700">
+<meta name="created" content="2021-07-21T13:37:00&#43;0000">
+<meta name="modified" content="2021-07-21T13:37:00&#43;0000">
+<meta property="article:published_time" content="2021-07-21T13:37:00&#43;0000">
 
 <meta name="author" content="Nguyen Hoang Trung">
 
@@ -1341,7 +1349,7 @@
 <meta property="og:type" content="website">
 <meta property="og:description" content="">
 
-<meta name="generator" content="Hugo 0.79.1" />
+<meta name="generator" content="Hugo 0.84.4" />
 <meta name="msapplication-TileColor" content="#fff">
 
 <meta name="theme-color" content="#fff">
@@ -1392,7 +1400,6 @@ if (!doNotTrack) {
 	ga('send', 'pageview');
 }
 </script>
-
   
 <script type="application/javascript">
 var doNotTrack = false;
@@ -1653,6 +1660,42 @@ if (!doNotTrack) {
     </div>
 
     <div class="summary__container" data-display="block">
+      
+        
+  <article class="summary-classic" data-ani="true">
+  <div class="summary-classic__flex-box" >
+
+    
+
+    <div class="summary-classic__content">
+      <header>
+        <h5 class="title h5"><a href='https://trungnguyen1909.github.io/blog/post/GGCTF21/'>Full chain - Google CTF 2021</a> </h5>
+        <h6 class="subtitle caption">
+          <time title="Written At" dir="ltr">📅&nbsp;Jul 21, 2021 </time>
+          
+          <span title="Reading Time" dir="ltr"> &middot; ☕&nbsp;10&nbsp;min read </span>
+          
+        </h6>
+      </header>
+      <div>
+        <div class="summary-classic__text p2">
+          
+            Full chain  Do you have what it takes to pwn all the layers?
+ Intro Hi, last weekend I participated in Google CTF 2021 with my team vh++.
+To quote from my last year&rsquo;s writeup:
+ Although I didn&rsquo;t solve the challenge in time for the points,
+          
+        </div>
+      </div>
+    </div>
+
+    
+    
+  </div>
+  <hr />
+</article>
+
+
       
         
   <article class="summary-classic" data-ani="true">
@@ -2074,45 +2117,28 @@ Spent quite a lot of time reversing it, I figured it out that it malloc a few by
 
 
       
-        
-  <article class="summary-classic" data-ani="true">
-  <div class="summary-classic__flex-box" >
-
-    
-
-    <div class="summary-classic__content">
-      <header>
-        <h5 class="title h5"><a href='https://trungnguyen1909.github.io/blog/post/matesctf/babyOVERFLOW/'>matesCTF babyOVERFLOW</a> </h5>
-        <h6 class="subtitle caption">
-          <time title="Written At" dir="ltr">📅&nbsp;Oct 10, 2018 </time>
-          
-          <span title="Reading Time" dir="ltr"> &middot; ☕&nbsp;2&nbsp;min read </span>
-          
-        </h6>
-      </header>
-      <div>
-        <div class="summary-classic__text p2">
-          
-            babyOVERFLOW Exploit
-Tên file bài này gợi ý rất nhiều.
-&ldquo;baby&rdquo; thường được dùng trong CTF chỉ những bài đơn giản dành cho người mới
-&ldquo;OVERFLOW&rdquo; ở đây thì chỉ đến stack buffer overflow.
-Chạy nó, nhập vào thì nó in ra lại đúng như thế.
-          
-        </div>
-      </div>
-    </div>
-
-    
-    
-  </div>
-  <hr />
-</article>
-
-
-      
       
 
+
+  
+  
+  
+  
+    
+  
+  <ul class="pagination">
+    
+      
+      
+        <li class="active"><a href="/blog/tags/pwn/">1</a></li>
+      
+    
+      
+      
+        <li ><a href="/blog/tags/pwn/page/2/">2</a></li>
+      
+    
+  </ul>
 
     </div>
     <div class="search-result" data-display="none">
@@ -2159,6 +2185,10 @@ Chạy nó, nhập vào thì nó in ra lại đúng như thế.
     
         
         <li class="sidebar-recent">
+            <a href="/blog/post/GGCTF21/" class="sidebar-recent__title p1">Full chain - Google CTF 2021</a>
+        </li>
+        
+        <li class="sidebar-recent">
             <a href="/blog/post/WhiteHatGrandPrix06/Pwn01/" class="sidebar-recent__title p1">Pwnable01 scull - Whitehat Grandprix 06</a>
         </li>
         
@@ -2172,10 +2202,6 @@ Chạy nó, nhập vào thì nó in ra lại đúng như thế.
         
         <li class="sidebar-recent">
             <a href="/blog/post/CampCTF/PwningKernelz/" class="sidebar-recent__title p1">pwning your kernelz: macOS 0day LPE</a>
-        </li>
-        
-        <li class="sidebar-recent">
-            <a href="/blog/post/FBCTF19-Qual/kpets/" class="sidebar-recent__title p1">kpets FacebookCTF 2019 QR</a>
         </li>
         
         <hr class="hr-fade sidebar-hr" />
@@ -2238,7 +2264,7 @@ Chạy nó, nhập vào thì nó in ra lại đúng như thế.
                         CTF
                     </span>
                     <span class="taxo__num" dir="auto">
-                        15
+                        16
                     </span>
                 </a>
             </span>
@@ -2301,6 +2327,19 @@ Chạy nó, nhập vào thì nó in ra lại đúng như thế.
                 <a href="/blog/tags/GCI/" class="is-tags taxo__link" data-dir="ltr">
                     <span class="taxo__text">
                         GCI
+                    </span>
+                    <span class="taxo__num" dir="auto">
+                        1
+                    </span>
+                </a>
+            </span>
+        
+        
+        
+            <span class="tag">
+                <a href="/blog/tags/GGCTF/" class="is-tags taxo__link" data-dir="ltr">
+                    <span class="taxo__text">
+                        GGCTF
                     </span>
                     <span class="taxo__num" dir="auto">
                         1
@@ -2433,7 +2472,7 @@ Chạy nó, nhập vào thì nó in ra lại đúng như thế.
                         UAF
                     </span>
                     <span class="taxo__num" dir="auto">
-                        2
+                        3
                     </span>
                 </a>
             </span>
@@ -2563,7 +2602,7 @@ Chạy nó, nhập vào thì nó in ra lại đúng như thế.
                         kernel
                     </span>
                     <span class="taxo__num" dir="auto">
-                        5
+                        6
                     </span>
                 </a>
             </span>
@@ -2576,7 +2615,7 @@ Chạy nó, nhập vào thì nó in ra lại đúng như thế.
                         linux
                     </span>
                     <span class="taxo__num" dir="auto">
-                        4
+                        5
                     </span>
                 </a>
             </span>
@@ -2654,7 +2693,7 @@ Chạy nó, nhập vào thì nó in ra lại đúng như thế.
                         pwn
                     </span>
                     <span class="taxo__num" dir="auto">
-                        13
+                        14
                     </span>
                 </a>
             </span>
@@ -2732,7 +2771,7 @@ Chạy nó, nhập vào thì nó in ra lại đúng như thế.
                         use-after-free
                     </span>
                     <span class="taxo__num" dir="auto">
-                        2
+                        3
                     </span>
                 </a>
             </span>
@@ -3019,7 +3058,7 @@ Chạy nó, nhập vào thì nó in ra lại đúng như thế.
                 
             <p class="caption">
                 
-                    ©2020, All Rights Reserved. Content licensed under CC BY 4.0
+                    ©2021, All Rights Reserved. Content licensed under CC BY 4.0
                 
             </p>
         

@@ -18,9 +18,9 @@
 
 <script defer src="/blog/js/lazysizes.min.fb649fcae62177dfe63e67081ddceb830b5ce1f05a4184e9bbb7d87ac4b8f4e5.js"></script>
 
-<script defer src="/blog/js/helper/getParents.min.1618c696be7c98933f9a92677f518b512a74e55bdbb976b09936b4182e93181b.js"></script>
+<script defer src="/blog/js/helper/getParents.min.ccd45f158c1b17849307ba913a72beac239c410f2b6e648496a79842da84e55b.js"></script>
 
-<script defer src="/blog/js/helper/fadeinout.min.efa35f4c090622130b3f4cfae6971448b5ffb61c5f0a8f21cdfd157fa712abc4.js"></script>
+<script defer src="/blog/js/helper/fadeinout.min.1d13d3e810c3940e80cbba6216a1c76fbf42b5431fc83537ea6997863802362b.js"></script>
 
 <script defer src="/blog/js/helper/closest.min.js"></script>
   
@@ -663,6 +663,12 @@
     
     var enableSearch = JSON.parse("true");
     
+    var searchDistance = JSON.parse("null");
+    
+    var searchThreshold = JSON.parse("null");
+    
+    var searchContent = JSON.parse("null");
+    
     var enableSearchHighlight = JSON.parse("true");
     
     var searchResultPosition = JSON.parse("null");
@@ -686,12 +692,13 @@
         xhr.onload = function () {
           if (xhr.status === 200) {
             fuse = new Fuse(JSON.parse(xhr.response.toString('utf-8')), {
-              keys: sectionType.includes('publication') ? ['title', 'abstract'] : ['title', 'description', 'content'],
+              keys: sectionType.includes('publication') ? ['title', 'abstract'] : 
+                searchContent ? ['title', 'description', 'content'] : ['title', 'description'],
               includeMatches: enableSearchHighlight,
               shouldSort: true, 
-              threshold: 0.4, 
+              threshold: searchThreshold ? searchThreshold : 0.4, 
               location: 0, 
-              distance: 100, 
+              distance: searchDistance ? searchDistance : 100, 
               maxPatternLength: 32,
               minMatchCharLength: 1,
               isCaseSensitive: false, 
@@ -715,7 +722,7 @@
       var a = document.createElement('a');
       a.innerHTML = obj.item.title;
       a.setAttribute('class', 'search-result__item--title');
-      a.setAttribute('href', obj.item.permalink);
+      a.setAttribute('href', obj.item.uri);
 
       var descDiv = document.createElement('div');
       descDiv.setAttribute('class', 'search-result__item--desc');
@@ -1315,7 +1322,8 @@
     }
   
   });
-</script>    
+</script>
+    
     
 
 
@@ -1341,7 +1349,7 @@
 <meta property="og:type" content="website">
 <meta property="og:description" content="">
 
-<meta name="generator" content="Hugo 0.79.1" />
+<meta name="generator" content="Hugo 0.84.4" />
 <meta name="msapplication-TileColor" content="#fff">
 
 <meta name="theme-color" content="#fff">
@@ -1392,7 +1400,6 @@ if (!doNotTrack) {
 	ga('send', 'pageview');
 }
 </script>
-
   
 <script type="application/javascript">
 var doNotTrack = false;
@@ -1957,7 +1964,7 @@ Spent quite a lot of time reversing it, I figured it out that it malloc a few by
                         CTF
                     </span>
                     <span class="taxo__num" dir="auto">
-                        15
+                        16
                     </span>
                 </a>
             </span>
@@ -2020,6 +2027,19 @@ Spent quite a lot of time reversing it, I figured it out that it malloc a few by
                 <a href="/blog/tags/GCI/" class="is-tags taxo__link" data-dir="ltr">
                     <span class="taxo__text">
                         GCI
+                    </span>
+                    <span class="taxo__num" dir="auto">
+                        1
+                    </span>
+                </a>
+            </span>
+        
+        
+        
+            <span class="tag">
+                <a href="/blog/tags/GGCTF/" class="is-tags taxo__link" data-dir="ltr">
+                    <span class="taxo__text">
+                        GGCTF
                     </span>
                     <span class="taxo__num" dir="auto">
                         1
@@ -2152,7 +2172,7 @@ Spent quite a lot of time reversing it, I figured it out that it malloc a few by
                         UAF
                     </span>
                     <span class="taxo__num" dir="auto">
-                        2
+                        3
                     </span>
                 </a>
             </span>
@@ -2282,7 +2302,7 @@ Spent quite a lot of time reversing it, I figured it out that it malloc a few by
                         kernel
                     </span>
                     <span class="taxo__num" dir="auto">
-                        5
+                        6
                     </span>
                 </a>
             </span>
@@ -2295,7 +2315,7 @@ Spent quite a lot of time reversing it, I figured it out that it malloc a few by
                         linux
                     </span>
                     <span class="taxo__num" dir="auto">
-                        4
+                        5
                     </span>
                 </a>
             </span>
@@ -2373,7 +2393,7 @@ Spent quite a lot of time reversing it, I figured it out that it malloc a few by
                         pwn
                     </span>
                     <span class="taxo__num" dir="auto">
-                        13
+                        14
                     </span>
                 </a>
             </span>
@@ -2451,7 +2471,7 @@ Spent quite a lot of time reversing it, I figured it out that it malloc a few by
                         use-after-free
                     </span>
                     <span class="taxo__num" dir="auto">
-                        2
+                        3
                     </span>
                 </a>
             </span>
@@ -2724,7 +2744,7 @@ Spent quite a lot of time reversing it, I figured it out that it malloc a few by
                 
             <p class="caption">
                 
-                    ©2020, All Rights Reserved. Content licensed under CC BY 4.0
+                    ©2021, All Rights Reserved. Content licensed under CC BY 4.0
                 
             </p>
         

@@ -13,14 +13,63 @@
     <language>en</language>
     <managingEditor>ntrung03@gmail.com (Nguyen Hoang Trung)</managingEditor>
     <webMaster>ntrung03@gmail.com (Nguyen Hoang Trung)</webMaster>
-    <copyright>©{year}, All Rights Reserved. Content licensed under CC BY 4.0</copyright>
-    <lastBuildDate>Mon, 28 Dec 2020 17:22:26 +0700</lastBuildDate>
+    <copyright>©2021, All Rights Reserved. Content licensed under CC BY 4.0</copyright>
+    <lastBuildDate>Wed, 21 Jul 2021 13:37:00 +0000</lastBuildDate>
     
         <atom:link href="https://trungnguyen1909.github.io/blog/tags/linux/index.xml" rel="self" type="application/rss+xml" />
     
-    
-    
 
+      
+      <item>
+        <title>Full chain - Google CTF 2021</title>
+        <link>https://trungnguyen1909.github.io/blog/post/GGCTF21/</link>
+        <pubDate>Wed, 21 Jul 2021 13:37:00 +0000</pubDate>
+        <author>ntrung03@gmail.com (Nguyen Hoang Trung)</author>
+        <atom:modified>Wed, 21 Jul 2021 13:37:00 +0000</atom:modified>
+        <guid>https://trungnguyen1909.github.io/blog/post/GGCTF21/</guid>
+        <description>Full chain  Do you have what it takes to pwn all the layers?
+ Intro Hi, last weekend I participated in Google CTF 2021 with my team vh++.
+To quote from my last year&amp;rsquo;s writeup:
+ Although I didn&amp;rsquo;t solve the challenge in time for the points,</description>
+        
+        <dc:creator>Nguyen Hoang Trung</dc:creator>
+        
+        
+        
+        
+          
+            
+              <category>GGCTF</category>
+            
+          
+            
+              <category>CTF</category>
+            
+          
+            
+              <category>pwn</category>
+            
+          
+            
+              <category>linux</category>
+            
+          
+            
+              <category>kernel</category>
+            
+          
+            
+              <category>use-after-free</category>
+            
+          
+            
+              <category>UAF</category>
+            
+          
+        
+        
+        
+      </item>
       
       <item>
         <title>Pwnable01 scull - Whitehat Grandprix 06</title>
